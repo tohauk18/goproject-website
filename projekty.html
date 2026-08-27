@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Projektów Budowlanych i Koncepcji 3D — GOPROJECT Pomorze</title>
+  <meta name="description" content="Zobacz portfolio zrealizowanych projektów: domy jednorodzinne, nowoczesne stodoły, osiedla budynków dwulokalowych oraz budynki wielorodzinne w Gdańsku." />
+  <link rel="canonical" href="https://goproject.com.pl/projekty.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goproject.com.pl/projekty.html" />
+  <meta property="og:title" content="Portfolio Projektów Budowlanych i Koncepcji 3D — GOPROJECT Pomorze" />
+  <meta property="og:description" content="Zobacz portfolio zrealizowanych projektów: domy jednorodzinne, nowoczesne stodoły, osiedla budynków dwulokalowych oraz budynki wielorodzinne w Gdańsku." />
+  <meta property="og:image" content="https://goproject.com.pl/img/adam-kubat.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio Projektów Budowlanych i Koncepcji 3D — GOPROJECT Pomorze" />
+  <meta name="twitter:description" content="Zobacz portfolio zrealizowanych projektów: domy jednorodzinne, nowoczesne stodoły, osiedla budynków dwulokalowych oraz budynki wielorodzinne w Gdańsku." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+            },
+            studio: {
+              surface: '#FAFAFA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
+        <span>GOPROJECT</span>
+        <span class="text-[10px] sm:text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+                <span>// PRZEGLĄD OFERTA</span>
+                <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+              </a>
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent font-bold">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="hidden sm:inline-flex h-[44px] px-5 sm:px-6 items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center" aria-label="Menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi.html" class="block py-2.5 text-accent font-bold hover:underline tracking-wide">// Przegląd wszystkich usług &rarr;</a>
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="w-full h-12 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+            <span>Bezpłatna Konsultacja</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <!-- CONTENT -->
+  <div class="pt-28 md:pt-32 pb-24 bg-white text-black min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-8 border-b border-gray-200">
+        <div>
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            03 // PORTFOLIO INŻYNIERSKIE &amp; PROJEKTOWE
+          </span>
+          <h1 class="font-heading font-extrabold text-3xl md:text-5xl">
+            Projekt Domu, Projekt Osiedla &amp; Realizacje
+          </h1>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-xl leading-relaxed">
+          Autorski <strong>projekt koncepcyjny</strong>, <strong>dom jednorodzinny</strong>, <strong>budynek wielorodzinny</strong> oraz <strong>projekt osiedla</strong> domów dwulokalowych. Kliknij obiekt, aby poznać parametry PUM, zakres PAB/PT i galerię powiązanych rysunków.
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="flex flex-wrap gap-2.5 mb-12 font-mono text-xs font-bold uppercase tracking-wider">
+        <button data-filter="all" class="filter-btn active px-5 py-2.5 border bg-black text-white border-black transition-all">Wszystkie</button>
+        <button data-filter="dom-jednorodzinny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Domy jednorodzinne</button>
+        <button data-filter="szeregowe" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Zabudowa szeregowa</button>
+        <button data-filter="komercyjne" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Obiekty wielorodzinne</button>
+      </div>
+
+      <!-- GRID CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: OBIEKT UŻYTECZNOŚCI PUBLICZNEJ — PROJEKT KONKURSOWY -->
+        <a href="./projekt-wielorodzinny-sniadeckich.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="komercyjne">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/wielorodzinny-sniadeckich-hq.webp" alt="Obiekt użyteczności publicznej — projekt konkursowy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">UŻYTECZNOŚĆ PUBLICZNA · KONKURS</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Obiekt użyteczności publicznej — projekt konkursowy</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Koncepcja opracowana na potrzeby konkursu architektonicznego, wyróżniająca się wysoką jakością architektury, przemyślanymi rozwiązaniami funkcjonalnymi oraz harmonijnym wpisaniem w otoczenie.</p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span class="font-bold text-black">Użyteczność publ.</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span class="font-bold text-black">Konkursowy</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Dostępność</span><span class="font-bold text-black">Bez barier</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 2: BUDYNEK MIESZKALNY WIELORODZINNY — PEŁNY CYKL -->
+        <a href="./projekt-osiedle-dwulokalowe.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/budynek-mieszkalny-wielorodzinny-widok-poludniowo-zachodni.webp" alt="Budynek mieszkalny wielorodzinny — od koncepcji do realizacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY · PEŁNY CYKL</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny — od koncepcji do realizacji</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Złożony projekt wielolokalowy zrealizowany od pierwszej koncepcji aż po zakończenie budowy. Optymalizacja konstrukcyjna, PUM i pełna dostępność.</p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span class="font-bold text-black">Mieszkaniowy</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span class="font-bold text-black">Pełny cykl</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Standard</span><span class="font-bold text-black">Energooszczędny</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 3: OSIEDLE BUDYNKÓW JEDNORODZINNYCH DWULOKALOWYCH -->
+        <a href="./projekt-stodola-3d.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY / URBANISTYCZNY</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Kompletny projekt zagospodarowania osiedla domów dwulokalowych. Prywatność, wygoda oraz racjonalne wykorzystanie potencjału terenu.</p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span class="font-bold text-black">Urbanistyczny</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span class="font-bold text-black">Masterplan</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Zabudowa</span><span class="font-bold text-black">Dwulokalowa</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 4: DOM JEDNORODZINNY — PEŁNY CYKL -->
+        <a href="./projekt-dom-jednorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp" alt="Dom jednorodzinny — od koncepcji do realizacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY · PEŁNY CYKL</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Dom jednorodzinny — od koncepcji do realizacji</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Kompleksowa realizacja mieszkaniowa obejmująca cały proces — od pierwszego spotkania z inwestorem, przez projektowanie, aż po zakończenie budowy.</p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span class="font-bold text-black">Mieszkaniowy</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span class="font-bold text-black">Pełny cykl</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Standard</span><span class="font-bold text-black">WT2021 / A+</span></div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- DUAL ACTION CLOSING BANNER -->
+      <div class="bg-black text-white p-10 md:p-14 text-center border border-zinc-800 shadow-2xl mt-12 mb-4">
+        <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-widest block mb-2">// KOMPLEKSOWA OBSŁUGA INWESTYCJI</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl mb-4 text-white">
+          Stwórzmy optymalny projekt Twojego budynku
+        </h2>
+        <p class="font-sans text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Skonsultuj założenia architektoniczne, ukształtowanie działki i zapisy planu miejscowego bezpośrednio z głównym projektantem.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:+48884757815" class="h-[50px] px-8 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all shadow-lg w-full sm:w-auto">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="h-[50px] px-8 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all w-full sm:w-auto">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Formularz Wyceny w 24h &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <span class="font-heading font-extrabold text-white text-xl tracking-tight uppercase block mb-3">GOPROJECT</span>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-wielorodzinny-sniadeckich.html" class="hover:text-accent transition-colors">Obiekt użyteczności publicznej</a></li>
+            <li><a href="./projekt-osiedle-dwulokalowe.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+            <li><a href="./projekt-stodola-3d.html" class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-dom-jednorodzinny.html" class="hover:text-accent transition-colors">Dom jednorodzinny — od koncepcji do realizacji</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:kontakt@goproject.com.pl" class="hover:text-white transition-colors">kontakt@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojniczki (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

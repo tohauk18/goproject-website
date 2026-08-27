@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulamin Serwisu | GOPROJECT Architekt & Inżynier Gdańsk</title>
+  <meta name="description" content="Regulamin świadczenia usług drogą elektroniczną oraz zasady korzystania z serwisu pracowni projektowej GOPROJECT mgr inż. Adam Kubat." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- LUCIDE ICONS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+            },
+            studio: {
+              surface: '#FAFAFA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
+        <span>GOPROJECT</span>
+        <span class="text-[10px] sm:text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+                <span>// PRZEGLĄD OFERTA</span>
+                <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+              </a>
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./index.html#proces" class="hover:text-accent transition-colors">Proces</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="hidden sm:inline-flex h-[44px] px-5 sm:px-6 items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent transition-colors" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi.html" class="block py-2.5 text-accent font-bold hover:underline tracking-wide">// Przegląd wszystkich usług &rarr;</a>
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="w-full h-12 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+            <span>Bezpłatna Konsultacja</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <!-- MAIN LEGAL CONTENT -->
+  <main class="flex-grow pt-28 md:pt-36 pb-20">
+    <div class="max-w-4xl mx-auto px-4 md:px-8">
+      
+      <!-- BREADCRUMB -->
+      <div class="mb-8 font-mono text-xs text-gray-500">
+        <a href="./index.html" class="hover:text-black">&larr; Strona Główna</a>
+        <span class="mx-2">/</span>
+        <span class="text-black font-bold">Regulamin</span>
+      </div>
+
+      <!-- TITLE HEADER -->
+      <div class="border-b border-gray-200 pb-8 mb-12">
+        <div class="inline-block font-mono text-xs font-bold text-accent uppercase tracking-widest mb-2">
+          DOKUMENT PRAWNY // WARUNKI KORZYSTANIA
+        </div>
+        <h1 class="font-heading font-extrabold text-3xl md:text-5xl text-black mb-4">
+          Regulamin Świadczenia Usług Drogą Elektroniczną
+        </h1>
+        <p class="font-sans text-gray-600 text-sm md:text-base">
+          Niniejszy regulamin określa zasady korzystania z serwisu internetowego <strong>goproject.pl</strong>, prawa i obowiązki Usługobiorców oraz zasady ochrony praw autorskich do projektów i materiałów inżynieryjnych, na podstawie ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz.U. z 2020 r. poz. 344).
+        </p>
+        <div class="mt-4 font-mono text-xs text-gray-400">
+          Ostatnia aktualizacja: 8 sierpnia 2026 r.
+        </div>
+      </div>
+
+      <!-- SECTIONS -->
+      <div class="space-y-10 font-sans text-sm md:text-base text-gray-700 leading-relaxed">
+        
+        <!-- §1 -->
+        <section class="bg-studio-surface border border-gray-200 p-6 md:p-8 rounded-sm">
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 1.</span> Postanowienia Ogólne i Dane Usługodawcy
+          </h2>
+          <p class="mb-3">
+            Właścicielem i operatorem serwisu internetowego dostępnego pod adresem <strong>goproject.pl</strong> jest:
+          </p>
+          <div class="bg-white border border-gray-200 p-4 font-mono text-xs text-gray-800 space-y-1.5 mb-3">
+            <div><strong class="text-black">GOPROJECT mgr inż. Adam Kubat</strong></div>
+            <div>Pracownia Projektowo-Inżynieryjna</div>
+            <div>Działalność prowadzona na terenie: Gdańsk, Gdynia, Sopot, Województwo Pomorskie</div>
+            <div>E-mail: <a href="mailto:kontakt@goproject.pl" class="text-accent underline">kontakt@goproject.pl</a></div>
+            <div>Telefon: <a href="tel:+48884757815" class="text-accent underline">+48 884 757 815</a></div>
+          </div>
+        </section>
+
+        <!-- §2 -->
+        <section>
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 2.</span> Definicje
+          </h2>
+          <ul class="space-y-3 list-disc list-inside">
+            <li>
+              <strong>Serwis:</strong> strona internetowa pod domeną goproject.pl wraz ze wszystkimi jej podstronami.
+            </li>
+            <li>
+              <strong>Usługodawca:</strong> GOPROJECT mgr inż. Adam Kubat.
+            </li>
+            <li>
+              <strong>Użytkownik / Inwestor:</strong> osoba fizyczna, osoba prawna lub jednostka organizacyjna korzystająca z funkcjonalności Serwisu.
+            </li>
+            <li>
+              <strong>Usługi Elektroniczne:</strong> nieodpłatne usługi świadczone drogą elektroniczną przez Usługodawcę na rzecz Użytkownika (formularz kontaktowy, selektor wyceny, prezentacja portfolio).
+            </li>
+            <li>
+              <strong>Umowa o Prace Projektowe / Nadzór:</strong> odrębna, pisemna umowa cywilnoprawna zawierana indywidualnie pomiędzy Inwestorem a Usługodawcą.
+            </li>
+          </ul>
+        </section>
+
+        <!-- §3 -->
+        <section>
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 3.</span> Rodzaje Usług Świadczonych Drogą Elektroniczną
+          </h2>
+          <p class="mb-3">Usługodawca świadczy za pośrednictwem Serwisu bezpłatne usługi elektroniczne w zakresie:</p>
+          <ul class="space-y-2 list-disc list-inside text-gray-700">
+            <li>Umożliwienia przeglądania oferty inżynieryjnej, opisów procedur budowlanych oraz portfolio projektów,</li>
+            <li>Udostępnienia interaktywnego formularza kontaktowego umożliwiającego wysłanie zapytania ofertowego,</li>
+            <li>Udostępnienia selektora wyceny i kategorii inwestycyjnych (projekty, nadzór, odbiory, WZ).</li>
+          </ul>
+          <p class="mt-3 text-xs text-gray-500">
+            Umowa o świadczenie usług drogą elektroniczną zostaje zawarta z chwilą wejścia na stronę Serwisu i ulega rozwiązaniu z chwilą opuszczenia strony przez Użytkownika.
+          </p>
+        </section>
+
+        <!-- §4 -->
+        <section class="bg-studio-surface border border-gray-200 p-6 md:p-8 rounded-sm">
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 4.</span> Prawa Autorskie i Ochrona Własności Intelektualnej
+          </h2>
+          <p class="mb-3">
+            Wszelkie treści zamieszczone w Serwisie — w tym w szczególności <strong>koncepcje architektoniczne, rzuty kondygnacji, schematy instalacji, wizualizacje 3D, fotografie z placów budów oraz teksty techniczne</strong> — stanowią utwory podlegające ochronie na podstawie ustawy z dnia 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych (Dz.U. z 2021 r. poz. 1062).
+          </p>
+          <ul class="space-y-2 list-disc list-inside text-xs font-mono text-gray-800">
+            <li>Kopiowanie, powielanie, rozpowszechnianie lub modyfikowanie projektów i wizualizacji bez pisemnej zgody Usługodawcy jest zabronione.</li>
+            <li>Wykorzystanie udostępnionych rysunków do celów budowlanych lub adaptacyjnych bez zawarcia indywidualnej umowy stanowi naruszenie praw autorskich.</li>
+          </ul>
+        </section>
+
+        <!-- §5 -->
+        <section>
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 5.</span> Składanie Zapytań i Charakter Informacyjny Treści
+          </h2>
+          <ul class="space-y-3 list-disc list-inside">
+            <li>
+              Treści, kalkulacje orientacyjne, terminy oraz przykłady rozwiązań konstrukcyjnych prezentowane w Serwisie mają wyłącznie <strong>charakter informacyjny</strong> i nie stanowią wiążącej oferty handlowej w rozumieniu <strong>art. 66 § 1 ustawy z dnia 23 kwietnia 1964 r. — Kodeks Cywilny</strong>.
+            </li>
+            <li>
+              Ostateczna cena oraz harmonogram prac projektowych, adaptacyjnych lub kierownictwa budowy ustalane są każdorazowo na podstawie indywidualnej analizy działki, warunków gruntowych i zakresu dokumentacji.
+            </li>
+          </ul>
+        </section>
+
+        <!-- §6 -->
+        <section>
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 6.</span> Wymagania Techniczne i Bezpieczeństwo
+          </h2>
+          <p class="mb-3">Do prawidłowego korzystania z Serwisu niezbędne są:</p>
+          <ul class="space-y-2 list-disc list-inside text-gray-700">
+            <li>Urządzenie z dostępem do sieci Internet (komputer, tablet, smartfon),</li>
+            <li>Aktualna przeglądarka internetowa (np. Chrome, Safari, Firefox, Edge) obsługująca JavaScript i pliki cookies,</li>
+            <li>Aktywne konto poczty elektronicznej (w przypadku korzystania z formularza kontaktowego).</li>
+          </ul>
+          <p class="mt-3 text-xs text-gray-500">
+            Użytkownik zobowiązany jest do niedostarczania za pośrednictwem formularza treści o charakterze bezprawnym, wulgarnym lub mogących zakłócić pracę Serwisu.
+          </p>
+        </section>
+
+        <!-- §7 -->
+        <section>
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 7.</span> Tryb Postępowania Reklamacyjnego
+          </h2>
+          <p class="mb-3">
+            Reklamacje dotyczące funkcjonowania Serwisu lub usług świadczonych drogą elektroniczną można zgłaszać drogą elektroniczną na adres: <strong>kontakt@goproject.pl</strong>.
+          </p>
+          <p class="text-xs text-gray-600">
+            Zgłoszenie reklamacyjne powinno zawierać opis zaistniałego problemu oraz adres e-mail do kontaktu. Usługodawca rozpatruje reklamacje w terminie 14 dni roboczych od dnia ich doręczenia.
+          </p>
+        </section>
+
+        <!-- §8 -->
+        <section class="border-t border-gray-200 pt-8">
+          <h2 class="font-heading font-bold text-xl text-black mb-3 flex items-center gap-2">
+            <span class="font-mono text-accent text-sm">§ 8.</span> Postanowienia Końcowe
+          </h2>
+          <p class="mb-2">
+            W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają powszechnie obowiązujące przepisy prawa polskiego, w szczególności Kodeksu Cywilnego, Ustawy o prawie autorskim i prawach pokrewnych oraz Ustawy o świadczeniu usług drogą elektroniczną.
+          </p>
+          <p class="text-xs text-gray-500">
+            Regulamin wchodzi w życie z dniem publikacji w Serwisie.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <span class="font-heading font-extrabold text-white text-xl tracking-tight uppercase block mb-3">GOPROJECT</span>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-wielorodzinny-sniadeckich.html" class="hover:text-accent transition-colors">Obiekt użyteczności publicznej</a></li>
+            <li><a href="./projekt-osiedle-dwulokalowe.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+            <li><a href="./projekt-stodola-3d.html" class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-dom-jednorodzinny.html" class="hover:text-accent transition-colors">Dom jednorodzinny — od koncepcji do realizacji</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:kontakt@goproject.com.pl" class="hover:text-white transition-colors">kontakt@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojniczki (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="text-accent font-bold">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

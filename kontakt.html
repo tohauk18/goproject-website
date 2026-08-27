@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt & Bezpłatna Konsultacja | GOPROJECT mgr inż. Adam Kubat</title>
+  <meta name="description" content="Skontaktuj się z pracownią GOPROJECT. Zadzwoń: +48 884 757 815 lub napisz do mgr inż. Adama Kubata. Bezpłatna wstępna analiza działki i wycena w 24h." />
+  <meta name="keywords" content="kontakt architekt, kierownik budowy kontakt, projekt domu gdańsk, architekt chojnice, wycena projektu budowlanego" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+            },
+            studio: {
+              surface: '#FAFAFA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="canonical" href="https://goproject.com.pl/kontakt.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goproject.com.pl/kontakt.html" />
+  <meta property="og:title" content="Kontakt & Bezpłatna Konsultacja | GOPROJECT mgr inż. Adam Kubat" />
+  <meta property="og:description" content="Skontaktuj się z pracownią GOPROJECT. Zadzwoń: +48 884 757 815 lub napisz. Bezpłatna wstępna analiza działki i wycena w 24h." />
+  <meta property="og:image" content="https://goproject.com.pl/img/adam-kubat.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt & Bezpłatna Konsultacja | GOPROJECT mgr inż. Adam Kubat" />
+  <meta name="twitter:description" content="Skontaktuj się z pracownią GOPROJECT. Zadzwoń: +48 884 757 815 lub napisz. Bezpłatna wstępna analiza działki i wycena w 24h." />
+  
+  <style>
+    img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+    /* Bulletproof Oferta Dropdown */
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
+        <span>GOPROJECT</span>
+        <span class="text-[10px] sm:text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+                <span>// PRZEGLĄD OFERTA</span>
+                <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+              </a>
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./kontakt.html" class="text-accent font-bold">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="hidden sm:inline-flex h-[44px] px-5 sm:px-6 items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center" aria-label="Menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi.html" class="block py-2.5 text-accent font-bold hover:underline tracking-wide">// Przegląd wszystkich usług &rarr;</a>
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="w-full h-12 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+            <span>Bezpłatna Konsultacja</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <!-- MAIN CONTENT CONTAINER (BALANCED SPACING, NO VOIDS) -->
+  <main class="flex-grow pt-28 md:pt-32 pb-16 md:pb-24 bg-white text-black">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- TOP BREADCRUMB & CONTEXT -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-4 font-mono text-xs">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-accent font-bold hover:underline">
+          &larr; Powrót do Strony Głównej
+        </a>
+        <div class="text-gray-500 uppercase">
+          Obszar działania: Gdańsk · Chojnice · Trójmiasto · Pomorskie
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+        
+        <!-- LEFT COLUMN: CONTACT DETAILS & CREDENTIALS (COL-5) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <div class="inline-block font-mono text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 border border-accent/30 px-3 py-1">
+              // BEZPOŚREDNI KONTAKT INŻYNIERSKI
+            </div>
+            <h1 class="font-heading font-extrabold text-3xl md:text-5xl text-black leading-tight">
+              Skontaktuj się z nami
+            </h1>
+            <p class="font-sans text-gray-600 text-sm md:text-base mt-3 leading-relaxed">
+              Porozmawiaj bezpośrednio z <strong>mgr inż. Adamem Kubatem</strong>. Odpowiemy na pytania dotyczące <strong>projektu domu</strong>, analizy działki pod <strong>budowę</strong> lub pełnienia funkcji <strong>kierownika budowy</strong>.
+            </p>
+          </div>
+
+          <!-- DIRECT CONTACT CARDS -->
+          <div class="space-y-3 font-mono text-xs">
+            <!-- Phone card -->
+            <a href="tel:+48884757815" class="flex items-center gap-4 p-5 bg-studio-surface border border-gray-200 hover:border-black transition-all group">
+              <div class="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Telefon Bezpośredni</div>
+                <div class="font-bold text-black text-base md:text-lg mt-0.5">+48 884 757 815</div>
+                <div class="text-[10px] text-accent mt-0.5 font-sans font-medium">Dostępność: Pon – Pt 8:00 – 18:00</div>
+              </div>
+            </a>
+
+            <!-- Email card -->
+            <a href="mailto:kontakt@goproject.com.pl" class="flex items-center gap-4 p-5 bg-studio-surface border border-gray-200 hover:border-black transition-all group">
+              <div class="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Adres E-mail</div>
+                <div class="font-bold text-black text-sm md:text-base mt-0.5">kontakt@goproject.com.pl</div>
+                <div class="text-[10px] text-gray-500 mt-0.5 font-sans">Wycena dokumentacji w 24h</div>
+              </div>
+            </a>
+
+            <!-- Office card -->
+            <div class="flex items-center gap-4 p-5 bg-studio-surface border border-gray-200">
+              <div class="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center text-accent shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Siedziba Pracowni</div>
+                <div class="font-bold text-black text-sm mt-0.5">ul. Chojnicka 18, 89-600 Chojniczki</div>
+                <div class="text-[11px] text-gray-600 font-sans mt-0.5">Spotkania w Gdańsku, Chojnicach lub na działce inwestora</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRUST PILLS -->
+          <div class="p-5 bg-studio-surface border-l-4 border-accent border-y border-r border-gray-200 font-sans text-xs text-gray-700 space-y-2">
+            <div class="font-bold text-black flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-accent"></i>
+              <span>Gwarancja rzetelności inżynierskiej</span>
+            </div>
+            <p class="text-gray-600 text-[11px] leading-relaxed">
+              Uprawnienia budowlane do projektowania i kierowania robotami budowlanymi bez ograniczeń. 100% pozytywnych decyzji administracyjnych.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: INTERACTIVE INQUIRY FORM (COL-7) -->
+        <div class="lg:col-span-7 bg-black text-white p-7 sm:p-10 md:p-12 border border-zinc-800 shadow-2xl">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-zinc-800">
+            <div>
+              <span class="font-mono text-[10px] font-bold text-accent uppercase tracking-widest block mb-1">FORMULARZ WYCENY</span>
+              <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-white">Napisz Wiadomość</h2>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 font-mono text-[10px] text-gray-400 bg-zinc-900 border border-zinc-800 px-3 py-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Odpowiedź w 24h</span>
+            </div>
+          </div>
+
+          <form id="contact-page-form" class="space-y-4 font-sans">
+            <!-- Row 1: Name & Phone -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Imię i Nazwisko *</label>
+                <input type="text" required class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none transition-colors" placeholder="Jan Kowalski" />
+              </div>
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Numer Telefonu *</label>
+                <input type="tel" required class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none transition-colors" placeholder="+48 884 757 815" />
+              </div>
+            </div>
+
+            <!-- Row 2: Email & Location -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Adres E-mail</label>
+                <input type="email" class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none transition-colors" placeholder="jan@example.com" />
+              </div>
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Lokalizacja Inwestycji</label>
+                <input type="text" class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none transition-colors" placeholder="np. Gdańsk / Chojnice / Żukowo" />
+              </div>
+            </div>
+
+            <!-- Custom Interactive Service Selector -->
+            <div class="relative" id="custom-select-wrapper">
+              <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Rodzaj Usługi / Temat Inwestycji *</label>
+              <input type="hidden" name="service" id="selected-service-input" value="projekt-indywidualny" />
+              
+              <!-- Trigger Button -->
+              <button 
+                type="button" 
+                id="select-trigger" 
+                class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white flex items-center justify-between text-left hover:border-zinc-700 focus:border-accent focus:outline-none transition-all duration-200 cursor-pointer group"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0"></span>
+                  <span id="selected-service-label" class="font-medium text-white text-xs sm:text-sm">Projekt indywidualny lub adaptacja</span>
+                </div>
+                <i data-lucide="chevron-down" id="select-chevron" class="w-4 h-4 text-gray-400 group-hover:text-accent transition-transform duration-200 shrink-0"></i>
+              </button>
+
+              <!-- Custom Dropdown Menu -->
+              <div 
+                id="select-dropdown" 
+                class="hidden absolute left-0 top-full mt-1.5 w-full bg-[#141414] border border-zinc-700 shadow-2xl z-50 overflow-hidden font-sans text-xs divide-y divide-zinc-800/90"
+                role="listbox"
+              >
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group bg-zinc-800/40" data-value="projekt-indywidualny" data-label="Projekt indywidualny lub adaptacja">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Projekt indywidualny lub adaptacja</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0"></i>
+                </div>
+
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group" data-value="kierownik-budowy" data-label="Kierownik budowy i nadzór">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Kierownik budowy i nadzór</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0 hidden"></i>
+                </div>
+
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group" data-value="projekt-osiedla" data-label="Projekt osiedla lub wielorodzinny">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Projekt osiedla lub wielorodzinny</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0 hidden"></i>
+                </div>
+
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group" data-value="odbiory-mieszkan" data-label="Odbiór mieszkania z termowizją">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Odbiór mieszkania z termowizją</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0 hidden"></i>
+                </div>
+
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group" data-value="formalnosci-wz" data-label="Warunki Zabudowy (WZ) & świadectwo">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Warunki Zabudowy (WZ) & świadectwo</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0 hidden"></i>
+                </div>
+
+                <div class="option-item p-3.5 hover:bg-zinc-800/90 cursor-pointer flex items-center justify-between transition-colors group" data-value="inne-pytanie" data-label="Inny temat / Zadaj pytanie">
+                  <span class="font-bold text-white group-hover:text-accent transition-colors">Inny temat / Zadaj pytanie</span>
+                  <i data-lucide="check" class="check-icon w-4 h-4 text-accent shrink-0 hidden"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Area -->
+            <div>
+              <label class="block font-mono text-xs text-gray-400 uppercase mb-1.5">Wiadomość / Opis Działki i Oczekiwań *</label>
+              <textarea rows="4" required class="w-full bg-zinc-900 border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none transition-colors" placeholder="Opisz krótko status działki (posiadane MPZP lub WZ), metraż budynku lub pytania o nadzór budowlany..."></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="h-[50px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 shadow-lg mt-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Wyślij Wiadomość &rarr; Wycena w 24h</span>
+            </button>
+
+            <!-- GDPR / RODO Notice -->
+            <p class="text-[11px] text-gray-500 font-sans mt-2.5 text-center leading-relaxed">
+              Wysyłając formularz, wyrażasz zgodę na kontakt w celu przygotowania wyceny. Administratorem Twoich danych jest GOPROJECT mgr inż. Adam Kubat. Szczegóły znajdziesz w naszej <a href="./polityka-prywatnosci.html" class="text-accent underline hover:text-accent-hover">Polityce Prywatności</a>.
+            </p>
+          </form>
+
+          <div id="contact-status" class="hidden mt-4 p-4 bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-mono text-center">
+            Dziękujemy! Wiadomość została przesłana. Skontaktujemy się z Tobą telefonicznie lub mailowo w ciągu 24 godzin.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM TRUST BANNER: 3 ASSURANCES (FILLS SPACE BALANCEDLY) -->
+      <div class="border-t border-gray-200 pt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+          <div class="p-6 bg-studio-surface border border-gray-200">
+            <span class="text-accent font-bold block mb-1">01 // SZYBKA ODPOWIEDŹ</span>
+            <div class="font-bold text-black text-sm mb-1">Konsultacja w 24h</div>
+            <p class="font-sans text-gray-600 text-xs leading-relaxed">
+              Analizujemy dokumenty działki (wypis z MPZP lub WZ) i przedstawiamy wstępną wycenę oraz harmonogram.
+            </p>
+          </div>
+
+          <div class="p-6 bg-studio-surface border border-gray-200">
+            <span class="text-accent font-bold block mb-1">02 // WIZJA LOKALNA</span>
+            <div class="font-bold text-black text-sm mb-1">Spotkanie na działce</div>
+            <p class="font-sans text-gray-600 text-xs leading-relaxed">
+              Dojeżdżamy na teren inwestycji w Trójmieście, Chojnicach i w promieniu 100 km, aby ocenić ukształtowanie i zjazdy.
+            </p>
+          </div>
+
+          <div class="p-6 bg-studio-surface border border-gray-200">
+            <span class="text-accent font-bold block mb-1">03 // UPRAWNIENIA</span>
+            <div class="font-bold text-black text-sm mb-1">Główny Projektant</div>
+            <p class="font-sans text-gray-600 text-xs leading-relaxed">
+              mgr inż. Adam Kubat osobiście prowadzi uzgodnienia i nadzoruje każdy etap realizacji inwestycji.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <span class="font-heading font-extrabold text-white text-xl tracking-tight uppercase block mb-3">GOPROJECT</span>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-wielorodzinny-sniadeckich.html" class="hover:text-accent transition-colors">Obiekt użyteczności publicznej</a></li>
+            <li><a href="./projekt-osiedle-dwulokalowe.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+            <li><a href="./projekt-stodola-3d.html" class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-dom-jednorodzinny.html" class="hover:text-accent transition-colors">Dom jednorodzinny — od koncepcji do realizacji</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:kontakt@goproject.com.pl" class="hover:text-white transition-colors">kontakt@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojniczki (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+      
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+
+      // Custom Dropdown Selector Logic
+      const selectWrapper = document.getElementById('custom-select-wrapper');
+      const selectTrigger = document.getElementById('select-trigger');
+      const selectDropdown = document.getElementById('select-dropdown');
+      const selectLabel = document.getElementById('selected-service-label');
+      const selectInput = document.getElementById('selected-service-input');
+      const selectChevron = document.getElementById('select-chevron');
+      const options = document.querySelectorAll('.option-item');
+
+      if (selectTrigger && selectDropdown) {
+        selectTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = selectTrigger.getAttribute('aria-expanded') === 'true';
+          selectTrigger.setAttribute('aria-expanded', !isExpanded);
+          selectDropdown.classList.toggle('hidden');
+          if (selectChevron) {
+            selectChevron.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+        });
+
+        // Option selection
+        options.forEach(option => {
+          option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const value = option.getAttribute('data-value');
+            const label = option.getAttribute('data-label');
+
+            if (selectInput) selectInput.value = value;
+            if (selectLabel) selectLabel.textContent = label;
+
+            // Highlight selected option
+            options.forEach(opt => {
+              opt.classList.remove('bg-zinc-800/40');
+              const check = opt.querySelector('.check-icon');
+              if (check) check.classList.add('hidden');
+            });
+
+            option.classList.add('bg-zinc-800/40');
+            const activeCheck = option.querySelector('.check-icon');
+            if (activeCheck) activeCheck.classList.remove('hidden');
+
+            // Close menu
+            selectDropdown.classList.add('hidden');
+            selectTrigger.setAttribute('aria-expanded', 'false');
+            if (selectChevron) selectChevron.style.transform = 'rotate(0deg)';
+          });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+          if (selectWrapper && !selectWrapper.contains(e.target)) {
+            selectDropdown.classList.add('hidden');
+            selectTrigger.setAttribute('aria-expanded', 'false');
+            if (selectChevron) selectChevron.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !selectDropdown.classList.contains('hidden')) {
+            selectDropdown.classList.add('hidden');
+            selectTrigger.setAttribute('aria-expanded', 'false');
+            if (selectChevron) selectChevron.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+
+      // Contact form submit simulation
+      const form = document.getElementById('contact-page-form');
+      const status = document.getElementById('contact-status');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (status) {
+            status.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => status.classList.add('hidden'), 6000);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

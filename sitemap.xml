@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://goproject.com.pl/</loc><priority>1.0</priority></url>
+  <url><loc>https://goproject.com.pl/uslugi.html</loc><priority>0.9</priority></url>
+  <url><loc>https://goproject.com.pl/projekty.html</loc><priority>0.9</priority></url>
+  <url><loc>https://goproject.com.pl/o-nas.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/kontakt.html</loc><priority>0.8</priority></url>
+
+  <!-- SERWISY SUBPAGES -->
+  <url><loc>https://goproject.com.pl/uslugi-projekty-i-adaptacje.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/uslugi-nadzor-i-kierownik-budowy.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/uslugi-odbiory-i-ekspertyzy.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/uslugi-formalnosci-i-energetyka.html</loc><priority>0.8</priority></url>
+
+  <!-- PROJEKTY SUBPAGES -->
+  <url><loc>https://goproject.com.pl/projekt-wielorodzinny-sniadeckich.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/projekt-osiedle-dwulokalowe.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/projekt-stodola-3d.html</loc><priority>0.8</priority></url>
+  <url><loc>https://goproject.com.pl/projekt-dom-jednorodzinny.html</loc><priority>0.8</priority></url>
+
+  <!-- LEGAL SUBPAGES -->
+  <url><loc>https://goproject.com.pl/polityka-prywatnosci.html</loc><priority>0.5</priority></url>
+  <url><loc>https://goproject.com.pl/regulamin.html</loc><priority>0.5</priority></url>
+</urlset>

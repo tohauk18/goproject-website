@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Pracowni GOPROJECT — mgr inż. Adam Kubat | Inżynieria i Projekty</title>
+  <meta name="description" content="Poznaj zespół GOPROJECT. Łączymy pasję architektoniczną z pełnymi uprawnieniami budowlanymi i doświadczeniem na placach budów w woj. pomorskim." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://goproject.com.pl/o-nas.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://goproject.com.pl/o-nas.html" />
+  <meta property="og:title" content="O Pracowni — GOPROJECT mgr inż. Adam Kubat" />
+  <meta property="og:description" content="Poznaj historię pracowni GOPROJECT założonej w 2015 roku przez mgr inż. Adama Kubata." />
+  <meta property="og:image" content="https://goproject.com.pl/img/adam-kubat.jpg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+              subtle: 'rgba(255, 59, 0, 0.12)',
+              border: 'rgba(255, 59, 0, 0.3)',
+            },
+            studio: {
+              bg: '#FFFFFF',
+              surface: '#FAFAFA',
+              subtle: '#F4F4F3',
+              dark: '#0A0A0A',
+              card: '#141414',
+              border: '#E8E8E8',
+              borderDark: '#222222',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+<style>
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
+        <span>GOPROJECT</span>
+        <span class="text-[10px] sm:text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+                <span>// PRZEGLĄD OFERTA</span>
+                <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+              </a>
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="text-accent font-bold">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="hidden sm:inline-flex h-[44px] px-5 sm:px-6 items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center" aria-label="Menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi.html" class="block py-2.5 text-accent font-bold hover:underline tracking-wide">// Przegląd wszystkich usług &rarr;</a>
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="w-full h-12 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+            <span>Bezpłatna Konsultacja</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <!-- CONTENT -->
+  <div class="pt-28 md:pt-32 pb-24 bg-white text-black min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-10 border-b border-gray-200">
+        <div class="max-w-3xl">
+          <div class="inline-block font-mono text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 border border-accent/30 px-3.5 py-1">
+            // HISTORIA & WARTOŚCI
+          </div>
+          <h1 class="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+            Rzetelność inżynieryjna od 2015 roku
+          </h1>
+          <p class="font-sans text-gray-600 text-base md:text-lg leading-relaxed">
+            Pracownia projektowa <strong class="text-black font-semibold">GOPROJECT</strong> powstała z pasji do nowoczesnej architektury oraz bezkompromisowego przestrzegania sztuki budowlanej i wymogów prawa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 font-mono text-xs shrink-0 lg:w-80">
+          <div class="p-4 bg-studio-surface border border-gray-200 text-center">
+            <div class="font-heading font-black text-2xl text-accent">2015</div>
+            <div class="text-gray-500 uppercase text-[10px] mt-0.5">Rok Założenia Pracowni</div>
+          </div>
+          <div class="p-4 bg-studio-surface border border-gray-200 text-center">
+            <div class="font-heading font-black text-2xl text-black">Gdańsk & Pomorze</div>
+            <div class="text-gray-500 uppercase text-[10px] mt-0.5">Główny Obszar Działania</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOUNDER BIO GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div class="relative h-[420px] md:h-[540px] w-full overflow-hidden border border-gray-200 shadow-2xl">
+          <img src="./img/adam-kubat.jpg" alt="mgr inż. Adam Kubat" class="w-full h-full object-cover object-top" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 right-8 text-white">
+            <div class="font-mono text-xs font-bold text-accent uppercase tracking-widest mb-1">
+              // ZAŁOŻYCIEL & GŁÓWNY PROJEKTANT
+            </div>
+            <div class="font-heading font-black text-3xl uppercase">
+              mgr inż. Adam Kubat
+            </div>
+            <div class="font-sans text-sm text-gray-300 mt-1">
+              Uprawnienia budowlane do projektowania i kierowania robotami budowlanymi bez ograniczeń.
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h2 class="font-heading font-extrabold text-3xl mb-4">
+            Architekt i Kierownik Budowy — Pełna Spójność Inwestycji
+          </h2>
+          <p class="font-sans text-gray-700 text-base leading-relaxed">
+            Nazywam się <strong>Adam Kubat</strong>. Jako <strong>architekt</strong> i inżynier budownictwa z pełnymi uprawnieniami, prowadzę klientów przez kompletny proces: od pierwszego szkicu (<strong>projekt koncepcyjny</strong>), przez pozwolenie na budowę (<strong>projekt budowlany</strong>), aż po nadzór na budowie jako <strong>kierownik budowy</strong>.
+          </p>
+          <p class="font-sans text-gray-700 text-base leading-relaxed">
+            Niezależnie od tego, czy planujesz <strong>dom jednorodzinny</strong>, <strong>budynek wielorodzinny</strong>, czy wieloetapowy <strong>projekt osiedla</strong>, gwarantujemy precyzję obliczeń konstrukcyjnych, optymalizację kosztów wykonawczych i bezstresową współpracę z urzędami.
+          </p>
+
+          <div class="space-y-3 pt-4 border-t border-gray-200 font-sans text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>100% dopuszczonych decyzji o pozwoleniu na budowę</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>Profesjonalna <strong>budowa domu</strong> i nadzór nad wykonawcami</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>Indywidualny <strong>projekt domu</strong> dopasowany do uwarunkowań MPZP/WZ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UVP COMPARATIVE HIGHLIGHT: PROJEKTANT + KIEROWNIK BUDOWY -->
+      <div class="mb-24 bg-studio-surface border border-gray-200 p-8 lg:p-12">
+        <div class="max-w-3xl mb-8">
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            UNIKALNA WARTOŚĆ DLA INWESTORA // ZERO SPYCHOLOGII
+          </span>
+          <h2 class="font-heading font-extrabold text-2xl md:text-4xl text-black">
+            Dlaczego połączenie roli Projektanta i Kierownika Budowy to największa korzyść?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 border border-gray-200">
+            <span class="font-mono text-xl font-black text-accent block mb-2">01 / Odpowiedzialność</span>
+            <h3 class="font-heading font-bold text-base text-black mb-2">Brak rozbieżności</h3>
+            <p class="font-sans text-xs text-gray-600 leading-relaxed">
+              Tradycyjnie architekt obwinia wykonawcę, a wykonawca krytykuje projekt. W GOPROJECT jedna osoba odpowiada za koncepcję i realizację na budowie.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 border border-gray-200">
+            <span class="font-mono text-xl font-black text-accent block mb-2">02 / Ekonomia</span>
+            <h3 class="font-heading font-bold text-base text-black mb-2">Projekt pod realne koszty</h3>
+            <p class="font-sans text-xs text-gray-600 leading-relaxed">
+              Dzięki codziennej obecności na placach budów projektujemy rozwiązania praktyczne, unikając kosztownych błędów i skomplikowanych detali.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 border border-gray-200">
+            <span class="font-mono text-xl font-black text-accent block mb-2">03 / Jakość</span>
+            <h3 class="font-heading font-bold text-base text-black mb-2">Egzekwowanie projektu</h3>
+            <p class="font-sans text-xs text-gray-600 leading-relaxed">
+              Jako <strong>kierownik budowy</strong> rygorystycznie kontroluję jakość materiałów, zbrojenia i hydroizolacji, uniemożliwiając samowolę wykonawców.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 border border-gray-200">
+            <span class="font-mono text-xl font-black text-accent block mb-2">04 / Czas</span>
+            <h3 class="font-heading font-bold text-base text-black mb-2">Błyskawiczne decyzje</h3>
+            <p class="font-sans text-xs text-gray-600 leading-relaxed">
+              Wszelkie wyzwania techniczne na budowie rozwiązujemy od ręki, bez konieczności wielotygodniowego oczekiwania na akceptację zmian przez biuro.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLARS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="award" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Precyzja projektowa</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Trójwymiarowe koncepcje i dokładne obliczenia nośności pozwalają uniknąć niespodzianek na etapie realizacji.
+          </p>
+        </div>
+
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="shield-check" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Bezpieczeństwo prawne</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Prowadzimy sprawy w urzędach od A do Z, dbając o bezbłędność wniosków i terminowość decyzji.
+          </p>
+        </div>
+
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="ruler" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Niezależny nadzór</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Chronimy budżet Inwestora, weryfikując jakość pracy wykonawców oraz rzetelność kosztorysów.
+          </p>
+        </div>
+      </div>
+
+      <!-- DUAL ACTION CLOSING BANNER -->
+      <div class="bg-black text-white p-10 md:p-14 text-center border border-zinc-800 shadow-2xl">
+        <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-widest block mb-2">// BEZPOŚREDNI KONTAKT Z PROJEKTANTEM</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl mb-4 text-white">
+          Zaufaj doświadczeniu inżyniera
+        </h2>
+        <p class="font-sans text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Skonsultuj założenia architektoniczne, ukształtowanie działki i zapisy planu miejscowego bezpośrednio z głównym projektantem.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:+48884757815" class="h-[50px] px-8 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all shadow-lg w-full sm:w-auto">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="h-[50px] px-8 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all w-full sm:w-auto">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Formularz Wyceny w 24h &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <span class="font-heading font-extrabold text-white text-xl tracking-tight uppercase block mb-3">GOPROJECT</span>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-wielorodzinny-sniadeckich.html" class="hover:text-accent transition-colors">Obiekt użyteczności publicznej</a></li>
+            <li><a href="./projekt-osiedle-dwulokalowe.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+            <li><a href="./projekt-stodola-3d.html" class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-dom-jednorodzinny.html" class="hover:text-accent transition-colors">Dom jednorodzinny — od koncepcji do realizacji</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:kontakt@goproject.com.pl" class="hover:text-white transition-colors">kontakt@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojniczki (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
