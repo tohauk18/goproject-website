@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budynek Mieszkalny Wielorodzinny ul. Śniadeckich Gdańsk — GOPROJECT</title>
+  <meta name="description" content="Szczegóły projektu budowlanego wielorodzinnego w Gdańsku przy ul. Śniadeckich. Dokumentacja PAB+PT, koordynacja branżowa i nadzór autorski." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { accent: { DEFAULT: '#FF3B00', hover: '#E03400' }, studio: { surface: '#FAFAFA' } },
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"Space Grotesk"', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }</style>
+</head>
+<body class="bg-white text-black font-sans antialiased">
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1.5 text-black">
+        <span>GOPROJECT</span>
+        <span class="text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider text-black transition-colors">
+        <div class="relative group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+          <div class="absolute top-full left-0 w-80 bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+            <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+              <span>// PRZEGLĄD OFERTA</span>
+              <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+            </a>
+            <div class="space-y-1 pt-1 font-medium text-gray-300">
+              <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">01 / Projekty budowlane i adaptacje</a>
+              <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">02 / Kierownik budowy i nadzór</a>
+              <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">03 / Odbiory mieszkań i ekspertyzy</a>
+              <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">04 / Formalności WZ & Świadectwa</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent font-bold transition-colors">Portfolio</a>
+        <a href="./index.html#proces" class="hover:text-accent transition-colors">Proces</a>
+        <a href="./index.html#faq" class="hover:text-accent transition-colors">FAQ</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+        <a href="./kontakt.html" class="h-[44px] px-6 inline-flex items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="pt-28 md:pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- BREADCRUMB & BACK LINK -->
+      <div class="mb-8 flex items-center justify-between border-b border-gray-200 pb-4 font-mono text-xs">
+        <a href="./projekty.html" class="inline-flex items-center gap-2 text-accent font-bold hover:underline">&larr; Powrót do Portfolio</a>
+        <span class="text-gray-400 uppercase">Realizacja · Gdańsk ul. Śniadeckich</span>
+      </div>
+
+      <!-- MAIN TITLE BLOCK -->
+      <div class="max-w-4xl mb-12">
+        <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">PROJEKT ARCHITEKTONICZNO-BUDOWLANY (PAB + PT)</span>
+        <h1 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl mb-4">Budynek mieszkalny wielorodzinny Śniadeckich</h1>
+        <p class="font-sans text-gray-600 text-base md:text-lg leading-relaxed">Kompleksowa obsługa projektowa i inżynieryjna od analizy chłonności działki, przez trójwymiarową koncepcję, uzgodnienia rzeczoznawców, po wydanie ostatecznego Pozwolenia na Budowę.</p>
+      </div>
+
+      <!-- MAIN HERO IMAGE -->
+      <div class="mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group h-[400px] md:h-[600px]">
+        <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Budynek Wielorodzinny Śniadeckich Gdańsk" class="w-full h-full object-cover" />
+        <div class="absolute bottom-6 left-6 bg-black/80 text-white font-mono text-xs px-4 py-2">Gdańsk, ul. Śniadeckich · Wizualizacja Główna Elewacji</div>
+      </div>
+
+      <!-- SPECS GRID & DETAILS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+        
+        <!-- LEFT COL: TECHNICAL SPECS TABLE -->
+        <div class="lg:col-span-4 bg-studio-surface border border-gray-200 p-8 space-y-6">
+          <h2 class="font-heading font-bold text-xl border-b border-gray-200 pb-3">Parametry Techniczne</h2>
+          
+          <div class="space-y-4 font-mono text-xs">
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Lokalizacja:</span><span class="font-bold text-black">Gdańsk, ul. Śniadeckich</span></div>
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Kategoria Obiektu:</span><span class="font-bold text-black">Wielorodzinny (XIII)</span></div>
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Zakres Prac:</span><span class="font-bold text-black">Koncepcja + PAB + PT</span></div>
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Branże:</span><span class="font-bold text-black">Architektura, Konstrukcja, Instalacje</span></div>
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Główny Projektant:</span><span class="font-bold text-black">mgr inż. Adam Kubat</span></div>
+            <div class="flex justify-between border-b border-gray-200 pb-2"><span class="text-gray-500">Status:</span><span class="font-bold text-accent">Zatwierdzony / W realizacji</span></div>
+          </div>
+
+          <a href="./kontakt.html" class="h-[44px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all mt-4">
+            <i data-lucide="phone" class="w-4 h-4"></i> Zapytaj o podobny projekt
+          </a>
+        </div>
+
+        <!-- RIGHT COL: DETAILED DESCRIPTION -->
+        <div class="lg:col-span-8 space-y-6 font-sans text-gray-700 leading-relaxed text-sm md:text-base">
+          <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-black">Zakres i Wyzwania Inżynieryjne</h2>
+          <p>Projekt budynku mieszkalnego wielorodzinnego przy ul. Śniadeckich w Gdańsku wymagał precyzyjnego dopasowania geometrii obiektu do rygorystycznych zapisów Miejscowego Planu Zagospodarowania Przestrzennego (MPZP) oraz otaczającej tkanki miejskiej.</p>
+          <p>Opracowanie objęło wielobranżową dokumentację techniczną, w tym szczegółowe obliczenia nośności elementów żelbetowych, analizę osłonecznienia i przesłaniania sąsiedniej zabudowy oraz kompletny projekt garażu podziemnego.</p>
+          
+          <h3 class="font-heading font-bold text-xl text-black pt-4">Wykonane Prace Projektowe:</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 font-sans text-sm">
+            <li>Analiza chłonności działki oraz opracowanie trójwymiarowej koncepcji architektonicznej.</li>
+            <li>Projekt Architektoniczno-Budowlany (PAB) oraz Projekt Techniczny (PT) zgodnie z nowym Prawem Budowlanym.</li>
+            <li>Uzgodnienia z rzeczoznawcami ds. zabezpieczeń przeciwpożarowych (PPOŻ), sanitarno-higienicznych oraz BHP.</li>
+            <li>Projekt instalacji wewnętrznych: kanalizacyjnych, wodociągowych, grzewczych, wentylacyjnych oraz elektrycznych.</li>
+            <li>Nadzór autorski oraz koordynacja prac przygotowawczych na placu budowy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="mb-16 pt-12 border-t border-gray-200">
+        <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-8">Galeria Rendery i Perspektywy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-sniadeckich-front.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-perspektywa-1.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-perspektywa-2.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-perspektywa-3.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-perspektywa-4.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+          <div class="border border-gray-200 overflow-hidden h-64"><img src="./public/img/wielorodzinny-infocentrum.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer class="bg-black text-gray-400 py-12 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-heading font-extrabold text-white text-base uppercase">GOPROJECT</span>
+        <span class="text-accent ml-2">/ PRACOWNIA PROJEKTOWA</span>
+        <p class="mt-1 text-gray-500">© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</p>
+      </div>
+      <div class="flex items-center gap-6 text-gray-300 uppercase">
+        <a href="./uslugi.html" class="hover:text-accent">Oferta</a>
+        <a href="./projekty.html" class="hover:text-accent">Portfolio</a>
+        <a href="./o-nas.html" class="hover:text-accent">O pracowni</a>
+        <a href="./kontakt.html" class="hover:text-accent">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
+</body>
+</html>

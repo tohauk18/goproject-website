@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GO PROJECT — Pracownia Architektoniczno-Inżynieryjna | Chojnice & Gdańsk</title>
+  <meta name="description" content="Autorska pracownia architektoniczno-inżynieryjna mgr inż. Adam Kubat. Kompleksowe projekty domów, adaptacje MPZP/WZ, kierownik budowy, odbiory mieszkań i nadzór inwestorski w Chojnicach i Gdańsku.">
+  <meta name="author" content="GO PROJECT mgr inż. Adam Kubat">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://goproject.com.pl/">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="GO PROJECT">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://goproject.com.pl/">
+  <meta property="og:title" content="GO PROJECT — Projekty domów, które żyją">
+  <meta property="og:description" content="Racjonalna architektura, szwajcarska dyscyplina i inżynierski rygor na Pomorzu. Ponad 120+ zrealizowanych obiektów.">
+  <meta property="og:image" content="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp">
+
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       FLUID.GLASS & SWISS ARCHITECTURAL DESIGN SYSTEM
+       ========================================================================== */
+    :root {
+      --color-black: #0b1012;
+      --color-white: #ffffff;
+      --color-cream: #f7f5f2;       /* Warm off-white architectural matte paper */
+      --color-surface: #efece6;     /* Subtle warm card tone */
+      --color-taupe: #d4cec6;
+      --color-grey: #1a1a1a;        /* Deep charcoal */
+      --color-muted: #6b6b6b;       /* Warm stone gray */
+      --color-accent: #c45d3a;      /* Burnt terracotta */
+      --color-accent-hover: #a84928;
+      
+      --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+      --font-f-aeonik-pro: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-f-aeonik-mono: 'Space Grotesk', ui-monospace, monospace;
+    }
+
+    *, :after, :before {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      background: var(--color-cream);
+      color: var(--color-grey);
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-f-aeonik-pro);
+      background: var(--color-cream);
+      color: var(--color-grey);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    ::selection {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: none;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      outline: 0;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img, svg, video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* TYPOGRAPHY BASE */
+    .base-title {
+      align-items: center;
+      display: flex;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: .1em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .base-title:before {
+      background: var(--color-accent);
+      content: "";
+      display: block;
+      height: .55rem;
+      margin-right: 1.1rem;
+      transform: rotate(45deg) translateY(-.15rem);
+      width: .55rem;
+    }
+
+    .base-heading {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: clamp(3rem, 5.5vw, 6.2rem);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1.02;
+    }
+
+    /* BASE FLUID BUTTON */
+    .base-button {
+      align-items: center;
+      display: inline-flex;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-style: normal;
+      font-weight: 500;
+      justify-content: center;
+      letter-spacing: .08em;
+      line-height: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s var(--ease-fluid);
+      padding: 1.35rem 2.2rem;
+      border: 1px solid transparent;
+    }
+
+    .base-button.is-black {
+      background: var(--color-grey);
+      color: var(--color-white);
+      border-color: var(--color-grey);
+    }
+
+    .base-button.is-black:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .base-button.is-alpha {
+      background: color-mix(in srgb, var(--color-white) 15%, transparent);
+      color: var(--color-white);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid color-mix(in srgb, var(--color-white) 25%, transparent);
+    }
+
+    .base-button.is-alpha:hover {
+      background: var(--color-white);
+      color: var(--color-black);
+    }
+
+    .base-button .arrow-svg {
+      height: 1rem;
+      margin-right: 1.1rem;
+      transform: translateY(-.08rem);
+      width: 1.3rem;
+      transition: transform 0.3s var(--ease-fluid);
+    }
+
+    .base-button:hover .arrow-svg {
+      transform: translateX(3px) translateY(-.08rem);
+    }
+
+    .base-button .label {
+      height: 1.1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .base-button .line {
+      display: block;
+      height: 1.1rem;
+      line-height: 1.1rem;
+      transition: transform 0.3s var(--ease-fluid);
+    }
+
+    .base-button:hover .line {
+      transform: translateY(-100%);
+    }
+
+    /* FLUID GLASS FLOATING HEADER */
+    .header {
+      align-items: center;
+      color: var(--color-white);
+      display: flex;
+      height: 5rem;
+      justify-content: center;
+      left: 50%;
+      position: fixed;
+      transform: translate3d(-50%, 0, 0);
+      user-select: none;
+      width: 32rem;
+      z-index: 500;
+      top: 3rem;
+      transition: all 0.4s var(--ease-fluid);
+    }
+
+    .header .background {
+      -webkit-backdrop-filter: blur(2rem);
+      backdrop-filter: blur(2rem);
+      background: color-mix(in srgb, var(--color-black) 84%, transparent);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .header .logo {
+      align-items: center;
+      display: flex;
+      height: 5rem;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      width: 5.5rem;
+    }
+
+    .header .brandmark-svg {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
+    .header .title {
+      align-items: center;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-style: normal;
+      font-weight: 500;
+      height: 5rem;
+      letter-spacing: .08em;
+      line-height: 5rem;
+      overflow: hidden;
+      text-align: center;
+      text-transform: uppercase;
+      width: 18rem;
+    }
+
+    .header .burger {
+      align-items: center;
+      display: flex;
+      height: 5rem;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      width: 5.5rem;
+      cursor: pointer;
+    }
+
+    .header .burger-svg {
+      height: 1.1rem;
+      position: absolute;
+      width: 2rem;
+    }
+
+    .header .close {
+      align-items: center;
+      display: none;
+      height: 5rem;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      width: 5.5rem;
+      cursor: pointer;
+    }
+
+    .is-menu-open .header .burger { display: none; }
+    .is-menu-open .header .close { display: flex; }
+
+    /* FULLSCREEN GLASS DROPDOWN MENU */
+    .menu {
+      position: fixed;
+      top: 9rem;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      color: var(--color-white);
+      padding: 5rem;
+      width: 44rem;
+      z-index: 490;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .menu.is-active {
+      display: block;
+      opacity: 1;
+    }
+
+    .menu .background {
+      -webkit-backdrop-filter: blur(2rem);
+      backdrop-filter: blur(2rem);
+      background: color-mix(in srgb, var(--color-black) 90%, transparent);
+      inset: 0;
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .menu .title {
+      color: color-mix(in srgb, currentColor 60%, transparent);
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: .08em;
+      line-height: 1.3;
+      margin-bottom: 2.2rem;
+      text-transform: uppercase;
+    }
+
+    .menu .main {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .menu .main .link {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2.8rem;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu .main .link:hover {
+      color: var(--color-accent);
+      transform: translateX(10px);
+    }
+
+    .menu .sub {
+      list-style: none;
+      color: color-mix(in srgb, currentColor 60%, transparent);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin: 3rem 0;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+    }
+
+    .menu .sub a:hover {
+      color: var(--color-white);
+    }
+
+    /* HERO SECTION (.home-header) */
+    /* FLUID.GLASS PROJECTS HERO SLIDER (.slider) */
+    .slider {
+      background: var(--color-grey);
+      color: var(--color-white);
+      height: 100svh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+
+    @media (min-width: 601px) {
+      .slider { max-height: 96rem; }
+    }
+
+    .slider .indicator {
+      position: absolute;
+      z-index: 10;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: .08em;
+      line-height: 1.3;
+      text-transform: uppercase;
+      color: var(--color-white);
+      bottom: 6rem;
+      right: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .slider .indicator { bottom: 10rem; right: 2rem; }
+    }
+
+    .slider .progress {
+      background: color-mix(in srgb, currentcolor 20%, transparent);
+      height: 1px;
+      position: absolute;
+      z-index: 10;
+      inset: auto 4rem 10.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .slider .progress { inset: auto 2rem 8.5rem; }
+    }
+
+    .slider .progress-bar {
+      background: color-mix(in srgb, currentcolor 80%, transparent);
+      inset: 0;
+      position: absolute;
+      transform: scaleX(0.2);
+      transform-origin: left center;
+      transition: transform 0.4s var(--ease-fluid);
+    }
+
+    .slider .nav {
+      position: absolute;
+      bottom: 14rem;
+      right: 4rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 10;
+    }
+
+    @media (max-width: 600px) {
+      .slider .nav { display: none; }
+    }
+
+    .slider .button {
+      align-items: center;
+      -webkit-backdrop-filter: blur(2rem);
+      backdrop-filter: blur(2rem);
+      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--color-white);
+      display: flex;
+      height: 5.2rem;
+      justify-content: center;
+      width: 5.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .slider .button:first-child {
+      transform: rotate(180deg);
+    }
+
+    .slider .button:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .slider .arrow-svg {
+      height: 1rem;
+      width: 1.5rem;
+    }
+
+    .slider .container {
+      inset: 0;
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .slider .slide {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      inset: auto 4rem 6.5rem;
+      width: clamp(34rem, 64vw, 92rem);
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.6s var(--ease-fluid), transform 0.6s var(--ease-fluid);
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    @media (max-width: 600px) {
+      .slider .slide { inset: auto 2rem 11rem; width: auto; }
+    }
+
+    .slider .slide.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .slider .slide .heading {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: clamp(3.2rem, 6.2vw, 7.2rem);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .slider .slide .heading { margin-bottom: 2rem; }
+    }
+
+    .slider .slide .title {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: .1em;
+      line-height: 1.3;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .slider .slide .title:before {
+      content: "";
+      display: block;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--color-accent);
+      transform: rotate(45deg);
+    }
+
+    .slider .background {
+      inset: 0;
+      opacity: 1;
+      position: absolute;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .slider .background:before {
+      background: linear-gradient(180deg, rgba(11,16,18,0.2) 0%, rgba(11,16,18,0.78) 100%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .slider .asset {
+      inset: 0;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 1.2s ease;
+      transform: scale(1.04);
+      z-index: 1;
+    }
+
+    .slider .asset.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .slider .base-image {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+    }
+
+    /* STATS COUNTERS TICKER */
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-white) 15%, transparent);
+      padding-top: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: 0.5rem;
+    }
+
+    /* SECTION 2: TEXT CTA & ABOUT (.text-cta) */
+    .text-cta {
+      margin: 15rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .text-cta { margin: 8rem 0; }
+    }
+
+    .text-cta .container {
+      margin: 0 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .text-cta .container { margin: 0 2rem; }
+    }
+
+    .text-cta .base-heading {
+      margin: 4rem 0 5rem;
+      max-width: 104rem;
+    }
+
+    /* SECTION 3: SERVICES COLLECTION & 4 PILLARS */
+    .product-collection {
+      margin: 15rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .product-collection { margin: 8rem 0; }
+    }
+
+    .product-collection .container {
+      margin: 0 4rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding-top: 2rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .product-collection .container { margin: 0 2rem; }
+    }
+
+    .product-collection .content {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      width: 34rem;
+    }
+
+    @media (max-width: 992px) {
+      .product-collection .content { position: static; width: 100%; margin: 2rem 0 4rem; }
+    }
+
+    .product-collection .richtext p {
+      font-size: 1.7rem;
+      line-height: 1.35;
+      margin-bottom: 2.5rem;
+      color: var(--color-muted);
+    }
+
+    .product-collection .richtext p strong {
+      color: var(--color-grey);
+    }
+
+    .product-collection .blocks {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      grid-column-gap: 2rem;
+      padding-top: 8rem;
+    }
+
+    @media (max-width: 992px) {
+      .product-collection .blocks { display: flex; flex-direction: column; gap: 3rem; padding-top: 2rem; }
+    }
+
+    .product-collection .block {
+      align-items: center;
+      aspect-ratio: 500 / 617;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      background: var(--color-taupe);
+      cursor: pointer;
+    }
+
+    .product-collection .block:nth-child(1) { grid-column: 1 / 8; }
+    .product-collection .block:nth-child(2) { grid-column: 9 / 16; margin-top: 6rem; }
+    .product-collection .block:nth-child(3) { grid-column: 17 / 25; margin-top: 12rem; }
+
+    .product-collection .block .title {
+      color: var(--color-white);
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 2;
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 3rem;
+      letter-spacing: -.02em;
+      font-weight: 400;
+    }
+
+    .product-collection .block .base-image {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-fluid), filter 0.6s var(--ease-fluid);
+      filter: grayscale(18%) contrast(1.02);
+    }
+
+    .product-collection .block:hover .base-image {
+      transform: scale(1.04);
+      filter: grayscale(0%) contrast(1.05);
+    }
+
+    /* DETAILED 4-PILLAR SERVICE CARDS */
+    .pillar-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 6rem;
+    }
+
+    @media (max-width: 992px) {
+      .pillar-cards { grid-template-columns: 1fr; }
+    }
+
+    .pillar-card {
+      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding: 3.5rem;
+      background: var(--color-cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--color-accent);
+      background: #FFFFFF;
+    }
+
+    .pillar-num {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .08em;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-title {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-desc {
+      font-size: 1.5rem;
+      line-height: 1.45;
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+    }
+
+    .pillar-list {
+      list-style: none;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      color: var(--color-grey);
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 15%, transparent);
+      padding-top: 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    /* INTERACTIVE BEFORE/AFTER COMPARISON SLIDER */
+    .comparison-section {
+      margin: 15rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-section { margin: 8rem 0; }
+    }
+
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      height: 620px;
+      overflow: hidden;
+      border: 1px solid var(--color-grey);
+      margin-top: 4rem;
+      user-select: none;
+    }
+
+    .comparison-before, .comparison-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .comparison-before img, .comparison-after img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .comparison-after {
+      width: 50%;
+      border-right: 2px solid var(--color-accent);
+      z-index: 2;
+    }
+
+    .comparison-slider-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 10;
+    }
+
+    .comparison-badge-left, .comparison-badge-right {
+      position: absolute;
+      bottom: 2rem;
+      padding: 0.8rem 1.4rem;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+
+    .comparison-badge-left {
+      left: 2rem;
+      background: rgba(11, 16, 18, 0.85);
+      color: #fff;
+    }
+
+    .comparison-badge-right {
+      right: 2rem;
+      background: rgba(247, 245, 242, 0.9);
+      color: var(--color-grey);
+      border: 1px solid var(--color-grey);
+    }
+
+    /* SECTION 4: IMMERSIVE BANNER & FOUNDER (.banner-showroom) */
+    .banner-showroom {
+      background: var(--color-grey);
+      color: var(--color-white);
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .banner-showroom { padding: 2rem; }
+    }
+
+    .banner-showroom .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 2rem;
+    }
+
+    .banner-showroom .column:nth-child(2) {
+      text-align: right;
+    }
+
+    .banner-showroom .address {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2rem;
+    }
+
+    /* SECTION 5: FEATURED PROJECTS LIST (.featured-projects) */
+    .featured-projects {
+      margin: 15rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .featured-projects { margin: 8rem 0; }
+    }
+
+    .featured-projects .container {
+      margin: 0 4rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .featured-projects .container { margin: 0 2rem; }
+    }
+
+    .featured-projects .projects {
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent);
+      margin-top: 8rem;
+    }
+
+    .featured-projects .project {
+      align-items: center;
+      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent);
+      display: flex;
+      justify-content: space-between;
+      padding: 2.8rem 0;
+      position: relative;
+      cursor: pointer;
+      transition: padding-left 0.3s var(--ease-fluid), border-color 0.3s ease;
+    }
+
+    .featured-projects .project:hover {
+      padding-left: 1.5rem;
+      border-color: var(--color-accent);
+    }
+
+    .featured-projects .project-title {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      transition: color 0.3s ease;
+    }
+
+    .featured-projects .project:hover .project-title {
+      color: var(--color-accent);
+    }
+
+    .featured-projects .product-tag {
+      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      border-radius: 2rem;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      padding: .5rem 1.2rem;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .featured-projects .project-arrow-svg {
+      height: 1.1rem;
+      width: 1.5rem;
+      opacity: .3;
+      transition: transform 0.3s var(--ease-fluid), opacity 0.3s ease;
+    }
+
+    .featured-projects .project:hover .project-arrow-svg {
+      opacity: 1;
+      transform: translateX(8px);
+    }
+
+    /* TECHNICAL STANDARDS & MATERIALITY MATRIX */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4rem;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.2rem;
+    }
+
+    .specs-table th {
+      text-align: left;
+      border-bottom: 2px solid var(--color-grey);
+      padding: 1.5rem 1rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--color-grey);
+    }
+
+    .specs-table td {
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 15%, transparent);
+      color: var(--color-muted);
+    }
+
+    .specs-table tr:hover td {
+      color: var(--color-grey);
+      background: #FFFFFF;
+    }
+
+    /* 5-STEP ROADMAP & FAQ ACCORDIONS */
+    .process-section {
+      margin: 15rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .process-section { margin: 8rem 0; }
+    }
+
+    .process-section .container {
+      margin: 0 4rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .process-section .container { margin: 0 2rem; }
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-top: 6rem;
+    }
+
+    @media (max-width: 1100px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+
+    .process-step {
+      border-top: 1px solid var(--color-grey);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .step-num {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .step-title {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .step-desc {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      color: var(--color-muted);
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      margin-top: 6rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding: 2.5rem 0;
+      cursor: pointer;
+    }
+
+    .faq-question {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2.2rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: var(--color-muted);
+      margin-top: 1.5rem;
+      max-width: 80rem;
+      display: none;
+    }
+
+    .faq-item.is-active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.is-active .faq-toggle {
+      transform: rotate(45deg);
+      color: var(--color-accent);
+    }
+
+    .faq-toggle {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 2rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* REVIEWS / MANIFESTO */
+    .reviews {
+      margin: 15rem 0;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .reviews { margin: 8rem 0; }
+    }
+
+    .reviews .container {
+      margin: 0 4rem;
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding-top: 2rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .reviews .container { margin: 0 2rem; }
+    }
+
+    .reviews .blockquote {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: clamp(2.8rem, 4.8vw, 5.8rem);
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      margin: 6rem 0 4rem;
+      max-width: 110rem;
+    }
+
+    .reviews .author {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .reviews .author-img {
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+      border: 1px solid var(--color-grey);
+      filter: grayscale(100%);
+    }
+
+    .reviews .author-name {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .reviews .author-role {
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      color: var(--color-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* SLIDE-OVER QUOTE CONFIGURATOR PANEL (.quote-panel) */
+    .quote-panel {
+      background: var(--color-cream);
+      display: flex;
+      flex-direction: column;
+      inset: 0 0 0 auto;
+      overflow-y: auto;
+      position: fixed;
+      scrollbar-width: none;
+      z-index: 999;
+      width: clamp(34rem, 48vw, 72rem);
+      padding: 5rem;
+      border-left: 1px solid var(--color-grey);
+      transform: translateX(100%);
+      transition: transform 0.5s var(--ease-fluid);
+      box-shadow: -20px 0 60px rgba(0,0,0,0.15);
+    }
+
+    .quote-panel.is-open {
+      transform: translateX(0);
+    }
+
+    .quote-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 16, 18, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 990;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .quote-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .quote-panel .close {
+      align-items: center;
+      background: var(--color-grey);
+      display: flex;
+      height: 4.2rem;
+      justify-content: center;
+      width: 4.2rem;
+      position: absolute;
+      top: 4rem;
+      right: 4rem;
+      cursor: pointer;
+    }
+
+    .quote-panel .close-svg {
+      color: var(--color-cream);
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+
+    .quote-panel .heading {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 4.4rem;
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin: 4rem 0 3rem;
+    }
+
+    .quote-panel .row {
+      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      padding: 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .quote-panel .input {
+      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      font-family: var(--font-f-aeonik-pro);
+      font-size: 1.8rem;
+      padding: 1.8rem;
+      width: 100%;
+      background: var(--color-white);
+    }
+
+    .quote-panel .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .quote-panel .button {
+      background: var(--color-cream);
+      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.15rem;
+      font-weight: 500;
+      height: 4.4rem;
+      letter-spacing: .08em;
+      padding: 0 2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .quote-panel .button:hover, .quote-panel .button.is-active {
+      background: var(--color-grey);
+      color: var(--color-white);
+    }
+
+    /* FULLSCREEN ARCHITECTURAL SPECIFICATION & BLUEPRINT MODAL */
+    .blueprint-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 16, 18, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+
+    .blueprint-modal.is-active {
+      display: flex;
+    }
+
+    .blueprint-box {
+      background: var(--color-cream);
+      border: 1px solid var(--color-grey);
+      width: 100%;
+      max-width: 1200px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blueprint-header {
+      padding: 2.5rem 3.5rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blueprint-body {
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .blueprint-body { grid-template-columns: 1fr; }
+    }
+
+    /* MASSIVE FOOTER (.footer) */
+    .footer {
+      background: var(--color-black);
+      color: var(--color-white);
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer { padding: 2rem; }
+    }
+
+    .footer .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 3rem;
+    }
+
+    .footer .big-email {
+      font-family: var(--font-f-aeonik-pro);
+      font-size: clamp(3.2rem, 7.5vw, 9.6rem);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: 1;
+      display: inline-block;
+      margin: 8rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer .big-email:hover {
+      color: var(--color-accent);
+    }
+
+    .footer .bottom {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      grid-column-gap: 2rem;
+      font-family: var(--font-f-aeonik-mono);
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 2rem;
+    }
+
+    .footer .bottom-col-1 { grid-column: 1 / 8; }
+    .footer .bottom-col-2 { grid-column: 9 / 16; }
+    .footer .bottom-col-3 { grid-column: 17 / 25; text-align: right; }
+
+    @media (max-width: 992px) {
+      .footer .bottom { display: flex; flex-direction: column; gap: 2rem; }
+      .footer .bottom-col-3 { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING PILL HEADER -->
+  <header class="header" id="main-header">
+    <a href="#hero" class="logo" aria-label="GO PROJECT Home">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="brandmark-svg">
+        <path d="M42 15.1935V10.5L21 0L0 10.5V31.5L21 42L42 31.5V19.95L25.2 11.55V23.2995L37.2435 29.1795L21 37.3065L4.2 28.9065V13.0935L21 4.6935L42 15.1935Z" fill="currentColor"></path>
+        <path d="M21 13.902V9.45L8.4 15.75V20.4435L21 13.902Z" fill="currentColor"></path>
+      </svg>
+    </a>
+    <div class="title" id="header-title">GO PROJECT &middot; ARCHITEKTURA</div>
+    <button class="burger" aria-label="Menu" onclick="toggleMenu()">
+      <svg viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="burger-svg">
+        <path d="M0 0.5H20" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M0 5.5H20" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M0 10.5H20" stroke="currentColor" stroke-width="1.2"></path>
+      </svg>
+    </button>
+    <button class="close" aria-label="Close Menu" onclick="toggleMenu()">
+      <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 1.3rem; width: 1.3rem;">
+        <path d="M0.353516 11.6673L11.6672 0.353589" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M0.353516 0.353577L11.6672 11.6673" stroke="currentColor" stroke-width="1.2"></path>
+      </svg>
+    </button>
+    <div class="background"></div>
+  </header>
+
+  <!-- FULLSCREEN GLASS DROPDOWN MENU -->
+  <div class="menu" id="nav-menu">
+    <div class="background"></div>
+    <div class="title"> Nawigacja Pracowni </div>
+    <ul class="main">
+      <li><a href="#about" class="link" onclick="toggleMenu()">01 O Pracowni</a></li>
+      <li><a href="#pillars" class="link" onclick="toggleMenu()">02 Filary Usług</a></li>
+      <li><a href="#comparison" class="link" onclick="toggleMenu()">03 Studium Realizacji</a></li>
+      <li><a href="#projects" class="link" onclick="toggleMenu()">04 Portfolio Projektów</a></li>
+      <li><a href="#standards" class="link" onclick="toggleMenu()">05 Standardy WT 2021</a></li>
+      <li><a href="#process" class="link" onclick="toggleMenu()">06 Proces & Roadmapa</a></li>
+      <li><a href="#faq" class="link" onclick="toggleMenu()">07 FAQ Pytania</a></li>
+      <li><a href="#contact" class="link" onclick="toggleMenu()">08 Kontakt</a></li>
+    </ul>
+    <ul class="sub">
+      <li><a href="tel:+48884757815">+48 884 757 815</a></li>
+      <li><a href="mailto:kontakt@goproject.com.pl">kontakt@goproject.com.pl</a></li>
+      <li>Chojnice: ul. Chojnicka 18</li>
+      <li>Gdańsk: al. Grunwaldzka</li>
+    </ul>
+    <button class="base-button is-black" style="width: 100%;" onclick="toggleMenu(); openQuotePanel();">
+      <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+        <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+        <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+      </svg>
+      <div class="label">
+        <span class="line" aria-hidden="true">Wycena inwestycji</span>
+        <span class="line">Wycena inwestycji</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- MAIN APPLICATION CONTENT -->
+  <main>
+
+    <!-- SECTION 1: FLUID.GLASS HERO SLIDER (.slider) -->
+    <section class="slider" id="hero">
+      
+      <!-- TOP STATUS BAR -->
+      <div style="position: absolute; top: 3.5rem; left: 4rem; right: 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 10;">
+        <div style="font-family: var(--font-f-aeonik-mono); font-size: 1.25rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
+          <span>GO PROJECT</span>
+          <span style="color: var(--color-accent);">/</span>
+          <span>MGR INŻ. ADAM KUBAT</span>
+        </div>
+        <button class="base-button is-alpha" onclick="openQuotePanel()">
+          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+          </svg>
+          <div class="label">
+            <span class="line" aria-hidden="true">Wyceń projekt</span>
+            <span class="line">Wyceń projekt</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- SLIDER INDICATOR -->
+      <div class="indicator" id="hero-indicator">01 / 05</div>
+
+      <!-- PROGRESS LINE -->
+      <div class="progress">
+        <div class="progress-bar" id="hero-progress-bar"></div>
+      </div>
+
+      <!-- NEXT / PREV BUTTONS -->
+      <div class="nav">
+        <button class="button" aria-label="Previous" onclick="prevSlide()">
+          <svg viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+            <path d="M0 3.56641L10.7969 3.56641L8.00488 0.900391L7.94043 0.839844L8.00098 0.774414L8.65332 0.0673828L8.71484 0L8.78125 0.0625L12.9727 4.06348L13.04 4.12793L12.9727 4.19336L8.78125 8.19336L8.71484 8.25586L8.65332 8.18848L8.00098 7.48145L7.94043 7.41602L8.00488 7.35547L10.7969 4.69043L0 4.69043L0 3.56641Z" fill="currentColor"></path>
+          </svg>
+        </button>
+        <button class="button" aria-label="Next" onclick="nextSlide()">
+          <svg viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+            <path d="M0 3.56641L10.7969 3.56641L8.00488 0.900391L7.94043 0.839844L8.00098 0.774414L8.65332 0.0673828L8.71484 0L8.78125 0.0625L12.9727 4.06348L13.04 4.12793L12.9727 4.19336L8.78125 8.19336L8.71484 8.25586L8.65332 8.18848L8.00098 7.48145L7.94043 7.41602L8.00488 7.35547L10.7969 4.69043L0 4.69043L0 3.56641Z" fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- SLIDE TYPOGRAPHY CONTAINER -->
+      <div class="container">
+        
+        <!-- Slide 1 -->
+        <div class="slide is-active" data-slide="0" onclick="openBlueprintModal('chojniczki')">
+          <p class="heading">Nowoczesny dom parterowy ze szklaną ścianą szczytową w Chojniczkach</p>
+          <h3 class="title">01 / Dom w Chojniczkach &middot; 185 m&sup2;</h3>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-slide="1" onclick="openBlueprintModal('gdansk')">
+          <p class="heading">Minimalistyczna willa klifowa z panoramicznym przeszkleniem HS i tarasem</p>
+          <h3 class="title">02 / Willa Nadmorska Gdańsk &middot; 240 m&sup2;</h3>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-slide="2" onclick="openBlueprintModal('sniadeckich')">
+          <p class="heading">Mieszkalna tkanka miejska w Chojnicach z 16 lokalami i podziemną halą</p>
+          <h3 class="title">03 / Budynek Śniadeckich &middot; 1 420 m&sup2;</h3>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" data-slide="3" onclick="openBlueprintModal('stodola')">
+          <p class="heading">Reinterpretacja pomorskiej formy dwuspadowej z bezokapowym dachem na rąbek</p>
+          <h3 class="title">04 / Nowoczesna Stodoła &middot; 210 m&sup2;</h3>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" data-slide="4" onclick="openBlueprintModal('kaszuby')">
+          <p class="heading">Kameralny zespół czterech budynków dwulokalowych w krajobrazie Kaszub</p>
+          <h3 class="title">05 / Osiedle Kaszuby &middot; 360 m&sup2;</h3>
+        </div>
+
+      </div>
+
+      <!-- SLIDER BACKGROUND IMAGES ASSETS -->
+      <div class="background" id="slider-bg-container" onclick="openCurrentSlideModal()">
+        
+        <div class="asset is-active" data-slide="0">
+          <img src="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp" alt="Dom w Chojniczkach" class="base-image">
+        </div>
+
+        <div class="asset" data-slide="1">
+          <img src="./public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp" alt="Willa Nadmorska Gdańsk" class="base-image">
+        </div>
+
+        <div class="asset" data-slide="2">
+          <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Budynek Śniadeckich" class="base-image">
+        </div>
+
+        <div class="asset" data-slide="3">
+          <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Nowoczesna Stodoła z Garażem" class="base-image">
+        </div>
+
+        <div class="asset" data-slide="4">
+          <img src="./public/img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle Kaszuby" class="base-image">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: ABOUT / MANIFESTO (.text-cta) -->
+    <section class="text-cta" id="about">
+      <div class="container">
+        <h2 class="base-title">O Pracowni GO PROJECT</h2>
+        <p class="base-heading">
+          Wprowadzamy architekturę w życie poprzez inżynierską precyzję i dyscyplinę. Zaufali nam inwestorzy indywidualni i deweloperzy wymagający trwałości, harmonii i pełnej zgodności z prawem budowlanym.
+        </p>
+        <button class="base-button is-black" onclick="openQuotePanel()">
+          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+          </svg>
+          <div class="label">
+            <span class="line" aria-hidden="true">Poznaj proces</span>
+            <span class="line">Poznaj proces</span>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES COLLECTION & 4 EXPANDED PILLARS -->
+    <section class="product-collection" id="pillars">
+      <div class="container">
+        <h2 class="base-title">Filary oferty inżynieryjnej</h2>
+        <div class="content">
+          <div class="richtext">
+            <p>Nasz <strong>zakres projektowy</strong> definiuje bezkompromisowa jakość, uprawnienia POIIB bez ograniczeń i pełna koordynacja wielobranżowa. Dla odważnej architektury mieszkalnej.</p>
+          </div>
+          <button class="base-button is-black" onclick="openQuotePanel()">
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+            <div class="label">
+              <span class="line" aria-hidden="true">Wycena i zapytanie</span>
+              <span class="line">Wycena i zapytanie</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="blocks">
+          <div class="block" onclick="openBlueprintModal('chojniczki')">
+            <h3 class="title">01 Koncepcja & 3D</h3>
+            <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Koncepcja architektoniczna" class="base-image">
+          </div>
+          <div class="block" onclick="openBlueprintModal('gdansk')">
+            <h3 class="title">02 PAB & PT Budowlany</h3>
+            <img src="./public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp" alt="Projekt budowlany" class="base-image">
+          </div>
+          <div class="block" onclick="openBlueprintModal('sniadeckich')">
+            <h3 class="title">03 Nadzór POIIB</h3>
+            <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Kierownik budowy i nadzór" class="base-image">
+          </div>
+        </div>
+
+        <!-- 4 EXPANDED DETAILED SERVICE PILLARS -->
+        <div class="pillar-cards">
+          
+          <!-- Pillar 1: Projekty budowlane i adaptacje -->
+          <div class="pillar-card" onclick="openQuotePanel()">
+            <div>
+              <div class="pillar-num">FILAR 01 &middot; PROJEKTOWANIE</div>
+              <h3 class="pillar-title">Projekty budowlane & Adaptacje MPZP</h3>
+              <p class="pillar-desc">
+                Indywidualne projekty nowoczesnych domów jednorodzinnych, nowoczesnych stodół 3D, rezydencji oraz adaptacje projektów typowych (Archon, Z500, Extradom, Murator) do warunków działki i wypisu z planu zagospodarowania.
+              </p>
+              <ul class="pillar-list">
+                <li>&check; Projekt Architektoniczno-Budowlany (PAB) i Techniczny (PT)</li>
+                <li>&check; Studium nasłonecznienia, ergonomii i optymalizacji energetycznej</li>
+                <li>&check; Koordynacja branżowa: konstrukcja, HVAC, instalacje sanitarne i elektryka</li>
+                <li>&check; Reprezentacja w starostwie i pozwolenie na budowę</li>
+              </ul>
+            </div>
+            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 01 &rarr;</span>
+          </div>
+
+          <!-- Pillar 2: Kierownik budowy i nadzór inwestorski -->
+          <div class="pillar-card" onclick="openQuotePanel()">
+            <div>
+              <div class="pillar-num">FILAR 02 &middot; NADZÓR INŻYNIERSKI</div>
+              <h3 class="pillar-title">Kierownik budowy & Nadzór inwestorski</h3>
+              <p class="pillar-desc">
+                Niezależny nadzór nad realizacją stanu surowego i deweloperskiego przez licencjonowanego inżyniera z uprawnieniami POIIB. Ochrona budżetu inwestora przed błędami wykonawców i nieuzasadnionymi kosztami.
+              </p>
+              <ul class="pillar-list">
+                <li>&check; Prowadzenie i formalne wpisy do Dziennika Budowy</li>
+                <li>&check; Rygorystyczny odbiór zbrojenia, szalunków, wieńców, stropów i więźby</li>
+                <li>&check; Kontrola jakości materiałów i zgodności z projektem konstrukcyjnym</li>
+                <li>&check; Przygotowanie dokumentacji powykonawczej i odbiór PINB</li>
+              </ul>
+            </div>
+            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 02 &rarr;</span>
+          </div>
+
+          <!-- Pillar 3: Odbiory mieszkań od dewelopera & ekspertyzy -->
+          <div class="pillar-card" onclick="openQuotePanel()">
+            <div>
+              <div class="pillar-num">FILAR 03 &middot; DIAGNOSTYKA TECHNICZNA</div>
+              <h3 class="pillar-title">Odbiory mieszkań od dewelopera & Ekspertyzy</h3>
+              <p class="pillar-desc">
+                Specjalistyczne odbiory techniczne lokali mieszkalnych i domów w stanie deweloperskim. Badania kamerą termowizyjną i pomiary laserowe odchyłek tynków oraz wylewek z urzędowym protokołem usterek.
+              </p>
+              <ul class="pillar-list">
+                <li>&check; Pomiary laserowe płaszczyzn i kątów wg normy PN-B-10110</li>
+                <li>&check; Termowizyjna detekcja mostków cieplnych i nieszczelności stolarki</li>
+                <li>&check; Weryfikacja instalacji elektrycznych, wod-kan, wentylacji i balkonów</li>
+                <li>&check; Wiążący protokół wad prawnie zmuszający dewelopera do napraw</li>
+              </ul>
+            </div>
+            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 03 &rarr;</span>
+          </div>
+
+          <!-- Pillar 4: Formalności WZ, MPZP & Świadectwa Energetyczne -->
+          <div class="pillar-card" onclick="openQuotePanel()">
+            <div>
+              <div class="pillar-num">FILAR 04 &middot; FORMALNOŚCI & ENERGIA</div>
+              <h3 class="pillar-title">Warunki Zabudowy (WZ) & Świadectwa Energetyczne</h3>
+              <p class="pillar-desc">
+                Kompleksowa obsługa procedur administracyjnych: wnioski o WZ, uzgodnienia z gestorami sieci oraz oficjalne Świadectwa Charakterystyki Energetycznej z wpisem do rejestru Ministerstwa Rozwoju i Technologii (MRiT).
+              </p>
+              <ul class="pillar-list">
+                <li>&check; Przygotowanie wniosków o Warunki Zabudowy (WZ) dla trudnych działek</li>
+                <li>&check; Uzyskiwanie warunków przyłączeniowych: Energa, PGNiG, ZWiK</li>
+                <li>&check; Certyfikowane Świadectwa Energetyczne (obowiązkowe do odbioru i sprzedaży)</li>
+                <li>&check; Audyty energetyczne do programu „Czyste Powietrze”</li>
+              </ul>
+            </div>
+            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 04 &rarr;</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE BEFORE/AFTER SLIDER (Koncepcja vs Realizacja) -->
+    <section class="comparison-section" id="comparison">
+      <div class="container" style="margin: 0 4rem; border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent); padding-top: 2rem;">
+        <h2 class="base-title">Studium Realizacji &middot; Przed i Po</h2>
+        <p class="base-heading" style="margin-top: 2rem; font-size: clamp(2.4rem, 4vw, 4.4rem);">
+          Od wizualizacji 3D po bezkompromisowe wykonanie na działce.
+        </p>
+
+        <div class="comparison-container" id="comparison-slider-box">
+          <div class="comparison-before">
+            <img src="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp" alt="Realizacja Domu w Chojniczkach">
+            <div class="comparison-badge-right">Zrealizowany Obiekt (Chojniczki)</div>
+          </div>
+          <div class="comparison-after" id="comparison-overlay">
+            <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Koncepcja 3D i Model Projektowy">
+            <div class="comparison-badge-left">Koncepcja Projektowa 3D</div>
+          </div>
+          <input 
+            type="range" 
+            min="0" 
+            max="100" 
+            value="50" 
+            class="comparison-slider-input" 
+            id="comparison-range"
+            oninput="handleComparison(this.value)"
+          >
+        </div>
+        <p style="font-family: var(--font-f-aeonik-mono); font-size: 1.15rem; color: var(--color-muted); text-align: center; margin-top: 1.5rem; text-transform: uppercase;">
+          &larr; Przesuń suwak myszą lub palcem, aby porównać koncepcję z realizacją &rarr;
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: IMMERSIVE MONOGRAPH BANNER (.banner-showroom) -->
+    <section class="banner-showroom">
+      <div style="position: absolute; inset: 0; z-index: 1;">
+        <img src="./public/img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle Chojnice" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.45; filter: grayscale(30%);">
+      </div>
+      <div class="base-title" style="color: var(--color-white); position: relative; z-index: 2;">
+        Główna siedziba &middot; Chojnice &middot; Gdańsk
+      </div>
+      <div class="content">
+        <div class="column">
+          <p class="base-heading" style="color: var(--color-white); font-size: clamp(2.4rem, 4vw, 4.4rem); max-width: 50rem;">
+            Projektujemy na Pomorzu. Od Chojnic po Trójmiasto.
+          </p>
+        </div>
+        <div class="column">
+          <div class="address">
+            GOPROJECT mgr inż. Adam Kubat<br>
+            ul. Chojnicka 18, 89-600 Chojnice / Chojniczki<br>
+            NIP: 555-123-45-67 &middot; REGON: 382910293 &middot; POIIB
+          </div>
+          <button class="base-button is-alpha" onclick="openQuotePanel()">
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+            <div class="label">
+              <span class="line" aria-hidden="true">Umów spotkanie</span>
+              <span class="line">Umów spotkanie</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED PROJECTS LIST WITH DIRECT BLUEPRINT MODALS -->
+    <section class="featured-projects" id="projects">
+      <div class="container">
+        <h2 class="base-title">Portfolio realizacji &middot; Kliknij obiekt</h2>
+        <p class="base-heading" style="margin-top: 2rem;">
+          Domy stworzone z myślą o świetle, funkcji i przestrzeni.
+        </p>
+
+        <div class="projects">
+          
+          <div class="project" onclick="openBlueprintModal('chojniczki')">
+            <h3 class="project-title">Dom w Chojniczkach</h3>
+            <span class="product-tag">185 m&sup2; &middot; Parterowy ze szklanym szczytem &middot; 2025</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+          <div class="project" onclick="openBlueprintModal('gdansk')">
+            <h3 class="project-title">Willa Nadmorska Gdańsk</h3>
+            <span class="product-tag">240 m&sup2; &middot; Rezydencja z tarasem klifowym &middot; 2024</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+          <div class="project" onclick="openBlueprintModal('sniadeckich')">
+            <h3 class="project-title">Budynek Mieszkalny Śniadeckich</h3>
+            <span class="product-tag">1 420 m&sup2; &middot; Tkanka miejska / 16 lokali &middot; 2025</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+          <div class="project" onclick="openBlueprintModal('kaszuby')">
+            <h3 class="project-title">Osiedle Dwulokalowe Kaszuby</h3>
+            <span class="product-tag">360 m&sup2; &middot; Zespół bliźniaczy &middot; 2024</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+          <div class="project" onclick="openBlueprintModal('stodola')">
+            <h3 class="project-title">Nowoczesna Stodoła z Garażem</h3>
+            <span class="product-tag">210 m&sup2; &middot; Dach bezokapowy &middot; Powiat Gdański &middot; 2024</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+          <div class="project" onclick="openBlueprintModal('detal')">
+            <h3 class="project-title">Detal Architektoniczny: Drewno & Stal [B&W]</h3>
+            <span class="product-tag">Studium konstrukcyjne tarasu i pergoli</span>
+            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
+              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TECHNICAL STANDARDS & MATERIALITY MATRIX (WT 2021) -->
+    <section class="process-section" id="standards" style="margin-top: 8rem;">
+      <div class="container">
+        <h2 class="base-title">Standardy Inżynieryjne &middot; WT 2021</h2>
+        <p class="base-heading" style="margin-top: 2rem; font-size: clamp(2.4rem, 4vw, 4.4rem);">
+          Rygorystyczne normy termiczne i konstrukcyjne każdego projektu.
+        </p>
+
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Element Konstrukcyjny</th>
+              <th>Wymóg WT 2021</th>
+              <th>Standard GO PROJECT</th>
+              <th>Zastosowana Technologia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 700; color: var(--color-grey);">Ściany zewnętrzne</td>
+              <td>U &le; 0.20 W/m&sup2;K</td>
+              <td>U = 0.14 W/m&sup2;K</td>
+              <td>Silka / Porotherm + 20cm Grafitowy EPS &lambda;=0.031</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 700; color: var(--color-grey);">Dach i stropodach</td>
+              <td>U &le; 0.15 W/m&sup2;K</td>
+              <td>U = 0.11 W/m&sup2;K</td>
+              <td>PIR nakrokwiowy / Wełna mineralna 30cm</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 700; color: var(--color-grey);">Stolarka okienna HS</td>
+              <td>Uw &le; 0.90 W/m&sup2;K</td>
+              <td>Uw = 0.72 W/m&sup2;K</td>
+              <td>Aluminiowe profile z przekładką termiczną + pakiet 3-szybowy</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 700; color: var(--color-grey);">Wentylacja & HVAC</td>
+              <td>Grawitacyjna / Rekuperacja</td>
+              <td>Rekuperacja &ge; 92%</td>
+              <td>Entalpiczny wymiennik ciepła + Gruntowa/Powietrzna Pompa Ciepła</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 700; color: var(--color-grey);">Wskaźnik EP energii pierwotnej</td>
+              <td>EP &le; 70 kWh/m&sup2;&middot;rok</td>
+              <td>EP &le; 35 kWh/m&sup2;&middot;rok</td>
+              <td>Projekt w standardzie budynku niemal zeroenergetycznego (nZEB)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 6: 5-STEP ROADMAP PROCESS (.process-section) -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <h2 class="base-title">Roadmapa współpracy</h2>
+        <p class="base-heading" style="margin-top: 2rem;">
+          Przejrzysty 5-etapowy proces inżynieryjny.
+        </p>
+
+        <div class="process-grid">
+          
+          <div class="process-step">
+            <div>
+              <div class="step-num">01 / KONSULTACJA</div>
+              <h3 class="step-title">Analiza Działki & MPZP</h3>
+              <p class="step-desc">
+                Weryfikacja uwarunkowań formalnych, wypis z MPZP lub analiza WZ, badania geotechniczne gruntu i wstępny budżet.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <div class="step-num">02 / KONCEPCJA</div>
+              <h3 class="step-title">Koncepcja 3D & Układ</h3>
+              <p class="step-desc">
+                2-3 warianty funkcjonalne, ergonomiczne rzuty kondygnacji, bryła 3D oraz optymalizacja nasłonecznienia.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <div class="step-num">03 / PROJEKT</div>
+              <h3 class="step-title">Projekt PAB + PT</h3>
+              <p class="step-desc">
+                Pełnobranżowy Projekt Architektoniczno-Budowlany i Projekt Techniczny z obliczeniami konstrukcyjnymi.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <div class="step-num">04 / FORMALNOŚCI</div>
+              <h3 class="step-title">Pozwolenie na Budowę</h3>
+              <p class="step-desc">
+                Kompletne uzgodnienia rzeczoznawców, reprezentacja w starostwie powiatowym i uzyskanie prawomocnej decyzji PnB.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <div class="step-num">05 / NADZÓR</div>
+              <h3 class="step-title">Kierownik Budowy</h3>
+              <p class="step-desc">
+                Przejęcie placu budowy, odbiory zbrojenia, wpisy do dziennika budowy i formalne zakończenie inwestycji w PINB.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FAQ (.faq-section) -->
+    <section class="process-section" id="faq" style="margin-top: 8rem;">
+      <div class="container">
+        <h2 class="base-title">Najczęściej zadawane pytania (FAQ)</h2>
+        <div class="faq-list">
+          
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <span>Ile czasu trwa wykonanie indywidualnego projektu domu?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Czas opracowania pełnobranżowego projektu indywidualnego wynosi średnio od 6 do 10 tygodni. W przypadku konieczności uzyskania decyzji o Warunkach Zabudowy (WZ) lub dodatkowych uzgodnień środowiskowych/wodnoprawnych czas może ulec wydłużeniu o czas procedur urzędowych.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <span>Czy wykonujecie adaptacje projektów gotowych (Archon, Z500, Extradom)?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Tak. Wykonujemy pełną adaptację projektów typowych, w tym: dostosowanie fundamentów do lokalnych warunków gruntowo-wodnych, zmiany układu ścian i otworów okiennych, dopasowanie geometrii dachu do ustaleń MPZP/WZ, projekt zagospodarowania działki (PZT) oraz reprezentację przed urzędem.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <span>Na jakich kluczowych etapach kierownik budowy przeprowadza odbiory?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Kierownik budowy jest obecny na wszystkich robotach ulegających zakryciu: wykop i podbudowa, zbrojenie ław i płyty fundamentowej, zbrojenie wieńców i nadproży, deskowanie i zbrojenie stropów, montaż konstrukcji więźby dachowej oraz odbiór izolacji przeciwwilgociowych i termicznych.
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <span>W jakim rejonie geograficznym świadczycie usługi?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Działamy na terenie całego województwa pomorskiego i regionów ościennych: Chojnice, Człuchów, Gdańsk, Sopot, Gdynia, Kartuzy, Kościerzyna, Bytów, Starogard Gdański, Tczew oraz Wejherowo.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: MANIFESTO REVIEWS (.reviews) -->
+    <section class="reviews">
+      <div class="container">
+        <h2 class="base-title">Filozofia Inżynierska</h2>
+        <blockquote class="blockquote">
+          &bdquo;Architektura to nie chwilowy ornament. To bezwzględna dyscyplina proporcji, światła i konstrukcji. Każda linia na rysunku ma swoje uzasadnienie w trwałości i komforcie mieszkańca.&rdquo;
+        </blockquote>
+        <div class="author">
+          <img src="./public/img/adam-kubat.jpg" alt="mgr inż. Adam Kubat" class="author-img">
+          <div>
+            <div class="author-name">mgr inż. Adam Kubat</div>
+            <div class="author-role">Założyciel &middot; Główny Projektant &middot; Uprawnienia POIIB bez ograniczeń</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: MASSIVE FOOTER (.footer) -->
+    <footer class="footer" id="contact">
+      <div class="top">
+        <div class="base-title" style="color: var(--color-white);">
+          Rozpocznij projekt
+        </div>
+        <button class="base-button is-alpha" onclick="openQuotePanel()">
+          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+          </svg>
+          <div class="label">
+            <span class="line" aria-hidden="true">Wyceń projekt</span>
+            <span class="line">Wyceń projekt</span>
+          </div>
+        </button>
+      </div>
+
+      <div>
+        <span style="font-family: var(--font-f-aeonik-mono); font-size: 1.3rem; color: rgba(255,255,255,0.6); display: block;">
+          Bezpośredni adres mailowy do architekta:
+        </span>
+        <a href="mailto:kontakt@goproject.com.pl" class="big-email">
+          kontakt@goproject.com.pl
+        </a>
+      </div>
+
+      <div class="bottom">
+        <div class="bottom-col-1">
+          Chojnice &middot; ul. Chojnicka 18<br>
+          Gdańsk &middot; al. Grunwaldzka<br>
+          Województwo Pomorskie
+        </div>
+        <div class="bottom-col-2">
+          Tel: +48 884 757 815<br>
+          Pn &ndash; Pt: 08:00 &ndash; 18:00<br>
+          NIP: 555-123-45-67 &middot; REGON: 382910293
+        </div>
+        <div class="bottom-col-3">
+          &copy; 2026 GO PROJECT mgr inż. Adam Kubat<br>
+          Fluid Glass Architecture System
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- FULLSCREEN ARCHITECTURAL SPECIFICATION & BLUEPRINT MODAL -->
+  <div class="blueprint-modal" id="blueprint-modal" onclick="closeBlueprintModal(event)">
+    <div class="blueprint-box" onclick="event.stopPropagation()">
+      <div class="blueprint-header">
+        <span class="base-title" id="modal-spec-label">[ SPECYFIKACJA TECHNICZNA OBIEKTU ]</span>
+        <button onclick="closeBlueprintModalDirect()" class="base-button is-black" style="padding: 0.8rem 1.6rem; font-size: 1.1rem;">
+          ZAMKNIJ [&times;]
+        </button>
+      </div>
+      <div class="blueprint-body">
+        <div>
+          <img id="modal-project-img" src="" alt="Projekt architektoniczny" style="border: 1px solid var(--color-grey); margin-bottom: 2rem;">
+          <div style="display: flex; gap: 1rem;">
+            <button class="base-button is-black" style="flex: 1; font-size: 1.1rem; padding: 1rem;" onclick="openQuoteFromModal()">
+              Zapytaj o ten projekt &rarr;
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3 id="modal-project-title" style="font-family: var(--font-f-aeonik-pro); font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.1;"></h3>
+          <p id="modal-project-desc" style="font-size: 1.5rem; line-height: 1.5; color: var(--color-muted); margin-bottom: 2.5rem;"></p>
+          
+          <div style="border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; font-family: var(--font-f-aeonik-mono); font-size: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
+              <span style="color: var(--color-muted);">Powierzchnia użytkowa:</span>
+              <strong id="modal-project-area" style="color: var(--color-grey);"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
+              <span style="color: var(--color-muted);">Lokalizacja inwestycji:</span>
+              <strong id="modal-project-loc" style="color: var(--color-grey);"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
+              <span style="color: var(--color-muted);">Konstrukcja & Bryła:</span>
+              <strong id="modal-project-struct" style="color: var(--color-grey);"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
+              <span style="color: var(--color-muted);">System grzewczy:</span>
+              <strong id="modal-project-hvac" style="color: var(--color-grey);"></strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-bottom: 0.6rem;">
+              <span style="color: var(--color-muted);">Zakres dokumentacji:</span>
+              <strong id="modal-project-scope" style="color: var(--color-accent);"></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER QUOTE CONFIGURATOR PANEL -->
+  <div class="quote-backdrop" id="quote-backdrop" onclick="closeQuotePanel()"></div>
+  <div class="quote-panel" id="quote-panel">
+    <div class="close" onclick="closeQuotePanel()">
+      <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-svg">
+        <path d="M0.353516 11.6673L11.6672 0.353589" stroke="currentColor" stroke-width="1.2"></path>
+        <path d="M0.353516 0.353577L11.6672 11.6673" stroke="currentColor" stroke-width="1.2"></path>
+      </svg>
+    </div>
+
+    <div class="base-title">Wycena inwestycji</div>
+    <h2 class="heading">Skonfiguruj projekt</h2>
+
+    <form onsubmit="handleQuoteSubmit(event)" style="display: flex; flex-direction: column; gap: 2rem;">
+      <div class="row">
+        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">1. Typ planowanego obiektu</label>
+        <div class="buttons">
+          <button type="button" class="button is-active" onclick="selectType(this)">Dom Jednorodzinny</button>
+          <button type="button" class="button" onclick="selectType(this)">Nowoczesna Stodoła</button>
+          <button type="button" class="button" onclick="selectType(this)">Wielorodzinny</button>
+          <button type="button" class="button" onclick="selectType(this)">Adaptacja MPZP/WZ</button>
+          <button type="button" class="button" onclick="selectType(this)">Kierownik Budowy</button>
+          <button type="button" class="button" onclick="selectType(this)">Odbiór Mieszkania</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">2. Powierzchnia użytkowa:</label>
+          <span id="slider-val" style="font-family: var(--font-f-aeonik-mono); font-size: 1.4rem; font-weight: 700; color: var(--color-accent);">180 m²</span>
+        </div>
+        <input 
+          id="quote-area-slider" 
+          type="range" 
+          min="70" 
+          max="600" 
+          value="180" 
+          step="10" 
+          style="width: 100%; accent-color: var(--color-accent); cursor: pointer;"
+          oninput="updateQuoteCalculation(this.value)"
+        >
+      </div>
+
+      <div class="row">
+        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">3. Geometria dachu & Kondygnacje</label>
+        <div class="buttons">
+          <button type="button" class="button is-active" onclick="selectSub(this)">Parterowy (1)</button>
+          <button type="button" class="button" onclick="selectSub(this)">Z poddaszem (1.5)</button>
+          <button type="button" class="button" onclick="selectSub(this)">Piętrowy (2)</button>
+          <button type="button" class="button" onclick="selectSub(this)">Dach Płaski</button>
+          <button type="button" class="button" onclick="selectSub(this)">Dach Dwuspadowy</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">4. Lokalizacja działki</label>
+        <input type="text" class="input" placeholder="np. Chojnice / Gdańsk / Kartuzy / Kaszuby" required>
+      </div>
+
+      <div class="row">
+        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">5. Dane kontaktowe inwestora</label>
+        <input type="text" class="input" placeholder="Imię i nazwisko" required style="margin-bottom: 1rem;">
+        <input type="email" class="input" placeholder="Adres e-mail lub telefon" required>
+      </div>
+
+      <!-- Real-time estimation readout -->
+      <div style="background: #FFFFFF; border: 1px solid var(--color-grey); padding: 1.8rem; font-family: var(--font-f-aeonik-mono); font-size: 1.2rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
+          <span style="color: var(--color-muted);">Szacowany czas realizacji dokumentacji:</span>
+          <strong id="calc-weeks" style="color: var(--color-grey);">6 – 9 tygodni</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--color-muted);">Wymagane procedury urzędowe:</span>
+          <strong style="color: var(--color-accent);">Starostwo Powiatowe &middot; PnB</strong>
+        </div>
+      </div>
+
+      <button type="submit" class="base-button is-black" style="width: 100%; margin-top: 1rem;">
+        <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+          <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
+          <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
+        </svg>
+        <div class="label">
+          <span class="line" aria-hidden="true">Wyślij zapytanie do architekta</span>
+          <span class="line">Wyślij zapytanie do architekta</span>
+        </div>
+      </button>
+      <div id="quote-success" style="display: none; font-family: var(--font-f-aeonik-mono); color: var(--color-accent); font-size: 1.2rem; text-align: center; margin-top: 1rem;">
+        &check; Dziękujemy. Architekt mgr inż. Adam Kubat skontaktuje się w ciągu 24h.
+      </div>
+    </form>
+  </div>
+
+  <!-- JAVASCRIPT: Comparison Slider, Blueprint Modal, Stats Counters, and Menu Logic -->
+  <script>
+    // 1. Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      const header = document.getElementById('main-header');
+      const isOpen = menu.classList.contains('is-active');
+      if (isOpen) {
+        menu.classList.remove('is-active');
+        header.classList.remove('is-menu-open');
+      } else {
+        menu.classList.add('is-active');
+        header.classList.add('is-menu-open');
+      }
+    }
+
+    // 2. Quote Panel Toggle & Dynamic Calculation
+    function openQuotePanel() {
+      document.getElementById('quote-panel').classList.add('is-open');
+      document.getElementById('quote-backdrop').classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuotePanel() {
+      document.getElementById('quote-panel').classList.remove('is-open');
+      document.getElementById('quote-backdrop').classList.remove('is-open');
+      document.body.style.overflow = 'auto';
+    }
+
+    function selectType(btn) {
+      document.querySelectorAll('.quote-panel .button').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    }
+
+    function selectSub(btn) {
+      btn.parentElement.querySelectorAll('.button').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    }
+
+    function updateQuoteCalculation(area) {
+      document.getElementById('slider-val').textContent = area + ' m²';
+      const weeks = Math.round(area / 30) + 4;
+      document.getElementById('calc-weeks').textContent = `${weeks} – ${weeks + 3} tygodni`;
+    }
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      document.getElementById('quote-success').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('quote-success').style.display = 'none';
+        closeQuotePanel();
+        e.target.reset();
+      }, 3000);
+    }
+
+    // 3. Interactive Fluid.Glass Projects Hero Slider Controller
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const projectKeys = ['chojniczki', 'gdansk', 'sniadeckich', 'stodola', 'kaszuby'];
+    let slideTimer = null;
+
+    function updateSlider(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      
+      // Update typography slides
+      document.querySelectorAll('.slider .slide').forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.classList.add('is-active');
+        } else {
+          slide.classList.remove('is-active');
+        }
+      });
+
+      // Update background assets
+      document.querySelectorAll('.slider .asset').forEach((asset, i) => {
+        if (i === currentSlide) {
+          asset.classList.add('is-active');
+        } else {
+          asset.classList.remove('is-active');
+        }
+      });
+
+      // Update indicator & progress bar
+      document.getElementById('hero-indicator').textContent = `0${currentSlide + 1} / 05`;
+      document.getElementById('hero-progress-bar').style.transform = `scaleX(${(currentSlide + 1) / totalSlides})`;
+    }
+
+    function nextSlide() {
+      updateSlider(currentSlide + 1);
+      resetSlideTimer();
+    }
+
+    function prevSlide() {
+      updateSlider(currentSlide - 1);
+      resetSlideTimer();
+    }
+
+    function openCurrentSlideModal() {
+      openBlueprintModal(projectKeys[currentSlide]);
+    }
+
+    function resetSlideTimer() {
+      if (slideTimer) clearInterval(slideTimer);
+      slideTimer = setInterval(() => {
+        updateSlider(currentSlide + 1);
+      }, 6000);
+    }
+    resetSlideTimer();
+
+    // Keyboard navigation (ArrowLeft & ArrowRight)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // 4. Interactive Before/After Comparison Slider
+    function handleComparison(val) {
+      document.getElementById('comparison-overlay').style.width = val + '%';
+    }
+
+    // 4. Detailed Project Blueprint Data & Modal
+    const projectLibrary = {
+      'chojniczki': {
+        title: 'Dom w Chojniczkach',
+        desc: 'Nowoczesny parterowy budynek mieszkalny z wielkoformatową szklaną ścianą szczytową i salonem o podwyższonej kubaturze (5.2m). Kompletna koordynacja konstrukcyjna z pompą ciepła i rekuperacją.',
+        area: '185 m²',
+        loc: 'Chojniczki k. Chojnic',
+        struct: 'Tradycyjna murowana + Szczyt żelbetowy',
+        hvac: 'Gruntowa pompa ciepła + Rekuperacja 94%',
+        scope: 'Projekt indywidualny PAB + PT + Nadzór POIIB',
+        img: './public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp'
+      },
+      'gdansk': {
+        title: 'Willa Nadmorska Gdańsk',
+        desc: 'Dwukondygnacyjna modernistyczna bryła klifowa z panoramicznym przeszkleniem HS i tarasem widokowym na Zatokę Gdańską. Dach płaski o odwróconym układzie warstw.',
+        area: '240 m²',
+        loc: 'Gdańsk / Pas Nadmorski',
+        struct: 'Żelbetowy szkielet + Ściany Silka',
+        hvac: 'Pompa ciepła powietrze-woda + Klimatyzacja VRF',
+        scope: 'Pełny projekt budowlany + PnB',
+        img: './public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp'
+      },
+      'sniadeckich': {
+        title: 'Budynek Śniadeckich',
+        desc: 'Wielorodzinny budynek mieszkalny z 16 lokalami, windą i podziemną halą garażową. Czysta rytmika balkonów i loggii wpisana w tkankę urbanistyczną Chojnic.',
+        area: '1 420 m²',
+        loc: 'Chojnice, ul. Śniadeckich',
+        struct: 'Monolityczny żelbet + Wypełnienie ceramiczne',
+        hvac: 'Węzeł cieplny + Wentylacja hybrydowa',
+        scope: 'PAB + Projekt Wykonawczy + Kierownik Budowy',
+        img: './public/img/wielorodzinny-sniadeckich-hq.webp'
+      },
+      'kaszuby': {
+        title: 'Osiedle Kaszuby',
+        desc: 'Kameralny zespół czterech budynków dwulokalowych. Równowaga pomiędzy intymnością mieszkańców a optymalizacją wskaźnika zabudowy działki.',
+        area: '360 m²',
+        loc: 'Powiat Chojnicki / Kaszuby',
+        struct: 'Pustak ceramiczny + Drewniana więźba',
+        hvac: 'Pompy ciepła powietrze-woda',
+        scope: 'Projekt zagospodarowania terenu + PAB',
+        img: './public/img/osiedle-dwulokalowe-lot-ptaka.webp'
+      },
+      'stodola': {
+        title: 'Nowoczesna Stodoła z Garażem',
+        desc: 'Reinterpretacja tradycyjnej pomorskiej formy dwuspadowej. Bezokapowy dach z blachy na rąbek, antracytowa stolarka i zintegrowana wiata garażowa.',
+        area: '210 m²',
+        loc: 'Powiat Gdański',
+        struct: 'Murowana + Wiązary dachowe',
+        hvac: 'Pompa ciepła + Ogrzewanie podłogowe',
+        scope: 'Projekt budowlany + Adaptacja WZ',
+        img: './public/img/dom-parterowy-z-garazem-wizualizacja.webp'
+      },
+      'detal': {
+        title: 'Detal Architektoniczny: Drewno & Stal',
+        desc: 'Studium monograficzne węzła konstrukcyjnego tarasu zintegrowanego z pergolą. Połączenie stali malowanej proszkowo z impregnowanym modrzewiem syberyjskim.',
+        area: 'Skala 1:10',
+        loc: 'Realizacja Pomorskie',
+        struct: 'Stal konstrukcyjna S235 + Modrzew',
+        hvac: 'Niewymagane',
+        scope: 'Nadzór autorski & detal wykonawczy',
+        img: './public/img/dom-drewniany-z-tarasem-zdjecie-realizacji.webp'
+      }
+    };
+
+    function openBlueprintModal(key) {
+      const p = projectLibrary[key];
+      if (!p) return;
+      document.getElementById('modal-project-title').textContent = p.title;
+      document.getElementById('modal-project-desc').textContent = p.desc;
+      document.getElementById('modal-project-area').textContent = p.area;
+      document.getElementById('modal-project-loc').textContent = p.loc;
+      document.getElementById('modal-project-struct').textContent = p.struct;
+      document.getElementById('modal-project-hvac').textContent = p.hvac;
+      document.getElementById('modal-project-scope').textContent = p.scope;
+      document.getElementById('modal-project-img').src = p.img;
+      
+      document.getElementById('blueprint-modal').classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlueprintModal(e) {
+      if (e.target === document.getElementById('blueprint-modal')) {
+        closeBlueprintModalDirect();
+      }
+    }
+
+    function closeBlueprintModalDirect() {
+      document.getElementById('blueprint-modal').classList.remove('is-active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function openQuoteFromModal() {
+      closeBlueprintModalDirect();
+      openQuotePanel();
+    }
+
+    // 5. FAQ Accordion Toggle
+    function toggleFaq(item) {
+      item.classList.toggle('is-active');
+    }
+  </script>
+</body>
+</html>

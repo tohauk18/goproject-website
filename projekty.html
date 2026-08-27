@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Projektów Budowlanych — GOPROJECT Gdańsk</title>
+  <meta name="description" content="Przegląd realizowanych projektów budowlanych, domów jednorodzinnych, nowoczesnych stodół i osiedli w Gdańsku, Chojnicach i na Pomorzu." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://goproject.com.pl/projekty.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goproject.com.pl/projekty.html" />
+  <meta property="og:title" content="Portfolio Projektów — GOPROJECT Gdańsk" />
+  <meta property="og:description" content="Przegląd realizowanych projektów budowlanych, domów jednorodzinnych i nowoczesnych stodół." />
+  <meta property="og:image" content="https://goproject.com.pl/public/img/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+            },
+            studio: {
+              surface: '#FAFAFA',
+              subtle: '#F4F4F3',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+  </style>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1.5 text-black">
+        <span>GOPROJECT</span>
+        <span class="text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH DROPDOWN -->
+        <div class="relative group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="absolute top-full left-0 w-80 bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+            <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+              <span>// PRZEGLĄD OFERTA</span>
+              <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+            </a>
+            <div class="space-y-1 pt-1 font-medium text-gray-300">
+              <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                01 / Projekty budowlane i adaptacje
+              </a>
+              <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                02 / Kierownik budowy i nadzór
+              </a>
+              <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                03 / Odbiory mieszkań i ekspertyzy
+              </a>
+              <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                04 / Formalności WZ & Świadectwa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent font-bold">Portfolio</a>
+        <a href="./index.html#proces" class="hover:text-accent transition-colors">Proces</a>
+        <a href="./index.html#faq" class="hover:text-accent transition-colors">FAQ</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="h-[44px] px-6 inline-flex items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="pt-28 md:pt-32 pb-24 bg-white text-black min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-8 border-b border-gray-200">
+        <div>
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            03 // REALIZACJE & KONCEPCJE
+          </span>
+          <h1 class="font-heading font-extrabold text-3xl md:text-5xl">
+            Selekcja projektów i koncepcji
+          </h1>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-xl leading-relaxed">
+          Przegląd wybranych koncepcji oraz projektów budowlanych. Kliknij na dowolny obiekt, aby zapoznać się ze szczegółowymi parametrami technicznymi.
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="flex flex-wrap gap-2.5 mb-12 font-mono text-xs font-bold uppercase tracking-wider">
+        <button data-filter="all" class="filter-btn active px-5 py-2.5 border bg-black text-white border-black">Wszystkie</button>
+        <button data-filter="dom-jednorodzinny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black">Domy jednorodzinne</button>
+        <button data-filter="szeregowe" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black">Zabudowa szeregowa</button>
+        <button data-filter="komercyjne" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black">Obiekty usługowe i hale</button>
+      </div>
+
+      <!-- GRID CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: WIELORODZINNY ŚNIADECKICH -->
+        <a href="./projekt-wielorodzinny-sniadeckich.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="komercyjne">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Budynek mieszkalny wielorodzinny Śniadeckich Gdańsk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">WIELORODZINNY · GDAŃSK</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny Śniadeckich</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Projekt budowlany – od pierwszej koncepcji architektonicznej do realizacji. Kompleksowa koordynacja branżowa, dokumentacja PAB+PT i nadzór autorski.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Zakres</span><span class="font-bold text-black">Koncepcja & PAB</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Koordynacja</span><span class="font-bold text-black">Wielobranżowa</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Gdańsk</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 2: OSIEDLE DWULOKALOWE -->
+        <a href="./projekt-osiedle-dwulokalowe.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle budynków jednorodzinnych dwulokalowych Pomorze" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">OSIEDLE DWULOKALOWE</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Osiedle budynków jednorodzinnych dwulokalowych</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Koncepcja urbanistyczna i kompleksowy projekt architektoniczny osiedla. Maksymalne wykorzystanie nasłonecznienia i zapewnienie prywatności mieszkańcom.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span class="font-bold text-black">Dwulokalowe</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Standard</span><span class="font-bold text-black">Energooszczędny</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Pomorskie</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: STODOŁA 3D -->
+        <a href="./projekt-stodola-3d.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp" alt="Stodoła 3D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">STODOŁA 3D</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Dom parterowy ze szklaną ścianą szczytową</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Indywidualny projekt domu w stylu nowoczesnej stodoły z panoramicznymi przeszkleniami i konstrukcją o podwyższonym standardzie.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. Użytkowa</span><span class="font-bold text-black">102,80 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kubatura</span><span class="font-bold text-black">911,37 m³</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Gdańsk</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: DOM JEDNORODZINNY Z GARAŻEM -->
+        <a href="./projekt-dom-jednorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp" alt="Dom jednorodzinny" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">DOM JEDNORODZINNY</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Nowoczesny dom jednorodzinny z garażem</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Projekt koncepcyjny i budowlany budynku mieszkalnego parterowego z poddaszem użytkowym.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. Użytkowa</span><span class="font-bold text-black">167,12 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kubatura</span><span class="font-bold text-black">764,54 m³</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Chojnice</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: OSIEDLE SZEREGOWE -->
+        <a href="./projekt-osiedle-dwulokalowe.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/osiedle-domow-szeregowych-widok-z-lotu-ptaka.webp" alt="Zabudowa szeregowa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">ZABUDOWA SZEREGOWA</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Osiedle domów szeregowych z ogrodami</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Koncepcja oraz projekt budowlany osiedla 6 budynków jednorodzinnych w zabudowie szeregowej.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. Użytkowa</span><span class="font-bold text-black">540,00 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kubatura</span><span class="font-bold text-black">2200 m³</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Trójmiasto</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: BIURA I USŁUGI -->
+        <a href="./projekt-wielorodzinny-sniadeckich.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="komercyjne">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./public/img/nowoczesny-budynek-biurowy-wizualizacja.webp" alt="Usługowy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">BIURA & USŁUGI</div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">Nowoczesny budynek biurowo-usługowy</h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">Projekt trzykondygnacyjnego budynku biurowego z fasadą wentylowaną ze szkła i stali.</p>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. Użytkowa</span><span class="font-bold text-black">780,00 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kubatura</span><span class="font-bold text-black">3100 m³</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Lokalizacja</span><span class="font-bold text-black">Gdańsk</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-heading font-extrabold text-white text-base uppercase">GOPROJECT</span>
+        <span class="text-accent ml-2">/ PRACOWNIA PROJEKTOWA</span>
+        <p class="mt-1 text-gray-500">© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</p>
+      </div>
+
+      <div class="flex items-center gap-6 text-gray-300 uppercase">
+        <a href="./uslugi.html" class="hover:text-accent">Oferta</a>
+        <a href="./o-nas.html" class="hover:text-accent">O pracowni</a>
+        <a href="./kontakt.html" class="hover:text-accent">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const pCards = document.querySelectorAll('.project-card');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.className = 'filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black');
+          btn.className = 'filter-btn active px-5 py-2.5 border bg-black text-white border-black';
+          const cat = btn.dataset.filter;
+          pCards.forEach(card => {
+            if (cat === 'all' || card.dataset.category === cat) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Pracowni — GOPROJECT mgr inż. Adam Kubat Gdańsk</title>
+  <meta name="description" content="Poznaj historię pracowni GOPROJECT założonej w 2015 roku przez mgr inż. Adama Kubata. Uprawnienia budowlane, rzetelność i setki zrealizowanych obiektów w Gdańsku i na Pomorzu." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://goproject.com.pl/o-nas.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://goproject.com.pl/o-nas.html" />
+  <meta property="og:title" content="O Pracowni — GOPROJECT mgr inż. Adam Kubat" />
+  <meta property="og:description" content="Poznaj historię pracowni GOPROJECT założonej w 2015 roku przez mgr inż. Adama Kubata." />
+  <meta property="og:image" content="https://goproject.com.pl/public/img/adam-kubat.jpg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+              subtle: 'rgba(255, 59, 0, 0.12)',
+              border: 'rgba(255, 59, 0, 0.3)',
+            },
+            studio: {
+              bg: '#FFFFFF',
+              surface: '#FAFAFA',
+              subtle: '#F4F4F3',
+              dark: '#0A0A0A',
+              card: '#141414',
+              border: '#E8E8E8',
+              borderDark: '#222222',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1.5 text-black">
+        <span>GOPROJECT</span>
+        <span class="text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH DROPDOWN -->
+        <div class="relative group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="absolute top-full left-0 w-80 bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+            <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+              <span>// PRZEGLĄD OFERTA</span>
+              <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+            </a>
+            <div class="space-y-1 pt-1 font-medium text-gray-300">
+              <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                01 / Projekty budowlane i adaptacje
+              </a>
+              <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                02 / Kierownik budowy i nadzór
+              </a>
+              <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                03 / Odbiory mieszkań i ekspertyzy
+              </a>
+              <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                04 / Formalności WZ & Świadectwa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="text-accent font-bold">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./index.html#proces" class="hover:text-accent transition-colors">Proces</a>
+        <a href="./index.html#faq" class="hover:text-accent transition-colors">FAQ</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="h-[44px] px-6 inline-flex items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black text-white px-6 py-8 font-mono text-sm space-y-4 border-t border-zinc-800">
+      <div class="border-b border-zinc-800 pb-3">
+        <a href="./uslugi.html" class="block font-bold text-accent mb-2">// Wszystkie Usługi</a>
+        <a href="./uslugi-projekty-i-adaptacje.html" class="block text-gray-300 hover:text-accent pl-3 py-1 text-xs">01 / Projekty i adaptacje</a>
+        <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block text-gray-300 hover:text-accent pl-3 py-1 text-xs">02 / Kierownik budowy & nadzór</a>
+        <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block text-gray-300 hover:text-accent pl-3 py-1 text-xs">03 / Odbiory mieszkań & ekspertyzy</a>
+        <a href="./uslugi-formalnosci-i-energetyka.html" class="block text-gray-300 hover:text-accent pl-3 py-1 text-xs">04 / Formalności WZ & energia</a>
+      </div>
+      <a href="./o-nas.html" class="block py-2 border-b border-zinc-800 text-accent font-bold">O pracowni</a>
+      <a href="./projekty.html" class="block py-2 border-b border-zinc-800 hover:text-accent">Portfolio Projektów</a>
+      <a href="./index.html#proces" class="block py-2 border-b border-zinc-800 hover:text-accent">Proces</a>
+      <a href="./index.html#faq" class="block py-2 border-b border-zinc-800 hover:text-accent">FAQ</a>
+      <a href="./kontakt.html" class="block py-2 hover:text-accent">Kontakt</a>
+      <div class="pt-4 border-t border-zinc-800">
+        <a href="tel:+48884757815" class="h-[48px] w-full bg-accent text-white font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń: +48 884 757 815
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="pt-28 md:pt-32 pb-24 bg-white text-black min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-10 border-b border-gray-200">
+        <div class="max-w-3xl">
+          <div class="inline-block font-mono text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 border border-accent/30 px-3.5 py-1">
+            // HISTORIA & WARTOŚCI
+          </div>
+          <h1 class="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+            Rzetelność inżynieryjna od 2015 roku
+          </h1>
+          <p class="font-sans text-gray-600 text-base md:text-lg leading-relaxed">
+            Pracownia projektowa <strong class="text-black font-semibold">GOPROJECT</strong> powstała z pasji do nowoczesnej architektury oraz bezkompromisowego przestrzegania sztuki budowlanej i wymogów prawa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 font-mono text-xs shrink-0 lg:w-80">
+          <div class="p-4 bg-studio-surface border border-gray-200 text-center">
+            <div class="font-heading font-black text-2xl text-accent">2015</div>
+            <div class="text-gray-500 uppercase text-[10px] mt-0.5">Rok Założenia Pracowni</div>
+          </div>
+          <div class="p-4 bg-studio-surface border border-gray-200 text-center">
+            <div class="font-heading font-black text-2xl text-black">Gdańsk & Pomorze</div>
+            <div class="text-gray-500 uppercase text-[10px] mt-0.5">Główny Obszar Działania</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOUNDER BIO GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+        <div class="relative h-[420px] md:h-[540px] w-full overflow-hidden border border-gray-200 shadow-2xl">
+          <img src="./public/img/adam-kubat.jpg" alt="mgr inż. Adam Kubat" class="w-full h-full object-cover object-top" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 right-8 text-white">
+            <div class="font-mono text-xs font-bold text-accent uppercase tracking-widest mb-1">
+              // ZAŁOŻYCIEL & GŁÓWNY PROJEKTANT
+            </div>
+            <div class="font-heading font-black text-3xl uppercase">
+              mgr inż. Adam Kubat
+            </div>
+            <div class="font-sans text-sm text-gray-300 mt-1">
+              Uprawnienia budowlane do projektowania i kierowania robotami budowlanymi bez ograniczeń.
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h2 class="font-heading font-extrabold text-3xl mb-4">
+            Nasza misja: bezstresowa inwestycja dla klienta
+          </h2>
+          <p class="font-sans text-gray-700 text-base leading-relaxed">
+            Projektowanie budynku lub nadzór nad budową to odpowiedzialność na dziesiątki lat. Dlatego w <strong>GOPROJECT</strong> stawiamy na transparentność, precyzyjne obliczenia konstrukcyjne oraz bezbłędną koordynację dokumentacji formalnej.
+          </p>
+          <p class="font-sans text-gray-700 text-base leading-relaxed">
+            Współpracujemy wyłącznie ze sprawdzonymi inżynierami branży sanitarnej, elektrycznej i konstrukcyjnej. Dzięki temu nasi klienci unikają przestojów na budowie oraz kosztownych poprawek wykonawczych.
+          </p>
+
+          <div class="space-y-3 pt-4 border-t border-gray-200 font-sans text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>100% dopuszczonych decyzji o pozwoleniu na budowę</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>Pełny nadzór nad inwestycją w Gdańsku, Chojnicach i na Pomorzu</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0"></i>
+              <span>Indywidualne podejście do każdego uwarunkowania MPZP/WZ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLARS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="award" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Precyzja projektowa</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Trójwymiarowe koncepcje i dokładne obliczenia nośności pozwalają uniknąć niespodzianek na etapie realizacji.
+          </p>
+        </div>
+
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="shield-check" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Bezpieczeństwo prawne</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Prowadzimy sprawy w urzędach od A do Z, dbając o bezbłędność wniosków i terminowość decyzji.
+          </p>
+        </div>
+
+        <div class="bg-studio-surface border border-gray-200 p-8">
+          <i data-lucide="ruler" class="w-10 h-10 text-accent mb-4"></i>
+          <h3 class="font-heading font-bold text-xl mb-2">Niezależny nadzór</h3>
+          <p class="font-sans text-sm text-gray-600 leading-relaxed">
+            Chronimy budżet Inwestora, weryfikując jakość pracy wykonawców oraz rzetelność kosztorysów.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA BANNER -->
+      <div class="bg-black text-white p-8 md:p-12 text-center border border-zinc-800">
+        <h2 class="font-heading font-black text-3xl md:text-5xl uppercase mb-4">
+          Zaufaj Doświadczeniu Inżyniera
+        </h2>
+        <p class="font-sans text-gray-400 max-w-2xl mx-auto text-sm md:text-base mb-8">
+          Umów bezpłatną konsultację telefoniczną lub spotkanie w biurze.
+        </p>
+        <a href="tel:+48884757815" class="h-[48px] px-8 bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all">
+          <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń: +48 884 757 815
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-heading font-extrabold text-white text-base uppercase">GOPROJECT</span>
+        <span class="text-accent ml-2">/ PRACOWNIA PROJEKTOWA</span>
+        <p class="mt-1 text-gray-500">© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</p>
+      </div>
+
+      <div class="flex items-center gap-6 text-gray-300 uppercase">
+        <a href="./uslugi.html" class="hover:text-accent">Oferta</a>
+        <a href="./projekty.html" class="hover:text-accent">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    });
+  </script>
+</body>
+</html>

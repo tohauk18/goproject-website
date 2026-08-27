@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oferta Usług Architektonicznych i Nadzoru — GOPROJECT</title>
+  <meta name="description" content="Kompleksowy zakres usług projektowych: projekty domów, adaptacje WZ/MPZP, kierownik budowy, nadzór inwestorski i świadectwa energetyczne." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B00',
+              hover: '#E03400',
+            },
+            studio: {
+              surface: '#FAFAFA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1.5 text-black">
+        <span>GOPROJECT</span>
+        <span class="text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH DROPDOWN -->
+        <div class="relative group py-2">
+          <a href="./uslugi.html" class="text-accent font-bold flex items-center gap-1">
+            <span>Oferta</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="absolute top-full left-0 w-80 bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+            <a href="./uslugi.html" class="font-mono font-bold text-accent uppercase tracking-wider pb-2 border-b border-zinc-800 hover:text-white flex items-center justify-between">
+              <span>// PRZEGLĄD OFERTA</span>
+              <span class="text-[10px] text-gray-400">Zobacz wszystko &rarr;</span>
+            </a>
+            <div class="space-y-1 pt-1 font-medium text-gray-300">
+              <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                01 / Projekty budowlane i adaptacje
+              </a>
+              <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                02 / Kierownik budowy i nadzór
+              </a>
+              <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                03 / Odbiory mieszkań i ekspertyzy
+              </a>
+              <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                04 / Formalności WZ & Świadectwa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./index.html#proces" class="hover:text-accent transition-colors">Proces</a>
+        <a href="./index.html#faq" class="hover:text-accent transition-colors">FAQ</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+48884757815" class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <a href="./kontakt.html" class="h-[44px] px-6 inline-flex items-center justify-center font-mono text-xs font-bold uppercase tracking-wider bg-black text-white hover:bg-accent transition-all">
+          Konsultacja
+        </a>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-black hover:text-accent" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="pt-28 md:pt-32 pb-24 bg-white text-black min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-gray-200">
+        <div>
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            FILARY USŁUG // GOPROJECT
+          </span>
+          <h1 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl">
+            Kompleksowa obsługa architektoniczna i nadzór
+          </h1>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-xl leading-relaxed">
+          Wybierz intersujący Cię filar oferty, aby poznać szczegółowy zakres prac, roadmapę procesową oraz warunki inżynieryjne.
+        </p>
+      </div>
+
+      <!-- SERVICES GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        
+        <!-- ITEM 1 -->
+        <div class="bg-studio-surface border border-gray-200 p-8 md:p-10 flex flex-col justify-between hover:border-black transition-all shadow-sm group">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-3">FILAR 01</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-4 group-hover:text-accent transition-colors">
+              Projekty budowlane & Adaptacje
+            </h2>
+            <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+              Indywidualne projekty domów jednorodzinnych, nowoczesnych stodół 3D, budynków komercyjnych oraz adaptacje projektów gotowych (Archon, Z500).
+            </p>
+            <ul class="space-y-2.5 font-sans text-xs text-gray-700 mb-8 pt-4 border-t border-gray-200">
+              <li class="flex items-center justify-between"><span>• Indywidualne projekty (PAB + PT)</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Adaptacja do warunków działki i MPZP/WZ</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Wizualizacje 3D & koncepcje bryły</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+            </ul>
+          </div>
+          <a href="./uslugi-projekty-i-adaptacje.html" class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all">
+            <span>Zobacz Pełny Filar 01</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="bg-studio-surface border border-gray-200 p-8 md:p-10 flex flex-col justify-between hover:border-black transition-all shadow-sm group">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-3">FILAR 02</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-4 group-hover:text-accent transition-colors">
+              Kierownik budowy & Nadzór
+            </h2>
+            <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+              Licencjonowane prowadzenie budowy oraz niezależny Inspektor Nadzoru Inwestorskiego chroniący budżet i jakość robot budowlanych.
+            </p>
+            <ul class="space-y-2.5 font-sans text-xs text-gray-700 mb-8 pt-4 border-t border-gray-200">
+              <li class="flex items-center justify-between"><span>• Pełnienie funkcji Kierownika Budowy</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Inspektor Nadzoru Inwestorskiego</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Odbiory prac zanikających</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+            </ul>
+          </div>
+          <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all">
+            <span>Zobacz Pełny Filar 02</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="bg-studio-surface border border-gray-200 p-8 md:p-10 flex flex-col justify-between hover:border-black transition-all shadow-sm group">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-3">FILAR 03</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-4 group-hover:text-accent transition-colors">
+              Odbiory mieszkań & Ekspertyzy
+            </h2>
+            <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+              Inżynieryjne odbiory techniczne mieszkań od dewelopera, pomiary laserowe, badania termowizyjne i ekspertyzy konstrukcyjne.
+            </p>
+            <ul class="space-y-2.5 font-sans text-xs text-gray-700 mb-8 pt-4 border-t border-gray-200">
+              <li class="flex items-center justify-between"><span>• Odbiory deweloperskie z termowizją</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Ekspertyzy stanu konstrukcji</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Przeglądy okresowe budynków (KOB)</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+            </ul>
+          </div>
+          <a href="./uslugi-odbiory-i-ekspertyzy.html" class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all">
+            <span>Zobacz Pełny Filar 03</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="bg-studio-surface border border-gray-200 p-8 md:p-10 flex flex-col justify-between hover:border-black transition-all shadow-sm group">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-3">FILAR 04</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-4 group-hover:text-accent transition-colors">
+              Formalności WZ & Świadectwa Energetyczne
+            </h2>
+            <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+              Zastępstwo inwestorskie przed urzędami, pozyskiwanie Warunków Zabudowy (WZ) oraz oficjalne Świadectwa Energetyczne z wpisem do MRiT.
+            </p>
+            <ul class="space-y-2.5 font-sans text-xs text-gray-700 mb-8 pt-4 border-t border-gray-200">
+              <li class="flex items-center justify-between"><span>• Wnioski o Warunki Zabudowy (WZ)</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Certyfikaty energetyczne (24-48h)</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+              <li class="flex items-center justify-between"><span>• Audyty "Czyste Powietrze"</span><i data-lucide="check" class="w-4 h-4 text-accent"></i></li>
+            </ul>
+          </div>
+          <a href="./uslugi-formalnosci-i-energetyka.html" class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all">
+            <span>Zobacz Pełny Filar 04</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-heading font-extrabold text-white text-base uppercase">GOPROJECT</span>
+        <span class="text-accent ml-2">/ PRACOWNIA PROJEKTOWA</span>
+        <p class="mt-1 text-gray-500">© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</p>
+      </div>
+
+      <div class="flex items-center gap-6 text-gray-300 uppercase">
+        <a href="./o-nas.html" class="hover:text-accent">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
