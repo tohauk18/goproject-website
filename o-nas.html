@@ -74,8 +74,8 @@
   <!-- HEADER -->
   <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
     <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
-      <a href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
-        <span>GOPROJECT</span>
+      <a id="header-logo" href="./index.html" class="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter uppercase flex items-baseline gap-1 sm:gap-1.5 text-black hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap">
+        <span id="header-logo-text">GOPROJECT</span>
         <span class="text-[10px] sm:text-xs font-mono font-medium tracking-widest pb-[2px] text-accent">/ PRACOWNIA</span>
       </a>
 
@@ -473,6 +473,19 @@
             mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
             if (window.lucide) lucide.createIcons();
           });
+        });
+      }
+
+      // Highlight the current page link in the mobile menu
+      if (mobileMenu) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        mobileMenu.querySelectorAll('a[href]').forEach(link => {
+          const hrefFile = link.getAttribute('href').split('/').pop();
+          if (hrefFile === currentFile) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.remove('text-zinc-200');
+            link.classList.add('text-accent', 'font-bold');
+          }
         });
       }
 

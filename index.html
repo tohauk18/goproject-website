@@ -1313,6 +1313,19 @@
         });
       }
 
+      // Highlight the current page link in the mobile menu
+      if (mobileMenu) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        mobileMenu.querySelectorAll('a[href]').forEach(link => {
+          const hrefFile = link.getAttribute('href').split('/').pop();
+          if (hrefFile === currentFile) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.remove('text-zinc-200');
+            link.classList.add('text-accent', 'font-bold');
+          }
+        });
+      }
+
       if (mobileOfertaToggle && mobileOfertaSubmenu) {
         mobileOfertaToggle.addEventListener('click', () => {
           const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
