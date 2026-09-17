@@ -116,7 +116,7 @@ def replace_element(html, marker, new_html):
     end = match_close(html, start, tag)
     # Replace from the MARKER, not from the element: otherwise the old marker
     # survives and the new markup adds another one, so they pile up on each run.
-    return html[:i] + new_html + html[end:], end - start
+    return html[:i].rstrip(' \t') + new_html + html[end:], end - start
 
 
 def replace_inner(html, open_tag_index, new_inner, tag='div'):
@@ -126,19 +126,22 @@ def replace_inner(html, open_tag_index, new_inner, tag='div'):
     return html[:open_end] + new_inner + html[end:]
 
 
-def render_hero(tile):
+def render_hero(tile, width_class='', sizes=None):
     u = tile['url']
     big = '%s-%d.webp' % (tile['stem'], tile['large_px'])
     small = '%s-%d.webp' % (tile['stem'], tile['small_px'])
+    sizes = sizes or '(min-width:1280px) 1200px, 100vw'
     alt = tile['caption']
     if tile['placeholder']:
         alt += ' — wizualizacja do wygenerowania'
+    fig_class = ('mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group'
+                 + (' ' + width_class if width_class else ''))
     return (
         '      <!-- MAIN HERO IMAGE -->\n'
-        '      <figure class="mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group"%s>\n'
+        '      <figure class="%s"%s>\n'
         '        <img src="%s%s"\n'
         '          srcset="%s%s %dw, %s%s %dw"\n'
-        '          sizes="(min-width:1280px) 1200px, 100vw"\n'
+        '          sizes="%s"\n'
         '          width="%d" height="%d"\n'
         '          loading="eager" fetchpriority="high" decoding="async"\n'
         '          alt="%s"\n'
@@ -150,8 +153,9 @@ def render_hero(tile):
         '        </figcaption>\n'
         '      </figure>'
     ) % (
+        fig_class,
         ' data-placeholder="1"' if tile['placeholder'] else '',
-        u, small, u, small, tile['small_px'], u, big, tile['large_px'],
+        u, small, u, small, tile['small_px'], u, big, tile['large_px'], sizes,
         tile['width'], tile['height'], alt, tile['kind'], tile['caption'],
     )
 
@@ -196,6 +200,18 @@ def render_gallery(tiles):
     return '\n\n'.join(parts)
 
 GALLERY_CLASS = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start'
+
+# Per-page hero width. A full-bleed hero puts the image under a magnifying glass, and
+# phone-quality photography does not survive that scrutiny - the same photo reads
+# perfectly well at 700px. Capping the width is a layout fix for a photo problem.
+# `sizes` must match, or the browser keeps downloading the 1600px variant for a
+# 768px slot.
+HERO_WIDTH = {
+    'dom-jednorodzinny': {
+        'class': 'max-w-3xl mx-auto',
+        'sizes': '(min-width:768px) 768px, 100vw',
+    },
+}
 
 PAGE_NAMES = {
     'budynek-wielorodzinny': 'projekt-budynek-mieszkalny-wielorodzinny.html',
@@ -265,13 +281,15 @@ def update_fact_bar(html, grid_start, text):
     return html[:open_end] + '\n            ' + text + '\n          ' + html[close:]
 
 
-def rebuild_page(path, tiles):
+def rebuild_page(path, tiles, hero=None):
+    hero = hero or {}
     with open(path, encoding='utf-8') as fh:
         html = fh.read()
     original = html
 
     # 1. hero
-    html, _ = replace_element(html, '<!-- MAIN HERO IMAGE -->', render_hero(tiles[0]))
+    html, _ = replace_element(html, '<!-- MAIN HERO IMAGE -->',
+                              render_hero(tiles[0], hero.get('class', ''), hero.get('sizes')))
 
     # 2. gallery container (class + tiles)
     start, end = find_gallery_grid(html)
@@ -327,6 +345,6 @@ if __name__ == '__main__':
             slug, len(tiles), sum(1 for t in tiles if t['placeholder'])))
     for slug, tiles in sorted(grouped.items()):
         path = os.path.join(ROOT, PAGE_NAMES[slug])
-        before, after = rebuild_page(path, tiles)
+        before, after = rebuild_page(path, tiles, HERO_WIDTH.get(slug))
         print('rebuilt  %-46s %d -> %d bytes' % (PAGE_NAMES[slug], before, after))
     print('card images repointed: %d' % repoint_cards(grouped))
