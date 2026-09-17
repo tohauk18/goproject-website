@@ -208,10 +208,12 @@ GALLERY_END = '<!-- GALLERY:END -->'
 # hero becomes one column of a two-column lead and the narrative sits beside it.
 HERO = {
     'dom-jednorodzinny': {
-        'figure_class': 'border border-gray-200 overflow-hidden relative group',
-        # 7 of 12 columns inside a max-1600 container: ~887px at full width, ~58vw below
-        # that. Naming the real column width keeps the browser on the 800px file instead
-        # of overshooting to 1600px for a 700px slot.
+        # flex-grow (not flex-1) - flex-1 is absent from the compiled stylesheet, and
+        # a class the CSS does not define fails silently
+        'figure_class': 'flex-grow bg-studio-surface border border-gray-200 overflow-hidden relative group',
+        # 7 of 12 columns inside a max-1600 container from 1280px up (~887px at full
+        # width, ~58vw between); full width below that. Naming the real column width
+        # keeps the browser on the 800px file instead of overshooting for a 700px slot.
         'sizes': '(min-width:1680px) 887px, (min-width:1024px) 58vw, 100vw',
     },
 }

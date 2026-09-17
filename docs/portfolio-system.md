@@ -662,3 +662,66 @@ building this:
   updated once and then reported a stale count.
 
 Both are now position-based, and the pipeline is byte-stable on a second run.
+
+---
+
+## 9. The stylesheet is pre-compiled - a silent trap
+
+`css/style.min.css` is a **built artifact**, not generated at deploy time. It contains only
+the classes that existed when it was last compiled:
+
+| prefix | classes in the file |
+|---|---|
+| `sm:` | 33 |
+| `md:` | 34 |
+| `lg:` | 19 |
+| `xl:` | **1** |
+| `2xl:` | 0 |
+
+So `xl:grid-cols-12`, `xl:col-span-7` and `flex-1` **do nothing at all** - there is no rule
+for them, and a missing class fails silently. This bit twice while building the two-column
+lead: the grid stayed single-column at every viewport, and the markup looked perfectly
+correct while it happened.
+
+**Verified available for layout work**
+
+- `lg:grid-cols-12`, `lg:col-span-4 / 5 / 7 / 8`
+- `md:grid-cols-2 / 3 / 4`, `sm:grid-cols-2 / 3`
+- `items-stretch`, `items-start`, `items-center`, `items-baseline`
+- `justify-center`, `flex-col`, `flex-grow`, `h-full`
+
+**Not available:** `flex-1`, `grow`, `self-stretch`, `aspect-*`, and anything `xl:`/`2xl:`.
+
+Before styling with a class, check it exists:
+
+```bash
+grep -o '\.lg\\:col-span-[0-9]*' css/style.min.css | sort -u
+```
+
+To use something outside that set, either append a small block to `css/style.min.css`, or
+rebuild it from `tailwind.config.js` + `src/input.css` with the Tailwind CLI.
+
+## 10. The two-column lead, and why it needed balancing
+
+A fixed-aspect image beside flowing text cannot stay balanced on its own: the image's
+height scales **linearly with width** (3:2), while the text column gets **wider and
+therefore shorter**. Measured before the fix:
+
+| viewport | photo | text column | result |
+|---|---|---|---|
+| 1024 | 549x366 | 393 wide | text 245px taller than the photo |
+| 1280 | 698x465 | 500 wide | balanced |
+| 1680+ | 885x589 | 633 wide | **180px of white space** beside the photo |
+
+The rule now:
+
+1. **Two columns only at `lg:` and up.** Below that it stacks, so the narrow end (where the
+text towers) never happens.
+2. **Both columns are plates** - the photo column is `flex flex-col`, the figure is
+   `flex-grow`, both carry `bg-studio-surface border`. `items-stretch` makes them equal
+   height at every width, so leftover space sits *inside a plate* as padding rather than
+   as a void on the page.
+3. **One paragraph in the lead, not two.** The second paragraph moved to the scope section,
+   where it belongs - it is about the benefit of integrated delivery, not about the house.
+
+Measured after: plates equal from 1024 up, and a 2px difference from 1200 up.
