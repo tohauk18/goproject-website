@@ -14,7 +14,7 @@ GOPROJECT's own render filenames and **require confirmation by mgr inż. Adam Ku
 | Code | Nazwa (display) | Typ | Miejscowość | Rok | Zakres | Status | Image folder | Page |
 |---|---|---|---|---|---|---|---|---|
 | GP-2023-01 | Budynek wielorodzinny «Śniadeckich» | wielorodzinny | Chojnice | 2023 | projekt + kierownik budowy | zrealizowany | `budynek-wielorodzinny` | `projekt-budynek-mieszkalny-wielorodzinny.html` |
-| GP-2023-02 | «Infocentrum» — obiekt użyteczności publicznej | użyteczności publicznej | — | 2023 | konkurs architektoniczny | koncepcja | `obiekt-uzytecznosci-publicznej` | `projekt-obiekt-uzytecznosci-publicznej.html` |
+| GP-2023-02 | «Infocentrum» — obiekt użyteczności publicznej | użyteczności publicznej | — | 2023 | konkurs architektoniczny | **zaparkowany** — poza portfolio | `obiekt-uzytecznosci-publicznej` | `projekt-obiekt-uzytecznosci-publicznej.html` |
 | GP-2024-01 | Dom jednorodzinny «Nad morzem» | jednorodzinny | Pomorze | 2024 | projekt + nadzór | w realizacji | `dom-jednorodzinny` | `projekt-dom-jednorodzinny.html` |
 | GP-2024-02 | Osiedle budynków dwulokalowych «…» | dwulokalowe | — | 2024 | zespół + infrastruktura | w toku | `osiedle-budynkow-dwulokalowych` | `projekt-osiedle-budynkow-dwulokalowych.html` |
 
@@ -38,6 +38,40 @@ These were not invented — they were read off GOPROJECT's own asset names:
    `dwupiętrowy`, `nad morzem`, `biały`). They cannot all be one project. Either
    pick the real project house and archive the rest, or promote each house to its
    own register row — which would take the portfolio from 4 entries to 9.
+
+### Parked projects
+
+**GP-2023-02 is parked** — held out of the portfolio deliberately, to be added back later.
+
+**Why:** the public-building entry is a competition **concept** that carried only two real
+renders (its other four tiles were placeholders). It weakened the portfolio rather than
+strengthening it, and showing a concept beside built work blurs what the practice is
+actually claiming. The `publiczny` filter button and the `Koncepcja` badges went with it.
+
+**Where it lives now — outside the repo**, because `tohauk18/goproject-website` is a
+**public** repository:
+
+```
+~/Desktop/goproject-parked/
+  projekt-obiekt-uzytecznosci-publicznej.html
+  obiekt-uzytecznosci-publicznej-images/      6 tiles x 2 sizes
+```
+
+**To bring it back:**
+
+1. `mv ~/Desktop/goproject-parked/projekt-obiekt-uzytecznosci-publicznej.html .`
+2. `mv ~/Desktop/goproject-parked/obiekt-uzytecznosci-publicznej-images img/projects/obiekt-uzytecznosci-publicznej`
+3. Delete `'obiekt-uzytecznosci-publicznej'` from `PARKED_SLUGS` in `tools/build-images.py`
+4. Re-add by hand: the portfolio card on `index.html` and `projekty.html`, the footer
+   entry on all pages, the `<url>` block in `sitemap.xml`, the `ListItem` in the portfolio
+   JSON-LD, and the `publiczny` filter button on both portfolio pages
+5. `python3 tools/build-images.py && python3 tools/rebuild-portfolio.py`
+
+**Before it returns, generate its renders.** Four of its six tiles were placeholders —
+re-adding it as-is would put grey boxes back into a live portfolio.
+
+The filter bar currently has four buttons:
+`Wszystkie · Domy jednorodzinne · Osiedla dwulokalowe · Budynki wielorodzinne`
 
 ---
 

@@ -264,11 +264,13 @@ def repoint_cards(grouped):
     for slug, tiles in grouped.items():
         heroes[slug] = '%s%s-%d.webp' % (tiles[0]['url'], tiles[0]['stem'], tiles[0]['small_px'])
     legacy = {
-        './img/projects/infocentrum/wielorodzinny-infocentrum.webp': heroes['obiekt-uzytecznosci-publicznej'],
-        './img/projects/mieszkalny/budynek-mieszkalny-wielorodzinny-widok-poludniowo-zachodni.webp': heroes['budynek-wielorodzinny'],
-        './img/projects/osiedle-dwulokalowe/osiedle-dwulokalowe-lot-ptaka.webp': heroes['osiedle-budynkow-dwulokalowych'],
-        './img/projects/dom-jednorodzinny/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp': heroes['dom-jednorodzinny'],
+        './img/projects/infocentrum/wielorodzinny-infocentrum.webp': 'obiekt-uzytecznosci-publicznej',
+        './img/projects/mieszkalny/budynek-mieszkalny-wielorodzinny-widok-poludniowo-zachodni.webp': 'budynek-wielorodzinny',
+        './img/projects/osiedle-dwulokalowe/osiedle-dwulokalowe-lot-ptaka.webp': 'osiedle-budynkow-dwulokalowych',
+        './img/projects/dom-jednorodzinny/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp': 'dom-jednorodzinny',
     }
+    # Parked projects are absent from the manifest - skip them rather than fail.
+    legacy = {old: heroes[slug] for old, slug in legacy.items() if slug in heroes}
     changed = 0
     for name in ('index.html', 'projekty.html'):
         path = os.path.join(ROOT, name)

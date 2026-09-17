@@ -35,6 +35,12 @@ W = 'Wizualizacja'
 REAL = 'Realizacja'
 KON = 'Koncepcja'
 
+# Parked projects: temporarily out of the portfolio. Their definitions below are
+# kept intact, so bringing one back is a one-line edit - remove the slug from this
+# set, restore the page and folder from ~/Desktop/goproject-parked, then re-run
+# build-images.py and rebuild-portfolio.py.
+PARKED_SLUGS = {'obiekt-uzytecznosci-publicznej'}
+
 # Folder names use building typology only - no invented client facts.
 # Proper project names live in docs/projects.md and need studio sign-off.
 PROJECTS = [
@@ -205,6 +211,8 @@ def build():
     manifest = []
     for project in PROJECTS:
         slug = project['slug']
+        if slug in PARKED_SLUGS:
+            continue
         dest_dir = os.path.join(STAGE, slug)
         os.makedirs(dest_dir, exist_ok=True)
         for index, tile in enumerate(project['tiles'], 1):
