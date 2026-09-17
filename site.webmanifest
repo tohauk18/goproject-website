@@ -1,0 +1,16 @@
+{
+  "name": "GOPROJECT Pracownia Projektowa",
+  "short_name": "GOPROJECT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF3B00",
+  "description": "Licencjonowana pracownia projektowa GOPROJECT mgr inż. Adam Kubat. Projekty budowlane, adaptacje MPZP/WZ, kierownik budowy w Gdańsku i Chojnicach.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
