@@ -41,82 +41,122 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "GOPROJECT Pracownia Projektowa mgr inż. Adam Kubat",
-    "image": "https://goproject.com.pl/img/adam-kubat.jpg",
-    "@id": "https://goproject.com.pl/#organization",
-    "url": "https://goproject.com.pl/",
-    "telephone": "+48884757815",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ul. Chojnicka 18",
-      "addressLocality": "Chojnice",
-      "postalCode": "89-600",
-      "addressRegion": "Pomorskie",
-      "addressCountry": "PL"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 54.3520252,
-      "longitude": 18.6466384
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Adam Kubat",
-      "jobTitle": "Główny Inżynier / Projektant"
-    },
-    "areaServed": [
-      "Gdańsk",
-      "Chojnice",
-      "Województwo Pomorskie"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Usługi Architektoniczne i Inżynieryjne",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Projekty Budowlane i Adaptacje"
-          }
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "GOPROJECT Pracownia Projektowa mgr inż. Adam Kubat",
+        "image": "https://goproject.com.pl/img/adam-kubat.jpg",
+        "@id": "https://goproject.com.pl/#organization",
+        "url": "https://goproject.com.pl/",
+        "telephone": "+48884757815",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Chojnicka 18",
+          "addressLocality": "Chojnice",
+          "postalCode": "89-600",
+          "addressRegion": "Pomorskie",
+          "addressCountry": "PL"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Kierownik Budowy i Nadzór Inwestorski"
-          }
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 54.3520252,
+          "longitude": 18.6466384
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Odbiory Mieszkań i Ekspertyzy Techniczne"
-          }
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Świadectwa Energetyczne i WZ"
-          }
+        "areaServed": [
+          "Gdańsk",
+          "Chojnice",
+          "Województwo Pomorskie"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Usługi Architektoniczne i Inżynieryjne",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Projekty Budowlane i Adaptacje"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Kierownik Budowy i Nadzór Inwestorski"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Odbiory Mieszkań i Ekspertyzy Techniczne"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Świadectwa Energetyczne i WZ"
+              }
+            }
+          ]
+        },
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://goproject.com.pl/#logo",
+          "url": "https://goproject.com.pl/img/goprojekt_logo_dark.svg"
+        },
+        "employee": {
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "email": "biuro@goproject.com.pl",
+        "founder": {
+          "@id": "https://goproject.com.pl/#adam-kubat"
         }
-      ]
-    }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://goproject.com.pl/#adam-kubat",
+        "name": "Adam Kubat",
+        "honorificPrefix": "mgr inż.",
+        "jobTitle": "Główny Inżynier Projektant i Kierownik Budowy",
+        "image": "https://goproject.com.pl/img/adam-kubat.jpg",
+        "worksFor": {
+          "@id": "https://goproject.com.pl/#organization"
+        },
+        "knowsAbout": [
+          "Projekty budowlane",
+          "Kierownictwo budowy",
+          "Nadzór inwestorski",
+          "Adaptacje MPZP i WZ",
+          "Odbiory mieszkań od dewelopera",
+          "Świadectwa energetyczne"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://goproject.com.pl/#website",
+        "url": "https://goproject.com.pl/",
+        "name": "GOPROJECT Pracownia Projektowa",
+        "inLanguage": "pl-PL",
+        "publisher": {
+          "@id": "https://goproject.com.pl/#organization"
+        }
+      }
+    ]
   }
   </script>
 

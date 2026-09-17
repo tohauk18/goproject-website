@@ -82,19 +82,61 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CreativeWork",
+        "@type": [
+          "CreativeWork",
+          "Project"
+        ],
+        "@id": "https://goproject.com.pl/projekt-budynek-mieszkalny-wielorodzinny.html#projekt",
         "name": "Budynek mieszkalny wielorodzinny — od koncepcji do realizacji",
         "headline": "Nowoczesne, funkcjonalne i ekonomicznie zoptymalizowane mieszkania",
-        "author": {
-          "@type": "Person",
-          "name": "mgr inż. Adam Kubat"
-        },
         "creator": {
-          "@type": "ProfessionalService",
-          "name": "GOPROJECT Pracownia Projektowa"
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "author": {
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "publisher": {
+          "@id": "https://goproject.com.pl/#organization"
+        },
+        "copyrightHolder": {
+          "@id": "https://goproject.com.pl/#organization"
         },
         "description": "Złożony projekt wielolokalowy zrealizowany od pierwszej koncepcji aż po zakończenie budowy. Projekt odpowiada na potrzeby przyszłych mieszkańców, jednocześnie spełniając wysokie wymagania inwestora pod względem jakości, efektywności i możliwości sprawnej realizacji. Zawiera zoptymalizowane rozwiązania konstrukcyjne i instalacyjne, zgodność z wymaganiami efektywności energetycznej, bezpieczeństwa pożarowego i pełną dostępnością.",
-        "keywords": ["#wielorodzinny", "#mieszkaniowy", "#mieszkania", "#podklucz", "#nowoczesnezamieszkanie"]
+        "keywords": [
+          "budynek wielorodzinny",
+          "projekt budowlany",
+          "kierownik budowy",
+          "nadzór inwestorski",
+          "Chojnice"
+        ],
+        "isPartOf": {
+          "@id": "https://goproject.com.pl/projekty.html#portfolio"
+        },
+        "mainEntityOfPage": "https://goproject.com.pl/projekt-budynek-mieszkalny-wielorodzinny.html",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/budynek-wielorodzinny/01-hero-1600.webp",
+            "width": 1600,
+            "height": 936,
+            "caption": "Widok od strony południowo-zachodniej",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/budynek-wielorodzinny/02-sytuacja-dzialki-1000.webp",
+            "width": 1000,
+            "height": 697,
+            "caption": "Usytuowanie budynku na działce"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/budynek-wielorodzinny/03-widok-od-ulicy-1000.webp",
+            "width": 1000,
+            "height": 710,
+            "caption": "Widok od strony wjazdu"
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",

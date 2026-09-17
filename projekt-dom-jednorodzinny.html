@@ -82,19 +82,60 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CreativeWork",
+        "@type": [
+          "CreativeWork",
+          "Project"
+        ],
+        "@id": "https://goproject.com.pl/projekt-dom-jednorodzinny.html#projekt",
         "name": "Dom jednorodzinny — od koncepcji do realizacji",
         "headline": "Funkcjonalny, nowoczesny i ponadczasowy projekt dopasowany do potrzeb inwestora",
-        "author": {
-          "@type": "Person",
-          "name": "mgr inż. Adam Kubat"
-        },
         "creator": {
-          "@type": "ProfessionalService",
-          "name": "GOPROJECT Pracownia Projektowa"
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "author": {
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "publisher": {
+          "@id": "https://goproject.com.pl/#organization"
+        },
+        "copyrightHolder": {
+          "@id": "https://goproject.com.pl/#organization"
         },
         "description": "Kompleksowa realizacja mieszkaniowa obejmująca cały proces — od pierwszego spotkania z inwestorem, przez projektowanie, aż po zakończenie budowy. Projekt łączy estetykę z praktycznymi rozwiązaniami technicznymi, zapewniając wysoką efektywność energetyczną i ekonomikę realizacji. Architekt pełnił rolę zarówno projektanta, jak i kierownika budowy, co gwarantowało pełną spójność między założeniami projektowymi a wykonaniem na placu budowy.",
-        "keywords": ["#domjednorodzinny", "#mieszkalny", "#podklucz", "#energooszczedny", "#kierownikbudowy"]
+        "keywords": [
+          "dom jednorodzinny",
+          "projekt budowlany",
+          "kierownik budowy",
+          "nadzór inwestorski"
+        ],
+        "isPartOf": {
+          "@id": "https://goproject.com.pl/projekty.html#portfolio"
+        },
+        "mainEntityOfPage": "https://goproject.com.pl/projekt-dom-jednorodzinny.html",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/dom-jednorodzinny/01-hero-1600.webp",
+            "width": 1427,
+            "height": 1102,
+            "caption": "Dom parterowy ze szklaną ścianą szczytową",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/dom-jednorodzinny/02-widok-od-ogrodu-1000.webp",
+            "width": 780,
+            "height": 1000,
+            "caption": "Dom z garażem dwustanowiskowym — strefa ogrodowa"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/dom-jednorodzinny/03-elewacja-frontowa-1000.webp",
+            "width": 1000,
+            "height": 663,
+            "caption": "Dom o elewacji ceglanej — widok frontowy"
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",

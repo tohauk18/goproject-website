@@ -567,3 +567,69 @@ Fix the naming and connect the creator, and the photographs you already own will
 ### Immediate next step
 
 P0 items 1–7 are all implementable in this repo without new material. On approval, the studio can execute them in a single pass: reorganise `img/`, rename the four projects, replace the gallery markup, and rewire the JSON-LD.
+
+
+---
+
+## 6. Known data issues in the existing markup
+
+Found while wiring the entity graph. **Not changed** — these are factual claims about the
+practice and need confirmation before anyone edits them.
+
+### The address and the map coordinates contradict each other
+
+Defined identically on `index.html` and `kontakt.html`:
+
+```json
+"address": { "streetAddress": "ul. Chojnicka 18", "addressLocality": "Chojnice", ... },
+"geo": { "latitude": 54.3520252, "longitude": 18.6466384 }
+```
+
+`54.3520252, 18.6466384` is **Gdańsk** (city centre). Chojnice is roughly
+`53.695, 17.557` — about 120 km away. So the schema tells Google the business is in
+Gdańsk while the address says Chojnice. A wrong map pin is worse than no pin for a local
+practice.
+
+**Options:** agree which office is the registered/primary one, then either correct the
+coordinates or delete the `geo` block entirely. Do not leave both as they are.
+
+### "Architekt" is a protected title
+
+The original markup described Adam Kubat as *"Główny Inżynier / Projektant"* on
+`index.html` and *"Główny Inżynier Projektant & Kierownik Budowy"* on `o-nas.html`. The
+rewired graph uses the latter **verbatim**. *Architekt* is a protected professional title
+in Poland (IARP registration), so it should not be asserted in structured data unless it
+is actually held.
+
+### The old site is still live and shows different contact details
+
+`goproject.com.pl` currently serves the old one-page site, which lists
+`goproject00@gmail.com`. The new site consistently uses `biuro@goproject.com.pl`
+(all 14 pages), and `+48 884 757 815` (both sites agree). Someone searching for the
+business may still land on the gmail address.
+
+---
+
+## 7. Entity graph — implemented
+
+`tools/rewire-schema.py` produces one connected graph, verified with **0 unresolved
+references** and **0 invalid blocks**:
+
+```
+index.html      defines  #organization, #adam-kubat, #website
+o-nas.html      references  #adam-kubat, #website   (its own #founder @id was merged away)
+projekty.html   defines  #portfolio  ->  hasPart -> each project @id
+projekt-*.html  references  #adam-kubat (creator + author),
+                            #organization (publisher + copyrightHolder),
+                            isPartOf #portfolio
+```
+
+`creator`/`author` are now the **person** and `publisher`/`copyrightHolder` the **studio**
+— previously it was the other way round, with no `@id` anywhere, so nothing was connected.
+`keywords` no longer contain hashtags, and every project carries a real `image` array with
+pixel dimensions.
+
+Deliberately **not** added, because they must not be invented: **`dateCreated`** (year) and
+**`locationCreated`** (place) on each project. Add them once the register is confirmed.
+
+The tool is idempotent — a second run is byte-identical.

@@ -82,19 +82,60 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CreativeWork",
+        "@type": [
+          "CreativeWork",
+          "Project"
+        ],
+        "@id": "https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html#projekt",
         "name": "Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy",
         "headline": "Harmonijna przestrzeń mieszkaniowa zaprojektowana dla współczesnych rodzin",
-        "author": {
-          "@type": "Person",
-          "name": "mgr inż. Adam Kubat"
-        },
         "creator": {
-          "@type": "ProfessionalService",
-          "name": "GOPROJECT Pracownia Projektowa"
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "author": {
+          "@id": "https://goproject.com.pl/#adam-kubat"
+        },
+        "publisher": {
+          "@id": "https://goproject.com.pl/#organization"
+        },
+        "copyrightHolder": {
+          "@id": "https://goproject.com.pl/#organization"
         },
         "description": "Kompletny projekt zagospodarowania osiedla domów dwulokalowych, powstały w odpowiedzi na rosnące zapotrzebowanie na nowoczesną, komfortową i funkcjonalną zabudowę. Projekt zapewnia mieszkańcom prywatność, wygodę użytkowania oraz wysoką jakość przestrzeni, równocześnie racjonalnie wykorzystując potencjał całego terenu. Każdy budynek zachowuje indywidualny charakter, tworząc spójną całość urbanistyczną.",
-        "keywords": ["#osiedle", "#dwulokalowy", "#masterplan", "#mieszkaniowy", "#urbanistyka"]
+        "keywords": [
+          "osiedle domów dwulokalowych",
+          "projekt osiedla",
+          "urbanistyka",
+          "zagospodarowanie terenu"
+        ],
+        "isPartOf": {
+          "@id": "https://goproject.com.pl/projekty.html#portfolio"
+        },
+        "mainEntityOfPage": "https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/osiedle-budynkow-dwulokalowych/01-hero-1600.webp",
+            "width": 1402,
+            "height": 1122,
+            "caption": "Zespół budynków dwulokalowych — widok z lotu ptaka",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/osiedle-budynkow-dwulokalowych/02-widok-frontowy-1000.webp",
+            "width": 1000,
+            "height": 816,
+            "caption": "Elewacja frontowa zespołu"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://goproject.com.pl/img/projects/osiedle-budynkow-dwulokalowych/03-elewacja-frontowa-szeregowa-1000.webp",
+            "width": 1000,
+            "height": 562,
+            "caption": "Układ szeregowy — elewacja frontowa"
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
