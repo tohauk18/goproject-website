@@ -31,9 +31,16 @@ if not CUR:
 C = lambda p: os.path.join(CUR, p)
 R = lambda p: os.path.join(REC, p)
 
+# Material harvested from the live one-page site (see
+# ~/Desktop/goproject-imported/IMPORT-NOTES.md). Highest-resolution authoring
+# the practice owns: 2040px photographs and 760px drawing sheets.
+IMP = os.path.expanduser('~/Desktop/goproject-imported/originals')
+I = lambda p: os.path.join(IMP, p)
+
 W = 'Wizualizacja'
 REAL = 'Realizacja'
 KON = 'Koncepcja'
+RY = 'Rysunek'   # drawings - not a visualisation, and not a concept
 
 # Parked projects: temporarily out of the portfolio. Their definitions below are
 # kept intact, so bringing one back is a one-line edit - remove the slug from this
@@ -81,27 +88,28 @@ PROJECTS = [
         ],
     },
     {
+        # One finished house, not a catalogue. Material: the practice's own
+        # published project "Projekt domu jednorodzinnego w Chojnicach" - three
+        # 2040px photographs of the built house plus its drawing sheet.
         'slug': 'dom-jednorodzinny',
         'page': 'projekt-dom-jednorodzinny.html',
         'tiles': [
-            ('hero', W, C('dom-jednorodzinny/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp'),
-             'Dom parterowy ze szklaną ścianą szczytową'),
-            ('widok-od-ogrodu', W, C('dom-jednorodzinny/dom-jednorodzinny-z-garazem-i-ogrodem-wizualizacja.webp'),
-             'Dom z garażem dwustanowiskowym — strefa ogrodowa'),
-            ('elewacja-frontowa', W, R('dom-jednorodzinny/dom-jednorodzinny-ceglany-wizualizacja.webp'),
-             'Dom o elewacji ceglanej — widok frontowy'),
-            ('widok-nocny', W, R('dom-jednorodzinny/dom-jednorodzinny-widok-noca-wizualizacja.webp'),
-             'Iluminacja budynku po zmroku'),
-            ('widok-od-ulicy', W, R('dom-jednorodzinny/dom-parterowy-z-garazem-wizualizacja.webp'),
-             'Dom parterowy z garażem — widok od strony wjazdu'),
-            ('widok-od-ogrodu-02', W, R('dom-jednorodzinny/dwupietrowy-dom-z-ogrodem-wizualizacja.webp'),
-             'Dom dwukondygnacyjny — elewacja ogrodowa'),
-            ('widok-nad-morzem', W, R('dom-jednorodzinny/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp'),
-             'Bryła otwarta na stronę południową'),
-            ('widok-od-ogrodu-03', W, R('dom-jednorodzinny/dom-jednorodzinny-bialy-z-ogrodem-wizualizacja.webp'),
-             'Dom z ogrodem od strony tarasu'),
-            ('realizacja-01', REAL, C('dom-jednorodzinny/dom-drewniany-z-tarasem-zdjecie-realizacji.webp'),
-             'Realizacja — taras i elewacja drewniana'),
+            ('hero', REAL, I('goprojecthouse_adam_kubat1.jpg'),
+             'Dom jednorodzinny w Chojnicach — bryła od strony wjazdu'),
+            ('widok-od-ogrodu', REAL, I('goprojecthouse_adam_kubat7.jpg'),
+             'Elewacja od strony ogrodu'),
+            ('elewacja-boczna', REAL, I('goprojecthouse_adam_kubat8.jpg'),
+             'Elewacja boczna z oknami dachowymi'),
+            ('wnetrze-01', W, None,
+             'Strefa dzienna — wizualizacja do wygenerowania'),
+            ('detal-01', W, None,
+             'Detal — wejście lub okap — do wygenerowania'),
+            ('wizualizacja-koncepcja', W, None,
+             'Wizualizacja koncepcyjna bryły — do wygenerowania'),
+            ('rzut-parter', RY, I('Projekt5inside.jpg'),
+             'Rzut parteru ze zestawieniem stolarki', (760, 640)),
+            ('elewacje', RY, I('Projekt5front.jpg'),
+             'Elewacje: frontowa, tylna i boczna', (760, 640)),
         ],
     },
     {
@@ -216,14 +224,16 @@ def build():
         dest_dir = os.path.join(STAGE, slug)
         os.makedirs(dest_dir, exist_ok=True)
         for index, tile in enumerate(project['tiles'], 1):
-            role, kind, src, caption = tile
+            role, kind, src, caption = tile[:4]
             stem = '%02d-%s' % (index, role)
             # A source path that was written but does not exist is a typo, not a
             # request for a placeholder. Fail loudly instead of shipping a grey box.
             if src is not None and not os.path.exists(src):
                 raise SystemExit('Source render missing: %s' % src)
             made_placeholder = src is None
-            edges = HERO_EDGES if index == 1 else TILE_EDGES
+            # a 5th element overrides the size pair (drawings are only 760px wide,
+            # so naming them -1000.webp would be a lie)
+            edges = tile[4] if len(tile) > 4 else (HERO_EDGES if index == 1 else TILE_EDGES)
             names = {}
             for edge in edges:
                 name = '%s-%d.webp' % (stem, edge)

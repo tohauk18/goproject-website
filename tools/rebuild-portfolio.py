@@ -33,6 +33,12 @@ LABELS = {
     'widok-dodatkowy': 'Widok dodatkowy',
     'widok-z-lotu-ptaka-02': 'Z lotu ptaka',
     'widok-nad-morzem': 'Bryła od strony morza',
+    'elewacja-boczna': 'Elewacja boczna',
+    'wnetrze-01': 'Wnętrze',
+    'detal-01': 'Detal',
+    'wizualizacja-koncepcja': 'Wizualizacja koncepcji',
+    'rzut-parter': 'Rzut parteru',
+    'elewacje': 'Elewacje',
     'widok-polnocno-wschodni': 'Widok płn.-wsch.',
     'widok-polnocno-zachodni': 'Widok płn.-zach.',
     'widok-poludniowo-zachodni': 'Widok płd.-zach.',
@@ -54,6 +60,7 @@ BADGE_CLASS = {
     'Realizacja': 'bg-accent text-black',
     'Koncepcja': 'bg-white/90 text-black',
     'Wizualizacja': 'bg-white/90 text-black',
+    'Rysunek': 'bg-zinc-900 text-white',
 }
 
 
@@ -107,7 +114,9 @@ def replace_element(html, marker, new_html):
         raise ValueError('no element follows marker at %d' % i)
     start, tag = min(candidates)
     end = match_close(html, start, tag)
-    return html[:start] + new_html + html[end:], end - start
+    # Replace from the MARKER, not from the element: otherwise the old marker
+    # survives and the new markup adds another one, so they pile up on each run.
+    return html[:i] + new_html + html[end:], end - start
 
 
 def replace_inner(html, open_tag_index, new_inner, tag='div'):
@@ -214,21 +223,46 @@ def find_gallery_grid(html):
     raise ValueError('gallery grid not found')
 
 
+def plural(n, one, few, many):
+    """Polish numeral inflection: 1 / 2-4 / 5+ (with the 12-14 exception)."""
+    if n == 1:
+        return one
+    if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
+        return few
+    return many
+
+
 def summary(tiles):
     counts = {}
     for t in tiles:
         counts[t['kind']] = counts.get(t['kind'], 0) + 1
-    order = [('Wizualizacja', 'wizualizacji'), ('Koncepcja', 'plansz koncepcyjnych'),
-             ('Realizacja', 'zdjęcie z realizacji')]
+    forms = [
+        ('Realizacja', ('realizacja', 'realizacje', 'realizacji')),
+        ('Wizualizacja', ('wizualizacja', 'wizualizacje', 'wizualizacji')),
+        ('Rysunek', ('rysunek', 'rysunki', 'rysunków')),
+        ('Koncepcja', ('koncepcja', 'koncepcje', 'koncepcji')),
+    ]
     bits = []
-    for kind, noun in order:
-        if counts.get(kind):
-            n = counts[kind]
-            if kind == 'Realizacja':
-                bits.append(noun)
-            else:
-                bits.append('%d %s' % (n, noun))
+    for kind, (one, few, many) in forms:
+        n = counts.get(kind)
+        if n:
+            bits.append('%d %s' % (n, plural(n, one, few, many)))
     return ' &#183; '.join(bits)
+
+
+def update_fact_bar(html, grid_start, text):
+    """Rewrite the mono summary line that sits just above the gallery grid.
+
+    Located by position rather than by its old text: the previous version matched
+    'Pliki: ...' and so only ever fired once, leaving a stale count behind.
+    """
+    tag = 'class="font-mono text-xs text-gray-500"'
+    i = html.rfind(tag, 0, grid_start)
+    if i == -1:
+        return html
+    open_end = html.index('>', i) + 1
+    close = html.index('</div>', open_end)
+    return html[:open_end] + '\n            ' + text + '\n          ' + html[close:]
 
 
 def rebuild_page(path, tiles):
@@ -244,8 +278,9 @@ def rebuild_page(path, tiles):
     html = html[:start] + '<div class="%s">\n%s\n\n        </div>' % (
         GALLERY_CLASS, render_gallery(tiles)) + html[end:]
 
-    # 3. internal filename dump -> editorial fact bar
-    html = re.sub(r'Pliki(?: powi&#261;zane| powi\u0105zane)?:[^<]*', summary(tiles), html, count=1)
+    # 3. fact bar - re-locate the grid because the offsets above have moved
+    start, _ = find_gallery_grid(html)
+    html = update_fact_bar(html, start, summary(tiles))
 
     # 4. og:image -> this project's own hero, absolute so social scrapers resolve it
     hero_abs = 'https://goproject.com.pl/%s%s-%d.webp' % (

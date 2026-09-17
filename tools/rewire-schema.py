@@ -19,6 +19,7 @@ import io
 import json
 import os
 import re
+import html as html_lib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://goproject.com.pl/'
@@ -99,6 +100,16 @@ def load_images():
     return out
 
 
+def page_h1(html):
+    """The project name comes from the page's own <h1> - one source of truth, so
+    the schema name can never drift from the heading a visitor actually reads."""
+    m = re.search(r'<h1[^>]*>(.*?)</h1>', html, re.S)
+    if not m:
+        return None
+    text = re.sub(r'<[^>]+>', ' ', m.group(1))
+    return re.sub(r'\s+', ' ', html_lib.unescape(text)).strip()
+
+
 def rewire_project(page, slug, canonical, keywords, images):
     path = os.path.join(ROOT, page)
     html = io.open(path, encoding='utf-8').read()
@@ -111,7 +122,7 @@ def rewire_project(page, slug, canonical, keywords, images):
         new_work = {
             '@type': ['CreativeWork', 'Project'],
             '@id': canonical + '#projekt',
-            'name': work.get('name'),
+            'name': page_h1(html) or work.get('name'),
         }
         if work.get('headline'):
             new_work['headline'] = work['headline']

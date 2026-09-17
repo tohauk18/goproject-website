@@ -15,7 +15,7 @@ GOPROJECT's own render filenames and **require confirmation by mgr inż. Adam Ku
 |---|---|---|---|---|---|---|---|---|
 | GP-2023-01 | Budynek wielorodzinny «Śniadeckich» | wielorodzinny | Chojnice | 2023 | projekt + kierownik budowy | zrealizowany | `budynek-wielorodzinny` | `projekt-budynek-mieszkalny-wielorodzinny.html` |
 | GP-2023-02 | «Infocentrum» — obiekt użyteczności publicznej | użyteczności publicznej | — | 2023 | konkurs architektoniczny | **zaparkowany** — poza portfolio | `obiekt-uzytecznosci-publicznej` | `projekt-obiekt-uzytecznosci-publicznej.html` |
-| GP-2024-01 | Dom jednorodzinny «Nad morzem» | jednorodzinny | Pomorze | 2024 | projekt + nadzór | w realizacji | `dom-jednorodzinny` | `projekt-dom-jednorodzinny.html` |
+| GP-2024-01 | Dom jednorodzinny w Chojnicach | jednorodzinny | **Chojnice** | — | projekt + kierownik budowy + nadzór | **zrealizowany** | `dom-jednorodzinny` | `projekt-dom-jednorodzinny.html` |
 | GP-2024-02 | Osiedle budynków dwulokalowych «…» | dwulokalowe | — | 2024 | zespół + infrastruktura | w toku | `osiedle-budynkow-dwulokalowych` | `projekt-osiedle-budynkow-dwulokalowych.html` |
 
 ### Evidence behind the placeholders
@@ -72,6 +72,54 @@ re-adding it as-is would put grey boxes back into a live portfolio.
 
 The filter bar currently has four buttons:
 `Wszystkie · Domy jednorodzinne · Osiedla dwulokalowe · Budynki wielorodzinne`
+
+### The other house designs, from `projekt-dom-jednorodzinny`
+
+That page used to display **nine images of at least six different houses** — a modern
+barn, a brick house, a two-storey flat-roof house, a seaside pavilion, a small white
+barn and a wooden house — presented as one project. They are now parked at:
+
+```
+~/Desktop/goproject-parked/dom-jednorodzinny-inne-koncepcje/      12 files
+```
+
+They are **not** wasted. Each is a candidate register entry, and promoting them would
+take the portfolio from 3 to as many as 8 projects — each needing only renders.
+
+| What it shows | Source render |
+|---|---|
+| night render | `dom-jednorodzinny-widok-noca-wizualizacja` |
+| single-storey with garage | `dom-parterowy-z-garazem-wizualizacja` |
+| two-storey, flat roof | `dwupietrowy-dom-z-ogrodem-wizualizacja` |
+| seaside pavilion | `nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja` |
+| white house with garden | `dom-jednorodzinny-bialy-z-ogrodem-wizualizacja` |
+| wooden house with terrace | `dom-drewniany-z-tarasem-zdjecie-realizacji` **(real photograph)** |
+
+**Note:** that wooden-house photograph was the *only* real image the page had. It is
+parked with the rest — if it turns out to be a completed project, it deserves its own
+entry rather than sitting inside a concept set.
+
+### The page's own metadata already said Chojnice
+
+Worth recording, because it settles the "which house" question. The page's parameter
+table already read **167,12 m²**, **764,54 m³**, **Lokalizacja: Chojnice**, **Status:
+Zrealizowany pod klucz** — exactly the figures published for *"Projekt domu
+jednorodzinnego w Chojnicach"* on the old site. The page was always meant to be this
+house; only its images were wrong. The table was missing two real values, now added:
+**pow. zabudowy 120,00 m²** and **wysokość 7,86 m**.
+
+### Confirm the photo / drawing pairing
+
+The three photographs (`goprojecthouse_adam_kubat1/7/8`) and the drawing sheet
+(`Projekt5front` / `Projekt5inside`) were paired by the **old site's own carousel**, so
+the pairing is GOPROJECT's assertion rather than an invention here. It still deserves a
+human eye: the elevation sheet shows a roof with a different dormer arrangement from
+the photographs.
+
+Also: those drawings are **760 px wide and carry a tiled GoProject watermark**. They
+read as thumbnails only — the floor plan's dimension text is not legible at that size.
+A re-export from the original CAD/PDF at 1600–2400 px is what would make the drawings
+section genuinely persuasive.
 
 ---
 
