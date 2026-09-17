@@ -150,6 +150,14 @@ QUALITY = 78
 # Shipping a 1600px variant for a 390px tile was the single biggest waste.
 HERO_EDGES = (1600, 800)
 TILE_EDGES = (1000, 640)
+
+# Where a hero is contained in a column rather than shown full bleed, a 1600px
+# variant is dead weight - the slot is ~700px, so the browser was downloading
+# 380KB where 150KB would do, and overshooting to 1600 whenever it resolved
+# `sizes` before layout settled. Cap the hero at the size the layout can use.
+HERO_EDGES_BY_SLUG = {
+    'dom-jednorodzinny': (1000, 800),
+}
 FONT_CANDIDATES = [
     '/System/Library/Fonts/Supplemental/Arial.ttf',
     '/System/Library/Fonts/Supplemental/Arial Bold.ttf',
@@ -237,8 +245,13 @@ def build():
                 raise SystemExit('Source render missing: %s' % src)
             made_placeholder = src is None
             # a 5th element overrides the size pair (drawings are only 760px wide,
-            # so naming them -1000.webp would be a lie)
-            edges = tile[4] if len(tile) > 4 else (HERO_EDGES if index == 1 else TILE_EDGES)
+            # so naming them -1000.webp would be a lie); the hero can be capped per page
+            if len(tile) > 4:
+                edges = tile[4]
+            elif index == 1:
+                edges = HERO_EDGES_BY_SLUG.get(slug, HERO_EDGES)
+            else:
+                edges = TILE_EDGES
             names = {}
             for edge in edges:
                 name = '%s-%d.webp' % (stem, edge)

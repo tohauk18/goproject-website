@@ -126,7 +126,7 @@ def replace_inner(html, open_tag_index, new_inner, tag='div'):
     return html[:open_end] + new_inner + html[end:]
 
 
-def render_hero(tile, width_class='', sizes=None):
+def render_hero(tile, figure_class=None, sizes=None):
     u = tile['url']
     big = '%s-%d.webp' % (tile['stem'], tile['large_px'])
     small = '%s-%d.webp' % (tile['stem'], tile['small_px'])
@@ -134,8 +134,8 @@ def render_hero(tile, width_class='', sizes=None):
     alt = tile['caption']
     if tile['placeholder']:
         alt += ' — wizualizacja do wygenerowania'
-    fig_class = ('mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group'
-                 + (' ' + width_class if width_class else ''))
+    fig_class = figure_class or ('mb-16 border border-gray-200 shadow-2xl overflow-hidden '
+                                 'relative group')
     return (
         '      <!-- MAIN HERO IMAGE -->\n'
         '      <figure class="%s"%s>\n'
@@ -194,24 +194,63 @@ def render_tile(tile):
 
 
 def render_gallery(tiles):
-    parts = []
-    for tile in tiles[1:]:
-        parts.append(render_tile(tile))
-    return '\n\n'.join(parts)
+    """Render the given tiles as grid children (the hero is filtered by the caller)."""
+    return '\n\n'.join(render_tile(t) for t in tiles)
 
 GALLERY_CLASS = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start'
 
-# Per-page hero width. A full-bleed hero puts the image under a magnifying glass, and
-# phone-quality photography does not survive that scrutiny - the same photo reads
-# perfectly well at 700px. Capping the width is a layout fix for a photo problem.
-# `sizes` must match, or the browser keeps downloading the 1600px variant for a
-# 768px slot.
-HERO_WIDTH = {
+GALLERY_START = '<!-- GALLERY:START -->'
+GALLERY_END = '<!-- GALLERY:END -->'
+
+# Per-page hero treatment. A full-bleed hero makes the page a showcase, which is
+# right for commissioned photography and wrong for phone snapshots: the same image
+# reads well at 650px and badly at 1200px. Where the material is documentary, the
+# hero becomes one column of a two-column lead and the narrative sits beside it.
+HERO = {
     'dom-jednorodzinny': {
-        'class': 'max-w-3xl mx-auto',
-        'sizes': '(min-width:768px) 768px, 100vw',
+        'figure_class': 'border border-gray-200 overflow-hidden relative group',
+        # 7 of 12 columns inside a max-1600 container: ~887px at full width, ~58vw below
+        # that. Naming the real column width keeps the browser on the 800px file instead
+        # of overshooting to 1600px for a 700px slot.
+        'sizes': '(min-width:1680px) 887px, (min-width:1024px) 58vw, 100vw',
     },
 }
+
+# Per-page gallery grouping. Mixing a site photo, a render and a floor plan in one
+# undifferentiated grid is what makes a gallery read as clutter - group by kind, with
+# a label, so the visitor is told what they are looking at.
+GALLERY_GROUPS = {
+    'dom-jednorodzinny': [
+        ('Realizacja', 'Zdjęcia z budowy oraz wizualizacje', ('Realizacja', 'Wizualizacja')),
+        ('Dokumentacja', 'Rzuty i elewacje z projektu budowlanego', ('Rysunek',)),
+    ],
+}
+
+
+def render_group_label(title, sub):
+    return (
+        '        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-5 mt-12 first:mt-0">\n'
+        '          <h3 class="font-mono text-xs font-bold text-black uppercase tracking-widest">%s</h3>\n'
+        '          <span class="font-sans text-[11px] text-gray-500">%s</span>\n'
+        '        </div>' % (title, sub)
+    )
+
+
+def replace_gallery(html, new_inner):
+    """Swap the gallery body between explicit markers.
+
+    Sits between <!-- GALLERY:START --> and <!-- GALLERY:END --> rather than relying on
+    div-depth matching, so a grouped gallery (several grids plus labels) can be
+    regenerated as a whole and re-runs stay clean.
+    """
+    i = html.find(GALLERY_START)
+    j = html.find(GALLERY_END)
+    if i != -1 and j != -1 and j > i:
+        head = html[:i + len(GALLERY_START)]
+        tail = html[j:]
+        return head + '\n' + new_inner + '\n        ' + tail
+    start, end = find_gallery_grid(html)
+    return html[:start] + new_inner + html[end:]
 
 PAGE_NAMES = {
     'budynek-wielorodzinny': 'projekt-budynek-mieszkalny-wielorodzinny.html',
@@ -281,20 +320,33 @@ def update_fact_bar(html, grid_start, text):
     return html[:open_end] + '\n            ' + text + '\n          ' + html[close:]
 
 
-def rebuild_page(path, tiles, hero=None):
-    hero = hero or {}
+def rebuild_page(path, tiles, slug):
+    hero = HERO.get(slug, {})
+    groups = GALLERY_GROUPS.get(slug)
     with open(path, encoding='utf-8') as fh:
         html = fh.read()
     original = html
 
     # 1. hero
     html, _ = replace_element(html, '<!-- MAIN HERO IMAGE -->',
-                              render_hero(tiles[0], hero.get('class', ''), hero.get('sizes')))
+                              render_hero(tiles[0], hero.get('figure_class'), hero.get('sizes')))
 
-    # 2. gallery container (class + tiles)
-    start, end = find_gallery_grid(html)
-    html = html[:start] + '<div class="%s">\n%s\n\n        </div>' % (
-        GALLERY_CLASS, render_gallery(tiles)) + html[end:]
+    # 2. gallery - labelled groups where configured, otherwise one grid
+    rest = tiles[1:]
+    if groups:
+        blocks = []
+        for title, sub, kinds in groups:
+            sel = [t for t in rest if t['kind'] in kinds]
+            if not sel:
+                continue
+            blocks.append(render_group_label(title, sub))
+            blocks.append('        <div class="%s">\n%s\n\n        </div>'
+                          % (GALLERY_CLASS, render_gallery(sel)))
+        inner = '\n\n'.join(blocks)
+    else:
+        inner = '        <div class="%s">\n%s\n\n        </div>' % (
+            GALLERY_CLASS, render_gallery(rest))
+    html = replace_gallery(html, inner)
 
     # 3. fact bar - re-locate the grid because the offsets above have moved
     start, _ = find_gallery_grid(html)
@@ -345,6 +397,6 @@ if __name__ == '__main__':
             slug, len(tiles), sum(1 for t in tiles if t['placeholder'])))
     for slug, tiles in sorted(grouped.items()):
         path = os.path.join(ROOT, PAGE_NAMES[slug])
-        before, after = rebuild_page(path, tiles, HERO_WIDTH.get(slug))
+        before, after = rebuild_page(path, tiles, slug)
         print('rebuilt  %-46s %d -> %d bytes' % (PAGE_NAMES[slug], before, after))
     print('card images repointed: %d' % repoint_cards(grouped))
