@@ -255,16 +255,17 @@
       <!-- FILTER TABS -->
       <div class="flex flex-wrap gap-2.5 mb-12 font-mono text-xs font-bold uppercase tracking-wider">
         <button data-filter="all" class="filter-btn active px-5 py-2.5 border bg-black text-white border-black transition-all">Wszystkie</button>
-        <button data-filter="dom-jednorodzinny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Domy jednorodzinne</button>
-        <button data-filter="szeregowe" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Zabudowa szeregowa</button>
-        <button data-filter="komercyjne" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Obiekty wielorodzinne</button>
+        <button data-filter="jednorodzinny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Domy jednorodzinne</button>
+        <button data-filter="dwulokalowy" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Osiedla dwulokalowe</button>
+        <button data-filter="wielorodzinny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Budynki wielorodzinne</button>
+        <button data-filter="publiczny" class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Obiekty użyteczności publicznej</button>
       </div>
 
       <!-- GRID CARDS -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- CARD 1: OBIEKT UŻYTECZNOŚCI PUBLICZNEJ — PROJEKT KONKURSOWY -->
-        <a href="./projekt-obiekt-uzytecznosci-publicznej.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="komercyjne">
+        <a href="./projekt-obiekt-uzytecznosci-publicznej.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="publiczny">
           <div class="relative h-[280px] w-full overflow-hidden">
             <img src="./img/projects/obiekt-uzytecznosci-publicznej/01-hero-800.webp" alt="Obiekt użyteczności publicznej — projekt konkursowy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">UŻYTECZNOŚĆ PUBLICZNA · KONKURS</div>
@@ -281,7 +282,7 @@
         </a>
 
         <!-- CARD 2: BUDYNEK MIESZKALNY WIELORODZINNY — PEŁNY CYKL -->
-        <a href="./projekt-budynek-mieszkalny-wielorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="komercyjne">
+        <a href="./projekt-budynek-mieszkalny-wielorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="wielorodzinny">
           <div class="relative h-[280px] w-full overflow-hidden">
             <img src="./img/projects/budynek-wielorodzinny/01-hero-800.webp" alt="Budynek mieszkalny wielorodzinny — od koncepcji do realizacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY · PEŁNY CYKL</div>
@@ -298,7 +299,7 @@
         </a>
 
         <!-- CARD 3: OSIEDLE BUDYNKÓW JEDNORODZINNYCH DWULOKALOWYCH -->
-        <a href="./projekt-osiedle-budynkow-dwulokalowych.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="szeregowe">
+        <a href="./projekt-osiedle-budynkow-dwulokalowych.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="dwulokalowy">
           <div class="relative h-[280px] w-full overflow-hidden">
             <img src="./img/projects/osiedle-budynkow-dwulokalowych/01-hero-800.webp" alt="Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY / URBANISTYCZNY</div>
@@ -315,7 +316,7 @@
         </a>
 
         <!-- CARD 4: DOM JEDNORODZINNY — PEŁNY CYKL -->
-        <a href="./projekt-dom-jednorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="dom-jednorodzinny">
+        <a href="./projekt-dom-jednorodzinny.html" class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl" data-category="jednorodzinny">
           <div class="relative h-[280px] w-full overflow-hidden">
             <img src="./img/projects/dom-jednorodzinny/01-hero-800.webp" alt="Dom jednorodzinny — od koncepcji do realizacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">MIESZKANIOWY · PEŁNY CYKL</div>
