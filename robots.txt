@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Internal working material - strategy notes, project register, image manifest
+# and the build scripts. Not for search engines or the public.
+Disallow: /docs/
+Disallow: /tools/
+
 Sitemap: https://goproject.com.pl/sitemap.xml
