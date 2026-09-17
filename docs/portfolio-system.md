@@ -633,3 +633,32 @@ Deliberately **not** added, because they must not be invented: **`dateCreated`**
 **`locationCreated`** (place) on each project. Add them once the register is confirmed.
 
 The tool is idempotent — a second run is byte-identical.
+
+---
+
+## 8. Build pipeline — the order matters
+
+Three tools, and they must run in this order, because each consumes the previous
+one's output:
+
+```bash
+python3 tools/build-images.py        # 1. images + docs/image-manifest.json
+python3 tools/rebuild-portfolio.py   # 2. hero, gallery, fact bar, og:image
+python3 tools/rewire-schema.py       # 3. JSON-LD, incl. each project's image array
+```
+
+**Why:** `rewire-schema.py` reads the manifest to build every project's `image` array.
+Running it before `build-images.py` leaves that array naming tiles that no longer
+exist — which happened during development, when it kept pointing at two
+previously-named single-family tiles after the gallery was rebuilt.
+
+All three are idempotent, verified by hashing the output of two consecutive runs, so
+re-running any of them is safe. Two bugs of this class were found and fixed while
+building this:
+
+- `replace_element` did not consume its marker, so `<!-- MAIN HERO IMAGE -->` comments
+  accumulated (five per page at worst).
+- The fact bar was located by matching its old `Pliki: ...` text, so it only ever
+  updated once and then reported a stale count.
+
+Both are now position-based, and the pipeline is byte-stable on a second run.

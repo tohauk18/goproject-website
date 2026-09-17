@@ -37,6 +37,11 @@ R = lambda p: os.path.join(REC, p)
 IMP = os.path.expanduser('~/Desktop/goproject-imported/originals')
 I = lambda p: os.path.join(IMP, p)
 
+# Photographs corrected in the correction pass (levelled, cropped to 3:2, graded).
+# kubat1 is only cropped/graded - it is keystone-dominated, so rotation cannot fix it.
+COR = os.path.expanduser('~/Desktop/goproject-imported/corrected')
+I2 = lambda p: os.path.join(COR, p)
+
 W = 'Wizualizacja'
 REAL = 'Realizacja'
 KON = 'Koncepcja'
@@ -94,12 +99,12 @@ PROJECTS = [
         'slug': 'dom-jednorodzinny',
         'page': 'projekt-dom-jednorodzinny.html',
         'tiles': [
-            ('hero', REAL, I('goprojecthouse_adam_kubat1.jpg'),
-             'Dom jednorodzinny w Chojnicach — bryła od strony wjazdu'),
-            ('widok-od-ogrodu', REAL, I('goprojecthouse_adam_kubat7.jpg'),
-             'Elewacja od strony ogrodu'),
-            ('elewacja-boczna', REAL, I('goprojecthouse_adam_kubat8.jpg'),
+            ('hero', REAL, I2('goprojecthouse_adam_kubat7.jpg'),
+             'Dom jednorodzinny w Chojnicach — bryła od strony ogrodu'),
+            ('widok-od-ulicy', REAL, I2('goprojecthouse_adam_kubat8.jpg'),
              'Elewacja boczna z oknami dachowymi'),
+            ('elewacja-frontowa', REAL, I2('goprojecthouse_adam_kubat1.jpg'),
+             'Główna elewacja od strony wjazdu'),
             ('wnetrze-01', W, None,
              'Strefa dzienna — wizualizacja do wygenerowania'),
             ('detal-01', W, None,
