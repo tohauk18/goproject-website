@@ -90,7 +90,6 @@
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: #ffffff;
-      font-size: 1.8rem;
       width: 46px;
       height: 46px;
       border-radius: 50%;
@@ -98,6 +97,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
+      line-height: 0;
       transition: background 0.2s, transform 0.2s;
       z-index: 1010;
     }
@@ -105,7 +106,13 @@
       background: #FF3B00;
       transform: scale(1.05);
     }
-    .lightbox-content {
+    .lightbox-close svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+    }
+.lightbox-content {
       max-width: 92vw;
       max-height: 78vh;
       object-fit: contain;
@@ -141,16 +148,17 @@
       top: 50%;
       transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
-      font-size: 1.75rem;
-      width: 50px;
-      height: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
+      line-height: 0;
       transition: background 0.2s, transform 0.2s;
       z-index: 1010;
     }
@@ -158,16 +166,35 @@
       background: #FF3B00;
       transform: translateY(-50%) scale(1.08);
     }
-    .lightbox-prev { left: 20px; }
+    .lightbox-nav svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+    }
+.lightbox-prev { left: 20px; }
     .lightbox-next { right: 20px; }
     @media (max-width: 640px) {
       .lightbox-nav {
         width: 42px;
         height: 42px;
-        font-size: 1.3rem;
+      }
+      .lightbox-nav svg {
+        width: 20px;
+        height: 20px;
       }
       .lightbox-prev { left: 10px; }
       .lightbox-next { right: 10px; }
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+      }
+      .lightbox-close svg {
+        width: 18px;
+        height: 18px;
+      }
     }
   </style>
   <link rel="canonical" href="https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html" />
@@ -709,13 +736,19 @@
 
   <!-- LIGHTBOX MODAL -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Zamknij podgląd">&times;</button>
-    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)" aria-label="Poprzednie zdjęcie">&#10094;</button>
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Zamknij podgląd">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)" aria-label="Poprzednie zdjęcie">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
     <img class="lightbox-content" id="lightboxImg" src="" alt="Podgląd powiększony">
     <div class="lightbox-caption" id="lightboxCaption"></div>
     <div class="lightbox-sub" id="lightboxSub"></div>
     <div class="lightbox-counter" id="lightboxCounter"></div>
-    <button class="lightbox-nav lightbox-next" onclick="changeImage(1, event)" aria-label="Następne zdjęcie">&#10095;</button>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1, event)" aria-label="Następne zdjęcie">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
   </div>
 
   <!-- FOOTER -->
