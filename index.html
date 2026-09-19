@@ -401,17 +401,19 @@
         padding-bottom: 20px;
         margin-left: -16px;
         margin-right: -16px;
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: calc((100vw - 82vw) / 2) !important;
+        padding-right: calc((100vw - 82vw) / 2) !important;
+        scroll-padding-inline: calc((100vw - 82vw) / 2);
         scrollbar-width: none;
       }
       .portfolio-slider::-webkit-scrollbar {
         display: none;
       }
       .portfolio-slider .project-card {
-        flex: 0 0 86vw !important;
-        max-width: 360px !important;
-        scroll-snap-align: start;
+        flex: 0 0 82vw !important;
+        width: 82vw !important;
+        max-width: 82vw !important;
+        scroll-snap-align: center !important;
         scroll-snap-stop: normal;
         height: auto !important;
         align-self: stretch;
@@ -1763,8 +1765,9 @@
           activeSlideEl.textContent = '00';
           return;
         }
-        const cardWidth = visibleCards[0].offsetWidth + 16;
-        const currentIdx = Math.min(Math.round(portfolioSlider.scrollLeft / cardWidth), visibleCards.length - 1);
+        const gap = parseFloat(window.getComputedStyle(portfolioSlider).gap) || 16;
+        const cardStep = visibleCards[0].offsetWidth + gap;
+        const currentIdx = Math.min(Math.round(portfolioSlider.scrollLeft / cardStep), visibleCards.length - 1);
         activeSlideEl.textContent = String(Math.max(0, currentIdx) + 1).padStart(2, '0');
       }
 
@@ -1773,10 +1776,15 @@
           window.requestAnimationFrame(updatePortfolioSlider);
         }, { passive: true });
 
+        window.addEventListener('resize', () => {
+          window.requestAnimationFrame(updatePortfolioSlider);
+        }, { passive: true });
+
         if (prevSlideBtn) {
           prevSlideBtn.addEventListener('click', () => {
             const visibleCards = Array.from(pCards).filter(c => c.style.display !== 'none');
-            const step = visibleCards[0] ? visibleCards[0].offsetWidth + 16 : 320;
+            const gap = parseFloat(window.getComputedStyle(portfolioSlider).gap) || 16;
+            const step = visibleCards[0] ? visibleCards[0].offsetWidth + gap : 320;
             portfolioSlider.scrollBy({ left: -step, behavior: 'smooth' });
           });
         }
@@ -1784,7 +1792,8 @@
         if (nextSlideBtn) {
           nextSlideBtn.addEventListener('click', () => {
             const visibleCards = Array.from(pCards).filter(c => c.style.display !== 'none');
-            const step = visibleCards[0] ? visibleCards[0].offsetWidth + 16 : 320;
+            const gap = parseFloat(window.getComputedStyle(portfolioSlider).gap) || 16;
+            const step = visibleCards[0] ? visibleCards[0].offsetWidth + gap : 320;
             portfolioSlider.scrollBy({ left: step, behavior: 'smooth' });
           });
         }
