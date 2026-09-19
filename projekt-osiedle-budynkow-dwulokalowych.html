@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <title>Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy — GOPROJECT</title>
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="description" content="Kompleksowy projekt osiedla domów jednorodzinnych dwulokalowych. Masterplan, koncepcja urbanistyczna i dokumentacja techniczna na Pomorzu." />
+  <!-- Preload custom fonts to help avoid FOUT (Flash of unstyled text) -->
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.min.css" />
+  
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <style>
+    /* Header Logo Switching */
+    #main-header .logo-light {
+      display: none;
+    }
+    #main-header .logo-dark {
+      display: block;
+    }
+    #main-header.mobile-header-open .logo-light {
+      display: block !important;
+    }
+    #main-header.mobile-header-open .logo-dark {
+      display: none !important;
+    }
+    #header-logo img, footer img {
+      image-rendering: auto !important;
+      width: auto !important;
+      object-fit: contain !important;
+      object-position: left center !important;
+    }
+
+    img {  image-rendering: auto; }
+    /* Bulletproof Oferta Dropdown */
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      padding: 24px 16px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 1.8rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-close:hover {
+      background: #FF3B00;
+      transform: scale(1.05);
+    }
+    .lightbox-content {
+      max-width: 92vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .lightbox-sub {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 4px;
+      text-align: center;
+      max-width: 720px;
+      line-height: 1.5;
+    }
+    .lightbox-counter {
+      color: #71717a;
+      font-family: monospace;
+      font-size: 0.75rem;
+      margin-top: 6px;
+      text-align: center;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1.75rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-nav:hover {
+      background: #FF3B00;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    @media (max-width: 640px) {
+      .lightbox-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+      }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
+    }
+  </style>
+  <link rel="canonical" href="https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html" />
+  <meta property="og:title" content="Projekt osiedla domów dwulokalowych: Maksymalny PUM i prywatność — GOPROJECT" />
+  <meta property="og:description" content="Kompleksowy projekt osiedla domów dwulokalowych. Maksymalizacja PUM działki, optymalne nasłonecznienie, bezkolizyjna dokumentacja i 100% skuteczności w urzędzie." />
+  <meta property="og:image" content="https://goproject.com.pl/img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projekt osiedla domów dwulokalowych: Maksymalny PUM i prywatność — GOPROJECT" />
+  <meta name="twitter:description" content="Kompleksowy projekt osiedla domów dwulokalowych. Maksymalizacja PUM działki, optymalne nasłonecznienie, bezkolizyjna dokumentacja i 100% skuteczności w urzędzie." />
+
+  <!-- JSON-LD CreativeWork & Breadcrumbs Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Projekt osiedla domów dwulokalowych — masterplan i architektura",
+        "headline": "Maksymalizacja PUM działki i bezkompromisowa prywatność mieszkańców",
+        "author": {
+          "@type": "Person",
+          "name": "mgr inż. Adam Kubat"
+        },
+        "creator": {
+          "@type": "ProfessionalService",
+          "name": "GOPROJECT Pracownia Projektowa"
+        },
+        "description": "Kompleksowa koncepcja urbanistyczno-architektoniczna osiedla budynków dwulokalowych. Maksymalizacja wskaźnika PUM przy zachowaniu intymności akustycznej, nasłonecznionych ogrodów i bezkolizyjnej infrastruktury technicznej.",
+        "keywords": ["#osiedle", "#dwulokalowy", "#masterplan", "#mieszkaniowy", "#urbanistyka", "#PUM"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Główna",
+            "item": "https://goproject.com.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://goproject.com.pl/projekty.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Osiedle budynków jednorodzinnych dwulokalowych — kompleksowy projekt osiedlowy",
+            "item": "https://goproject.com.pl/projekt-osiedle-budynkow-dwulokalowych.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-black font-sans antialiased">
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <!-- LOGO -->
+      <a id="header-logo" href="./index.html" class="flex items-center shrink-0" aria-label="GOPROJECT Pracownia Projektowa">
+        <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-light h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+        <img src="./img/goprojekt_logo_dark.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-dark h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180 shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a id="header-phone" href="tel:+48884757815"
+          class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center"
+          aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 shrink-0"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <div class="pt-28 md:pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- BREADCRUMB & BACK LINK -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-4 font-mono text-xs">
+        <a href="./projekty.html" class="inline-flex items-center gap-2 text-accent font-bold hover:underline">
+          &larr; Powrót do Portfolio
+        </a>
+        <div class="flex items-center gap-2 text-gray-500 uppercase">
+          <span class="bg-gray-100 px-2 py-0.5 font-semibold text-black">Kategoria: Mieszkaniowy / Urbanistyczny</span>
+          <span>·</span>
+          <span>Typ: Kompleksowy projekt osiedlowy</span>
+        </div>
+      </div>
+
+      <!-- MAIN TITLE BLOCK -->
+      <div class="max-w-4xl mb-12">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/30 px-3 py-1">
+            STUDIUM INWESTYCYJNE // ARCHITEKTURA &amp; MASTERPLAN
+          </span>
+          <span class="font-mono text-xs font-semibold text-gray-700 bg-gray-100 border border-gray-200 px-3 py-1">
+            Maksymalizacja PUM &amp; Zgodność WT2021
+          </span>
+        </div>
+        <h1 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl mb-4 text-black">
+          Projekt osiedla domów dwulokalowych: Maksymalny PUM działki i bezkompromisowa prywatność
+        </h1>
+        <p class="font-sans text-gray-600 text-lg md:text-xl font-medium leading-relaxed mb-4">
+          Kompleksowa koncepcja urbanistyczno-architektoniczna z precyzyjnym podziałem parceli, analizą nasłonecznienia i pełną dokumentacją do pozwolenia na budowę.
+        </p>
+
+      </div>
+
+      <!-- MAIN HERO IMAGE (CLICKABLE FOR LIGHTBOX) -->
+      <div class="mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group h-[400px] md:h-[600px] cursor-pointer" onclick="openLightbox(1)">
+        <img src="./img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg" alt="Osiedle budynków jednorodzinnych dwulokalowych — perspektywa ogrodowa i strefa tarasu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" fetchpriority="high" />
+        <div class="absolute bottom-6 left-6 bg-black/80 text-white font-mono text-xs px-4 py-2 flex items-center gap-2">
+          <span class="text-accent font-bold">Wizualizacja Główna</span>
+          <span>·</span>
+          <span>Perspektywa Ogrodowa i Strefa Rekreacyjna</span>
+        </div>
+        <div class="absolute bottom-6 right-6 bg-black/80 text-white font-mono text-xs px-3 py-1.5 flex items-center gap-2 pointer-events-none">
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-accent"></i>
+          <span>Kliknij, aby powiększyć</span>
+        </div>
+      </div>
+
+      <!-- SPECS GRID & DETAILS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+        
+        <!-- LEFT COL: TECHNICAL SPECS TABLE -->
+        <div class="lg:col-span-4 bg-studio-surface border border-gray-200 p-8 space-y-6">
+          <h2 class="font-heading font-bold text-xl border-b border-gray-200 pb-3 flex items-center justify-between">
+            <span>Parametry Osiedla</span>
+            <span class="text-[10px] font-mono font-bold text-accent uppercase tracking-wider">Tabela Danych</span>
+          </h2>
+          
+          <div class="space-y-3.5 font-mono text-xs">
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Kategoria:</span>
+              <span class="font-bold text-black">Mieszkaniowy / Urbanistyczny</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Typ Projektu:</span>
+              <span class="font-bold text-black text-right">Projekt osiedlowy</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Typ Zabudowy:</span>
+              <span class="font-bold text-accent text-right">Dwulokalowa / Bliźniacza</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Zagospodarowanie:</span>
+              <span class="font-bold text-black">Prywatne ogrody + parkingi</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Standard Energetyczny:</span>
+              <span class="font-bold text-black">WT2021 / Pompy ciepła + PV</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Główny Projektant:</span>
+              <span class="font-bold text-black">mgr inż. Adam Kubat</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Status:</span>
+              <span class="font-bold text-accent">Kompletny masterplan</span>
+            </div>
+          </div>
+
+          <a href="./kontakt.html" class="h-[46px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all mt-4 shadow-md">
+            <i data-lucide="calculator" class="w-4 h-4"></i> Bezpłatna analiza Twojej działki &rarr;
+          </a>
+          <p class="font-mono text-[10px] text-gray-500 text-center mt-2">
+            Odpowiedź głównego projektanta w 24h · Bez zobowiązań
+          </p>
+        </div>
+
+        <!-- RIGHT COL: DETAILED DESCRIPTION & HIGHLIGHTED SERVICES -->
+        <div class="lg:col-span-8 space-y-8 font-sans text-gray-700 leading-relaxed text-sm md:text-base">
+          <div>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-black mb-4">
+              Architektura, która łączy rentowność deweloperską z najwyższym komfortem życia
+            </h2>
+            <div class="p-6 bg-studio-surface border-l-4 border-accent mb-6">
+              <p class="font-sans text-gray-900 font-medium leading-relaxed text-base">
+                Głównym celem projektu było wygenerowanie maksymalnego wskaźnika powierzchni użytkowej (PUM) przy bezkompromisowej intymności akustycznej i wizualnej dla każdego z lokali. Każdy segment funkcjonuje jak niezależny dom jednorodzinny — z prywatnym ogrodem, dedykowanymi miejscami postojowymi i odrębną strefą wejściową.
+              </p>
+            </div>
+            <p>
+              Dzięki przemyślanej orientacji względem stron świata, przesunięciom brył i podwójnym ścianom dylatacyjnym zminimalizowano straty energii, a strefy dzienne otrzymały optymalne doświetlenie południowo-zachodnie. To projekt przygotowany pod kątem racjonalnych kosztów wykonawczych i szybkiej sprzedaży inwestycji na wczesnym etapie realizacji.
+            </p>
+          </div>
+
+          <!-- KEY HIGHLIGHTED SERVICES -->
+          <div class="pt-4">
+            <h3 class="font-heading font-bold text-xl md:text-2xl text-black mb-6 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+              <span>Kluczowe usługi w ramach realizacji:</span>
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Service 1 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">01 / ANALIZA TERENU</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Analiza chłonności i potencjału działki</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Weryfikujemy zapisy MPZP/WZ, eliminujemy ryzyka prawne i optymalizujemy bilans miejsc postojowych, wyciągając 100% bezpiecznego PUM z każdego ara gruntu.
+                </p>
+              </div>
+
+              <!-- Service 2 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">02 / MASTERPLAN</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Koncepcja urbanistyczna i infrastruktura</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Ergonomiczny układ dróg wewnętrznych, przejść pieszych i sieci mediów — bez ślepych zaułków i bez marnowania cennej powierzchni biologicznie czynnej.
+                </p>
+              </div>
+
+              <!-- Service 3 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">03 / BRYŁA I PROJEKT</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Architektura o wysokiej płynności rynkowej</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Standard WT2021, integracja z pompami ciepła i fotowoltaiką. Duże przeszklenia i przemyślane układy wnętrz tworzą produkt pożądany przez wymagających nabywców.
+                </p>
+              </div>
+
+              <!-- Service 4 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">04 / DOKUMENTACJA</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Bezkolizyjny Projekt Techniczny (PT)</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Spójna, skoordynowana dokumentacja konstrukcyjna i wykonawcza instalacji. Wykonawca na budowie otrzymuje precyzyjne wytyczne, co wyklucza kosztowne poprawki.
+                </p>
+              </div>
+
+              <!-- Service 5 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">05 / KOORDYNACJA</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Jedno źródło inżynierskiej odpowiedzialności</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Jako główny projektant koordynuję wszystkie branże (konstrukcję, drogi, sieci sanitarne, energetykę). Nie tracisz czasu na spory między projektantami.
+                </p>
+              </div>
+
+              <!-- Service 6 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">06 / POZWOLENIE NA BUDOWĘ</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Gwarancja sprawnego przejścia przez urzędy</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Przejmujemy pełną reprezentację formalną: od uzgodnień zjazdów i gestorów sieci po prawomocną decyzję o pozwoleniu na budowę (PnB). Zero przestojów.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GALLERY & RELATED FILES GRID -->
+      <div class="mb-16 pt-12 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+              DOKUMENTACJA WIZUALNA &amp; PLIKI POWIĄZANE
+            </span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl">
+              Galeria masterplanu, wizualizacje i ujęcia perspektywiczne
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-gray-500">
+            Kliknij dowolne ujęcie, aby otworzyć galerię w pełnym formacie
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 0: Front Direct -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(0)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/01-elewacja-frontowa-na-wprost.jpg" alt="Osiedle budynków dwulokalowych — elewacja frontowa na wprost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-accent text-white font-mono text-[10px] font-bold px-2.5 py-1">Elewacja Frontowa</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Elewacja Frontowa na Wprost</div>
+              <p class="text-gray-500 text-[11px] font-sans">Osiowe ujęcie ściany szczytowej z portalową białą ramą i panoramicznym przeszkleniem.</p>
+            </div>
+          </div>
+
+          <!-- Card 1: Three Quarter Garden -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(1)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg" alt="Osiedle budynków dwulokalowych — ujęcie trzy czwarte od ogrodu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Widok 3/4 Ogród</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa Ogrodowa i Taras</div>
+              <p class="text-gray-500 text-[11px] font-sans">Szerokokątny widok na taras wypoczynkowy, strefę relaksu i fasadę boczną.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Side Garden -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(2)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/03-elewacja-boczna-ogrodowa.jpg" alt="Osiedle budynków dwulokalowych — elewacja boczna ogrodowa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Elewacja Boczna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Elewacja Boczna — Strefa Dzienna</div>
+              <p class="text-gray-500 text-[11px] font-sans">Rytmiczny układ przesuwnych przeszkleń i pionowego szalunku drewnianego.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Entrance & Driveway -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(3)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/04-strefa-wejsciowa-i-podjazd.jpg" alt="Osiedle budynków dwulokalowych — strefa wejściowa i podjazd" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Strefa Wejściowa</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Strefa Wejściowa i Podjazd</div>
+              <p class="text-gray-500 text-[11px] font-sans">Nowoczesne zadaszenie wejścia, podjazd z kostki i murki z oświetleniem LED.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Rear Facade -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(4)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/05-elewacja-tylna-ogrod-prywatny.jpg" alt="Osiedle budynków dwulokalowych — elewacja tylna i ogród" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Elewacja Tylna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Elewacja Tylna i Ogród Prywatny</div>
+              <p class="text-gray-500 text-[11px] font-sans">Prywatna strefa rekreacyjna mieszkańców z wyjściem na trawnik.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Corner Master -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(5)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/06-perspektywa-narozna-master.jpg" alt="Osiedle budynków dwulokalowych — perspektywa narożna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Perspektywa Narożna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa Narożna z Otoczeniem</div>
+              <p class="text-gray-500 text-[11px] font-sans">Całościowa kompozycja bryłowa w relacji z zagospodarowaniem terenu i drogą.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Gable Detail -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(6)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/07-bryla-szczytu-i-przeszklenia.jpg" alt="Osiedle budynków dwulokalowych — detal bryły szczytu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Architektoniczny</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Detal Bryły Szczytu i Ramy</div>
+              <p class="text-gray-500 text-[11px] font-sans">Zbliżenie na geometryczną białą ramę, trójkątne przeszklenie i komin na kalenicy.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Terrace Lounge Detail -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(7)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/08-strefa-wypoczynkowa-taras.jpg" alt="Osiedle budynków dwulokalowych — detal strefy wypoczynkowej na tarasie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Strefa Relaksu</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Strefa Wypoczynkowa na Tarasie</div>
+              <p class="text-gray-500 text-[11px] font-sans">Detal drewnianego decku, mebli ogrodowych i podświetlanych donic z trawami.</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Entrance Detail -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(8)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/09-detal-wejscia-i-podjazdu.jpg" alt="Osiedle budynków dwulokalowych — detal wejścia i oświetlenia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Wejścia</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Detal Portalu Drzwiowego i Nawierzchni</div>
+              <p class="text-gray-500 text-[11px] font-sans">Nowoczesne drzwi zewnętrzne, szklane zadaszenie oraz słupki oświetleniowe.</p>
+            </div>
+          </div>
+
+          <!-- Card 9: Sliding Terrace Door -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(9)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/10-detal-drzwi-przesuwne-taras.jpg" alt="Osiedle budynków dwulokalowych — przesuwne drzwi tarasowe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-accent text-white font-mono text-[10px] font-bold px-2.5 py-1">Detal Drzwi / Taras</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Przesuwne Drzwi Tarasowe i Wnętrze</div>
+              <p class="text-gray-500 text-[11px] font-sans">Szerokie przeszklenie otwierające część dzienną na taras, ukazujące wyspę kuchenną i salon.</p>
+            </div>
+          </div>
+
+          <!-- Card 10: Panoramic Gable Window -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(10)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/11-detal-okna-panoramiczne-salon.jpg" alt="Osiedle budynków dwulokalowych — panoramiczne okno szczytowe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Okna / Szczyt</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Panoramiczne Okno Szczytowe</div>
+              <p class="text-gray-500 text-[11px] font-sans">Zbliżenie na geometryczne przeszklenie w skosie dachu, widok na schody i oświetlony salon.</p>
+            </div>
+          </div>
+
+          <!-- Card 11: Entrance Door Portal -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(11)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/osiedle-budynkow-dwulokalowych/12-detal-drzwi-wejsciowe-portal.jpg" alt="Osiedle budynków dwulokalowych — portal drzwi frontowych" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Drzwi Wejściowych</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Portal Drzwi Frontowych z Zadaszeniem</div>
+              <p class="text-gray-500 text-[11px] font-sans">Nowoczesne skrzydło drzwiowe z długim pochwytem, szklane naświetle i kinkiety elewacyjne.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DUAL ACTION CLOSING BANNER -->
+      <div class="bg-black text-white p-10 md:p-14 text-center border border-zinc-800 shadow-2xl mt-14 mb-4">
+        <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-widest block mb-2">// INWESTUJ BEZPIECZNIE</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl mb-4 text-white">
+          Planujesz budowę osiedla? Sprawdź chłonność terenu, zanim kupisz grunt lub zlecisz projekt
+        </h2>
+        <p class="font-sans text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Porozmawiaj bezpośrednio z inżynierem z uprawnieniami bez ograniczeń. Otrzymasz rzetelną ocenę możliwości prawnych działki, estymację PUM oraz precyzyjny harmonogram formalności.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:+48884757815" class="h-[50px] px-8 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all shadow-lg w-full sm:w-auto">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Zadzwoń teraz: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="h-[50px] px-8 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all w-full sm:w-auto">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Zapytaj o analizę działki i wycenę &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Zamknij podgląd">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)" aria-label="Poprzednie zdjęcie">&#10094;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Podgląd powiększony">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-sub" id="lightboxSub"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1, event)" aria-label="Następne zdjęcie">&#10095;</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <a href="./index.html" class="inline-block mb-4" aria-label="GOPROJECT Pracownia Projektowa">
+            <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="h-6 sm:h-7 w-auto object-contain object-left" width="290" height="24" />
+          </a>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-dom-jednorodzinny-chojnice.html" class="hover:text-accent transition-colors">Dom jednorodzinny w Chojnicach</a></li>
+            <li><a href="./projekt-nowoczesna-stodola.html" class="hover:text-accent transition-colors">Nowoczesna stodoła</a></li>
+            <li><a href="./projekt-dom-parterowy-z-garazem.html" class="hover:text-accent transition-colors">Dom parterowy z garażem</a></li>
+            <li><a href="./projekt-domy-szeregowe.html" class="hover:text-accent transition-colors">Domy szeregowe — osiedle</a></li>
+            <li><a href="./projekt-domy-szeregowe-szeregowiec.html" class="hover:text-accent transition-colors">Domy szeregowe — Szeregowiec</a></li>
+            <li><a href="./projekt-osiedle-budynkow-dwulokalowych.html" class="text-accent font-bold">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-budynek-mieszkalny-wielorodzinny.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:biuro@goproject.com.pl" class="hover:text-white transition-colors">biuro@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojnice (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { 
+      if (window.lucide) lucide.createIcons(); 
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      // Highlight the current page link in the mobile menu
+      if (mobileMenu) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        mobileMenu.querySelectorAll('a[href]').forEach(link => {
+          const hrefFile = link.getAttribute('href').split('/').pop();
+          if (hrefFile === currentFile) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.remove('text-zinc-200');
+            link.classList.add('text-accent', 'font-bold');
+          }
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    const imagesData = [
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/01-elewacja-frontowa-na-wprost.jpg",
+        title: "Elewacja Frontowa na Wprost",
+        desc: "Osiowe ujęcie ściany szczytowej z portalową białą ramą i panoramicznym przeszkleniem."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg",
+        title: "Perspektywa Ogrodowa i Taras",
+        desc: "Szerokokątny widok na taras wypoczynkowy, strefę relaksu i fasadę boczną."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/03-elewacja-boczna-ogrodowa.jpg",
+        title: "Elewacja Boczna — Strefa Dzienna",
+        desc: "Rytmiczny układ przesuwnych przeszkleń i pionowego szalunku drewnianego."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/04-strefa-wejsciowa-i-podjazd.jpg",
+        title: "Strefa Wejściowa i Podjazd",
+        desc: "Nowoczesne zadaszenie wejścia, podjazd z kostki i murki z oświetleniem LED."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/05-elewacja-tylna-ogrod-prywatny.jpg",
+        title: "Elewacja Tylna i Ogród Prywatny",
+        desc: "Prywatna strefa rekreacyjna mieszkańców z wyjściem na trawnik."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/06-perspektywa-narozna-master.jpg",
+        title: "Perspektywa Narożna z Otoczeniem",
+        desc: "Całościowa kompozycja bryłowa w relacji z zagospodarowaniem terenu i drogą."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/07-bryla-szczytu-i-przeszklenia.jpg",
+        title: "Detal Bryły Szczytu i Ramy",
+        desc: "Zbliżenie na geometryczną białą ramę, trójkątne przeszklenie i komin na kalenicy."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/08-strefa-wypoczynkowa-taras.jpg",
+        title: "Strefa Wypoczynkowa na Tarasie",
+        desc: "Detal drewnianego decku, mebli ogrodowych i podświetlanych donic z trawami."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/09-detal-wejscia-i-podjazdu.jpg",
+        title: "Detal Portalu Drzwiowego i Nawierzchni",
+        desc: "Nowoczesne drzwi zewnętrzne, szklane zadaszenie oraz słupki oświetleniowe."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/10-detal-drzwi-przesuwne-taras.jpg",
+        title: "Przesuwne Drzwi Tarasowe i Wnętrze",
+        desc: "Szerokie przeszklenie otwierające część dzienną na taras, ukazujące wyspę kuchenną i salon."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/11-detal-okna-panoramiczne-salon.jpg",
+        title: "Panoramiczne Okno Szczytowe",
+        desc: "Zbliżenie na geometryczne przeszklenie w skosie dachu, widok na schody i oświetlony salon."
+      },
+      {
+        src: "./img/projects/osiedle-budynkow-dwulokalowych/12-detal-drzwi-wejsciowe-portal.jpg",
+        title: "Portal Drzwi Frontowych z Zadaszeniem",
+        desc: "Nowoczesne skrzydło drzwiowe z długim pochwytem, szklane naświetle i kinkiety elewacyjne."
+      }
+    ];
+
+    let currentIndex = 0;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxSub = document.getElementById('lightboxSub');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function changeImage(direction, e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + direction + imagesData.length) % imagesData.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const item = imagesData[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxCaption.textContent = item.title;
+      lightboxSub.textContent = item.desc;
+      if (lightboxCounter) {
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + imagesData.length;
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    });
+  </script>
+</body>
+</html>

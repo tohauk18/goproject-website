@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <title>Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D — GOPROJECT</title>
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="description" content="Autorski projekt energooszczędnego domu w stylu nowoczesnej stodoły (modern barn). Panoramiczne przeszklenia ściany szczytowej, naturalne drewno i 12 fotorealistycznych wizualizacji 3D." />
+  <link rel="canonical" href="https://goproject.com.pl/projekt-nowoczesna-stodola.html" />
+
+  <!-- Preload custom fonts to help avoid FOUT -->
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin-ext.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-500-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin-ext.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-500-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin-ext.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin.woff2" as="font" type="woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin-ext.woff2" as="font" type="woff2" crossorigin>
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.min.css" />
+  
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D — GOPROJECT" />
+  <meta property="og:description" content="Autorski projekt energooszczędnego domu w stylu nowoczesnej stodoły. Panoramiczne przeszklenia ściany szczytowej, naturalne drewno i 12 fotorealistycznych wizualizacji 3D." />
+  <meta property="og:image" content="https://goproject.com.pl/img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg" />
+  <meta property="og:url" content="https://goproject.com.pl/projekt-nowoczesna-stodola.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D — GOPROJECT" />
+  <meta name="twitter:description" content="Autorski projekt energooszczędnego domu w stylu nowoczesnej stodoły. Panoramiczne przeszklenia ściany szczytowej, naturalne drewno i 12 fotorealistycznych wizualizacji 3D." />
+  <meta name="twitter:image" content="https://goproject.com.pl/img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg" />
+
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SingleFamilyResidence",
+        "@id": "https://goproject.com.pl/projekt-nowoczesna-stodola.html#residence",
+        "name": "Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D",
+        "description": "Projekt koncepcyjny i architektoniczny nowoczesnego domu jednorodzinnego w stylu stodoły (modern barn) o powierzchni użytkowej 148,5 m² z panoramicznymi przeszkleniami.",
+        "image": "https://goproject.com.pl/img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg",
+        "numberOfRooms": 5,
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 148.5,
+          "unitCode": "MTK"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "GOPROJECT Pracownia Projektowa",
+          "url": "https://goproject.com.pl"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Strona główna",
+            "item": "https://goproject.com.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://goproject.com.pl/projekty.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Nowoczesna stodoła",
+            "item": "https://goproject.com.pl/projekt-nowoczesna-stodola.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Header Logo Switching */
+    #main-header .logo-light {
+      display: none;
+    }
+    #main-header .logo-dark {
+      display: block;
+    }
+    #main-header.mobile-header-open .logo-light {
+      display: block !important;
+    }
+    #main-header.mobile-header-open .logo-dark {
+      display: none !important;
+    }
+    #header-logo img, footer img {
+      image-rendering: auto !important;
+      width: auto !important;
+      object-fit: contain !important;
+      object-position: left center !important;
+    }
+
+    img { image-rendering: auto; }
+
+    /* Bulletproof Oferta Dropdown */
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      padding: 24px 16px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 1.8rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-close:hover {
+      background: #FF3B00;
+      transform: scale(1.05);
+    }
+    .lightbox-content {
+      max-width: 92vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .lightbox-sub {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 4px;
+      text-align: center;
+      max-width: 720px;
+      line-height: 1.5;
+    }
+    .lightbox-counter {
+      color: #71717a;
+      font-family: monospace;
+      font-size: 0.75rem;
+      margin-top: 6px;
+      text-align: center;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 2rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-nav:hover {
+      background: #FF3B00;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox-prev {
+      left: 24px;
+    }
+    .lightbox-next {
+      right: 24px;
+    }
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+      }
+      .lightbox-prev { left: 8px; }
+      .lightbox-next { right: 8px; }
+      .lightbox-close { top: 12px; right: 12px; width: 40px; height: 40px; }
+    }
+  </style>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <!-- LOGO -->
+      <a id="header-logo" href="./index.html" class="flex items-center shrink-0" aria-label="GOPROJECT Pracownia Projektowa">
+        <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-light h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+        <img src="./img/goprojekt_logo_dark.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-dark h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-6 xl:gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180 shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3 shrink-0">
+        <a id="header-phone" href="tel:+48884757815"
+          class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center"
+          aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 shrink-0"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER OVERLAY -->
+  <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+    <div class="p-6 space-y-6 font-mono text-sm">
+      <div class="border-b border-zinc-800/80 pb-4">
+        <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+          <span>// OFERTA USŁUG</span>
+          <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+        </button>
+
+        <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+          <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+          <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+          <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+          <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+        </div>
+      </div>
+
+      <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+        <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>O pracowni</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+        </a>
+        <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>Portfolio Projektów</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+        </a>
+        <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>Kontakt</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+        </a>
+      </div>
+
+      <div class="pt-4 space-y-3">
+        <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+          <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+          <span>Zadzwoń: +48 884 757 815</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+      <span>GOPROJECT · Gdańsk / Chojnice</span>
+      <span class="text-accent">mgr inż. Adam Kubat</span>
+    </div>
+  </div>
+
+  <div class="pt-28 md:pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- BREADCRUMB & BACK LINK -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-4 font-mono text-xs">
+        <a href="./projekty.html" class="inline-flex items-center gap-2 text-accent font-bold hover:underline">
+          &larr; Powrót do Portfolio
+        </a>
+        <div class="flex items-center gap-2 text-gray-500 uppercase">
+          <span class="bg-gray-100 px-2 py-0.5 font-semibold text-black">Kategoria: Dom jednorodzinny</span>
+          <span>·</span>
+          <span>Styl: Nowoczesna stodoła (Modern Barn)</span>
+        </div>
+      </div>
+
+      <!-- MAIN TITLE BLOCK -->
+      <div class="max-w-4xl mb-12">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/30 px-3 py-1">
+            Nowy Projekt: Nowoczesna Stodoła
+          </span>
+          <span class="font-mono text-xs font-semibold text-gray-700 bg-gray-100 border border-gray-200 px-3 py-1">
+            Architektura Modern Barn &middot; 12 Wizualizacji 3D
+          </span>
+        </div>
+        <h1 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl mb-4 text-black">
+          Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D
+        </h1>
+        <p class="font-sans text-gray-600 text-lg md:text-xl font-medium leading-relaxed mb-4">
+          Autorski projekt parterowego domu jednorodzinnego ze stromym dachem dwuspadowym, pełnym przeszkleniem ściany szczytowej oraz harmonijnym połączeniem bieli, grafitu i pionowych lameli drewnianych.
+        </p>
+      </div>
+
+      <!-- MAIN HERO IMAGE (CLICKABLE FOR LIGHTBOX) -->
+      <div class="mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group h-[400px] md:h-[620px] cursor-pointer" onclick="openLightbox(0)">
+        <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg" alt="Nowoczesna stodoła — panoramiczna ściana szczytowa, elewacja frontowa 3/4 z drewnem modrzewiowym" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" fetchpriority="high" />
+        <div class="absolute bottom-6 left-6 bg-black/80 text-white font-mono text-xs px-4 py-2 flex items-center gap-2">
+          <span class="text-accent font-bold">Wizualizacja Główna</span>
+          <span>·</span>
+          <span>Trzyczwarte ujęcie frontowe ze szklaną ścianą szczytową i tarasem</span>
+        </div>
+        <div class="absolute bottom-6 right-6 bg-black/80 text-white font-mono text-xs px-3 py-1.5 flex items-center gap-2 pointer-events-none">
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-accent"></i>
+          <span>Kliknij, aby powiększyć</span>
+        </div>
+      </div>
+
+      <!-- SPECS GRID & DETAILS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+        
+        <!-- LEFT COL: TECHNICAL SPECS TABLE -->
+        <div class="lg:col-span-4 bg-studio-surface border border-gray-200 p-8 space-y-6">
+          <h2 class="font-heading font-bold text-xl border-b border-gray-200 pb-3 flex items-center justify-between">
+            <span>Parametry Budynku</span>
+            <span class="text-[10px] font-mono font-bold text-accent uppercase tracking-wider">Tabela Danych</span>
+          </h2>
+          
+          <div class="space-y-3.5 font-mono text-xs">
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Kategoria:</span>
+              <span class="font-bold text-black">Dom jednorodzinny</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Styl Architektoniczny:</span>
+              <span class="font-bold text-black text-right">Modern Barn (Stodoła)</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Pow. Użytkowa (PUM):</span>
+              <span class="font-bold text-accent text-right">148,50 m²</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Pow. Zabudowy:</span>
+              <span class="font-bold text-black text-right">182,30 m²</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Kondygnacje:</span>
+              <span class="font-bold text-black text-right">Parter + wysoki salon (pustka)</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Kąt Nachylenia Dachu:</span>
+              <span class="font-bold text-black text-right">40° (dwuspadowy, bezokapowy)</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Pokrycie Dachowe:</span>
+              <span class="font-bold text-black text-right">Blacha na rąbek (antracyt)</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Elewacja:</span>
+              <span class="font-bold text-black text-right">Tynk biały + drewniane lamele</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Przeszklenia:</span>
+              <span class="font-bold text-black text-right">Fasadowa ściana szczytowa 3-szybowa</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Standard Energetyczny:</span>
+              <span class="font-bold text-accent">WT2021 / Pompa ciepła + Rekup.</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Autor Opracowania:</span>
+              <span class="font-bold text-black">mgr inż. Adam Kubat</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Standard Wizualizacji:</span>
+              <span class="font-bold text-accent">Unreal Engine 5 (2K / 12 ujęć)</span>
+            </div>
+          </div>
+
+          <a href="./kontakt.html" class="h-[44px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all mt-4">
+            <i data-lucide="phone" class="w-4 h-4"></i> Skonsultuj projekt stodoły
+          </a>
+        </div>
+
+        <!-- RIGHT COL: DETAILED DESCRIPTION & HIGHLIGHTED SERVICES -->
+        <div class="lg:col-span-8 space-y-8 font-sans text-gray-700 leading-relaxed text-sm md:text-base">
+          <div>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-black mb-4">
+              Nowoczesna stodoła — minimalizm, przestrzeń i bezpośredni kontakt z naturą
+            </h2>
+            <p class="mb-4">
+              Projekt nowoczesnej stodoły (modern barn) to odpowiedź na rosnące zapotrzebowanie inwestorów na ponadczasową architekturę, która łączy tradycyjną archetypiczną bryłę z bezkompromisowo współczesnym detalem. Budynek zaprojektowano z myślą o malowniczej działce w otoczeniu lasu sosnowego, z maksymalnym otwarciem strefy dziennej na otaczający krajobraz.
+            </p>
+            <p class="mb-4">
+              Sercem domu jest imponujący salon o podwójnej wysokości z otwartą więźbą dachową i w pełni przeszkloną ścianą szczytową. Trójkątne doświetlenie górne w połączeniu z wielkoformatowymi przesuwnymi drzwiami tarasowymi HS wpuszcza do wnętrza naturalne światło słoneczne przez cały dzień, zacierając granicę między wnętrzem a ogrodem.
+            </p>
+            <p class="mb-4">
+              Elewacja budynku to starannie przemyślana kompozycja materiałów: gładki biały tynk mineralny kontrastuje z ciemnymi, pionowymi lamelami z drewna naturalnego oraz grafitową blachą dachową łączoną na rąbek stojący w systemie bezokapowym. Wejście do domu zaakcentowano płaskim zadaszeniem ze zintegrowanym oświetleniem liniowym LED.
+            </p>
+            <p>
+              Projekt spełnia rygorystyczne wytyczne warunków technicznych WT 2021 dzięki zastosowaniu powietrznej pompy ciepła, wentylacji mechanicznej z odzyskiem ciepła (rekuperacja) oraz zoptymalizowanej orientacji pasywnej.
+            </p>
+          </div>
+
+          <!-- HIGHLIGHTED SERVICES IN THIS PROJECT -->
+          <div class="pt-6 border-t border-gray-200">
+            <h3 class="font-heading font-bold text-lg text-black mb-4 uppercase tracking-wider font-mono text-xs">
+              // Kluczowe założenia projektowe
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">01 / KONCEPCJA & BRYŁA</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Archetyp w nowoczesnym wydaniu</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Czysta, bezokapowa bryła o kącie nachylenia dachu 40° z antracytową blachą na rąbek i minimalistycznym detalem ukrytych rynien.
+                </p>
+              </div>
+
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">02 / PRZESZKLENIA & ŚWIATŁO</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Szklana ściana szczytowa</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Pełnowymiarowe przeszklenie fasadowe z drzwiami podnoszono-przesuwnymi HS otwierającymi salon na betonowy taras i sosnowy las.
+                </p>
+              </div>
+
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">03 / ENERGETYKA WT2021</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Budynek niskoemisyjny</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Ciepły montaż stolarki 3-szybowej, ogrzewanie płaszczyznowe zasilane inwerterową pompą ciepła oraz rekuperacja ze sprawnością powyżej 90%.
+                </p>
+              </div>
+
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">04 / MATERIAŁY PREMIUM</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Detal architektoniczny</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Trwałe pionowe listwy elewacyjne z drewna modrzewiowego, tynk silikonowy samoczyszczący oraz podjazdy z kruszywa łamanego i płyt betonowych.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GALLERY & RELATED FILES GRID -->
+      <div class="mb-16 pt-12 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+              DOKUMENTACJA WIZUALNA &amp; UJĘCIA ARCHITEKTONICZNE
+            </span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl">
+              Galeria projektu — 12 perspektyw nowoczesnej stodoły
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-gray-500">
+            Kliknij dowolne ujęcie, aby otworzyć galerię w pełnym formacie (2K)
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Render 1 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(0)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg" alt="Nowoczesna stodoła — perspektywa frontowa 3/4 ze szklaną ścianą szczytową i drewnem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-accent text-white font-mono text-[10px] font-bold px-2.5 py-1">Wizualizacja Główna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">01 / Front ¾ — Ściana Szczytowa</div>
+              <p class="text-gray-500 text-[11px] font-sans">Szerokokątne ujęcie elewacji szczytowej z panoramicznym przeszkleniem, tarasem wypoczynkowym i zadbanym trawnikiem.</p>
+            </div>
+          </div>
+
+          <!-- Render 2 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(1)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-prostopadla.jpg" alt="Nowoczesna stodoła — symetryczna elewacja frontowa na wprost z pełnym przeszkleniem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Front Sferyczny</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">02 / Widok na Wprost (Osiowy)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Symetryczny kadr ukazujący geometrię dachu dwuspadowego, trójkątne przeszklenie szczytu oraz strefę wypoczynkową.</p>
+            </div>
+          </div>
+
+          <!-- Render 3 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(2)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-boczna-ogrodowa.jpg" alt="Nowoczesna stodoła — elewacja boczna ze skrzydłem wejściowym i dachem 40 stopni" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Elewacja Boczna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">03 / Elewacja Boczna (Pełna Długość)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Pełne ujęcie boczne przedstawiające zadaszone skrzydło wejściowe, rytm pionowych lameli i połać dachu na rąbek.</p>
+            </div>
+          </div>
+
+          <!-- Render 4 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(3)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-ogrodowa-taras.jpg" alt="Nowoczesna stodoła — perspektywa ogrodowa 3/4 z opaską żwirową i trawami ozdobnymi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Tył ¾</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">04 / Perspektywa Odrodowa ¾</div>
+              <p class="text-gray-500 text-[11px] font-sans">Ujęcie z przeciwległego narożnika ukazujące tylną ścianę szczytową, opaskę żwirową i kompozycję z zielenią leśną.</p>
+            </div>
+          </div>
+
+          <!-- Render 5 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(4)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-tylna-przeszklenia.jpg" alt="Nowoczesna stodoła — elewacja tylna na wprost z minimalistycznymi oknami sypialni" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Tył na Wprost</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">05 / Elewacja Tylna (Prostopadle)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Centrowany widok na tylny szczyt budynku, ukazujący dyskretne przeszklenia sypialni oraz geometrię komina systemowego.</p>
+            </div>
+          </div>
+
+          <!-- Render 6 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(5)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-widok-z-lotu-ptaka-perspektywa.jpg" alt="Nowoczesna stodoła — widok z lotu ptaka 45 stopni na geometrię dachu na rąbek i taras" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Dron 45°</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">06 / Ujęcie z Lotu Ptaka (45°)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Perspektywa z drona ukazująca układ połaci dachowych, układ tarasu z meblami oraz wkomponowanie domu w leśną działkę.</p>
+            </div>
+          </div>
+
+          <!-- Render 7 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(6)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-zagospodarowanie-dzialki-dron.jpg" alt="Nowoczesna stodoła — rzut pionowy 90 stopni na układ działki wkomponowany w sosnowy las" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Top-down 90°</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">07 / Rzut z Góry (Ortogonalny)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Pionowe ujęcie top-down przedstawiające kalenicę dachu, geometrię zadaszenia, nawierzchnie utwardzone oraz strefy zieleni.</p>
+            </div>
+          </div>
+
+          <!-- Render 8 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(7)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-niski-kat-sciana-szczytowa.jpg" alt="Nowoczesna stodoła — żabia perspektywa z poziomu trawnika eksponująca wysokość kalenicy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Żabia Perspektywa</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">08 / Niski Kąt (Monumentalizm Bryły)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Dramatyczna perspektywa z poziomu trawy akcentująca wysokość kalenicy, ostry kąt dachu i strzelistość szklanej ściany.</p>
+            </div>
+          </div>
+
+          <!-- Render 9 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(8)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-detal-naroznika-i-rynny-ukrytej.jpg" alt="Nowoczesna stodoła — zbliżenie na pionowe lamele z naturalnego drewna i obróbki blacharskie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Materiałowy</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">09 / Detal Architektoniczny Narożnika</div>
+              <p class="text-gray-500 text-[11px] font-sans">Materiały z bliska: styk pionowych lameli drewnianych z gładkim białym tynkiem, aluminiowe ramy okienne i obróbki blacharskie.</p>
+            </div>
+          </div>
+
+          <!-- Render 10 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(9)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-strefa-tarasowa-i-ogrod.jpg" alt="Nowoczesna stodoła — strefa wypoczynkowa na tarasie z widokiem na otaczający starodrzew" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Strefa Tarasowa</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">10 / Relaks na Tarasie</div>
+              <p class="text-gray-500 text-[11px] font-sans">Ujęcie z poziomu betonowego tarasu: narożny zestaw wypoczynkowy, stół jadalny, widok na sosny w złotym świetle popołudniowym.</p>
+            </div>
+          </div>
+
+          <!-- Render 11 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(10)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-iluminacja-nocna-zmierzch.jpg" alt="Nowoczesna stodoła — iluminacja nocna o zmierzchu z ciepłym światłem rozświetlającym las" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Sceneria Nocna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">11 / Iluminacja Nocna (Blue Hour)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Klimatyczny kadr o zmierzchu: ciepłe światło wnętrza sączące się przez wielkie tafle szkła, oświetlenie elewacyjne i ogrodowe.</p>
+            </div>
+          </div>
+
+          <!-- Render 12 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(11)">
+            <div class="h-64 overflow-hidden relative">
+              <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-sceneria-zimowa-snieg.jpg" alt="Nowoczesna stodoła — malownicza sceneria zimowa w śniegu z oświetlonym wnętrzem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Klimat Zimowy</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">12 / Malownicza Sceneria Zimowa</div>
+              <p class="text-gray-500 text-[11px] font-sans">Nowoczesna stodoła w zimowym krajobrazie: ośnieżone sosny, czapa śnieżna na krawędziach dachu i ciepłe światło bijące ze środka.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PROJECT NAVIGATION LINKS -->
+      <div class="mb-16 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+        <a href="./projekt-domy-szeregowe-szeregowiec.html" class="flex items-center gap-2 text-black hover:text-accent font-bold transition-colors">
+          <span>&larr; Poprzedni projekt: Domy szeregowe Szeregowiec</span>
+        </a>
+        <a href="./projekt-dom-parterowy-z-garazem.html" class="flex items-center gap-2 text-black hover:text-accent font-bold transition-colors">
+          <span>Następny projekt: Dom parterowy z garażem &rarr;</span>
+        </a>
+      </div>
+
+      <!-- DUAL ACTION CLOSING BANNER -->
+      <div class="bg-black text-white p-10 md:p-14 text-center border border-zinc-800 shadow-2xl mt-12 mb-4">
+        <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-widest block mb-2">// ZAPROJEKTUJ SWOJĄ NOWOCZESNĄ STODOŁĘ</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl mb-4 text-white">
+          Marzysz o nowoczesnym domu ze szklanym szczytem?
+        </h2>
+        <p class="font-sans text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Skonsultuj założenia architektoniczne, ukształtowanie działki i zapisy planu miejscowego (MPZP / WZ) bezpośrednio z głównym projektantem GOPROJECT.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:+48884757815" class="h-[50px] px-8 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all shadow-lg w-full sm:w-auto">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="h-[50px] px-8 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all w-full sm:w-auto">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Skonsultuj projekt stodoły &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL CONTAINER -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Zamknij galerię">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)" aria-label="Poprzednie zdjęcie">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1, event)" aria-label="Następne zdjęcie">&#10095;</button>
+    
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Nowoczesna stodoła powiększenie" onclick="event.stopPropagation()" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-sub" id="lightboxSub"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <a href="./index.html" class="inline-block mb-4" aria-label="GOPROJECT Pracownia Projektowa">
+            <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="h-6 sm:h-7 w-auto object-contain object-left" width="290" height="24" />
+          </a>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-dom-jednorodzinny-chojnice.html" class="hover:text-accent transition-colors">Dom jednorodzinny w Chojnicach</a></li>
+            <li><a href="./projekt-nowoczesna-stodola.html" class="hover:text-accent transition-colors text-white font-bold">Nowoczesna stodoła</a></li>
+            <li><a href="./projekt-dom-parterowy-z-garazem.html" class="hover:text-accent transition-colors">Dom parterowy z garażem</a></li>
+            <li><a href="./projekt-domy-szeregowe.html" class="hover:text-accent transition-colors">Domy szeregowe — osiedle</a></li>
+            <li><a href="./projekt-domy-szeregowe-szeregowiec.html" class="hover:text-accent transition-colors">Domy szeregowe — Szeregowiec</a></li>
+            <li><a href="./projekt-osiedle-budynkow-dwulokalowych.html" class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-budynek-mieszkalny-wielorodzinny.html" class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt Bezpośredni</div>
+          <div class="space-y-3 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white font-mono font-bold text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:kontakt@goproject.com.pl" class="hover:text-white transition-colors">kontakt@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojnice (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { 
+      if (window.lucide) lucide.createIcons(); 
+
+      // Mobile Menu Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+
+    // LIGHTBOX CONTROLLER
+    const imagesData = [
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg",
+        title: "01 / Front ¾ — Ściana Szczytowa z Przeszkleniem",
+        desc: "Trzyczwarte ujęcie frontowe ze szklaną ścianą szczytową, betonowym tarasem wypoczynkowym, trawnikiem i sosnowym lasem."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-prostopadla.jpg",
+        title: "02 / Widok na Wprost (Osiowa Elewacja Frontowa)",
+        desc: "Idealnie wycentrowana symetryczna kompozycja z pełnym przeszkleniem szczytu, odsłaniającym ciepłe oświetlenie wnętrza."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-boczna-ogrodowa.jpg",
+        title: "03 / Elewacja Boczna (Pełna Długość Bryły)",
+        desc: "Prostopadłe ujęcie bocznej elewacji ukazujące skrzydło wejściowe z płaskim zadaszeniem, lamelami oraz kąt dachu 40°."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-ogrodowa-taras.jpg",
+        title: "04 / Perspektywa Ogrodowa ¾",
+        desc: "Widok od strony ogrodu i przeciwległego narożnika: opaska żwirowa z trawami ozdobnymi i połączenie tynku z drewnem."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-tylna-przeszklenia.jpg",
+        title: "05 / Elewacja Tylna (Prostopadle)",
+        desc: "Centrowana elewacja tylnego szczytu z minimalistycznymi oknami sypialni oraz antracytowym kominem systemowym."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-widok-z-lotu-ptaka-perspektywa.jpg",
+        title: "06 / Ujęcie z Lotu Ptaka (Dron 45°)",
+        desc: "Podwyższona perspektywa ukazująca geometrię dachu z blachy na rąbek, układ tarasu ze strefą lounge oraz granice działki."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-zagospodarowanie-dzialki-dron.jpg",
+        title: "07 / Rzut z Góry (Ortogonalny 90°)",
+        desc: "Pionowe spojrzenie z lotu ptaka na dach, zadaszenie wejściowe, taras i aranżację ogrodu wkomponowanego w starodrzew."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-niski-kat-sciana-szczytowa.jpg",
+        title: "08 / Dynamiczny Niski Kąt (Żabia Perspektywa)",
+        desc: "Niskie ujęcie z poziomu trawnika podkreślające smukłość bryły, wysokość szczytu i refleksy na wielkich taflach szkła."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-detal-naroznika-i-rynny-ukrytej.jpg",
+        title: "09 / Zbliżenie na Detal Architektoniczny",
+        desc: "Materiały w zbliżeniu makro: pionowe lamele z naturalnego drewna, biały tynk mineralny, obróbki blacharskie i ramy okienne."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-strefa-tarasowa-i-ogrod.jpg",
+        title: "10 / Strefa Wypoczynkowa na Tarasie",
+        desc: "Klimatyczne ujęcie z poziomu tarasu: meble wypoczynkowe, stół ogrodowy, delikatne trawy w żwirze i widok na korony sosen."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-iluminacja-nocna-zmierzch.jpg",
+        title: "11 / Iluminacja Nocna (Blue Hour / Zmierzch)",
+        desc: "Wieczorne ujęcie ze spektakularną iluminacją: ciepłe światło z wnętrza rozświetla bryłę budynku i otaczający leśny krajobraz."
+      },
+      {
+        src: "./img/projects/nowoczesna-stodola/nowoczesna-stodola-sceneria-zimowa-snieg.jpg",
+        title: "12 / Malownicza Sceneria Zimowa",
+        desc: "Nowoczesna stodoła w zimowej szacie: śnieg na krawędziach dachu i igłach sosen tworzy niesamowity kontrast z ciepłem wnętrza."
+      }
+    ];
+
+    let currentIndex = 0;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxSub = document.getElementById('lightboxSub');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function changeImage(direction, e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + direction + imagesData.length) % imagesData.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const item = imagesData[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxCaption.textContent = item.title;
+      lightboxSub.textContent = item.desc;
+      if (lightboxCounter) {
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + imagesData.length;
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <title>Budynek mieszkalny wielorodzinny — od koncepcji do realizacji — GOPROJECT</title>
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="description" content="Projekt budynku mieszkalnego wielorodzinnego od pierwszej koncepcji po odbiór. Optymalizacja PUM, konstrukcji i koordynacja branżowa na Pomorzu." />
+  <!-- Preload custom fonts to help avoid FOUT (Flash of unstyled text) -->
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.min.css" />
+  
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <style>
+    /* Header Logo Switching */
+    #main-header .logo-light {
+      display: none;
+    }
+    #main-header .logo-dark {
+      display: block;
+    }
+    #main-header.mobile-header-open .logo-light {
+      display: block !important;
+    }
+    #main-header.mobile-header-open .logo-dark {
+      display: none !important;
+    }
+    #header-logo img, footer img {
+      image-rendering: auto !important;
+      width: auto !important;
+      object-fit: contain !important;
+      object-position: left center !important;
+    }
+
+    img {  image-rendering: auto; }
+    /* Bulletproof Oferta Dropdown */
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
+    }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      padding: 24px 16px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 1.8rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-close:hover {
+      background: #FF3B00;
+      transform: scale(1.05);
+    }
+    .lightbox-content {
+      max-width: 92vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .lightbox-sub {
+      color: #a1a1aa;
+      font-size: 0.875rem;
+      margin-top: 4px;
+      text-align: center;
+      max-width: 720px;
+      line-height: 1.5;
+    }
+    .lightbox-counter {
+      color: #71717a;
+      font-family: monospace;
+      font-size: 0.75rem;
+      margin-top: 6px;
+      text-align: center;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1.75rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+    .lightbox-nav:hover {
+      background: #FF3B00;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    @media (max-width: 640px) {
+      .lightbox-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+      }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
+    }
+  </style>
+  <link rel="canonical" href="https://goproject.com.pl/projekt-budynek-mieszkalny-wielorodzinny.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://goproject.com.pl/projekt-budynek-mieszkalny-wielorodzinny.html" />
+  <meta property="og:title" content="Budynek mieszkalny wielorodzinny — od koncepcji do realizacji — GOPROJECT" />
+  <meta property="og:description" content="Nowoczesne, funkcjonalne i ekonomicznie zoptymalizowane mieszkania. Kompleksowy projekt wielolokalowy od koncepcji po nadzór budowlany." />
+  <meta property="og:image" content="https://goproject.com.pl/img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Budynek mieszkalny wielorodzinny — od koncepcji do realizacji — GOPROJECT" />
+  <meta name="twitter:description" content="Nowoczesne, funkcjonalne i ekonomicznie zoptymalizowane mieszkania. Zoptymalizowana konstrukcja, instalacje i bezpieczeństwo pożarowe." />
+
+  <!-- JSON-LD CreativeWork & Breadcrumbs Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Budynek mieszkalny wielorodzinny — od koncepcji do realizacji",
+        "headline": "Nowoczesne, funkcjonalne i ekonomicznie zoptymalizowane mieszkania",
+        "author": {
+          "@type": "Person",
+          "name": "mgr inż. Adam Kubat"
+        },
+        "creator": {
+          "@type": "ProfessionalService",
+          "name": "GOPROJECT Pracownia Projektowa"
+        },
+        "description": "Złożony projekt wielolokalowy zrealizowany od pierwszej koncepcji aż po zakończenie budowy. Projekt odpowiada na potrzeby przyszłych mieszkańców, jednocześnie spełniając wysokie wymagania inwestora pod względem jakości, efektywności i możliwości sprawnej realizacji. Zawiera zoptymalizowane rozwiązania konstrukcyjne i instalacyjne, zgodność z wymaganiami efektywności energetycznej, bezpieczeństwa pożarowego i pełną dostępnością.",
+        "keywords": ["#wielorodzinny", "#mieszkaniowy", "#mieszkania", "#podklucz", "#nowoczesnezamieszkanie"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Główna",
+            "item": "https://goproject.com.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://goproject.com.pl/projekty.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Budynek mieszkalny wielorodzinny — od koncepcji do realizacji",
+            "item": "https://goproject.com.pl/projekt-budynek-mieszkalny-wielorodzinny.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-black font-sans antialiased">
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/80 py-3.5 text-black shadow-sm transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <!-- LOGO -->
+      <a id="header-logo" href="./index.html" class="flex items-center shrink-0" aria-label="GOPROJECT Pracownia Projektowa">
+        <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-light h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+        <img src="./img/goprojekt_logo_dark.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-dark h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180 shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="text-accent">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a id="header-phone" href="tel:+48884757815"
+          class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 bg-gray-50 text-black hover:border-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden p-2 text-black hover:text-accent transition-colors flex items-center justify-center"
+          aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 shrink-0"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+      <div class="p-6 space-y-6 font-mono text-sm">
+        
+        <!-- OFERTA ACCORDION -->
+        <div class="border-b border-zinc-800/80 pb-4">
+          <button id="mobile-oferta-toggle" class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+            <span>// OFERTA USŁUG</span>
+            <i data-lucide="chevron-down" id="mobile-oferta-arrow" class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mobile-oferta-submenu" class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+            <a href="./uslugi-projekty-i-adaptacje.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane & adaptacje</a>
+            <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a>
+            <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań & ekspertyzy</a>
+            <a href="./uslugi-formalnosci-i-energetyka.html" class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ & energia</a>
+          </div>
+        </div>
+
+        <!-- NAV LINKS -->
+        <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+          <a href="./o-nas.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>O pracowni</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./projekty.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Portfolio Projektów</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+          <a href="./kontakt.html" class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+            <span>Kontakt</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+          </a>
+        </div>
+
+        <!-- QUICK CONTACT & CTA -->
+        <div class="pt-4 space-y-3">
+          <a href="tel:+48884757815" class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOOTER METADATA IN MOBILE MENU -->
+      <div class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+        <span>GOPROJECT · Gdańsk / Chojnice</span>
+        <span class="text-accent">mgr inż. Adam Kubat</span>
+      </div>
+    </div>
+
+  <div class="pt-28 md:pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      
+      <!-- BREADCRUMB & BACK LINK -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-4 font-mono text-xs">
+        <a href="./projekty.html" class="inline-flex items-center gap-2 text-accent font-bold hover:underline">
+          &larr; Powrót do Portfolio
+        </a>
+        <div class="flex items-center gap-2 text-gray-500 uppercase">
+          <span class="bg-gray-100 px-2 py-0.5 font-semibold text-black">Kategoria: Mieszkaniowy</span>
+          <span>·</span>
+          <span>Typ: Pełny cykl (od koncepcji do realizacji)</span>
+        </div>
+      </div>
+
+      <!-- MAIN TITLE BLOCK -->
+      <div class="max-w-4xl mb-12">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/30 px-3 py-1">
+            Projekt 3: Budynek mieszkalny wielorodzinny
+          </span>
+          <span class="font-mono text-xs font-semibold text-gray-700 bg-gray-100 border border-gray-200 px-3 py-1">
+            Pełny cykl (od koncepcji do realizacji)
+          </span>
+        </div>
+        <h1 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl mb-4 text-black">
+          Budynek mieszkalny wielorodzinny — od koncepcji do realizacji
+        </h1>
+        <p class="font-sans text-gray-600 text-lg md:text-xl font-medium leading-relaxed mb-4">
+          Nowoczesne, funkcjonalne i ekonomicznie zoptymalizowane mieszkania
+        </p>
+
+      </div>
+
+      <!-- MAIN HERO IMAGE (CLICKABLE FOR LIGHTBOX) -->
+      <div class="mb-16 border border-gray-200 shadow-2xl overflow-hidden relative group h-[400px] md:h-[600px] cursor-pointer" onclick="openLightbox(0)">
+        <img src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg" alt="Budynek mieszkalny wielorodzinny — fotorealistyczna wizualizacja architektoniczna od strony ulicy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" fetchpriority="high" />
+        <div class="absolute bottom-6 left-6 bg-black/80 text-white font-mono text-xs px-4 py-2 flex items-center gap-2">
+          <span class="text-accent font-bold">Wizualizacja 3D</span>
+          <span>·</span>
+          <span>Główna Perspektywa Frontowa — Strefa Usługowa i Balkony</span>
+        </div>
+        <div class="absolute bottom-6 right-6 bg-black/80 text-white font-mono text-xs px-3 py-1.5 flex items-center gap-2 pointer-events-none">
+          <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-accent"></i>
+          <span>Kliknij, aby powiększyć</span>
+        </div>
+      </div>
+
+      <!-- SPECS GRID & DETAILS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+        
+        <!-- LEFT COL: TECHNICAL SPECS TABLE -->
+        <div class="lg:col-span-4 bg-studio-surface border border-gray-200 p-8 space-y-6">
+          <h2 class="font-heading font-bold text-xl border-b border-gray-200 pb-3 flex items-center justify-between">
+            <span>Parametry Projektu</span>
+            <span class="text-[10px] font-mono font-bold text-accent uppercase tracking-wider">Tabela Danych</span>
+          </h2>
+          
+          <div class="space-y-3.5 font-mono text-xs">
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Kategoria:</span>
+              <span class="font-bold text-black">Mieszkaniowy</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Typ Realizacji:</span>
+              <span class="font-bold text-black text-right">Pełny cykl (od koncepcji)</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Zakres Prac:</span>
+              <span class="font-bold text-accent text-right">PAB + PT + Nadzór</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Optymalizacja:</span>
+              <span class="font-bold text-black">PUM & Ekonomia Realizacji</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Standard PPOŻ & OZE:</span>
+              <span class="font-bold text-black">Zgodność WT2021 / Pełna</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Dostępność:</span>
+              <span class="font-bold text-black">Bez barier architektonicznych</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Główny Projektant:</span>
+              <span class="font-bold text-black">mgr inż. Adam Kubat</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-200 pb-2">
+              <span class="text-gray-500">Status:</span>
+              <span class="font-bold text-accent">Zrealizowany pod klucz</span>
+            </div>
+          </div>
+
+          <a href="./kontakt.html" class="h-[44px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all mt-4">
+            <i data-lucide="phone" class="w-4 h-4"></i> Zapytaj o projekt wielorodzinny
+          </a>
+        </div>
+
+        <!-- RIGHT COL: DETAILED DESCRIPTION & HIGHLIGHTED SERVICES -->
+        <div class="lg:col-span-8 space-y-8 font-sans text-gray-700 leading-relaxed text-sm md:text-base">
+          <div>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-black mb-4">
+              Kompleksowy proces inwestycyjny: od koncepcji po odbiór budynku
+            </h2>
+            <div class="p-6 bg-studio-surface border-l-4 border-accent mb-6">
+              <p class="font-sans text-gray-900 font-medium leading-relaxed text-base">
+                Złożony projekt wielolokalowy zrealizowany od pierwszej koncepcji aż po zakończenie budowy. Projekt odpowiada na potrzeby przyszłych mieszkańców, jednocześnie spełniając wysokie wymagania inwestora pod względem jakości, efektywności i możliwości sprawnej realizacji. Zawiera zoptymalizowane rozwiązania konstrukcyjne i instalacyjne, zgodność z wymaganiami efektywności energetycznej, bezpieczeństwa pożarowego i pełną dostępnością.
+              </p>
+            </div>
+            <p>
+              W ramach kompleksowej obsługi inżynieryjnej połączono projektowanie architektoniczne z wielobranżową koordynacją instalacji sanitarnych, wentylacji mechanicznej z rekuperacją oraz optymalizacją nośności układu żelbetowego. Projekt zapewnia optymalną izolację akustyczną pomiędzy lokalami, maksymalne nasłonecznienie stref dziennych oraz pełne przystosowanie dla osób ze szczególnymi potrzebami.
+            </p>
+          </div>
+
+          <!-- KEY HIGHLIGHTED SERVICES -->
+          <div class="pt-4">
+            <h3 class="font-heading font-bold text-xl md:text-2xl text-black mb-6 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+              <span>Kluczowe usługi w ramach realizacji:</span>
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Service 1 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">01 / ARCHITEKTURA I FUNKCJA</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Projekt architektoniczno-budowlany</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Opracowanie wielobranżowej dokumentacji PAB i PT z optymalizacją wskaźnika PUM, funkcjonalnymi rzutami mieszkań oraz nowoczesną estetyką elewacji.
+                </p>
+              </div>
+
+              <!-- Service 2 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">02 / KOORDYNACJA BRANŻOWA</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Koordynacja branży konstrukcyjnej i instalacyjnej</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Bezkolizyjna integracja konstrukcji żelbetowo-murowej z instalacjami HVAC, wod-kan, elektrycznymi, OZE oraz systemami oddymiania klatek schodowych.
+                </p>
+              </div>
+
+              <!-- Service 3 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">03 / FORMALNOŚCI PRAWNE</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Dokumentacja na pozwolenie na budowę</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Kompletowanie wymaganych opinii, uzgodnień rzeczoznawców ds. PPOŻ, sanitarno-higienicznych i BHP oraz sprawne przeprowadzenie procedury w urzędzie.
+                </p>
+              </div>
+
+              <!-- Service 4 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">04 / KONTROLA PLACU BUDOWY</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Nadzór nad realizacją</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Bieżąca obecność na budowie, rzetelne odbiory prac zanikających (zbrojenie, hydroizolacja, stropy) oraz weryfikacja zgodności robót z projektem wykonawczym.
+                </p>
+              </div>
+
+              <!-- Service 5 -->
+              <div class="p-5 border border-gray-200 bg-white hover:border-black transition-all md:col-span-2">
+                <div class="font-mono text-xs font-bold text-accent uppercase tracking-wider mb-1">05 / WSPARCIE INŻYNIERSKIE</div>
+                <h4 class="font-heading font-bold text-base text-black mb-2">Rozwiązywanie problemów technicznych</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  Natychmiastowe reagowanie na wyzwania wykonawcze na placu budowy, eliminacja kolizji instalacyjnych, optymalizacja materiałowa i doradztwo techniczne dla wykonawców.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GALLERY & RELATED FILES GRID -->
+      <div class="mb-16 pt-12 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+              DOKUMENTACJA WIZUALNA &amp; UJĘCIA ARCHITEKTONICZNE
+            </span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl">
+              Galeria projektu — 11 perspektyw bryły i otoczenia
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-gray-500">
+            Kliknij dowolne ujęcie, aby otworzyć galerię w pełnym formacie
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Render 1: Główna perspektywa frontowa 3/4 -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(0)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg"
+                alt="Budynek mieszkalny wielorodzinny — główna wizualizacja frontowa, elewacja z cegłą klinkierową i balkonami"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-accent text-white font-mono text-[10px] font-bold px-2.5 py-1">Wizualizacja 3D</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Główna Perspektywa Frontowa (3/4)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Widok od strony ulicy na parter usługowy z witrynami, elewację z klinkierem i balkony z czarnymi balustradami.</p>
+            </div>
+          </div>
+
+          <!-- Render 2: Perspektywa od strony wjazdu -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(1)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-od-podjazdu.jpg"
+                alt="Budynek mieszkalny wielorodzinny — widok od strony wjazdu i parkingu z podjazdem z kostki brukowej"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Wjazd / Parking</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa od Strony Wjazdu i Parkingu</div>
+              <p class="text-gray-500 text-[11px] font-sans">Ujęcie z podjazdu z kostki brukowej ukazujące strefę wejścia do klatki, miejsca postojowe i otaczającą zieleń.</p>
+            </div>
+          </div>
+
+          <!-- Render 3: Szeroki widok od ulicy -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(2)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-ulicy.jpg"
+                alt="Budynek mieszkalny wielorodzinny — szeroki widok od ulicy pokazujący pełną pierzeje frontową"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Widok od Ulicy</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Szeroki Plan od Strony Ulicy</div>
+              <p class="text-gray-500 text-[11px] font-sans">Prostopadły widok pełnej pierzei frontowej z pasażem chodnikowym, zielenią miejską i strefą usługową parteru.</p>
+            </div>
+          </div>
+
+          <!-- Render 4: Ujęcie z lotu ptaka (dron) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(3)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-drona.jpg"
+                alt="Budynek mieszkalny wielorodzinny — ujęcie z drona pokazujące dach, zagospodarowanie działki i okoliczne zabudowania"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Rzut z Drona</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Ujęcie z Lotu Ptaka (Dron, 35°)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Perspektywa z góry prezentująca układ dachu płaskiego, zagospodarowanie działki, parking i otaczające zabudowania.</p>
+            </div>
+          </div>
+
+          <!-- Render 5: Perspektywa z poziomu gruntu (niski kąt) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(4)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-z-dolu.jpg"
+                alt="Budynek mieszkalny wielorodzinny — dramatyczne ujęcie od dołu eksponujące balkony i bryłę na tle nieba"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Perspektywa od Dołu</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa z Poziomu Gruntu (Niski Kąt)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Monumentalne ujęcie narożnika budynku ku górze akcentujące wspornikowe balkony z czarnymi balustradami na tle nieba.</p>
+            </div>
+          </div>
+
+          <!-- Render 6: Detal architektoniczny elewacji -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(5)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-detal-elewacji.jpg"
+                alt="Budynek mieszkalny wielorodzinny — zbliżenie detalu elewacji: cegła klinkierowa, panele drewnopodobne, ślusarka okienna"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Detal Elewacji</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Zbliżenie Detalu Architektonicznego Elewacji</div>
+              <p class="text-gray-500 text-[11px] font-sans">Faktura cegły klinkierowej, panel drewnopodobny z widocznym słojem i czarna ślusarka okienna w bliskim kadrze.</p>
+            </div>
+          </div>
+
+          <!-- Render 7: Perspektywa z Balkonu (Widok na Otoczenie) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(6)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-balkonu.jpg"
+                alt="Budynek mieszkalny wielorodzinny — perspektywa z balkonu, widok na otoczenie, zieleń i sąsiedztwo"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Widok z Balkonu</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa z Balkonu (Widok na Otoczenie)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Spojrzenie z balkonu wyższego piętra: balustrada, boczna elewacja z klinkierem oraz widok na zielone osiedle i parking.</p>
+            </div>
+          </div>
+
+          <!-- Render 8: Perspektywa Pieszego (Chodnik przy Elewacji) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(7)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-pieszego.jpg"
+                alt="Budynek mieszkalny wielorodzinny — perspektywa pieszego, chodnik przy elewacji i strefa witryn"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Perspektywa Pieszego</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa Pieszego (Chodnik przy Elewacji)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Ujęcie z wysokości wzroku pieszego wzdłuż pierzei parteru usługowego z oświetleniem ściennym i zielonym pasem.</p>
+            </div>
+          </div>
+
+          <!-- Render 9: Zbliżenie na Strefę Wejściową (Parter) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(8)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-strefa-wejsciowa.jpg"
+                alt="Budynek mieszkalny wielorodzinny — zbliżenie na strefę wejściową, parter, drzwi szklane i domofon"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Strefa Wejściowa</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Zbliżenie na Strefę Wejściową (Parter)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Reprezentacyjne wejście główne do budynku: podwójne drzwi szklane, domofon, kinkiety elewacyjne i zadbana zieleń.</p>
+            </div>
+          </div>
+
+          <!-- Render 10: Perspektywa z Wnętrza (Widok przez Okno) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(9)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-z-wnetrza.jpg"
+                alt="Budynek mieszkalny wielorodzinny — perspektywa z wnętrza apartamentu, widok przez okno na balkon i osiedle"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Widok z Wnętrza</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Perspektywa z Wnętrza (Widok przez Okno)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Spojrzenie z wnętrza apartamentu przez panoramiczne przeszklenie na balkon, detal elewacji i zieleń osiedlową.</p>
+            </div>
+          </div>
+
+          <!-- Render 11: Wizualizacja Nocna (Iluminacja Elewacji) -->
+          <div class="border border-gray-200 bg-studio-surface overflow-hidden group cursor-pointer" onclick="openLightbox(10)">
+            <div class="h-64 overflow-hidden relative">
+              <img
+                src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-iluminacja-nocna.jpg"
+                alt="Budynek mieszkalny wielorodzinny — wizualizacja nocna, iluminacja elewacji i oświetlenie architektoniczne"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] px-2.5 py-1">Iluminacja Nocna</div>
+            </div>
+            <div class="p-4 font-mono text-xs border-t border-gray-200">
+              <div class="font-bold text-black mb-1">Wizualizacja Nocna (Iluminacja Elewacji)</div>
+              <p class="text-gray-500 text-[11px] font-sans">Sceneria o zmierzchu eksponująca ciepłe oświetlenie LED lameli drewnianych, klinkieru, balkonów oraz witryn parteru.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DUAL ACTION CLOSING BANNER -->
+      <div class="bg-black text-white p-10 md:p-14 text-center border border-zinc-800 shadow-2xl mt-14 mb-4">
+        <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-widest block mb-2">// ZESPOŁY ZABUDOWY & OSIEDLA</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl mb-4 text-white">
+          Zaprojektujmy funkcjonalne osiedle mieszkaniowe
+        </h2>
+        <p class="font-sans text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Skonsultuj założenia architektoniczne, optymalizację PUM i wymagania PPOŻ dla budynku mieszkalnego wielorodzinnego bezpośrednio z głównym projektantem.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="tel:+48884757815" class="h-[50px] px-8 bg-accent hover:bg-accent-hover text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all shadow-lg w-full sm:w-auto">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Zadzwoń: +48 884 757 815</span>
+          </a>
+          <a href="./kontakt.html" class="h-[50px] px-8 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 transition-all w-full sm:w-auto">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Wyceń projekt wielorodzinny &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Zamknij podgląd">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)" aria-label="Poprzednie zdjęcie">&#10094;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Podgląd powiększony">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-sub" id="lightboxSub"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1, event)" aria-label="Następne zdjęcie">&#10095;</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
+        <div>
+          <a href="./index.html" class="inline-block mb-4" aria-label="GOPROJECT Pracownia Projektowa">
+            <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="h-6 sm:h-7 w-auto object-contain object-left" width="290" height="24" />
+          </a>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Profesjonalna pracownia projektowa i kompleksowa inżynieria inwestycji budowlanych. Projekty architektoniczne, adaptacje, nadzór i kierownik budowy w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 / Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 / Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-dom-jednorodzinny-chojnice.html" class="hover:text-accent transition-colors">Dom jednorodzinny w Chojnicach</a></li>
+            <li><a href="./projekt-nowoczesna-stodola.html" class="hover:text-accent transition-colors">Nowoczesna stodoła</a></li>
+            <li><a href="./projekt-dom-parterowy-z-garazem.html" class="hover:text-accent transition-colors">Dom parterowy z garażem</a></li>
+            <li><a href="./projekt-domy-szeregowe.html" class="hover:text-accent transition-colors">Domy szeregowe — osiedle</a></li>
+            <li><a href="./projekt-domy-szeregowe-szeregowiec.html" class="hover:text-accent transition-colors">Domy szeregowe — Szeregowiec</a></li>
+            <li><a href="./projekt-osiedle-budynkow-dwulokalowych.html" class="text-accent font-bold">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-budynek-mieszkalny-wielorodzinny.html" class="text-accent font-bold">Budynek mieszkalny wielorodzinny</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:biuro@goproject.com.pl" class="hover:text-white transition-colors">biuro@goproject.com.pl</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojnice (Pomorskie)</span>
+            </div>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { 
+      if (window.lucide) lucide.createIcons(); 
+            // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      // Highlight the current page link in the mobile menu
+      if (mobileMenu) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        mobileMenu.querySelectorAll('a[href]').forEach(link => {
+          const hrefFile = link.getAttribute('href').split('/').pop();
+          if (hrefFile === currentFile) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.remove('text-zinc-200');
+            link.classList.add('text-accent', 'font-bold');
+          }
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    const imagesData = [
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg",
+        title: "Główna Perspektywa Frontowa (3/4)",
+        desc: "Widok od strony ulicy na parter usługowy z witrynami, elewację z klinkierem i balkony z czarnymi balustradami."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-od-podjazdu.jpg",
+        title: "Perspektywa od Strony Wjazdu i Parkingu",
+        desc: "Ujęcie z podjazdu z kostki brukowej ukazujące strefę wejścia do klatki, miejsca postojowe i otaczającą zieleń."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-ulicy.jpg",
+        title: "Szeroki Plan od Strony Ulicy",
+        desc: "Prostopadły widok pełnej pierzei frontowej z pasażem chodnikowym, zielenią miejską i strefą usługową parteru."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-drona.jpg",
+        title: "Ujęcie z Lotu Ptaka (Dron, 35°)",
+        desc: "Perspektywa z góry prezentująca układ dachu płaskiego, zagospodarowanie działki, parking i otaczające zabudowania."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-z-dolu.jpg",
+        title: "Perspektywa z Poziomu Gruntu (Niski Kąt)",
+        desc: "Monumentalne ujęcie narożnika budynku ku górze akcentujące wspornikowe balkony z czarnymi balustradami na tle nieba."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-detal-elewacji.jpg",
+        title: "Zbliżenie Detalu Architektonicznego Elewacji",
+        desc: "Faktura cegły klinkierowej, panel drewnopodobny z widocznym słojem i czarna ślusarka okienna w bliskim kadrze."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-widok-z-balkonu.jpg",
+        title: "Perspektywa z Balkonu (Widok na Otoczenie)",
+        desc: "Spojrzenie z balkonu wyższego piętra: balustrada, boczna elewacja z klinkierem oraz widok na zielone osiedle i parking."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-pieszego.jpg",
+        title: "Perspektywa Pieszego (Chodnik przy Elewacji)",
+        desc: "Ujęcie z wysokości wzroku pieszego wzdłuż pierzei parteru usługowego z oświetleniem ściennym i zielonym pasem."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-strefa-wejsciowa.jpg",
+        title: "Zbliżenie na Strefę Wejściową (Parter)",
+        desc: "Reprezentacyjne wejście główne do budynku: podwójne drzwi szklane, domofon, kinkiety elewacyjne i zadbana zieleń."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-perspektywa-z-wnetrza.jpg",
+        title: "Perspektywa z Wnętrza (Widok przez Okno)",
+        desc: "Spojrzenie z wnętrza apartamentu przez panoramiczne przeszklenie na balkon, detal elewacji i zieleń osiedlową."
+      },
+      {
+        src: "./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-iluminacja-nocna.jpg",
+        title: "Wizualizacja Nocna (Iluminacja Elewacji)",
+        desc: "Sceneria o zmierzchu eksponująca ciepłe oświetlenie LED lameli drewnianych, klinkieru, balkonów oraz witryn parteru."
+      }
+    ];
+
+    let currentIndex = 0;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxSub = document.getElementById('lightboxSub');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function changeImage(direction, e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + direction + imagesData.length) % imagesData.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const item = imagesData[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxCaption.textContent = item.title;
+      lightboxSub.textContent = item.desc;
+      if (lightboxCounter) {
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + imagesData.length;
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    });
+  </script>
+</body>
+</html>

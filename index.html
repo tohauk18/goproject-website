@@ -1,2423 +1,1740 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GO PROJECT — Pracownia Architektoniczno-Inżynieryjna | Chojnice & Gdańsk</title>
-  <meta name="description" content="Autorska pracownia architektoniczno-inżynieryjna mgr inż. Adam Kubat. Kompleksowe projekty domów, adaptacje MPZP/WZ, kierownik budowy, odbiory mieszkań i nadzór inwestorski w Chojnicach i Gdańsku.">
-  <meta name="author" content="GO PROJECT mgr inż. Adam Kubat">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://goproject.com.pl/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <title>Pracownia Projektowa Gdańsk & Chojnice | Projekty, Kierownik Budowy — GOPROJECT</title>
+  <meta name="description"
+    content="Licencjonowana pracownia projektowa GOPROJECT mgr inż. Adam Kubat. Projekty budowlane domów, adaptacje WZ/MPZP, kierownik budowy i nadzór inwestorski w Gdańsku, Chojnicach i na Pomorzu." />
+  <meta name="author" content="GOPROJECT mgr inż. Adam Kubat" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://goproject.com.pl/" />
 
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="GO PROJECT">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://goproject.com.pl/">
-  <meta property="og:title" content="GO PROJECT — Projekty domów, które żyją">
-  <meta property="og:description" content="Racjonalna architektura, szwajcarska dyscyplina i inżynierski rygor na Pomorzu. Ponad 120+ zrealizowanych obiektów.">
-  <meta property="og:image" content="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp">
+  <!-- Geo Local SEO Meta -->
+  <meta name="geo.region" content="PL-22" />
+  <meta name="geo.placename" content="Gdańsk, Chojnice" />
+  <meta name="geo.position" content="54.3520252;18.6466384" />
+  <meta name="ICBM" content="54.3520252, 18.6466384" />
 
-  <!-- Google Fonts: Inter & Space Grotesk -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph / Facebook / Social Cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goproject.com.pl/" />
+  <meta property="og:title" content="Pracownia Projektowa Gdańsk & Chojnice | GOPROJECT" />
+  <meta property="og:description"
+    content="Kompleksowa obsługa architektoniczna i inżynieryjna: projekty domów, adaptacje, kierownik budowy i odbiory mieszkań na Pomorzu." />
+  <meta property="og:image" content="https://goproject.com.pl/img/adam-kubat.jpg" />
+  <meta property="og:site_name" content="GOPROJECT Pracownia Projektowa" />
+  <meta property="og:locale" content="pl_PL" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pracownia Projektowa Gdańsk & Chojnice | GOPROJECT" />
+  <meta name="twitter:description"
+    content="Kompleksowa obsługa architektoniczna i inżynieryjna: projekty domów, adaptacje, kierownik budowy i odbiory mieszkań na Pomorzu." />
+  <meta name="twitter:image" content="https://goproject.com.pl/img/adam-kubat.jpg" />
+
+  <!-- JSON-LD LocalBusiness & ProfessionalService Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GOPROJECT Pracownia Projektowa mgr inż. Adam Kubat",
+    "image": "https://goproject.com.pl/img/adam-kubat.jpg",
+    "@id": "https://goproject.com.pl/#organization",
+    "url": "https://goproject.com.pl/",
+    "telephone": "+48884757815",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Chojnicka 18",
+      "addressLocality": "Chojnice",
+      "postalCode": "89-600",
+      "addressRegion": "Pomorskie",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 54.3520252,
+      "longitude": 18.6466384
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Adam Kubat",
+      "jobTitle": "Główny Inżynier / Projektant"
+    },
+    "areaServed": [
+      "Gdańsk",
+      "Chojnice",
+      "Województwo Pomorskie"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Usługi Architektoniczne i Inżynieryjne",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Projekty Budowlane i Adaptacje"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kierownik Budowy i Nadzór Inwestorski"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Odbiory Mieszkań i Ekspertyzy Techniczne"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Świadectwa Energetyczne i WZ"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- FAQPage Schema for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ile kosztuje projekt budowlany domu jednorodzinnego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Koszt zależy od wielkości domu, stopnia skomplikowania konstrukcji i uwarunkowań terenu. Po bezpłatnej konsultacji przygotowuję wycenę w ciągu 24 h."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy projekt gotowy trzeba adaptować do działki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak. Adaptacja jest wymagana prawnie, aby projekt katalogowy był zgodny z miejscowym planem (MPZP) lub warunkami zabudowy (WZ) oraz warunkami gruntowymi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile trwa uzyskanie pozwolenia na budowę?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Urząd ma ustawowo 65 dni na wydanie decyzji od złożenia kompletnego wniosku. Wszystkimi formalnościami zajmuję się za Ciebie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czym różni się kierownik budowy od inspektora nadzoru?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kierownik budowy odpowiada za prowadzenie robót zgodnie z projektem i przepisami prawa budowlanego. Inspektor nadzoru inwestorskiego reprezentuje wyłącznie Ciebie i kontroluje jakość oraz rozliczenia wykonawców."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN configured with exact original design tokens -->
+  <!-- Preload custom fonts to help avoid FOUT (Flash of unstyled text) -->
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/plus-jakarta-sans-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-600-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/space-grotesk-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.min.css" />
+
+  <link rel="preload" as="image"
+    href="./img/projects/dom-jednorodzinny-chojnice/hero/dom-jednorodzinny-chojnice-elewacja-frontowa-hero-1920w.jpg"
+    fetchpriority="high" />
+  <!-- Google Fonts -->
+  
+  
+  
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 
   <style>
-    /* ==========================================================================
-       FLUID.GLASS & SWISS ARCHITECTURAL DESIGN SYSTEM
-       ========================================================================== */
-    :root {
-      --color-black: #0b1012;
-      --color-white: #ffffff;
-      --color-cream: #f7f5f2;       /* Warm off-white architectural matte paper */
-      --color-surface: #efece6;     /* Subtle warm card tone */
-      --color-taupe: #d4cec6;
-      --color-grey: #1a1a1a;        /* Deep charcoal */
-      --color-muted: #6b6b6b;       /* Warm stone gray */
-      --color-accent: #c45d3a;      /* Burnt terracotta */
-      --color-accent-hover: #a84928;
-      
-      --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
-      --font-f-aeonik-pro: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-f-aeonik-mono: 'Space Grotesk', ui-monospace, monospace;
-    }
-
-    *, :after, :before {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-      background: var(--color-cream);
-      color: var(--color-grey);
-      font-size: 16px;
-    }
-
     body {
-      font-family: var(--font-f-aeonik-pro);
-      background: var(--color-cream);
-      color: var(--color-grey);
-      overflow-x: hidden;
-      line-height: 1.5;
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    ::selection {
-      background: var(--color-accent);
-      color: #fff;
+    /* Ultra-Smooth Hero Transitions */
+    .hero-slide {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1), transform 12s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: scale(1.0);
+      will-change: opacity, transform;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .hero-slide.active {
+      opacity: 0.85 !important;
+      visibility: visible !important;
+      transform: scale(1.08);
     }
 
-    button, input, select, textarea {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: none;
-      border: 0;
-      color: inherit;
-      font: inherit;
-      outline: 0;
+    #hero-tag {
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     }
 
-    button {
-      cursor: pointer;
+    /* HEADER INITIAL STATE (Over Dark Hero) */
+    #main-header {
+      background-color: transparent !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+      padding-top: 0.875rem !important;
+      padding-bottom: 0.875rem !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    img, svg, video {
+    /* Logo Switching for Header */
+    #main-header .logo-light {
       display: block;
-      width: 100%;
-      height: auto;
     }
 
-    /* TYPOGRAPHY BASE */
-    .base-title {
-      align-items: center;
-      display: flex;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.3rem;
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: .1em;
-      line-height: 1.3;
-      text-transform: uppercase;
+    #main-header .logo-dark {
+      display: none;
     }
 
-    .base-title:before {
-      background: var(--color-accent);
-      content: "";
+    #main-header.scrolled .logo-light {
+      display: none;
+    }
+
+    #main-header.scrolled .logo-dark {
       display: block;
-      height: .55rem;
-      margin-right: 1.1rem;
-      transform: rotate(45deg) translateY(-.15rem);
-      width: .55rem;
     }
 
-    .base-heading {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: clamp(3rem, 5.5vw, 6.2rem);
-      font-style: normal;
-      font-weight: 400;
-      letter-spacing: -.03em;
-      line-height: 1.02;
+    #main-header.mobile-header-open .logo-light {
+      display: block !important;
     }
 
-    /* BASE FLUID BUTTON */
-    .base-button {
-      align-items: center;
-      display: inline-flex;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-style: normal;
-      font-weight: 500;
-      justify-content: center;
-      letter-spacing: .08em;
-      line-height: 1rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s var(--ease-fluid);
-      padding: 1.35rem 2.2rem;
-      border: 1px solid transparent;
+    #main-header.mobile-header-open .logo-dark {
+      display: none !important;
     }
 
-    .base-button.is-black {
-      background: var(--color-grey);
-      color: var(--color-white);
-      border-color: var(--color-grey);
+    #header-logo img,
+    footer img {
+      image-rendering: auto !important;
+      width: auto !important;
+      object-fit: contain !important;
+      object-position: left center !important;
     }
 
-    .base-button.is-black:hover {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
+    #main-header #header-nav>a,
+    #main-header #header-nav>.dropdown-container>a {
+      color: #ffffff !important;
     }
 
-    .base-button.is-alpha {
-      background: color-mix(in srgb, var(--color-white) 15%, transparent);
-      color: var(--color-white);
+    #main-header #header-nav>a:hover,
+    #main-header #header-nav>.dropdown-container>a:hover,
+    #main-header #header-nav>.dropdown-container:hover>a {
+      color: #FF3B00 !important;
+    }
+
+    #main-header #header-phone {
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      background-color: rgba(255, 255, 255, 0.10) !important;
+      color: #ffffff !important;
+    }
+
+    #main-header #header-cta {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    #main-header #header-cta:hover {
+      background-color: #FF3B00 !important;
+      color: #ffffff !important;
+    }
+
+    #main-header #mobile-menu-btn {
+      color: #ffffff !important;
+    }
+
+    /* Header Scrolled State (Over White Body) */
+    #main-header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid color-mix(in srgb, var(--color-white) 25%, transparent);
+      border-bottom: 1px solid rgba(220, 220, 220, 0.9) !important;
+      padding-top: 0.875rem !important;
+      padding-bottom: 0.875rem !important;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
     }
 
-    .base-button.is-alpha:hover {
-      background: var(--color-white);
-      color: var(--color-black);
+    #main-header.scrolled #header-logo-text {
+      color: #000000 !important;
     }
 
-    .base-button .arrow-svg {
-      height: 1rem;
-      margin-right: 1.1rem;
-      transform: translateY(-.08rem);
-      width: 1.3rem;
-      transition: transform 0.3s var(--ease-fluid);
+    #main-header.scrolled #header-nav>a,
+    #main-header.scrolled #header-nav>.dropdown-container>a {
+      color: #000000 !important;
     }
 
-    .base-button:hover .arrow-svg {
-      transform: translateX(3px) translateY(-.08rem);
+    #main-header.scrolled #header-nav>a:hover,
+    #main-header.scrolled #header-nav>.dropdown-container>a:hover,
+    #main-header.scrolled #header-nav>.dropdown-container:hover>a {
+      color: #FF3B00 !important;
     }
 
-    .base-button .label {
-      height: 1.1rem;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    #main-header.scrolled #header-phone {
+      border-color: rgba(0, 0, 0, 0.15) !important;
+      background-color: rgba(0, 0, 0, 0.04) !important;
+      color: #000000 !important;
     }
 
-    .base-button .line {
-      display: block;
-      height: 1.1rem;
-      line-height: 1.1rem;
-      transition: transform 0.3s var(--ease-fluid);
+    #main-header.scrolled #header-cta {
+      background-color: #000000 !important;
+      color: #ffffff !important;
     }
 
-    .base-button:hover .line {
-      transform: translateY(-100%);
+    #main-header.scrolled #header-cta:hover {
+      background-color: #FF3B00 !important;
+      color: #ffffff !important;
     }
 
-    /* FLUID GLASS FLOATING HEADER */
-    .header {
-      align-items: center;
-      color: var(--color-white);
-      display: flex;
-      height: 5rem;
-      justify-content: center;
-      left: 50%;
-      position: fixed;
-      transform: translate3d(-50%, 0, 0);
-      user-select: none;
-      width: 32rem;
-      z-index: 500;
-      top: 3rem;
-      transition: all 0.4s var(--ease-fluid);
+    #main-header.scrolled #mobile-menu-btn {
+      color: #000000 !important;
     }
 
-    .header .background {
-      -webkit-backdrop-filter: blur(2rem);
-      backdrop-filter: blur(2rem);
-      background: color-mix(in srgb, var(--color-black) 84%, transparent);
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      z-index: -1;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+    /* Dropdown Menu Item Colors (Always Crystal Clear on Dark Background) */
+    #main-header .dropdown-menu,
+    #main-header.scrolled .dropdown-menu {
+      background-color: #000000 !important;
+      border: 1px solid #27272a !important;
     }
 
-    .header .logo {
-      align-items: center;
-      display: flex;
-      height: 5rem;
-      justify-content: center;
-      left: 0;
-      position: absolute;
-      width: 5.5rem;
+    #main-header .dropdown-menu a,
+    #main-header.scrolled .dropdown-menu a {
+      color: #e4e4e7 !important;
+      /* zinc-200 */
     }
 
-    .header .brandmark-svg {
-      height: 2.4rem;
-      width: 2.4rem;
+    #main-header .dropdown-menu a:hover,
+    #main-header.scrolled .dropdown-menu a:hover {
+      color: #FF3B00 !important;
     }
 
-    .header .title {
-      align-items: center;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-style: normal;
-      font-weight: 500;
-      height: 5rem;
-      letter-spacing: .08em;
-      line-height: 5rem;
-      overflow: hidden;
-      text-align: center;
-      text-transform: uppercase;
-      width: 18rem;
+    #main-header .dropdown-menu a.dropdown-overview-link,
+    #main-header.scrolled .dropdown-menu a.dropdown-overview-link,
+    #main-header .dropdown-menu a.dropdown-overview-link span,
+    #main-header.scrolled .dropdown-menu a.dropdown-overview-link span {
+      color: #FF3B00 !important;
     }
 
-    .header .burger {
-      align-items: center;
-      display: flex;
-      height: 5rem;
-      justify-content: center;
-      position: absolute;
-      right: 0;
-      width: 5.5rem;
-      cursor: pointer;
+    #main-header .dropdown-menu a.dropdown-overview-link:hover,
+    #main-header.scrolled .dropdown-menu a.dropdown-overview-link:hover,
+    #main-header .dropdown-menu a.dropdown-overview-link:hover span,
+    #main-header.scrolled .dropdown-menu a.dropdown-overview-link:hover span {
+      color: #ffffff !important;
     }
 
-    .header .burger-svg {
-      height: 1.1rem;
-      position: absolute;
-      width: 2rem;
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
     }
 
-    .header .close {
-      align-items: center;
-      display: none;
-      height: 5rem;
-      justify-content: center;
-      position: absolute;
-      right: 0;
-      width: 5.5rem;
-      cursor: pointer;
+    /* High-Contrast Solid Dark Header when Mobile Menu is open */
+    #main-header.mobile-header-open {
+      background-color: #09090b !important;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.8) !important;
+      color: #ffffff !important;
     }
 
-    .is-menu-open .header .burger { display: none; }
-    .is-menu-open .header .close { display: flex; }
-
-    /* FULLSCREEN GLASS DROPDOWN MENU */
-    .menu {
-      position: fixed;
-      top: 9rem;
-      left: 50%;
-      transform: translate3d(-50%, 0, 0);
-      color: var(--color-white);
-      padding: 5rem;
-      width: 44rem;
-      z-index: 490;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .menu.is-active {
-      display: block;
-      opacity: 1;
-    }
-
-    .menu .background {
-      -webkit-backdrop-filter: blur(2rem);
-      backdrop-filter: blur(2rem);
-      background: color-mix(in srgb, var(--color-black) 90%, transparent);
-      inset: 0;
-      position: absolute;
-      z-index: -1;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .menu .title {
-      color: color-mix(in srgb, currentColor 60%, transparent);
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-style: normal;
-      font-weight: 500;
-      letter-spacing: .08em;
-      line-height: 1.3;
-      margin-bottom: 2.2rem;
-      text-transform: uppercase;
-    }
-
-    .menu .main {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .menu .main .link {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2.8rem;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .menu .main .link:hover {
-      color: var(--color-accent);
-      transform: translateX(10px);
-    }
-
-    .menu .sub {
-      list-style: none;
-      color: color-mix(in srgb, currentColor 60%, transparent);
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-      margin: 3rem 0;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-    }
-
-    .menu .sub a:hover {
-      color: var(--color-white);
-    }
-
-    /* HERO SECTION (.home-header) */
-    /* FLUID.GLASS PROJECTS HERO SLIDER (.slider) */
-    .slider {
-      background: var(--color-grey);
-      color: var(--color-white);
-      height: 100svh;
-      min-height: 100vh;
-      overflow: hidden;
-      position: relative;
-      user-select: none;
-    }
-
-    @media (min-width: 601px) {
-      .slider { max-height: 96rem; }
-    }
-
-    .slider .indicator {
-      position: absolute;
-      z-index: 10;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.25rem;
-      font-style: normal;
-      font-weight: 500;
-      letter-spacing: .08em;
-      line-height: 1.3;
-      text-transform: uppercase;
-      color: var(--color-white);
-      bottom: 6rem;
-      right: 4rem;
-    }
-
-    @media (max-width: 600px) {
-      .slider .indicator { bottom: 10rem; right: 2rem; }
-    }
-
-    .slider .progress {
-      background: color-mix(in srgb, currentcolor 20%, transparent);
-      height: 1px;
-      position: absolute;
-      z-index: 10;
-      inset: auto 4rem 10.2rem;
-    }
-
-    @media (max-width: 600px) {
-      .slider .progress { inset: auto 2rem 8.5rem; }
-    }
-
-    .slider .progress-bar {
-      background: color-mix(in srgb, currentcolor 80%, transparent);
-      inset: 0;
-      position: absolute;
-      transform: scaleX(0.2);
-      transform-origin: left center;
-      transition: transform 0.4s var(--ease-fluid);
-    }
-
-    .slider .nav {
-      position: absolute;
-      bottom: 14rem;
-      right: 4rem;
-      display: flex;
-      gap: 1rem;
-      z-index: 10;
-    }
-
-    @media (max-width: 600px) {
-      .slider .nav { display: none; }
-    }
-
-    .slider .button {
-      align-items: center;
-      -webkit-backdrop-filter: blur(2rem);
-      backdrop-filter: blur(2rem);
-      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: var(--color-white);
-      display: flex;
-      height: 5.2rem;
-      justify-content: center;
-      width: 5.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .slider .button:first-child {
-      transform: rotate(180deg);
-    }
-
-    .slider .button:hover {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-    }
-
-    .slider .arrow-svg {
-      height: 1rem;
-      width: 1.5rem;
-    }
-
-    .slider .container {
-      inset: 0;
-      position: absolute;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    .slider .slide {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      inset: auto 4rem 6.5rem;
-      width: clamp(34rem, 64vw, 92rem);
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.6s var(--ease-fluid), transform 0.6s var(--ease-fluid);
-      pointer-events: none;
-      z-index: 6;
-    }
-
-    @media (max-width: 600px) {
-      .slider .slide { inset: auto 2rem 11rem; width: auto; }
-    }
-
-    .slider .slide.is-active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .slider .slide .heading {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: clamp(3.2rem, 6.2vw, 7.2rem);
-      font-style: normal;
-      font-weight: 400;
-      letter-spacing: -.03em;
-      line-height: 1;
-      margin-bottom: 3.5rem;
-    }
-
-    @media (max-width: 600px) {
-      .slider .slide .heading { margin-bottom: 2rem; }
-    }
-
-    .slider .slide .title {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.25rem;
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: .1em;
-      line-height: 1.3;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .slider .slide .title:before {
-      content: "";
-      display: block;
-      width: 0.6rem;
-      height: 0.6rem;
-      background: var(--color-accent);
-      transform: rotate(45deg);
-    }
-
-    .slider .background {
-      inset: 0;
-      opacity: 1;
-      position: absolute;
-      z-index: 1;
-      cursor: pointer;
-    }
-
-    .slider .background:before {
-      background: linear-gradient(180deg, rgba(11,16,18,0.2) 0%, rgba(11,16,18,0.78) 100%);
-      content: "";
-      inset: 0;
-      pointer-events: none;
-      position: absolute;
-      z-index: 2;
-    }
-
-    .slider .asset {
-      inset: 0;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 1.2s ease;
-      transform: scale(1.04);
-      z-index: 1;
-    }
-
-    .slider .asset.is-active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .slider .base-image {
-      display: flex;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      position: absolute;
-    }
-
-    /* STATS COUNTERS TICKER */
-    .hero-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-white) 15%, transparent);
-      padding-top: 1.5rem;
-    }
-
-    .stat-num {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-top: 0.5rem;
-    }
-
-    /* SECTION 2: TEXT CTA & ABOUT (.text-cta) */
-    .text-cta {
-      margin: 15rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .text-cta { margin: 8rem 0; }
-    }
-
-    .text-cta .container {
-      margin: 0 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .text-cta .container { margin: 0 2rem; }
-    }
-
-    .text-cta .base-heading {
-      margin: 4rem 0 5rem;
-      max-width: 104rem;
-    }
-
-    /* SECTION 3: SERVICES COLLECTION & 4 PILLARS */
-    .product-collection {
-      margin: 15rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .product-collection { margin: 8rem 0; }
-    }
-
-    .product-collection .container {
-      margin: 0 4rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding-top: 2rem;
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      .product-collection .container { margin: 0 2rem; }
-    }
-
-    .product-collection .content {
-      position: absolute;
-      top: 2rem;
-      right: 0;
-      width: 34rem;
-    }
-
-    @media (max-width: 992px) {
-      .product-collection .content { position: static; width: 100%; margin: 2rem 0 4rem; }
-    }
-
-    .product-collection .richtext p {
-      font-size: 1.7rem;
-      line-height: 1.35;
-      margin-bottom: 2.5rem;
-      color: var(--color-muted);
-    }
-
-    .product-collection .richtext p strong {
-      color: var(--color-grey);
-    }
-
-    .product-collection .blocks {
-      display: grid;
-      grid-template-columns: repeat(24, 1fr);
-      grid-column-gap: 2rem;
-      padding-top: 8rem;
-    }
-
-    @media (max-width: 992px) {
-      .product-collection .blocks { display: flex; flex-direction: column; gap: 3rem; padding-top: 2rem; }
-    }
-
-    .product-collection .block {
-      align-items: center;
-      aspect-ratio: 500 / 617;
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      background: var(--color-taupe);
-      cursor: pointer;
-    }
-
-    .product-collection .block:nth-child(1) { grid-column: 1 / 8; }
-    .product-collection .block:nth-child(2) { grid-column: 9 / 16; margin-top: 6rem; }
-    .product-collection .block:nth-child(3) { grid-column: 17 / 25; margin-top: 12rem; }
-
-    .product-collection .block .title {
-      color: var(--color-white);
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      z-index: 2;
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 3rem;
-      letter-spacing: -.02em;
-      font-weight: 400;
-    }
-
-    .product-collection .block .base-image {
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s var(--ease-fluid), filter 0.6s var(--ease-fluid);
-      filter: grayscale(18%) contrast(1.02);
-    }
-
-    .product-collection .block:hover .base-image {
-      transform: scale(1.04);
-      filter: grayscale(0%) contrast(1.05);
-    }
-
-    /* DETAILED 4-PILLAR SERVICE CARDS */
-    .pillar-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      margin-top: 6rem;
-    }
-
-    @media (max-width: 992px) {
-      .pillar-cards { grid-template-columns: 1fr; }
-    }
-
-    .pillar-card {
-      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding: 3.5rem;
-      background: var(--color-cream);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: border-color 0.3s ease, background-color 0.3s ease;
-    }
-
-    .pillar-card:hover {
-      border-color: var(--color-accent);
-      background: #FFFFFF;
-    }
-
-    .pillar-num {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      letter-spacing: .08em;
-      margin-bottom: 1.5rem;
-    }
-
-    .pillar-title {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-
-    .pillar-desc {
-      font-size: 1.5rem;
-      line-height: 1.45;
-      color: var(--color-muted);
-      margin-bottom: 2rem;
-    }
-
-    .pillar-list {
-      list-style: none;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      color: var(--color-grey);
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 15%, transparent);
-      padding-top: 1.5rem;
-      margin-bottom: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    /* INTERACTIVE BEFORE/AFTER COMPARISON SLIDER */
-    .comparison-section {
-      margin: 15rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .comparison-section { margin: 8rem 0; }
-    }
-
-    .comparison-container {
-      position: relative;
-      width: 100%;
-      height: 620px;
-      overflow: hidden;
-      border: 1px solid var(--color-grey);
-      margin-top: 4rem;
-      user-select: none;
-    }
-
-    .comparison-before, .comparison-after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .comparison-before img, .comparison-after img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .comparison-after {
-      width: 50%;
-      border-right: 2px solid var(--color-accent);
-      z-index: 2;
-    }
-
-    .comparison-slider-input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: ew-resize;
-      z-index: 10;
-    }
-
-    .comparison-badge-left, .comparison-badge-right {
-      position: absolute;
-      bottom: 2rem;
-      padding: 0.8rem 1.4rem;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      z-index: 5;
-    }
-
-    .comparison-badge-left {
-      left: 2rem;
-      background: rgba(11, 16, 18, 0.85);
-      color: #fff;
-    }
-
-    .comparison-badge-right {
-      right: 2rem;
-      background: rgba(247, 245, 242, 0.9);
-      color: var(--color-grey);
-      border: 1px solid var(--color-grey);
-    }
-
-    /* SECTION 4: IMMERSIVE BANNER & FOUNDER (.banner-showroom) */
-    .banner-showroom {
-      background: var(--color-grey);
-      color: var(--color-white);
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      .banner-showroom { padding: 2rem; }
-    }
-
-    .banner-showroom .content {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 2rem;
-    }
-
-    .banner-showroom .column:nth-child(2) {
-      text-align: right;
-    }
-
-    .banner-showroom .address {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 2rem;
-    }
-
-    /* SECTION 5: FEATURED PROJECTS LIST (.featured-projects) */
-    .featured-projects {
-      margin: 15rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .featured-projects { margin: 8rem 0; }
-    }
-
-    .featured-projects .container {
-      margin: 0 4rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .featured-projects .container { margin: 0 2rem; }
-    }
-
-    .featured-projects .projects {
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent);
-      margin-top: 8rem;
-    }
-
-    .featured-projects .project {
-      align-items: center;
-      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent);
-      display: flex;
-      justify-content: space-between;
-      padding: 2.8rem 0;
-      position: relative;
-      cursor: pointer;
-      transition: padding-left 0.3s var(--ease-fluid), border-color 0.3s ease;
-    }
-
-    .featured-projects .project:hover {
-      padding-left: 1.5rem;
-      border-color: var(--color-accent);
-    }
-
-    .featured-projects .project-title {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2.8rem;
-      font-weight: 400;
-      letter-spacing: -.02em;
-      transition: color 0.3s ease;
-    }
-
-    .featured-projects .project:hover .project-title {
-      color: var(--color-accent);
-    }
-
-    .featured-projects .product-tag {
-      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      border-radius: 2rem;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-weight: 500;
-      letter-spacing: .08em;
-      padding: .5rem 1.2rem;
-      text-transform: uppercase;
-      color: var(--color-muted);
-    }
-
-    .featured-projects .project-arrow-svg {
-      height: 1.1rem;
-      width: 1.5rem;
-      opacity: .3;
-      transition: transform 0.3s var(--ease-fluid), opacity 0.3s ease;
-    }
-
-    .featured-projects .project:hover .project-arrow-svg {
-      opacity: 1;
-      transform: translateX(8px);
-    }
-
-    /* TECHNICAL STANDARDS & MATERIALITY MATRIX */
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4rem;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.2rem;
-    }
-
-    .specs-table th {
-      text-align: left;
-      border-bottom: 2px solid var(--color-grey);
-      padding: 1.5rem 1rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--color-grey);
-    }
-
-    .specs-table td {
-      padding: 1.5rem 1rem;
-      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 15%, transparent);
-      color: var(--color-muted);
-    }
-
-    .specs-table tr:hover td {
-      color: var(--color-grey);
-      background: #FFFFFF;
-    }
-
-    /* 5-STEP ROADMAP & FAQ ACCORDIONS */
-    .process-section {
-      margin: 15rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .process-section { margin: 8rem 0; }
-    }
-
-    .process-section .container {
-      margin: 0 4rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .process-section .container { margin: 0 2rem; }
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-      margin-top: 6rem;
-    }
-
-    @media (max-width: 1100px) {
-      .process-grid { grid-template-columns: 1fr; }
-    }
-
-    .process-step {
-      border-top: 1px solid var(--color-grey);
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .step-num {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      margin-bottom: 1.5rem;
-    }
-
-    .step-title {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .step-desc {
-      font-size: 1.4rem;
-      line-height: 1.4;
-      color: var(--color-muted);
-    }
-
-    /* FAQ ACCORDION */
-    .faq-list {
-      margin-top: 6rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-    }
-
-    .faq-item {
-      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding: 2.5rem 0;
-      cursor: pointer;
-    }
-
-    .faq-question {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2.2rem;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      color: var(--color-muted);
-      margin-top: 1.5rem;
-      max-width: 80rem;
-      display: none;
-    }
-
-    .faq-item.is-active .faq-answer {
-      display: block;
-    }
-
-    .faq-item.is-active .faq-toggle {
-      transform: rotate(45deg);
-      color: var(--color-accent);
-    }
-
-    .faq-toggle {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 2rem;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    /* REVIEWS / MANIFESTO */
-    .reviews {
-      margin: 15rem 0;
-      user-select: none;
-    }
-
-    @media (max-width: 768px) {
-      .reviews { margin: 8rem 0; }
-    }
-
-    .reviews .container {
-      margin: 0 4rem;
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding-top: 2rem;
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      .reviews .container { margin: 0 2rem; }
-    }
-
-    .reviews .blockquote {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: clamp(2.8rem, 4.8vw, 5.8rem);
-      font-weight: 400;
-      letter-spacing: -.03em;
-      line-height: 1.05;
-      margin: 6rem 0 4rem;
-      max-width: 110rem;
-    }
-
-    .reviews .author {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .reviews .author-img {
-      width: 6rem;
-      height: 6rem;
-      object-fit: cover;
-      border: 1px solid var(--color-grey);
-      filter: grayscale(100%);
-    }
-
-    .reviews .author-name {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
-    .reviews .author-role {
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      color: var(--color-muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    /* SLIDE-OVER QUOTE CONFIGURATOR PANEL (.quote-panel) */
-    .quote-panel {
-      background: var(--color-cream);
-      display: flex;
-      flex-direction: column;
-      inset: 0 0 0 auto;
-      overflow-y: auto;
-      position: fixed;
-      scrollbar-width: none;
-      z-index: 999;
-      width: clamp(34rem, 48vw, 72rem);
-      padding: 5rem;
-      border-left: 1px solid var(--color-grey);
-      transform: translateX(100%);
-      transition: transform 0.5s var(--ease-fluid);
-      box-shadow: -20px 0 60px rgba(0,0,0,0.15);
-    }
-
-    .quote-panel.is-open {
-      transform: translateX(0);
-    }
-
-    .quote-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(11, 16, 18, 0.6);
-      backdrop-filter: blur(8px);
-      z-index: 990;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-
-    .quote-backdrop.is-open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .quote-panel .close {
-      align-items: center;
-      background: var(--color-grey);
-      display: flex;
-      height: 4.2rem;
-      justify-content: center;
-      width: 4.2rem;
-      position: absolute;
-      top: 4rem;
-      right: 4rem;
-      cursor: pointer;
-    }
-
-    .quote-panel .close-svg {
-      color: var(--color-cream);
-      height: 1.2rem;
-      width: 1.2rem;
-    }
-
-    .quote-panel .heading {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 4.4rem;
-      font-weight: 400;
-      letter-spacing: -.03em;
-      line-height: 1;
-      margin: 4rem 0 3rem;
-    }
-
-    .quote-panel .row {
-      border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      padding: 2.5rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .quote-panel .input {
-      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      font-family: var(--font-f-aeonik-pro);
-      font-size: 1.8rem;
-      padding: 1.8rem;
-      width: 100%;
-      background: var(--color-white);
-    }
-
-    .quote-panel .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .quote-panel .button {
-      background: var(--color-cream);
-      border: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.15rem;
-      font-weight: 500;
-      height: 4.4rem;
-      letter-spacing: .08em;
-      padding: 0 2rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .quote-panel .button:hover, .quote-panel .button.is-active {
-      background: var(--color-grey);
-      color: var(--color-white);
-    }
-
-    /* FULLSCREEN ARCHITECTURAL SPECIFICATION & BLUEPRINT MODAL */
-    .blueprint-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(11, 16, 18, 0.85);
-      backdrop-filter: blur(12px);
-      z-index: 1100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
-    }
-
-    .blueprint-modal.is-active {
-      display: flex;
-    }
-
-    .blueprint-box {
-      background: var(--color-cream);
-      border: 1px solid var(--color-grey);
-      width: 100%;
-      max-width: 1200px;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blueprint-header {
-      padding: 2.5rem 3.5rem;
-      border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .blueprint-body {
-      padding: 3.5rem;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 3.5rem;
-    }
-
-    @media (max-width: 992px) {
-      .blueprint-body { grid-template-columns: 1fr; }
-    }
-
-    /* MASSIVE FOOTER (.footer) */
-    .footer {
-      background: var(--color-black);
-      color: var(--color-white);
-      min-height: 100vh;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      .footer { padding: 2rem; }
-    }
-
-    .footer .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 3rem;
-    }
-
-    .footer .big-email {
-      font-family: var(--font-f-aeonik-pro);
-      font-size: clamp(3.2rem, 7.5vw, 9.6rem);
-      font-weight: 400;
-      letter-spacing: -.04em;
-      line-height: 1;
-      display: inline-block;
-      margin: 8rem 0;
-      transition: color 0.3s ease;
-    }
-
-    .footer .big-email:hover {
-      color: var(--color-accent);
-    }
-
-    .footer .bottom {
-      display: grid;
-      grid-template-columns: repeat(24, 1fr);
-      grid-column-gap: 2rem;
-      font-family: var(--font-f-aeonik-mono);
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.6);
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 2rem;
-    }
-
-    .footer .bottom-col-1 { grid-column: 1 / 8; }
-    .footer .bottom-col-2 { grid-column: 9 / 16; }
-    .footer .bottom-col-3 { grid-column: 17 / 25; text-align: right; }
-
-    @media (max-width: 992px) {
-      .footer .bottom { display: flex; flex-direction: column; gap: 2rem; }
-      .footer .bottom-col-3 { text-align: left; }
+    #main-header.mobile-header-open #header-logo,
+    #main-header.mobile-header-open #header-logo-text,
+    #main-header.mobile-header-open #mobile-menu-btn {
+      color: #ffffff !important;
     }
   </style>
 </head>
-<body>
 
-  <!-- FLOATING PILL HEADER -->
-  <header class="header" id="main-header">
-    <a href="#hero" class="logo" aria-label="GO PROJECT Home">
-      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="brandmark-svg">
-        <path d="M42 15.1935V10.5L21 0L0 10.5V31.5L21 42L42 31.5V19.95L25.2 11.55V23.2995L37.2435 29.1795L21 37.3065L4.2 28.9065V13.0935L21 4.6935L42 15.1935Z" fill="currentColor"></path>
-        <path d="M21 13.902V9.45L8.4 15.75V20.4435L21 13.902Z" fill="currentColor"></path>
-      </svg>
-    </a>
-    <div class="title" id="header-title">GO PROJECT &middot; ARCHITEKTURA</div>
-    <button class="burger" aria-label="Menu" onclick="toggleMenu()">
-      <svg viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="burger-svg">
-        <path d="M0 0.5H20" stroke="currentColor" stroke-width="1.2"></path>
-        <path d="M0 5.5H20" stroke="currentColor" stroke-width="1.2"></path>
-        <path d="M0 10.5H20" stroke="currentColor" stroke-width="1.2"></path>
-      </svg>
-    </button>
-    <button class="close" aria-label="Close Menu" onclick="toggleMenu()">
-      <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 1.3rem; width: 1.3rem;">
-        <path d="M0.353516 11.6673L11.6672 0.353589" stroke="currentColor" stroke-width="1.2"></path>
-        <path d="M0.353516 0.353577L11.6672 11.6673" stroke="currentColor" stroke-width="1.2"></path>
-      </svg>
-    </button>
-    <div class="background"></div>
+<body class="bg-white text-black font-sans antialiased selection:bg-accent selection:text-white">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 text-white py-3.5 transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <!-- LOGO -->
+      <a id="header-logo" href="./index.html" class="flex items-center shrink-0" aria-label="GOPROJECT Pracownia Projektowa">
+        <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-light h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+        <img src="./img/goprojekt_logo_dark.svg" alt="GOPROJECT Pracownia Projektowa" class="logo-dark h-5 sm:h-6 md:h-7 w-auto object-contain object-left transition-opacity duration-200" width="290" height="24" />
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="header-nav" class="hidden lg:flex items-center gap-8 font-mono text-xs font-semibold uppercase tracking-wider transition-colors">
+        <!-- OFERTA WITH BULLETPROOF DROPDOWN -->
+        <div class="relative dropdown-container group py-2">
+          <a href="./uslugi.html" class="hover:text-accent transition-colors flex items-center gap-1.5 py-1">
+            <span>Oferta</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:rotate-180 shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+
+          <!-- DROPDOWN MENU -->
+          <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black text-white p-5 shadow-2xl border border-zinc-800 font-sans text-xs flex flex-col gap-2">
+              <div class="space-y-1 pt-1 font-medium text-gray-300">
+                <a href="./uslugi-projekty-i-adaptacje.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  01 / Projekty budowlane i adaptacje
+                </a>
+                <a href="./uslugi-nadzor-i-kierownik-budowy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  02 / Kierownik budowy i nadzór
+                </a>
+                <a href="./uslugi-odbiory-i-ekspertyzy.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5 border-b border-zinc-900">
+                  03 / Odbiory mieszkań i ekspertyzy
+                </a>
+                <a href="./uslugi-formalnosci-i-energetyka.html" class="block hover:text-accent hover:pl-1.5 transition-all py-1.5">
+                  04 / Formalności WZ & Świadectwa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./o-nas.html" class="hover:text-accent transition-colors">O pracowni</a>
+        <a href="./projekty.html" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="./kontakt.html" class="hover:text-accent transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <a id="header-phone" href="tel:+48884757815"
+          class="hidden md:inline-flex items-center gap-2 h-[44px] px-5 font-mono text-xs font-bold uppercase tracking-wider border border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-md transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+48 884 757 815</span>
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden p-2 text-white hover:text-accent transition-colors flex items-center justify-center"
+          aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 shrink-0"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- FULLSCREEN GLASS DROPDOWN MENU -->
-  <div class="menu" id="nav-menu">
-    <div class="background"></div>
-    <div class="title"> Nawigacja Pracowni </div>
-    <ul class="main">
-      <li><a href="#about" class="link" onclick="toggleMenu()">01 O Pracowni</a></li>
-      <li><a href="#pillars" class="link" onclick="toggleMenu()">02 Filary Usług</a></li>
-      <li><a href="#comparison" class="link" onclick="toggleMenu()">03 Studium Realizacji</a></li>
-      <li><a href="#projects" class="link" onclick="toggleMenu()">04 Portfolio Projektów</a></li>
-      <li><a href="#standards" class="link" onclick="toggleMenu()">05 Standardy WT 2021</a></li>
-      <li><a href="#process" class="link" onclick="toggleMenu()">06 Proces & Roadmapa</a></li>
-      <li><a href="#faq" class="link" onclick="toggleMenu()">07 FAQ Pytania</a></li>
-      <li><a href="#contact" class="link" onclick="toggleMenu()">08 Kontakt</a></li>
-    </ul>
-    <ul class="sub">
-      <li><a href="tel:+48884757815">+48 884 757 815</a></li>
-      <li><a href="mailto:kontakt@goproject.com.pl">kontakt@goproject.com.pl</a></li>
-      <li>Chojnice: ul. Chojnicka 18</li>
-      <li>Gdańsk: al. Grunwaldzka</li>
-    </ul>
-    <button class="base-button is-black" style="width: 100%;" onclick="toggleMenu(); openQuotePanel();">
-      <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-        <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-        <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-      </svg>
-      <div class="label">
-        <span class="line" aria-hidden="true">Wycena inwestycji</span>
-        <span class="line">Wycena inwestycji</span>
-      </div>
-    </button>
-  </div>
+  <!-- MOBILE MENU DRAWER OVERLAY -->
+  <div id="mobile-menu"
+    class="hidden lg:hidden fixed inset-x-0 top-[60px] md:top-[68px] bottom-0 z-40 bg-zinc-950 text-white flex flex-col justify-between overflow-y-auto border-t border-zinc-800/80 transition-all duration-300">
+    <div class="p-6 space-y-6 font-mono text-sm">
 
-  <!-- MAIN APPLICATION CONTENT -->
-  <main>
-
-    <!-- SECTION 1: FLUID.GLASS HERO SLIDER (.slider) -->
-    <section class="slider" id="hero">
-      
-      <!-- TOP STATUS BAR -->
-      <div style="position: absolute; top: 3.5rem; left: 4rem; right: 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 10;">
-        <div style="font-family: var(--font-f-aeonik-mono); font-size: 1.25rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
-          <span>GO PROJECT</span>
-          <span style="color: var(--color-accent);">/</span>
-          <span>MGR INŻ. ADAM KUBAT</span>
-        </div>
-        <button class="base-button is-alpha" onclick="openQuotePanel()">
-          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-          </svg>
-          <div class="label">
-            <span class="line" aria-hidden="true">Wyceń projekt</span>
-            <span class="line">Wyceń projekt</span>
-          </div>
+      <!-- OFERTA ACCORDION -->
+      <div class="border-b border-zinc-800/80 pb-4">
+        <button id="mobile-oferta-toggle"
+          class="w-full flex items-center justify-between font-bold text-accent py-2 text-base">
+          <span>// OFERTA USŁUG</span>
+          <i data-lucide="chevron-down" id="mobile-oferta-arrow"
+            class="w-4 h-4 transition-transform duration-200 rotate-180"></i>
         </button>
-      </div>
-
-      <!-- SLIDER INDICATOR -->
-      <div class="indicator" id="hero-indicator">01 / 05</div>
-
-      <!-- PROGRESS LINE -->
-      <div class="progress">
-        <div class="progress-bar" id="hero-progress-bar"></div>
-      </div>
-
-      <!-- NEXT / PREV BUTTONS -->
-      <div class="nav">
-        <button class="button" aria-label="Previous" onclick="prevSlide()">
-          <svg viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-            <path d="M0 3.56641L10.7969 3.56641L8.00488 0.900391L7.94043 0.839844L8.00098 0.774414L8.65332 0.0673828L8.71484 0L8.78125 0.0625L12.9727 4.06348L13.04 4.12793L12.9727 4.19336L8.78125 8.19336L8.71484 8.25586L8.65332 8.18848L8.00098 7.48145L7.94043 7.41602L8.00488 7.35547L10.7969 4.69043L0 4.69043L0 3.56641Z" fill="currentColor"></path>
-          </svg>
-        </button>
-        <button class="button" aria-label="Next" onclick="nextSlide()">
-          <svg viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-            <path d="M0 3.56641L10.7969 3.56641L8.00488 0.900391L7.94043 0.839844L8.00098 0.774414L8.65332 0.0673828L8.71484 0L8.78125 0.0625L12.9727 4.06348L13.04 4.12793L12.9727 4.19336L8.78125 8.19336L8.71484 8.25586L8.65332 8.18848L8.00098 7.48145L7.94043 7.41602L8.00488 7.35547L10.7969 4.69043L0 4.69043L0 3.56641Z" fill="currentColor"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- SLIDE TYPOGRAPHY CONTAINER -->
-      <div class="container">
-        
-        <!-- Slide 1 -->
-        <div class="slide is-active" data-slide="0" onclick="openBlueprintModal('chojniczki')">
-          <p class="heading">Nowoczesny dom parterowy ze szklaną ścianą szczytową w Chojniczkach</p>
-          <h3 class="title">01 / Dom w Chojniczkach &middot; 185 m&sup2;</h3>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide" data-slide="1" onclick="openBlueprintModal('gdansk')">
-          <p class="heading">Minimalistyczna willa klifowa z panoramicznym przeszkleniem HS i tarasem</p>
-          <h3 class="title">02 / Willa Nadmorska Gdańsk &middot; 240 m&sup2;</h3>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide" data-slide="2" onclick="openBlueprintModal('sniadeckich')">
-          <p class="heading">Mieszkalna tkanka miejska w Chojnicach z 16 lokalami i podziemną halą</p>
-          <h3 class="title">03 / Budynek Śniadeckich &middot; 1 420 m&sup2;</h3>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="slide" data-slide="3" onclick="openBlueprintModal('stodola')">
-          <p class="heading">Reinterpretacja pomorskiej formy dwuspadowej z bezokapowym dachem na rąbek</p>
-          <h3 class="title">04 / Nowoczesna Stodoła &middot; 210 m&sup2;</h3>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="slide" data-slide="4" onclick="openBlueprintModal('kaszuby')">
-          <p class="heading">Kameralny zespół czterech budynków dwulokalowych w krajobrazie Kaszub</p>
-          <h3 class="title">05 / Osiedle Kaszuby &middot; 360 m&sup2;</h3>
-        </div>
-
-      </div>
-
-      <!-- SLIDER BACKGROUND IMAGES ASSETS -->
-      <div class="background" id="slider-bg-container" onclick="openCurrentSlideModal()">
-        
-        <div class="asset is-active" data-slide="0">
-          <img src="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp" alt="Dom w Chojniczkach" class="base-image">
-        </div>
-
-        <div class="asset" data-slide="1">
-          <img src="./public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp" alt="Willa Nadmorska Gdańsk" class="base-image">
-        </div>
-
-        <div class="asset" data-slide="2">
-          <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Budynek Śniadeckich" class="base-image">
-        </div>
-
-        <div class="asset" data-slide="3">
-          <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Nowoczesna Stodoła z Garażem" class="base-image">
-        </div>
-
-        <div class="asset" data-slide="4">
-          <img src="./public/img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle Kaszuby" class="base-image">
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- SECTION 2: ABOUT / MANIFESTO (.text-cta) -->
-    <section class="text-cta" id="about">
-      <div class="container">
-        <h2 class="base-title">O Pracowni GO PROJECT</h2>
-        <p class="base-heading">
-          Wprowadzamy architekturę w życie poprzez inżynierską precyzję i dyscyplinę. Zaufali nam inwestorzy indywidualni i deweloperzy wymagający trwałości, harmonii i pełnej zgodności z prawem budowlanym.
-        </p>
-        <button class="base-button is-black" onclick="openQuotePanel()">
-          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-          </svg>
-          <div class="label">
-            <span class="line" aria-hidden="true">Poznaj proces</span>
-            <span class="line">Poznaj proces</span>
-          </div>
-        </button>
-      </div>
-    </section>
-
-    <!-- SECTION 3: SERVICES COLLECTION & 4 EXPANDED PILLARS -->
-    <section class="product-collection" id="pillars">
-      <div class="container">
-        <h2 class="base-title">Filary oferty inżynieryjnej</h2>
-        <div class="content">
-          <div class="richtext">
-            <p>Nasz <strong>zakres projektowy</strong> definiuje bezkompromisowa jakość, uprawnienia POIIB bez ograniczeń i pełna koordynacja wielobranżowa. Dla odważnej architektury mieszkalnej.</p>
-          </div>
-          <button class="base-button is-black" onclick="openQuotePanel()">
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-            <div class="label">
-              <span class="line" aria-hidden="true">Wycena i zapytanie</span>
-              <span class="line">Wycena i zapytanie</span>
-            </div>
-          </button>
-        </div>
-
-        <div class="blocks">
-          <div class="block" onclick="openBlueprintModal('chojniczki')">
-            <h3 class="title">01 Koncepcja & 3D</h3>
-            <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Koncepcja architektoniczna" class="base-image">
-          </div>
-          <div class="block" onclick="openBlueprintModal('gdansk')">
-            <h3 class="title">02 PAB & PT Budowlany</h3>
-            <img src="./public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp" alt="Projekt budowlany" class="base-image">
-          </div>
-          <div class="block" onclick="openBlueprintModal('sniadeckich')">
-            <h3 class="title">03 Nadzór POIIB</h3>
-            <img src="./public/img/wielorodzinny-sniadeckich-hq.webp" alt="Kierownik budowy i nadzór" class="base-image">
-          </div>
-        </div>
-
-        <!-- 4 EXPANDED DETAILED SERVICE PILLARS -->
-        <div class="pillar-cards">
-          
-          <!-- Pillar 1: Projekty budowlane i adaptacje -->
-          <div class="pillar-card" onclick="openQuotePanel()">
-            <div>
-              <div class="pillar-num">FILAR 01 &middot; PROJEKTOWANIE</div>
-              <h3 class="pillar-title">Projekty budowlane & Adaptacje MPZP</h3>
-              <p class="pillar-desc">
-                Indywidualne projekty nowoczesnych domów jednorodzinnych, nowoczesnych stodół 3D, rezydencji oraz adaptacje projektów typowych (Archon, Z500, Extradom, Murator) do warunków działki i wypisu z planu zagospodarowania.
-              </p>
-              <ul class="pillar-list">
-                <li>&check; Projekt Architektoniczno-Budowlany (PAB) i Techniczny (PT)</li>
-                <li>&check; Studium nasłonecznienia, ergonomii i optymalizacji energetycznej</li>
-                <li>&check; Koordynacja branżowa: konstrukcja, HVAC, instalacje sanitarne i elektryka</li>
-                <li>&check; Reprezentacja w starostwie i pozwolenie na budowę</li>
-              </ul>
-            </div>
-            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 01 &rarr;</span>
-          </div>
-
-          <!-- Pillar 2: Kierownik budowy i nadzór inwestorski -->
-          <div class="pillar-card" onclick="openQuotePanel()">
-            <div>
-              <div class="pillar-num">FILAR 02 &middot; NADZÓR INŻYNIERSKI</div>
-              <h3 class="pillar-title">Kierownik budowy & Nadzór inwestorski</h3>
-              <p class="pillar-desc">
-                Niezależny nadzór nad realizacją stanu surowego i deweloperskiego przez licencjonowanego inżyniera z uprawnieniami POIIB. Ochrona budżetu inwestora przed błędami wykonawców i nieuzasadnionymi kosztami.
-              </p>
-              <ul class="pillar-list">
-                <li>&check; Prowadzenie i formalne wpisy do Dziennika Budowy</li>
-                <li>&check; Rygorystyczny odbiór zbrojenia, szalunków, wieńców, stropów i więźby</li>
-                <li>&check; Kontrola jakości materiałów i zgodności z projektem konstrukcyjnym</li>
-                <li>&check; Przygotowanie dokumentacji powykonawczej i odbiór PINB</li>
-              </ul>
-            </div>
-            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 02 &rarr;</span>
-          </div>
-
-          <!-- Pillar 3: Odbiory mieszkań od dewelopera & ekspertyzy -->
-          <div class="pillar-card" onclick="openQuotePanel()">
-            <div>
-              <div class="pillar-num">FILAR 03 &middot; DIAGNOSTYKA TECHNICZNA</div>
-              <h3 class="pillar-title">Odbiory mieszkań od dewelopera & Ekspertyzy</h3>
-              <p class="pillar-desc">
-                Specjalistyczne odbiory techniczne lokali mieszkalnych i domów w stanie deweloperskim. Badania kamerą termowizyjną i pomiary laserowe odchyłek tynków oraz wylewek z urzędowym protokołem usterek.
-              </p>
-              <ul class="pillar-list">
-                <li>&check; Pomiary laserowe płaszczyzn i kątów wg normy PN-B-10110</li>
-                <li>&check; Termowizyjna detekcja mostków cieplnych i nieszczelności stolarki</li>
-                <li>&check; Weryfikacja instalacji elektrycznych, wod-kan, wentylacji i balkonów</li>
-                <li>&check; Wiążący protokół wad prawnie zmuszający dewelopera do napraw</li>
-              </ul>
-            </div>
-            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 03 &rarr;</span>
-          </div>
-
-          <!-- Pillar 4: Formalności WZ, MPZP & Świadectwa Energetyczne -->
-          <div class="pillar-card" onclick="openQuotePanel()">
-            <div>
-              <div class="pillar-num">FILAR 04 &middot; FORMALNOŚCI & ENERGIA</div>
-              <h3 class="pillar-title">Warunki Zabudowy (WZ) & Świadectwa Energetyczne</h3>
-              <p class="pillar-desc">
-                Kompleksowa obsługa procedur administracyjnych: wnioski o WZ, uzgodnienia z gestorami sieci oraz oficjalne Świadectwa Charakterystyki Energetycznej z wpisem do rejestru Ministerstwa Rozwoju i Technologii (MRiT).
-              </p>
-              <ul class="pillar-list">
-                <li>&check; Przygotowanie wniosków o Warunki Zabudowy (WZ) dla trudnych działek</li>
-                <li>&check; Uzyskiwanie warunków przyłączeniowych: Energa, PGNiG, ZWiK</li>
-                <li>&check; Certyfikowane Świadectwa Energetyczne (obowiązkowe do odbioru i sprzedaży)</li>
-                <li>&check; Audyty energetyczne do programu „Czyste Powietrze”</li>
-              </ul>
-            </div>
-            <span class="base-title" style="font-size: 1.15rem; color: var(--color-accent);">Wyceń Filar 04 &rarr;</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: INTERACTIVE BEFORE/AFTER SLIDER (Koncepcja vs Realizacja) -->
-    <section class="comparison-section" id="comparison">
-      <div class="container" style="margin: 0 4rem; border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent); padding-top: 2rem;">
-        <h2 class="base-title">Studium Realizacji &middot; Przed i Po</h2>
-        <p class="base-heading" style="margin-top: 2rem; font-size: clamp(2.4rem, 4vw, 4.4rem);">
-          Od wizualizacji 3D po bezkompromisowe wykonanie na działce.
-        </p>
-
-        <div class="comparison-container" id="comparison-slider-box">
-          <div class="comparison-before">
-            <img src="./public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp" alt="Realizacja Domu w Chojniczkach">
-            <div class="comparison-badge-right">Zrealizowany Obiekt (Chojniczki)</div>
-          </div>
-          <div class="comparison-after" id="comparison-overlay">
-            <img src="./public/img/dom-parterowy-z-garazem-wizualizacja.webp" alt="Koncepcja 3D i Model Projektowy">
-            <div class="comparison-badge-left">Koncepcja Projektowa 3D</div>
-          </div>
-          <input 
-            type="range" 
-            min="0" 
-            max="100" 
-            value="50" 
-            class="comparison-slider-input" 
-            id="comparison-range"
-            oninput="handleComparison(this.value)"
-          >
-        </div>
-        <p style="font-family: var(--font-f-aeonik-mono); font-size: 1.15rem; color: var(--color-muted); text-align: center; margin-top: 1.5rem; text-transform: uppercase;">
-          &larr; Przesuń suwak myszą lub palcem, aby porównać koncepcję z realizacją &rarr;
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 4: IMMERSIVE MONOGRAPH BANNER (.banner-showroom) -->
-    <section class="banner-showroom">
-      <div style="position: absolute; inset: 0; z-index: 1;">
-        <img src="./public/img/osiedle-dwulokalowe-lot-ptaka.webp" alt="Osiedle Chojnice" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.45; filter: grayscale(30%);">
-      </div>
-      <div class="base-title" style="color: var(--color-white); position: relative; z-index: 2;">
-        Główna siedziba &middot; Chojnice &middot; Gdańsk
-      </div>
-      <div class="content">
-        <div class="column">
-          <p class="base-heading" style="color: var(--color-white); font-size: clamp(2.4rem, 4vw, 4.4rem); max-width: 50rem;">
-            Projektujemy na Pomorzu. Od Chojnic po Trójmiasto.
-          </p>
-        </div>
-        <div class="column">
-          <div class="address">
-            GOPROJECT mgr inż. Adam Kubat<br>
-            ul. Chojnicka 18, 89-600 Chojnice / Chojniczki<br>
-            NIP: 555-123-45-67 &middot; REGON: 382910293 &middot; POIIB
-          </div>
-          <button class="base-button is-alpha" onclick="openQuotePanel()">
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-            <div class="label">
-              <span class="line" aria-hidden="true">Umów spotkanie</span>
-              <span class="line">Umów spotkanie</span>
-            </div>
-          </button>
+        <div id="mobile-oferta-submenu"
+          class="pl-4 pt-3 space-y-2 text-sm sm:text-base border-l-2 border-accent/60 ml-1 mt-2">
+          <a href="./uslugi-projekty-i-adaptacje.html"
+            class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">01 / Projekty budowlane &
+            adaptacje</a>
+          <a href="./uslugi-nadzor-i-kierownik-budowy.html"
+            class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">02 / Kierownik budowy &
+            nadzór</a>
+          <a href="./uslugi-odbiory-i-ekspertyzy.html"
+            class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">03 / Odbiory mieszkań &
+            ekspertyzy</a>
+          <a href="./uslugi-formalnosci-i-energetyka.html"
+            class="block py-2.5 text-zinc-200 font-medium hover:text-accent transition-colors">04 / Formalności WZ &
+            energia</a>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION 5: FEATURED PROJECTS LIST WITH DIRECT BLUEPRINT MODALS -->
-    <section class="featured-projects" id="projects">
-      <div class="container">
-        <h2 class="base-title">Portfolio realizacji &middot; Kliknij obiekt</h2>
-        <p class="base-heading" style="margin-top: 2rem;">
-          Domy stworzone z myślą o świetle, funkcji i przestrzeni.
-        </p>
-
-        <div class="projects">
-          
-          <div class="project" onclick="openBlueprintModal('chojniczki')">
-            <h3 class="project-title">Dom w Chojniczkach</h3>
-            <span class="product-tag">185 m&sup2; &middot; Parterowy ze szklanym szczytem &middot; 2025</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-          <div class="project" onclick="openBlueprintModal('gdansk')">
-            <h3 class="project-title">Willa Nadmorska Gdańsk</h3>
-            <span class="product-tag">240 m&sup2; &middot; Rezydencja z tarasem klifowym &middot; 2024</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-          <div class="project" onclick="openBlueprintModal('sniadeckich')">
-            <h3 class="project-title">Budynek Mieszkalny Śniadeckich</h3>
-            <span class="product-tag">1 420 m&sup2; &middot; Tkanka miejska / 16 lokali &middot; 2025</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-          <div class="project" onclick="openBlueprintModal('kaszuby')">
-            <h3 class="project-title">Osiedle Dwulokalowe Kaszuby</h3>
-            <span class="product-tag">360 m&sup2; &middot; Zespół bliźniaczy &middot; 2024</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-          <div class="project" onclick="openBlueprintModal('stodola')">
-            <h3 class="project-title">Nowoczesna Stodoła z Garażem</h3>
-            <span class="product-tag">210 m&sup2; &middot; Dach bezokapowy &middot; Powiat Gdański &middot; 2024</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-          <div class="project" onclick="openBlueprintModal('detal')">
-            <h3 class="project-title">Detal Architektoniczny: Drewno & Stal [B&W]</h3>
-            <span class="product-tag">Studium konstrukcyjne tarasu i pergoli</span>
-            <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow-svg">
-              <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-              <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-            </svg>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: TECHNICAL STANDARDS & MATERIALITY MATRIX (WT 2021) -->
-    <section class="process-section" id="standards" style="margin-top: 8rem;">
-      <div class="container">
-        <h2 class="base-title">Standardy Inżynieryjne &middot; WT 2021</h2>
-        <p class="base-heading" style="margin-top: 2rem; font-size: clamp(2.4rem, 4vw, 4.4rem);">
-          Rygorystyczne normy termiczne i konstrukcyjne każdego projektu.
-        </p>
-
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Element Konstrukcyjny</th>
-              <th>Wymóg WT 2021</th>
-              <th>Standard GO PROJECT</th>
-              <th>Zastosowana Technologia</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight: 700; color: var(--color-grey);">Ściany zewnętrzne</td>
-              <td>U &le; 0.20 W/m&sup2;K</td>
-              <td>U = 0.14 W/m&sup2;K</td>
-              <td>Silka / Porotherm + 20cm Grafitowy EPS &lambda;=0.031</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: var(--color-grey);">Dach i stropodach</td>
-              <td>U &le; 0.15 W/m&sup2;K</td>
-              <td>U = 0.11 W/m&sup2;K</td>
-              <td>PIR nakrokwiowy / Wełna mineralna 30cm</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: var(--color-grey);">Stolarka okienna HS</td>
-              <td>Uw &le; 0.90 W/m&sup2;K</td>
-              <td>Uw = 0.72 W/m&sup2;K</td>
-              <td>Aluminiowe profile z przekładką termiczną + pakiet 3-szybowy</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: var(--color-grey);">Wentylacja & HVAC</td>
-              <td>Grawitacyjna / Rekuperacja</td>
-              <td>Rekuperacja &ge; 92%</td>
-              <td>Entalpiczny wymiennik ciepła + Gruntowa/Powietrzna Pompa Ciepła</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: var(--color-grey);">Wskaźnik EP energii pierwotnej</td>
-              <td>EP &le; 70 kWh/m&sup2;&middot;rok</td>
-              <td>EP &le; 35 kWh/m&sup2;&middot;rok</td>
-              <td>Projekt w standardzie budynku niemal zeroenergetycznego (nZEB)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- SECTION 6: 5-STEP ROADMAP PROCESS (.process-section) -->
-    <section class="process-section" id="process">
-      <div class="container">
-        <h2 class="base-title">Roadmapa współpracy</h2>
-        <p class="base-heading" style="margin-top: 2rem;">
-          Przejrzysty 5-etapowy proces inżynieryjny.
-        </p>
-
-        <div class="process-grid">
-          
-          <div class="process-step">
-            <div>
-              <div class="step-num">01 / KONSULTACJA</div>
-              <h3 class="step-title">Analiza Działki & MPZP</h3>
-              <p class="step-desc">
-                Weryfikacja uwarunkowań formalnych, wypis z MPZP lub analiza WZ, badania geotechniczne gruntu i wstępny budżet.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div>
-              <div class="step-num">02 / KONCEPCJA</div>
-              <h3 class="step-title">Koncepcja 3D & Układ</h3>
-              <p class="step-desc">
-                2-3 warianty funkcjonalne, ergonomiczne rzuty kondygnacji, bryła 3D oraz optymalizacja nasłonecznienia.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div>
-              <div class="step-num">03 / PROJEKT</div>
-              <h3 class="step-title">Projekt PAB + PT</h3>
-              <p class="step-desc">
-                Pełnobranżowy Projekt Architektoniczno-Budowlany i Projekt Techniczny z obliczeniami konstrukcyjnymi.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div>
-              <div class="step-num">04 / FORMALNOŚCI</div>
-              <h3 class="step-title">Pozwolenie na Budowę</h3>
-              <p class="step-desc">
-                Kompletne uzgodnienia rzeczoznawców, reprezentacja w starostwie powiatowym i uzyskanie prawomocnej decyzji PnB.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div>
-              <div class="step-num">05 / NADZÓR</div>
-              <h3 class="step-title">Kierownik Budowy</h3>
-              <p class="step-desc">
-                Przejęcie placu budowy, odbiory zbrojenia, wpisy do dziennika budowy i formalne zakończenie inwestycji w PINB.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: FAQ (.faq-section) -->
-    <section class="process-section" id="faq" style="margin-top: 8rem;">
-      <div class="container">
-        <h2 class="base-title">Najczęściej zadawane pytania (FAQ)</h2>
-        <div class="faq-list">
-          
-          <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">
-              <span>Ile czasu trwa wykonanie indywidualnego projektu domu?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              Czas opracowania pełnobranżowego projektu indywidualnego wynosi średnio od 6 do 10 tygodni. W przypadku konieczności uzyskania decyzji o Warunkach Zabudowy (WZ) lub dodatkowych uzgodnień środowiskowych/wodnoprawnych czas może ulec wydłużeniu o czas procedur urzędowych.
-            </div>
-          </div>
-
-          <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">
-              <span>Czy wykonujecie adaptacje projektów gotowych (Archon, Z500, Extradom)?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              Tak. Wykonujemy pełną adaptację projektów typowych, w tym: dostosowanie fundamentów do lokalnych warunków gruntowo-wodnych, zmiany układu ścian i otworów okiennych, dopasowanie geometrii dachu do ustaleń MPZP/WZ, projekt zagospodarowania działki (PZT) oraz reprezentację przed urzędem.
-            </div>
-          </div>
-
-          <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">
-              <span>Na jakich kluczowych etapach kierownik budowy przeprowadza odbiory?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              Kierownik budowy jest obecny na wszystkich robotach ulegających zakryciu: wykop i podbudowa, zbrojenie ław i płyty fundamentowej, zbrojenie wieńców i nadproży, deskowanie i zbrojenie stropów, montaż konstrukcji więźby dachowej oraz odbiór izolacji przeciwwilgociowych i termicznych.
-            </div>
-          </div>
-
-          <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">
-              <span>W jakim rejonie geograficznym świadczycie usługi?</span>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              Działamy na terenie całego województwa pomorskiego i regionów ościennych: Chojnice, Człuchów, Gdańsk, Sopot, Gdynia, Kartuzy, Kościerzyna, Bytów, Starogard Gdański, Tczew oraz Wejherowo.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: MANIFESTO REVIEWS (.reviews) -->
-    <section class="reviews">
-      <div class="container">
-        <h2 class="base-title">Filozofia Inżynierska</h2>
-        <blockquote class="blockquote">
-          &bdquo;Architektura to nie chwilowy ornament. To bezwzględna dyscyplina proporcji, światła i konstrukcji. Każda linia na rysunku ma swoje uzasadnienie w trwałości i komforcie mieszkańca.&rdquo;
-        </blockquote>
-        <div class="author">
-          <img src="./public/img/adam-kubat.jpg" alt="mgr inż. Adam Kubat" class="author-img">
-          <div>
-            <div class="author-name">mgr inż. Adam Kubat</div>
-            <div class="author-role">Założyciel &middot; Główny Projektant &middot; Uprawnienia POIIB bez ograniczeń</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9: MASSIVE FOOTER (.footer) -->
-    <footer class="footer" id="contact">
-      <div class="top">
-        <div class="base-title" style="color: var(--color-white);">
-          Rozpocznij projekt
-        </div>
-        <button class="base-button is-alpha" onclick="openQuotePanel()">
-          <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-            <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-            <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-          </svg>
-          <div class="label">
-            <span class="line" aria-hidden="true">Wyceń projekt</span>
-            <span class="line">Wyceń projekt</span>
-          </div>
-        </button>
-      </div>
-
-      <div>
-        <span style="font-family: var(--font-f-aeonik-mono); font-size: 1.3rem; color: rgba(255,255,255,0.6); display: block;">
-          Bezpośredni adres mailowy do architekta:
-        </span>
-        <a href="mailto:kontakt@goproject.com.pl" class="big-email">
-          kontakt@goproject.com.pl
+      <!-- NAV LINKS -->
+      <div class="space-y-1 font-mono text-base font-medium uppercase tracking-wider">
+        <a href="./o-nas.html"
+          class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>O pracowni</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+        </a>
+        <a href="./projekty.html"
+          class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>Portfolio</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
+        </a>
+        <a href="./kontakt.html"
+          class="py-3 border-b border-zinc-800/80 text-zinc-200 hover:text-accent transition-colors flex items-center justify-between">
+          <span>Kontakt</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500"></i>
         </a>
       </div>
 
-      <div class="bottom">
-        <div class="bottom-col-1">
-          Chojnice &middot; ul. Chojnicka 18<br>
-          Gdańsk &middot; al. Grunwaldzka<br>
-          Województwo Pomorskie
+      <!-- QUICK CONTACT & CTA -->
+      <div class="pt-4 space-y-3">
+        <a href="tel:+48884757815"
+          class="w-full h-12 bg-zinc-900 border border-zinc-800 hover:border-accent text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all">
+          <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+          <span>Zadzwoń: +48 884 757 815</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER METADATA IN MOBILE MENU -->
+    <div
+      class="p-6 border-t border-zinc-800/80 bg-black/60 font-mono text-[10px] text-zinc-400 flex items-center justify-between">
+      <span>GOPROJECT · Gdańsk / Chojnice</span>
+      <span class="text-accent">mgr inż. Adam Kubat</span>
+    </div>
+  </div>
+
+  <!-- HERO SLIDER SECTION -->
+  <section
+    class="relative w-full min-h-screen flex flex-col justify-between bg-black text-white pt-28 pb-10 overflow-hidden">
+    <!-- BACKGROUND SLIDES CAROUSEL -->
+    <div id="hero-slides-container" class="absolute inset-0 z-0 overflow-hidden">
+      <div class="hero-slide active absolute inset-0 bg-cover bg-center"
+        style="background-image: url('./img/projects/dom-jednorodzinny-chojnice/hero/dom-jednorodzinny-chojnice-elewacja-frontowa-hero-1920w.jpg');">
+      </div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center"
+        style="background-image: url('./img/projects/dom-parterowy-z-garazem/dom-parterowy-z-garazem-wizualizacja.webp');">
+      </div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center"
+        style="background-image: url('./img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg');"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center"
+        style="background-image: url('./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/35"></div>
+    </div>
+
+    <!-- MAIN HERO CONTENT CONTAINER -->
+    <div class="relative z-10 max-w-[1600px] mx-auto px-4 md:px-10 w-full my-auto py-12">
+      <div class="max-w-4xl">
+        <!-- KICKER BADGE -->
+        <div
+          class="inline-flex max-w-full items-center gap-2 mb-3 sm:mb-5 bg-zinc-950/80 border border-white/20 px-2.5 sm:px-3.5 py-1 sm:py-1.5 backdrop-blur-md shadow-xl">
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0"></span>
+          <span id="hero-tag"
+            class="font-mono text-[10px] sm:text-xs font-bold text-white tracking-wider sm:tracking-widest uppercase whitespace-nowrap overflow-hidden text-ellipsis">
+            PRACOWNIA PROJEKTOWA · GDAŃSK / CHOJNICE
+          </span>
         </div>
-        <div class="bottom-col-2">
-          Tel: +48 884 757 815<br>
-          Pn &ndash; Pt: 08:00 &ndash; 18:00<br>
-          NIP: 555-123-45-67 &middot; REGON: 382910293
+
+        <!-- H1 HEADLINE -->
+        <h1
+          class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl leading-[1.1] mb-6 text-white drop-shadow-md">
+          Jeden inżynier. Pełna odpowiedzialność. Od projektu po odbiór Twojej inwestycji.
+        </h1>
+
+
+        <!-- DESCRIPTION -->
+        <p
+          class="font-sans text-base md:text-lg text-gray-200 leading-relaxed mb-6 max-w-2xl font-normal drop-shadow-sm">
+          Łączę rolę architekta, konstruktora i kierownika budowy. Projektuję nowoczesne domy i osiedla zoptymalizowane kosztowo, a następnie osobiście nadzoruję wykonawców na budowie. Bez rozmywania odpowiedzialności — w Gdańsku, Chojnicach i na Pomorzu.
+        </p>
+
+        <!-- CTA BUTTONS -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+          <a href="./kontakt.html"
+            class="h-[48px] px-7 bg-white text-black font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent hover:text-white transition-all shadow-xl group">
+            <span>Porozmawiaj o swoim projekcie &rarr;</span>
+          </a>
+          <a href="./projekty.html"
+            class="h-[48px] px-7 bg-black/60 backdrop-blur-md border border-white/50 text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:border-white hover:bg-white hover:text-black transition-all">
+            <span>Zobacz realizacje</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
         </div>
-        <div class="bottom-col-3">
-          &copy; 2026 GO PROJECT mgr inż. Adam Kubat<br>
-          Fluid Glass Architecture System
+
+        <!-- MINIMALIST ARCHITECTURAL METRIC STRIP -->
+        <div
+          class="pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
+          <div class="sm:pr-6 group">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs font-bold text-accent">01 //</span>
+              <span
+                class="font-mono text-xs font-bold text-white uppercase tracking-wider group-hover:text-accent transition-colors">
+                100% uzyskanych pozwoleń na budowę
+              </span>
+            </div>
+            <p class="font-sans text-xs text-gray-300 pl-7">
+              Każdy projekt uzyskał prawomocną decyzję urzędu
+            </p>
+          </div>
+
+          <div class="sm:px-6 pt-4 sm:pt-0 group">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs font-bold text-accent">02 //</span>
+              <span
+                class="font-mono text-xs font-bold text-white uppercase tracking-wider group-hover:text-accent transition-colors">
+                120+ zatwierdzonych projektów
+              </span>
+            </div>
+            <p class="font-sans text-xs text-gray-300 pl-7">
+              Ponad 10 lat doświadczenia w projektowaniu i na budowie
+            </p>
+          </div>
+
+          <div class="sm:pl-6 pt-4 sm:pt-0 group">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs font-bold text-accent">03 //</span>
+              <span
+                class="font-mono text-xs font-bold text-white uppercase tracking-wider group-hover:text-accent transition-colors">
+                Nadzór inwestorski
+              </span>
+            </div>
+            <p class="font-sans text-xs text-gray-300 pl-7">
+              Niezależna kontrola jakości i kosztów budowy
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-  </main>
+    <!-- SCROLL DOWN INDICATOR -->
+    <div class="relative z-10 max-w-[1600px] mx-auto px-4 md:px-10 w-full flex justify-end">
+      <a href="#oferta"
+        class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors py-2">
+        <span>Scroll</span>
+        <i data-lucide="arrow-down" class="w-4 h-4 text-accent animate-bounce"></i>
+      </a>
+    </div>
+  </section>
 
-  <!-- FULLSCREEN ARCHITECTURAL SPECIFICATION & BLUEPRINT MODAL -->
-  <div class="blueprint-modal" id="blueprint-modal" onclick="closeBlueprintModal(event)">
-    <div class="blueprint-box" onclick="event.stopPropagation()">
-      <div class="blueprint-header">
-        <span class="base-title" id="modal-spec-label">[ SPECYFIKACJA TECHNICZNA OBIEKTU ]</span>
-        <button onclick="closeBlueprintModalDirect()" class="base-button is-black" style="padding: 0.8rem 1.6rem; font-size: 1.1rem;">
-          ZAMKNIJ [&times;]
-        </button>
-      </div>
-      <div class="blueprint-body">
+  <!-- TRUST BAR / STATS -->
+  <section class="py-6 md:py-12 bg-studio-dark text-white border-y border-zinc-800">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
         <div>
-          <img id="modal-project-img" src="" alt="Projekt architektoniczny" style="border: 1px solid var(--color-grey); margin-bottom: 2rem;">
-          <div style="display: flex; gap: 1rem;">
-            <button class="base-button is-black" style="flex: 1; font-size: 1.1rem; padding: 1rem;" onclick="openQuoteFromModal()">
-              Zapytaj o ten projekt &rarr;
+          <div class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-accent">120+</div>
+          <div class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-0.5 sm:mt-1">
+            Zrealizowanych inwestycji</div>
+        </div>
+        <div>
+          <div class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">100%</div>
+          <div class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-0.5 sm:mt-1">
+            Uzyskanych pozwoleń</div>
+        </div>
+        <div>
+          <div class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-accent">10+</div>
+          <div class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-0.5 sm:mt-1">Lat
+            praktyki inżynieryjnej</div>
+        </div>
+        <div>
+          <div class="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">24h</div>
+          <div class="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mt-0.5 sm:mt-1">Czas
+            pierwszej wyceny</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="oferta" class="scroll-mt-24 md:scroll-mt-28 py-28 bg-[#FBFBFA] text-black border-t border-gray-200">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-8 border-b border-gray-200">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest">
+              01 // USŁUGI
+            </span>
+          </div>
+          <h2 class="font-heading font-extrabold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+            Cała inwestycja w jednych rękach
+          </h2>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-md leading-relaxed">
+          Jeden uprawniony inżynier odpowiada za dokumentację i plac budowy — bez pośredników i bez przerzucania
+          odpowiedzialności.
+        </p>
+      </div>
+
+      <!-- 4 PREMIUM INTERACTIVE CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+
+        <!-- CARD 1: PROJEKTY & ADAPTACJE -->
+        <div
+          class="bg-white border border-gray-200/90 p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-black relative overflow-hidden group">
+          <div
+            class="absolute top-0 left-0 w-full h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-extrabold text-accent uppercase tracking-widest">01 / PROJEKTY</span>
+              <div
+                class="w-11 h-11 bg-zinc-100 group-hover:bg-accent group-hover:text-white text-black transition-all flex items-center justify-center">
+                <i data-lucide="compass" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3
+              class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors leading-snug">
+              Projekty budowlane i adaptacje (MPZP / WZ)
+            </h3>
+
+            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6">
+              Indywidualne projekty domów — w tym nowoczesne stodoły — oraz adaptacje projektów gotowych (Archon,
+              Z500) do Twojej działki i planu zagospodarowania.
+            </p>
+
+            <!-- FEATURE PILLS -->
+            <div class="space-y-3 pt-4 border-t border-gray-100 mb-8 font-mono text-xs">
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Kompletna dokumentacja do pozwolenia</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Adaptacja pod działkę, MPZP i WZ</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Fotorealistyczne koncepcje 3D</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="./uslugi-projekty-i-adaptacje.html"
+            class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all duration-300 group/btn">
+            <span>Zobacz przykładowy projekt</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- CARD 2: KIEROWNIK & NADZÓR -->
+        <div
+          class="bg-white border border-gray-200/90 p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-black relative overflow-hidden group">
+          <div
+            class="absolute top-0 left-0 w-full h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-extrabold text-accent uppercase tracking-widest">02 / NADZÓR</span>
+              <div
+                class="w-11 h-11 bg-zinc-100 group-hover:bg-accent group-hover:text-white text-black transition-all flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3
+              class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors leading-snug">
+              Kierownik budowy i nadzór inwestorski
+            </h3>
+
+            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6">
+              Prowadzę budowę w Twoim imieniu: wpisy i formalności w dzienniku budowy, kontrola wykonawców oraz
+              odbiory kolejnych etapów.
+            </p>
+
+            <!-- FEATURE PILLS -->
+            <div class="space-y-3 pt-4 border-t border-gray-100 mb-8 font-mono text-xs">
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Uprawnienia budowlane bez ograniczeń</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Odbiory robót zakrywanych i etapów</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Reprezentacja przed inspektorem nadzoru budowlanego</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="./uslugi-nadzor-i-kierownik-budowy.html"
+            class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all duration-300 group/btn">
+            <span>ZOBACZ OFERTĘ NADZORU</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- CARD 3: ODBIORY & EKSPERTYZY -->
+        <div
+          class="bg-white border border-gray-200/90 p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-black relative overflow-hidden group">
+          <div
+            class="absolute top-0 left-0 w-full h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-extrabold text-accent uppercase tracking-widest">03 / ODBIORY</span>
+              <div
+                class="w-11 h-11 bg-zinc-100 group-hover:bg-accent group-hover:text-white text-black transition-all flex items-center justify-center">
+                <i data-lucide="scan-line" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3
+              class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors leading-snug">
+              Odbiory mieszkań od dewelopera i ekspertyzy
+            </h3>
+
+            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6">
+              Sprawdzam mieszkanie przed podpisaniem protokołu odbiorczego: piony i kąty ścian mierzę laserem,
+              badam wilgotność tynków i szczelność okien. Otrzymujesz gotowy protokół usterek.
+            </p>
+
+            <!-- FEATURE PILLS -->
+            <div class="space-y-3 pt-4 border-t border-gray-100 mb-8 font-mono text-xs">
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Odbiory zgodne z normami PN-EN</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Pomiar laserowy i kamera termowizyjna</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Protokół usterek w 24 h</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="./uslugi-odbiory-i-ekspertyzy.html"
+            class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all duration-300 group/btn">
+            <span>UMÓW ODBIÓR TECHNICZNY</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- CARD 4: FORMALNOŚCI & ENERGIA -->
+        <div
+          class="bg-white border border-gray-200/90 p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-black relative overflow-hidden group">
+          <div
+            class="absolute top-0 left-0 w-full h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-xs font-extrabold text-accent uppercase tracking-widest">04 /
+                FORMALNOŚCI</span>
+              <div
+                class="w-11 h-11 bg-zinc-100 group-hover:bg-accent group-hover:text-white text-black transition-all flex items-center justify-center">
+                <i data-lucide="file-check" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <h3
+              class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors leading-snug">
+              Formalności budowlane i świadectwa energetyczne
+            </h3>
+
+            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6">
+              Załatwiam formalności za Ciebie: decyzje o warunkach zabudowy (WZ), uzgodnienia wodnoprawne,
+              świadectwa energetyczne i dokumentacja do dotacji.
+            </p>
+
+            <!-- FEATURE PILLS -->
+            <div class="space-y-3 pt-4 border-t border-gray-100 mb-8 font-mono text-xs">
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Decyzje o warunkach zabudowy (WZ)</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Świadectwa energetyczne w 24–48 h</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-gray-800">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent shrink-0"></i>
+                <span class="font-medium">Dotacje „Czyste Powietrze"</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="./uslugi-formalnosci-i-energetyka.html"
+            class="h-[48px] w-full bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all duration-300 group/btn">
+            <span>ZLEĆ FORMALNOŚCI</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT FOUNDER -->
+  <section id="o-nas" class="scroll-mt-24 md:scroll-mt-28 py-28 bg-white text-black border-t border-gray-200">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+
+      <!-- TOP SECTION KICKER -->
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest">
+          02 // O PRACOWNI
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+        <!-- LEFT: ARCHITECTURAL FOUNDER PORTRAIT -->
+        <div class="lg:col-span-5 relative">
+          <div
+            class="relative h-[480px] md:h-[540px] w-full overflow-hidden border border-gray-200 shadow-2xl group bg-zinc-950">
+            <img src="./img/adam-kubat.jpg" alt="mgr inż. Adam Kubat — Założyciel GOPROJECT"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              loading="lazy" />
+
+            <!-- SUBTLE ARCHITECTURAL GRADIENT OVERLAY -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+
+            <!-- TOP FLOATING CERTIFICATION BADGE -->
+            <div
+              class="absolute top-4 right-4 bg-black/85 backdrop-blur-md text-white border border-white/20 px-3.5 py-1.5 font-mono text-[11px] shadow-lg flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent"></i>
+              <span class="font-bold tracking-wider">UPRAWNIENIA BEZ OGRANICZEŃ</span>
+            </div>
+
+            <!-- INTEGRATED BOTTOM IDENTIFICATION CARD -->
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <div
+                class="font-mono text-[10px] font-bold text-accent uppercase tracking-widest mb-1 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                <span>ZAŁOŻYCIEL & GŁÓWNY INŻYNIER PROJEKTANT</span>
+              </div>
+              <div class="font-heading font-extrabold text-2xl md:text-3xl text-white tracking-tight">
+                mgr inż. Adam Kubat
+              </div>
+              <p class="font-sans text-xs text-gray-300 mt-1">
+                Uprawnienia do projektowania i kierowania robotami budowlanymi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: EDITORIAL CONTENT & 3 CLEAN PILLARS -->
+        <div class="lg:col-span-7 space-y-8">
+          <div>
+            <h2
+              class="font-heading font-extrabold text-2xl md:text-3xl lg:text-[34px] leading-tight mb-4 tracking-tight text-black">
+              Architektura poparta praktyką inżynierską z placu budowy.
+            </h2>
+
+            <p class="font-sans text-gray-600 text-sm md:text-[15px] leading-relaxed mb-6">
+              Łączę projektowanie z pełnymi <strong>uprawnieniami budowlanymi bez ograniczeń</strong>. Jako autor
+              projektu i kierownik budowy ponoszę pełną odpowiedzialność za cały proces — od pierwszej koncepcji po
+              odbiór gotowego budynku.
+            </p>
+
+            <!-- ARCHITECTURAL METRIC & TRUST INDICATOR BAR (BALANCED TYPOGRAPHY) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 py-5 my-5 border-y border-gray-200">
+              <div class="space-y-1">
+                <div class="font-heading font-bold text-lg md:text-xl text-black tracking-tight">Pełne Uprawnienia</div>
+                <div class="font-mono text-[11px] font-bold text-gray-400 uppercase tracking-wider">Projekt i budowa
+                </div>
+                <p class="font-sans text-xs text-gray-600 leading-relaxed">
+                  Projektowanie i kierowanie budową bez ograniczeń kubaturowych.
+                </p>
+              </div>
+
+              <div class="space-y-1 sm:border-l sm:border-gray-200 sm:pl-6">
+                <div class="font-heading font-bold text-lg md:text-xl text-black tracking-tight">Projekt + Nadzór</div>
+                <div class="font-mono text-[11px] font-bold text-gray-400 uppercase tracking-wider">Jedna
+                  Odpowiedzialność</div>
+                <p class="font-sans text-xs text-gray-600 leading-relaxed">
+                  Spójność dokumentacji i bezpośrednia kontrola prac na budowie.
+                </p>
+              </div>
+
+              <div class="space-y-1 sm:border-l sm:border-gray-200 sm:pl-6">
+                <div class="font-heading font-bold text-lg md:text-xl text-black tracking-tight">100% uzyskanych
+                  pozwoleń</div>
+                <div class="font-mono text-[11px] font-bold text-gray-400 uppercase tracking-wider">Formalności i
+                  urzędy</div>
+                <p class="font-sans text-xs text-gray-600 leading-relaxed">
+                  Sprawna ścieżka administracyjna i optymalizacja kosztów inwestycji.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="./o-nas.html"
+              class="h-[48px] px-8 bg-black text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent transition-all duration-300 shadow-sm">
+              <span>Poznaj historię pracowni</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="./kontakt.html"
+              class="h-[48px] px-7 bg-white text-black font-mono text-xs font-bold uppercase tracking-wider border border-gray-300 hover:border-black inline-flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Umów bezpłatną konsultację</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="projekty" class="scroll-mt-24 md:scroll-mt-28 py-24 bg-white text-black border-t border-gray-200">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-8 border-b border-gray-200">
+        <div>
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            03 // REALIZACJE
+          </span>
+          <h2 class="font-heading font-extrabold text-3xl md:text-5xl">
+            Wybrane projekty i koncepcje
+          </h2>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-xl leading-relaxed">
+          Koncepcje i projekty budowlane zrealizowane przez moją pracownię. Wybierz projekt, aby zobaczyć pełną
+          dokumentację i galerię.
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="flex flex-wrap gap-2.5 mb-12 font-mono text-xs font-bold uppercase tracking-wider">
+        <button data-filter="all"
+          class="filter-btn active px-5 py-2.5 border bg-black text-white border-black transition-all">Wszystkie</button>
+        <button data-filter="dom-jednorodzinny"
+          class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Domy
+          jednorodzinne</button>
+        <button data-filter="szeregowe"
+          class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Zabudowa
+          szeregowa</button>
+        <button data-filter="komercyjne"
+          class="filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all">Obiekty
+          wielorodzinne</button>
+      </div>
+
+      <!-- GRID CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD 1: BUDYNEK MIESZKALNY WIELORODZINNY — PEŁNY CYKL -->
+        <a href="./projekt-budynek-mieszkalny-wielorodzinny.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="komercyjne">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/budynek-mieszkalny-wielorodzinny/budynek-mieszkalny-wielorodzinny-wizualizacja-glowna.jpg"
+              alt="Budynek mieszkalny wielorodzinny — fotorealistyczna wizualizacja architektoniczna budynku wielorodzinnego"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              MIESZKANIOWY · PEŁNY CYKL
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Budynek mieszkalny wielorodzinny — pełny cykl inwestycji
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Projekt wielolokalowy prowadzony od pierwszej koncepcji po zakończenie budowy — z optymalizacją
+              konstrukcji i powierzchni użytkowej oraz pełną dostępnością.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Mieszkaniowy</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span
+                  class="font-bold text-black">Pełny cykl</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Standard</span><span
+                  class="font-bold text-black">Energooszczędny</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 2: OSIEDLE BUDYNKÓW JEDNORODZINNYCH DWULOKALOWYCH -->
+        <a href="./projekt-osiedle-budynkow-dwulokalowych.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/osiedle-budynkow-dwulokalowych/02-trzy-czwarte-ogrod-i-taras.jpg"
+              alt="Osiedle budynków jednorodzinnych dwulokalowych — perspektywa z ogrodem i tarasem"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              MIESZKANIOWY / URBANISTYCZNY
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Projekt osiedla domów dwulokalowych — maksymalizacja PUM
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Koncepcja urbanistyczno-architektoniczna łącząca zysk dewelopera z komfortem mieszkańców. Zgodność z WT2021 i optymalizacja działki.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Urbanistyczny</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span
+                  class="font-bold text-black">Masterplan</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Zabudowa</span><span
+                  class="font-bold text-black">Dwulokalowa</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 3: DOM PARTEROWY Z GARAŻEM -->
+        <a href="./projekt-dom-parterowy-z-garazem.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/dom-parterowy-z-garazem/dom-parterowy-z-garazem-wizualizacja.webp"
+              alt="Dom parterowy z garażem — wizualizacja 3D nowoczesnego domu jednorodzinnego z drewnianą elewacją"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              MIESZKANIOWY · PARTEROWY
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Dom parterowy z garażem — nowoczesna koncepcja
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Wygodny dom parterowy z dachem dwuspadowym, garażem w bryle oraz naturalnym wykończeniem elewacji z drewna. Zobacz pełną galerię 3D.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Jednorodzinny</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span
+                  class="font-bold text-black">Parterowy</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Garaż</span><span
+                  class="font-bold text-black">W bryle (1-st.)</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 4: NOWOCZESNA STODOŁA -->
+        <a href="./projekt-nowoczesna-stodola.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/nowoczesna-stodola/nowoczesna-stodola-elewacja-frontowa-perspektywa.jpg"
+              alt="Nowoczesna stodoła — perspektywa frontowa 3/4 domu w stylu modern barn z panoramicznym przeszkleniem"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              JEDNORODZINNY · NOWOCZESNA STODOŁA
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Nowoczesna stodoła — projekt koncepcyjny i wizualizacje 3D
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Autorski projekt domu w stylu modern barn z panoramicznymi przeszkleniami szczytu, elewacją z drewna i blachy na rąbek oraz strefą tarasową.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Jednorodzinny</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Styl</span><span
+                  class="font-bold text-black">Modern Barn</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Wizualizacje</span><span
+                  class="font-bold text-black">12 ujęć 3D</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 5: DOMY SZEREGOWE — NOWOCZESNE OSIEDLE MIESZKANIOWE -->
+        <a href="./projekt-domy-szeregowe.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/domy-szeregowe/domy-szeregowe-osiedle-elewacja-frontowa-hero.jpg"
+              alt="Domy szeregowe — nowoczesne osiedle domów w zabudowie szeregowej, wizualizacja frontowa 3/4"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              SZEREGOWE · 12 UJĘĆ 3D
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Domy szeregowe — nowoczesne osiedle mieszkaniowe
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Kompleksowa koncepcja osiedla domów w zabudowie szeregowej. Nowoczesna architektura z grafitową blachą na rąbek, drewnem i prywatnymi ogrodami.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Szeregowa</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span
+                  class="font-bold text-black">Osiedle</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Wizualizacje</span><span
+                  class="font-bold text-black">12 ujęć 3D</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 6: DOMY SZEREGOWE — OSIEDLE SZEREGOWIEC -->
+        <a href="./projekt-domy-szeregowe-szeregowiec.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="szeregowe">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/domy-szeregowe-szeregowiec/hero/domy-szeregowe-szeregowiec-front-facade-hero-2400w.jpg"
+              alt="Domy szeregowe Osiedle Szeregowiec — elewacja frontowa o zachodzie słońca z cegłą klinkierową"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              SZEREGOWE · CEGLANY DETAL
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Domy szeregowe — Osiedle Szeregowiec
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Kameralne osiedle domów szeregowych łączące ponadczasowy klinkier z nowoczesną bryłą, prywatnymi ogrodami i pełną infrastrukturą postojową.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Kategoria</span><span
+                  class="font-bold text-black">Szeregowa</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Typ</span><span
+                  class="font-bold text-black">Osiedle</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Elewacja</span><span
+                  class="font-bold text-black">Cegła klinkier</span></div>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 7: DOM JEDNORODZINNY W CHOJNICACH -->
+        <a href="./projekt-dom-jednorodzinny-chojnice.html"
+          class="project-card group bg-studio-surface border border-gray-200 overflow-hidden cursor-pointer hover:border-black transition-all flex flex-col justify-between shadow-sm hover:shadow-xl"
+          data-category="dom-jednorodzinny">
+          <div class="relative h-[280px] w-full overflow-hidden">
+            <img src="./img/projects/dom-jednorodzinny-chojnice/hero/dom-jednorodzinny-chojnice-elewacja-frontowa-hero-1920w.jpg"
+              alt="Projekt domu jednorodzinnego w Chojnicach — elewacja frontowa z dachem dwuspadowym na rąbek"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div
+              class="absolute top-4 left-4 bg-black/80 text-white font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+              JEDNORODZINNY · 167 M²
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors">
+              Projekt domu jednorodzinnego w Chojnicach
+            </h3>
+            <p class="font-sans text-gray-600 text-sm leading-relaxed mb-6">
+              Nowoczesny dom jednorodzinny z dwuspadowym dachem na rąbek, drewnianą elewacją i panoramiczną stolarką okienną. Powierzchnia użytkowa 167,12 m² na działce w Chojnicach.
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 font-mono text-xs">
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. użytkowa</span><span
+                  class="font-bold text-black">167,12 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Pow. zabudowy</span><span
+                  class="font-bold text-black">120,00 m²</span></div>
+              <div><span class="text-gray-400 block text-[10px] uppercase">Wysokość</span><span
+                  class="font-bold text-black">7,86 m</span></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section id="proces" class="scroll-mt-24 md:scroll-mt-28 py-24 bg-studio-surface border-t border-gray-200 text-black">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-gray-200">
+        <div>
+          <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+            04 // PROCES INWESTYCYJNY
+          </span>
+          <h2 class="font-heading font-extrabold text-3xl md:text-5xl">
+            Jak przebiega współpraca?
+          </h2>
+        </div>
+        <p class="font-sans text-gray-600 text-sm md:text-base max-w-xl leading-relaxed">
+          Prowadzę Cię krok po kroku — od analizy działki, przez projekt i pozwolenie, po odbiór gotowego budynku.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white border border-gray-200 p-8 shadow-sm">
+          <span class="font-mono text-3xl font-extrabold text-accent block mb-4">01</span>
+          <h3 class="font-heading font-bold text-xl mb-2">Koncepcja i działka</h3>
+          <p class="font-sans text-gray-600 text-sm leading-relaxed">Analizuję MPZP lub warunki zabudowy (WZ) oraz
+            warunki gruntowe. Przygotowuję koncepcję bryły i układu pomieszczeń w 3D.</p>
+        </div>
+        <div class="bg-white border border-gray-200 p-8 shadow-sm">
+          <span class="font-mono text-3xl font-extrabold text-accent block mb-4">02</span>
+          <h3 class="font-heading font-bold text-xl mb-2">Projekt budowlany</h3>
+          <p class="font-sans text-gray-600 text-sm leading-relaxed">Kompletna dokumentacja: architektura, konstrukcje,
+            instalacje i wymagane uzgodnienia branżowe.</p>
+        </div>
+        <div class="bg-white border border-gray-200 p-8 shadow-sm">
+          <span class="font-mono text-3xl font-extrabold text-accent block mb-4">03</span>
+          <h3 class="font-heading font-bold text-xl mb-2">Pozwolenie na budowę</h3>
+          <p class="font-sans text-gray-600 text-sm leading-relaxed">Składam wniosek i reprezentuję Cię w urzędzie
+            aż do prawomocnej decyzji o pozwoleniu na budowę.</p>
+        </div>
+        <div class="bg-white border border-gray-200 p-8 shadow-sm">
+          <span class="font-mono text-3xl font-extrabold text-accent block mb-4">04</span>
+          <h3 class="font-heading font-bold text-xl mb-2">Nadzór i kierownik budowy</h3>
+          <p class="font-sans text-gray-600 text-sm leading-relaxed">Prowadzę budowę lub niezależnie nadzoruję
+            wykonawców — kontrola jakości, odbiory i formalności aż do odbioru końcowego.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="scroll-mt-24 md:scroll-mt-28 py-24 bg-white text-black border-t border-gray-200">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">05 // FAQ</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl">Najczęściej zadawane pytania</h2>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="faq-item border border-gray-200 bg-studio-surface overflow-hidden">
+          <button
+            class="faq-toggle w-full p-6 text-left flex justify-between items-center font-heading font-bold text-lg hover:text-accent transition-colors">
+            <span>Ile kosztuje projekt budowlany domu jednorodzinnego?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-accent"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+            Koszt zależy od wielkości domu, stopnia skomplikowania konstrukcji i uwarunkowań terenu. Po bezpłatnej
+            konsultacji przygotowuję wycenę w ciągu 24 h.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 bg-studio-surface overflow-hidden">
+          <button
+            class="faq-toggle w-full p-6 text-left flex justify-between items-center font-heading font-bold text-lg hover:text-accent transition-colors">
+            <span>Czy projekt gotowy trzeba adaptować do działki?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-accent"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+            Tak. Adaptacja jest wymagana prawnie, aby projekt katalogowy był zgodny z miejscowym planem (MPZP) lub
+            warunkami zabudowy (WZ) oraz warunkami gruntowymi.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 bg-studio-surface overflow-hidden">
+          <button
+            class="faq-toggle w-full p-6 text-left flex justify-between items-center font-heading font-bold text-lg hover:text-accent transition-colors">
+            <span>Ile trwa uzyskanie pozwolenia na budowę?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-accent"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+            Urząd ma ustawowo 65 dni na wydanie decyzji od złożenia kompletnego wniosku. Wszystkimi formalnościami
+            zajmuję się za Ciebie.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 bg-studio-surface overflow-hidden">
+          <button
+            class="faq-toggle w-full p-6 text-left flex justify-between items-center font-heading font-bold text-lg hover:text-accent transition-colors">
+            <span>Czym różni się kierownik budowy od inspektora nadzoru?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-accent"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+            Kierownik budowy odpowiada za prowadzenie robót zgodnie z projektem i przepisami prawa budowlanego.
+            Inspektor nadzoru inwestorskiego reprezentuje wyłącznie Ciebie i kontroluje jakość oraz rozliczenia
+            wykonawców.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 bg-studio-surface overflow-hidden">
+          <button
+            class="faq-toggle w-full p-6 text-left flex justify-between items-center font-heading font-bold text-lg hover:text-accent transition-colors">
+            <span>Dlaczego warto powierzyć projekt i kierownictwo budowy jednej osobie?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-accent"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+            Eliminuje to częsty problem przerzucania odpowiedzialności między biurem projektowym a budową. Jako autor
+            projektu znam każdy detal techniczny — szybko rozwiewam wątpliwości wykonawców, ograniczam przestoje
+            i dbam o pełną zgodność realizacji z dokumentacją.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="kontakt" class="scroll-mt-24 md:scroll-mt-28 py-24 bg-black text-white">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="font-mono text-xs font-bold text-accent uppercase tracking-widest block mb-2">06 //
+              KONTAKT</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-white">Porozmawiajmy o Twojej inwestycji</h2>
+            <p class="font-sans text-gray-400 text-sm md:text-base mt-4">
+              Umów bezpłatną konsultację — wycenę przygotowuję w 24 h. Konsultacja do niczego nie zobowiązuje.
+            </p>
+          </div>
+
+          <div class="space-y-4 font-mono text-sm">
+            <a href="tel:+48884757815"
+              class="flex items-center gap-4 p-5 bg-zinc-900 border border-zinc-800 hover:border-accent transition-all group">
+              <i data-lucide="phone" class="w-6 h-6 text-accent"></i>
+              <div>
+                <div class="text-xs text-gray-400 uppercase">Telefon</div>
+                <div class="font-bold text-white text-base">+48 884 757 815</div>
+              </div>
+            </a>
+
+            <a href="mailto:biuro@goproject.com.pl"
+              class="flex items-center gap-4 p-5 bg-zinc-900 border border-zinc-800 hover:border-accent transition-all group">
+              <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
+              <div>
+                <div class="text-xs text-gray-400 uppercase">Email</div>
+                <div class="font-bold text-white text-base">biuro@goproject.com.pl</div>
+              </div>
+            </a>
+
+            <div class="flex items-center gap-4 p-5 bg-zinc-900 border border-zinc-800">
+              <i data-lucide="map-pin" class="w-6 h-6 text-accent"></i>
+              <div>
+                <div class="text-xs text-gray-400 uppercase">Biuro</div>
+                <div class="font-bold text-white text-sm">ul. Chojnicka 18, 89-600 Chojnice (Gdańsk / Pomorze)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-zinc-900 border border-zinc-800 p-8 md:p-12">
+          <h3 class="font-heading font-bold text-2xl mb-6 text-white">Opisz swoją inwestycję</h3>
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Imię i nazwisko *</label>
+                <input type="text" required
+                  class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
+                  placeholder="Jan Kowalski" />
+              </div>
+              <div>
+                <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Telefon *</label>
+                <input type="tel" required
+                  class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
+                  placeholder="+48 884 757 815" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Email</label>
+              <input type="email"
+                class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
+                placeholder="jan@example.com" />
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Wiadomość / Opis działki i
+                oczekiwań</label>
+              <textarea rows="4" required
+                class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
+                placeholder="Opisz swoje wymagania..."></textarea>
+            </div>
+
+            <button type="submit"
+              class="h-[48px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Otrzymaj wycenę w 24 h</span>
             </button>
+
+            <!-- GDPR / RODO Notice -->
+            <p class="text-[11px] text-gray-500 font-sans text-center leading-relaxed mt-2">
+              Wysyłając formularz, wyrażasz zgodę na kontakt w celu przygotowania wyceny. Administratorem danych jest
+              GOPROJECT. Szczegóły w <a href="./polityka-prywatnosci.html"
+                class="text-accent underline hover:text-accent-hover">Polityce prywatności</a>.
+            </p>
+          </form>
+          <div id="form-status"
+            class="hidden mt-4 p-4 bg-emerald-900/40 border border-emerald-500/40 text-emerald-300 text-xs font-mono text-center">
+            Dziękuję — wiadomość wysłana. Odezwę się w ciągu 24 godzin.
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-400 py-16 border-t border-zinc-800 font-mono text-xs mt-auto">
+    <div class="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 pb-12 border-b border-zinc-900">
         <div>
-          <h3 id="modal-project-title" style="font-family: var(--font-f-aeonik-pro); font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.1;"></h3>
-          <p id="modal-project-desc" style="font-size: 1.5rem; line-height: 1.5; color: var(--color-muted); margin-bottom: 2.5rem;"></p>
-          
-          <div style="border-top: 1px solid color-mix(in srgb, var(--color-grey) 20%, transparent); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; font-family: var(--font-f-aeonik-mono); font-size: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
-              <span style="color: var(--color-muted);">Powierzchnia użytkowa:</span>
-              <strong id="modal-project-area" style="color: var(--color-grey);"></strong>
+          <a href="./index.html" class="inline-block mb-4" aria-label="GOPROJECT Pracownia Projektowa">
+            <img src="./img/goprojekt_logo_light.svg" alt="GOPROJECT Pracownia Projektowa"
+              class="h-6 sm:h-7 w-auto object-contain object-left" width="290" height="24" />
+          </a>
+          <p class="font-sans text-gray-400 leading-relaxed text-xs mb-4">
+            Pracownia projektowa mgr inż. Adama Kubata. Projekty budowlane, adaptacje, kierownik budowy i nadzór
+            inwestorski w Gdańsku, Chojnicach i na Pomorzu.
+          </p>
+          <div class="text-gray-400 space-y-1">
+            <div>mgr inż. Adam Kubat</div>
+            <div>Uprawnienia budowlane bez ograniczeń</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Obszary Usług</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./uslugi-projekty-i-adaptacje.html" class="hover:text-accent transition-colors">01 / Projekty i
+                adaptacje</a></li>
+            <li><a href="./uslugi-nadzor-i-kierownik-budowy.html" class="hover:text-accent transition-colors">02 /
+                Kierownik budowy & nadzór</a></li>
+            <li><a href="./uslugi-odbiory-i-ekspertyzy.html" class="hover:text-accent transition-colors">03 / Odbiory
+                mieszkań i domów</a></li>
+            <li><a href="./uslugi-formalnosci-i-energetyka.html" class="hover:text-accent transition-colors">04 /
+                Warunki Zabudowy & Świadectwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Realizacje</div>
+          <ul class="space-y-2 font-sans text-xs text-gray-400">
+            <li><a href="./projekt-dom-jednorodzinny-chojnice.html" class="hover:text-accent transition-colors">Dom jednorodzinny w Chojnicach</a></li>
+            <li><a href="./projekt-nowoczesna-stodola.html" class="hover:text-accent transition-colors">Nowoczesna stodoła</a></li>
+            <li><a href="./projekt-dom-parterowy-z-garazem.html" class="hover:text-accent transition-colors">Dom parterowy z garażem</a></li>
+            <li><a href="./projekt-domy-szeregowe.html" class="hover:text-accent transition-colors">Domy szeregowe — osiedle</a></li>
+            <li><a href="./projekt-domy-szeregowe-szeregowiec.html" class="hover:text-accent transition-colors">Domy szeregowe — Szeregowiec</a></li>
+            <li><a href="./projekt-osiedle-budynkow-dwulokalowych.html"
+                class="hover:text-accent transition-colors">Osiedle budynków dwulokalowych</a></li>
+            <li><a href="./projekt-budynek-mieszkalny-wielorodzinny.html"
+                class="hover:text-accent transition-colors">Budynek mieszkalny wielorodzinny</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-bold uppercase tracking-wider mb-4">// Kontakt & Biuro</div>
+          <div class="space-y-2 font-sans text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="tel:+48884757815" class="hover:text-white transition-colors">+48 884 757 815</a>
             </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
-              <span style="color: var(--color-muted);">Lokalizacja inwestycji:</span>
-              <strong id="modal-project-loc" style="color: var(--color-grey);"></strong>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-accent"></i>
+              <a href="mailto:biuro@goproject.com.pl"
+                class="hover:text-white transition-colors">biuro@goproject.com.pl</a>
             </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
-              <span style="color: var(--color-muted);">Konstrukcja & Bryła:</span>
-              <strong id="modal-project-struct" style="color: var(--color-grey);"></strong>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i>
+              <span>Gdańsk / Chojnice (Pomorskie)</span>
             </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent); padding-bottom: 0.6rem;">
-              <span style="color: var(--color-muted);">System grzewczy:</span>
-              <strong id="modal-project-hvac" style="color: var(--color-grey);"></strong>
-            </div>
-            <div style="display: flex; justify-content: space-between; padding-bottom: 0.6rem;">
-              <span style="color: var(--color-muted);">Zakres dokumentacji:</span>
-              <strong id="modal-project-scope" style="color: var(--color-accent);"></strong>
+            <div class="pt-2 text-accent font-mono text-[10px]">
+              Pn - Pt: 08:00 – 18:00
             </div>
           </div>
         </div>
       </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>© 2026 GOPROJECT mgr inż. Adam Kubat. Wszelkie prawa zastrzeżone.</div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="./sitemap.xml" class="hover:text-gray-300">Mapa strony</a>
+          <a href="./polityka-prywatnosci.html" class="hover:text-gray-300">Polityka prywatności</a>
+          <a href="./regulamin.html" class="hover:text-gray-300">Regulamin</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <!-- SLIDE-OVER QUOTE CONFIGURATOR PANEL -->
-  <div class="quote-backdrop" id="quote-backdrop" onclick="closeQuotePanel()"></div>
-  <div class="quote-panel" id="quote-panel">
-    <div class="close" onclick="closeQuotePanel()">
-      <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-svg">
-        <path d="M0.353516 11.6673L11.6672 0.353589" stroke="currentColor" stroke-width="1.2"></path>
-        <path d="M0.353516 0.353577L11.6672 11.6673" stroke="currentColor" stroke-width="1.2"></path>
-      </svg>
-    </div>
-
-    <div class="base-title">Wycena inwestycji</div>
-    <h2 class="heading">Skonfiguruj projekt</h2>
-
-    <form onsubmit="handleQuoteSubmit(event)" style="display: flex; flex-direction: column; gap: 2rem;">
-      <div class="row">
-        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">1. Typ planowanego obiektu</label>
-        <div class="buttons">
-          <button type="button" class="button is-active" onclick="selectType(this)">Dom Jednorodzinny</button>
-          <button type="button" class="button" onclick="selectType(this)">Nowoczesna Stodoła</button>
-          <button type="button" class="button" onclick="selectType(this)">Wielorodzinny</button>
-          <button type="button" class="button" onclick="selectType(this)">Adaptacja MPZP/WZ</button>
-          <button type="button" class="button" onclick="selectType(this)">Kierownik Budowy</button>
-          <button type="button" class="button" onclick="selectType(this)">Odbiór Mieszkania</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">2. Powierzchnia użytkowa:</label>
-          <span id="slider-val" style="font-family: var(--font-f-aeonik-mono); font-size: 1.4rem; font-weight: 700; color: var(--color-accent);">180 m²</span>
-        </div>
-        <input 
-          id="quote-area-slider" 
-          type="range" 
-          min="70" 
-          max="600" 
-          value="180" 
-          step="10" 
-          style="width: 100%; accent-color: var(--color-accent); cursor: pointer;"
-          oninput="updateQuoteCalculation(this.value)"
-        >
-      </div>
-
-      <div class="row">
-        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">3. Geometria dachu & Kondygnacje</label>
-        <div class="buttons">
-          <button type="button" class="button is-active" onclick="selectSub(this)">Parterowy (1)</button>
-          <button type="button" class="button" onclick="selectSub(this)">Z poddaszem (1.5)</button>
-          <button type="button" class="button" onclick="selectSub(this)">Piętrowy (2)</button>
-          <button type="button" class="button" onclick="selectSub(this)">Dach Płaski</button>
-          <button type="button" class="button" onclick="selectSub(this)">Dach Dwuspadowy</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">4. Lokalizacja działki</label>
-        <input type="text" class="input" placeholder="np. Chojnice / Gdańsk / Kartuzy / Kaszuby" required>
-      </div>
-
-      <div class="row">
-        <label style="font-family: var(--font-f-aeonik-mono); font-size: 1.2rem; text-transform: uppercase;">5. Dane kontaktowe inwestora</label>
-        <input type="text" class="input" placeholder="Imię i nazwisko" required style="margin-bottom: 1rem;">
-        <input type="email" class="input" placeholder="Adres e-mail lub telefon" required>
-      </div>
-
-      <!-- Real-time estimation readout -->
-      <div style="background: #FFFFFF; border: 1px solid var(--color-grey); padding: 1.8rem; font-family: var(--font-f-aeonik-mono); font-size: 1.2rem;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
-          <span style="color: var(--color-muted);">Szacowany czas realizacji dokumentacji:</span>
-          <strong id="calc-weeks" style="color: var(--color-grey);">6 – 9 tygodni</strong>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: var(--color-muted);">Wymagane procedury urzędowe:</span>
-          <strong style="color: var(--color-accent);">Starostwo Powiatowe &middot; PnB</strong>
-        </div>
-      </div>
-
-      <button type="submit" class="base-button is-black" style="width: 100%; margin-top: 1rem;">
-        <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
-          <path d="M0.600006 0V6H13.1" stroke="currentColor" stroke-width="1.2"></path>
-          <rect x="9.18887" y="2.2251" width="5.56065" height="5.56065" transform="rotate(45 9.18887 2.2251)" stroke="currentColor" stroke-width="1.2"></rect>
-        </svg>
-        <div class="label">
-          <span class="line" aria-hidden="true">Wyślij zapytanie do architekta</span>
-          <span class="line">Wyślij zapytanie do architekta</span>
-        </div>
-      </button>
-      <div id="quote-success" style="display: none; font-family: var(--font-f-aeonik-mono); color: var(--color-accent); font-size: 1.2rem; text-align: center; margin-top: 1rem;">
-        &check; Dziękujemy. Architekt mgr inż. Adam Kubat skontaktuje się w ciągu 24h.
-      </div>
-    </form>
-  </div>
-
-  <!-- JAVASCRIPT: Comparison Slider, Blueprint Modal, Stats Counters, and Menu Logic -->
+  <!-- JAVASCRIPT -->
   <script>
-    // 1. Menu Toggle
-    function toggleMenu() {
-      const menu = document.getElementById('nav-menu');
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+      // Mobile Menu & Accordion Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileOfertaToggle = document.getElementById('mobile-oferta-toggle');
+      const mobileOfertaSubmenu = document.getElementById('mobile-oferta-submenu');
+      const mobileOfertaArrow = document.getElementById('mobile-oferta-arrow');
+
+      const mainHeader = document.getElementById('main-header');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (mainHeader) mainHeader.classList.add('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'true');
+            mobileBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+          } else {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            if (mainHeader) mainHeader.classList.remove('mobile-header-open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            if (window.lucide) lucide.createIcons();
+          });
+        });
+      }
+
+      // Highlight the current page link in the mobile menu
+      if (mobileMenu) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        mobileMenu.querySelectorAll('a[href]').forEach(link => {
+          const hrefFile = link.getAttribute('href').split('/').pop();
+          if (hrefFile === currentFile) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.remove('text-zinc-200');
+            link.classList.add('text-accent', 'font-bold');
+          }
+        });
+      }
+
+      if (mobileOfertaToggle && mobileOfertaSubmenu) {
+        mobileOfertaToggle.addEventListener('click', () => {
+          const isHidden = mobileOfertaSubmenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileOfertaSubmenu.classList.remove('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.add('rotate-180');
+          } else {
+            mobileOfertaSubmenu.classList.add('hidden');
+            if (mobileOfertaArrow) mobileOfertaArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+
+      // Header Scroll Effect using CSS class toggle
       const header = document.getElementById('main-header');
-      const isOpen = menu.classList.contains('is-active');
-      if (isOpen) {
-        menu.classList.remove('is-active');
-        header.classList.remove('is-menu-open');
-      } else {
-        menu.classList.add('is-active');
-        header.classList.add('is-menu-open');
+      function updateHeader() {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
       }
-    }
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
 
-    // 2. Quote Panel Toggle & Dynamic Calculation
-    function openQuotePanel() {
-      document.getElementById('quote-panel').classList.add('is-open');
-      document.getElementById('quote-backdrop').classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
+      // Seamless Hero Background Slider with Responsive Tags
+      const slides = document.querySelectorAll('.hero-slide');
+      const heroTag = document.getElementById('hero-tag');
+      const tagsDesktop = [
+        'PRACOWNIA PROJEKTOWA · DOM JEDNORODZINNY · GDAŃSK / CHOJNICE',
+        'DOM PARTEROWY Z GARAŻEM · KONCEPCJA ARCHITEKTONICZNA · POMORZE',
+        'OSIEDLA MIESZKANIOWE · DOMY DWULOKALOWE · TRÓJMIASTO',
+        'BUDYNEK MIESZKALNY WIELORODZINNY · OD KONCEPCJI DO REALIZACJI'
+      ];
+      const tagsMobile = [
+        'DOM JEDNORODZINNY · GDAŃSK / CHOJNICE',
+        'DOM PARTEROWY Z GARAŻEM · POMORZE',
+        'OSIEDLE DWULOKALOWE · TRÓJMIASTO',
+        'BUDYNEK WIELORODZINNY · GDAŃSK'
+      ];
 
-    function closeQuotePanel() {
-      document.getElementById('quote-panel').classList.remove('is-open');
-      document.getElementById('quote-backdrop').classList.remove('is-open');
-      document.body.style.overflow = 'auto';
-    }
-
-    function selectType(btn) {
-      document.querySelectorAll('.quote-panel .button').forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-    }
-
-    function selectSub(btn) {
-      btn.parentElement.querySelectorAll('.button').forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-    }
-
-    function updateQuoteCalculation(area) {
-      document.getElementById('slider-val').textContent = area + ' m²';
-      const weeks = Math.round(area / 30) + 4;
-      document.getElementById('calc-weeks').textContent = `${weeks} – ${weeks + 3} tygodni`;
-    }
-
-    function handleQuoteSubmit(e) {
-      e.preventDefault();
-      document.getElementById('quote-success').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('quote-success').style.display = 'none';
-        closeQuotePanel();
-        e.target.reset();
-      }, 3000);
-    }
-
-    // 3. Interactive Fluid.Glass Projects Hero Slider Controller
-    let currentSlide = 0;
-    const totalSlides = 5;
-    const projectKeys = ['chojniczki', 'gdansk', 'sniadeckich', 'stodola', 'kaszuby'];
-    let slideTimer = null;
-
-    function updateSlider(index) {
-      currentSlide = (index + totalSlides) % totalSlides;
-      
-      // Update typography slides
-      document.querySelectorAll('.slider .slide').forEach((slide, i) => {
-        if (i === currentSlide) {
-          slide.classList.add('is-active');
-        } else {
-          slide.classList.remove('is-active');
+      let curr = 0;
+      setInterval(() => {
+        if (!slides.length) return;
+        if (heroTag) {
+          heroTag.style.opacity = '0';
+          heroTag.style.transform = 'translateY(3px)';
         }
+        slides[curr].classList.remove('active');
+        curr = (curr + 1) % slides.length;
+        slides[curr].classList.add('active');
+        setTimeout(() => {
+          if (heroTag) {
+            const isMobile = window.innerWidth < 640;
+            const activeTags = isMobile ? tagsMobile : tagsDesktop;
+            if (activeTags[curr]) heroTag.textContent = activeTags[curr];
+            heroTag.style.opacity = '1';
+            heroTag.style.transform = 'translateY(0)';
+          }
+        }, 400);
+      }, 6500);
+
+      // Portfolio Category Filtering
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const pCards = document.querySelectorAll('.project-card');
+      if (filterBtns.length && pCards.length) {
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.className = 'filter-btn px-5 py-2.5 border bg-white text-black border-gray-300 hover:border-black transition-all';
+            });
+            btn.className = 'filter-btn active px-5 py-2.5 border bg-black text-white border-black transition-all';
+            const cat = btn.dataset.filter;
+            pCards.forEach(card => {
+              if (cat === 'all' || card.dataset.category === cat) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      }
+
+      // FAQ Accordion
+      const faqToggles = document.querySelectorAll('.faq-toggle');
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const isHidden = content.classList.contains('hidden');
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          if (isHidden) content.classList.remove('hidden');
+        });
       });
 
-      // Update background assets
-      document.querySelectorAll('.slider .asset').forEach((asset, i) => {
-        if (i === currentSlide) {
-          asset.classList.add('is-active');
-        } else {
-          asset.classList.remove('is-active');
-        }
-      });
-
-      // Update indicator & progress bar
-      document.getElementById('hero-indicator').textContent = `0${currentSlide + 1} / 05`;
-      document.getElementById('hero-progress-bar').style.transform = `scaleX(${(currentSlide + 1) / totalSlides})`;
-    }
-
-    function nextSlide() {
-      updateSlider(currentSlide + 1);
-      resetSlideTimer();
-    }
-
-    function prevSlide() {
-      updateSlider(currentSlide - 1);
-      resetSlideTimer();
-    }
-
-    function openCurrentSlideModal() {
-      openBlueprintModal(projectKeys[currentSlide]);
-    }
-
-    function resetSlideTimer() {
-      if (slideTimer) clearInterval(slideTimer);
-      slideTimer = setInterval(() => {
-        updateSlider(currentSlide + 1);
-      }, 6000);
-    }
-    resetSlideTimer();
-
-    // Keyboard navigation (ArrowLeft & ArrowRight)
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+      // Contact Form
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (status) {
+            status.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => status.classList.add('hidden'), 5000);
+          }
+        });
+      }
     });
-
-    // 4. Interactive Before/After Comparison Slider
-    function handleComparison(val) {
-      document.getElementById('comparison-overlay').style.width = val + '%';
-    }
-
-    // 4. Detailed Project Blueprint Data & Modal
-    const projectLibrary = {
-      'chojniczki': {
-        title: 'Dom w Chojniczkach',
-        desc: 'Nowoczesny parterowy budynek mieszkalny z wielkoformatową szklaną ścianą szczytową i salonem o podwyższonej kubaturze (5.2m). Kompletna koordynacja konstrukcyjna z pompą ciepła i rekuperacją.',
-        area: '185 m²',
-        loc: 'Chojniczki k. Chojnic',
-        struct: 'Tradycyjna murowana + Szczyt żelbetowy',
-        hvac: 'Gruntowa pompa ciepła + Rekuperacja 94%',
-        scope: 'Projekt indywidualny PAB + PT + Nadzór POIIB',
-        img: './public/img/dom-parterowy-szklana-szczytowa-sciana-wizualizacja.webp'
-      },
-      'gdansk': {
-        title: 'Willa Nadmorska Gdańsk',
-        desc: 'Dwukondygnacyjna modernistyczna bryła klifowa z panoramicznym przeszkleniem HS i tarasem widokowym na Zatokę Gdańską. Dach płaski o odwróconym układzie warstw.',
-        area: '240 m²',
-        loc: 'Gdańsk / Pas Nadmorski',
-        struct: 'Żelbetowy szkielet + Ściany Silka',
-        hvac: 'Pompa ciepła powietrze-woda + Klimatyzacja VRF',
-        scope: 'Pełny projekt budowlany + PnB',
-        img: './public/img/nowoczesny-dom-jednorodzinny-nad-morzem-wizualizacja.webp'
-      },
-      'sniadeckich': {
-        title: 'Budynek Śniadeckich',
-        desc: 'Wielorodzinny budynek mieszkalny z 16 lokalami, windą i podziemną halą garażową. Czysta rytmika balkonów i loggii wpisana w tkankę urbanistyczną Chojnic.',
-        area: '1 420 m²',
-        loc: 'Chojnice, ul. Śniadeckich',
-        struct: 'Monolityczny żelbet + Wypełnienie ceramiczne',
-        hvac: 'Węzeł cieplny + Wentylacja hybrydowa',
-        scope: 'PAB + Projekt Wykonawczy + Kierownik Budowy',
-        img: './public/img/wielorodzinny-sniadeckich-hq.webp'
-      },
-      'kaszuby': {
-        title: 'Osiedle Kaszuby',
-        desc: 'Kameralny zespół czterech budynków dwulokalowych. Równowaga pomiędzy intymnością mieszkańców a optymalizacją wskaźnika zabudowy działki.',
-        area: '360 m²',
-        loc: 'Powiat Chojnicki / Kaszuby',
-        struct: 'Pustak ceramiczny + Drewniana więźba',
-        hvac: 'Pompy ciepła powietrze-woda',
-        scope: 'Projekt zagospodarowania terenu + PAB',
-        img: './public/img/osiedle-dwulokalowe-lot-ptaka.webp'
-      },
-      'stodola': {
-        title: 'Nowoczesna Stodoła z Garażem',
-        desc: 'Reinterpretacja tradycyjnej pomorskiej formy dwuspadowej. Bezokapowy dach z blachy na rąbek, antracytowa stolarka i zintegrowana wiata garażowa.',
-        area: '210 m²',
-        loc: 'Powiat Gdański',
-        struct: 'Murowana + Wiązary dachowe',
-        hvac: 'Pompa ciepła + Ogrzewanie podłogowe',
-        scope: 'Projekt budowlany + Adaptacja WZ',
-        img: './public/img/dom-parterowy-z-garazem-wizualizacja.webp'
-      },
-      'detal': {
-        title: 'Detal Architektoniczny: Drewno & Stal',
-        desc: 'Studium monograficzne węzła konstrukcyjnego tarasu zintegrowanego z pergolą. Połączenie stali malowanej proszkowo z impregnowanym modrzewiem syberyjskim.',
-        area: 'Skala 1:10',
-        loc: 'Realizacja Pomorskie',
-        struct: 'Stal konstrukcyjna S235 + Modrzew',
-        hvac: 'Niewymagane',
-        scope: 'Nadzór autorski & detal wykonawczy',
-        img: './public/img/dom-drewniany-z-tarasem-zdjecie-realizacji.webp'
-      }
-    };
-
-    function openBlueprintModal(key) {
-      const p = projectLibrary[key];
-      if (!p) return;
-      document.getElementById('modal-project-title').textContent = p.title;
-      document.getElementById('modal-project-desc').textContent = p.desc;
-      document.getElementById('modal-project-area').textContent = p.area;
-      document.getElementById('modal-project-loc').textContent = p.loc;
-      document.getElementById('modal-project-struct').textContent = p.struct;
-      document.getElementById('modal-project-hvac').textContent = p.hvac;
-      document.getElementById('modal-project-scope').textContent = p.scope;
-      document.getElementById('modal-project-img').src = p.img;
-      
-      document.getElementById('blueprint-modal').classList.add('is-active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeBlueprintModal(e) {
-      if (e.target === document.getElementById('blueprint-modal')) {
-        closeBlueprintModalDirect();
-      }
-    }
-
-    function closeBlueprintModalDirect() {
-      document.getElementById('blueprint-modal').classList.remove('is-active');
-      document.body.style.overflow = 'auto';
-    }
-
-    function openQuoteFromModal() {
-      closeBlueprintModalDirect();
-      openQuotePanel();
-    }
-
-    // 5. FAQ Accordion Toggle
-    function toggleFaq(item) {
-      item.classList.toggle('is-active');
-    }
   </script>
 </body>
+
 </html>
