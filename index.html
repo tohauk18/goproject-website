@@ -1503,40 +1503,43 @@
         <div class="lg:col-span-7 bg-zinc-900 border border-zinc-800 p-8 md:p-12">
           <h3 class="font-heading font-bold text-2xl mb-6 text-white">Opisz swoją inwestycję</h3>
           <form id="contact-form" class="space-y-4">
+            <!-- Anti-spam Honeypot -->
+            <input type="text" name="_hp" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Imię i nazwisko *</label>
-                <input type="text" required
+                <label for="home-cf-name" class="block font-mono text-xs text-gray-400 uppercase mb-1">Imię i nazwisko *</label>
+                <input id="home-cf-name" name="name" type="text" required
                   class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="Jan Kowalski" />
               </div>
               <div>
-                <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Telefon *</label>
-                <input type="tel" required
+                <label for="home-cf-phone" class="block font-mono text-xs text-gray-400 uppercase mb-1">Telefon *</label>
+                <input id="home-cf-phone" name="phone" type="tel" required
                   class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="+48 884 757 815" />
               </div>
             </div>
 
             <div>
-              <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Email</label>
-              <input type="email"
+              <label for="home-cf-email" class="block font-mono text-xs text-gray-400 uppercase mb-1">Email</label>
+              <input id="home-cf-email" name="email" type="email"
                 class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
                 placeholder="jan@example.com" />
             </div>
 
             <div>
-              <label class="block font-mono text-xs text-gray-400 uppercase mb-1">Wiadomość / Opis działki i
-                oczekiwań</label>
-              <textarea rows="4" required
+              <label for="home-cf-message" class="block font-mono text-xs text-gray-400 uppercase mb-1">Wiadomość / Opis działki i
+                oczekiwań *</label>
+              <textarea id="home-cf-message" name="message" rows="4" required
                 class="w-full bg-black border border-zinc-800 p-3.5 text-sm text-white focus:border-accent focus:outline-none"
                 placeholder="Opisz swoje wymagania..."></textarea>
             </div>
 
-            <button type="submit"
-              class="h-[48px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all">
+            <button type="submit" id="home-contact-submit-btn"
+              class="h-[48px] w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all disabled:opacity-60 disabled:cursor-not-allowed">
               <i data-lucide="send" class="w-4 h-4"></i>
-              <span>Otrzymaj wycenę w 24 h</span>
+              <span id="home-btn-label">Otrzymaj wycenę w 24 h</span>
             </button>
 
             <!-- GDPR / RODO Notice -->
@@ -1844,16 +1847,65 @@
         });
       });
 
-      // Contact Form
+      // Contact Form (AJAX to ./contact.php)
       const form = document.getElementById('contact-form');
       const status = document.getElementById('form-status');
+      const submitBtn = document.getElementById('home-contact-submit-btn');
+      const btnLabel = document.getElementById('home-btn-label');
+
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          if (status) {
-            status.classList.remove('hidden');
-            form.reset();
-            setTimeout(() => status.classList.add('hidden'), 5000);
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const originalText = btnLabel ? btnLabel.textContent : 'Otrzymaj wycenę w 24 h';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            if (btnLabel) btnLabel.textContent = 'Wysyłanie...';
+          }
+          if (status) status.classList.add('hidden');
+
+          const formData = {
+            name: form.elements['name']?.value?.trim() || '',
+            phone: form.elements['phone']?.value?.trim() || '',
+            email: form.elements['email']?.value?.trim() || '',
+            message: form.elements['message']?.value?.trim() || '',
+            _hp: form.elements['_hp']?.value || '',
+            service: 'Formularz strona główna'
+          };
+
+          try {
+            const res = await fetch('./contact.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(formData)
+            });
+            const result = await res.json();
+
+            if (res.ok && result.success) {
+              if (status) {
+                status.className = 'mt-4 p-4 bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-mono text-center';
+                status.innerHTML = '✓ Dziękujemy! Wiadomość została pomyślnie wysłana. Skontaktujemy się w ciągu 24h.';
+                status.classList.remove('hidden');
+              }
+              form.reset();
+            } else {
+              throw new Error(result.error || 'Nie udało się wysłać formularza.');
+            }
+          } catch (err) {
+            if (status) {
+              status.className = 'mt-4 p-4 bg-rose-950/80 border border-rose-500/60 text-rose-300 text-xs font-mono text-center';
+              status.innerHTML = '⚠ ' + (err.message || 'Błąd wysyłania. Zadzwoń bezpośrednio: +48 884 757 815');
+              status.classList.remove('hidden');
+            }
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              if (btnLabel) btnLabel.textContent = originalText;
+            }
           }
         });
       }

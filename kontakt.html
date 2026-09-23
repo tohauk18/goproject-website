@@ -343,6 +343,9 @@
           </div>
 
           <form id="contact-page-form" class="space-y-4 font-sans">
+            <!-- Anti-spam Honeypot -->
+            <input type="text" name="_hp" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <!-- Row 1: Name & Phone -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -432,8 +435,8 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="h-[50px] py-3.5 px-6 w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 shadow-lg mt-2 cursor-pointer" style="min-height: 50px;">
-              <span>Wyślij zapytanie — odbierz wycenę w 24h</span>
+            <button type="submit" id="contact-submit-btn" class="h-[50px] py-3.5 px-6 w-full bg-accent text-white font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 shadow-lg mt-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" style="min-height: 50px;">
+              <span id="contact-btn-label">Wyślij zapytanie — odbierz wycenę w 24h</span>
               <i data-lucide="send" class="w-4 h-4"></i>
             </button>
 
@@ -698,41 +701,74 @@
         });
       }
 
-      // Contact form — opens a pre-filled e-mail to the studio
+      // Contact form — AJAX submit to ./contact.php
       const form = document.getElementById('contact-page-form');
       const status = document.getElementById('contact-status');
+      const submitBtn = document.getElementById('contact-submit-btn');
+      const btnLabel = document.getElementById('contact-btn-label');
+
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
           if (!form.checkValidity()) {
             form.reportValidity();
             return;
           }
+
+          const originalText = btnLabel ? btnLabel.textContent : 'Wyślij zapytanie — odbierz wycenę w 24h';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            if (btnLabel) btnLabel.textContent = 'Wysyłanie zapytania...';
+          }
+          if (status) status.classList.add('hidden');
+
           const val = (id) => ((document.getElementById(id) || {}).value || '').trim();
-          const name = val('cf-name');
-          const phone = val('cf-phone');
-          const email = val('cf-email');
-          const location = val('cf-location');
-          const message = val('cf-message');
           const serviceEl = document.getElementById('selected-service-label');
-          const service = serviceEl ? serviceEl.textContent.trim() : 'Zapytanie ogólne';
+          const service = serviceEl ? serviceEl.textContent.trim() : 'Projekt indywidualny lub adaptacja';
 
-          const subject = 'Zapytanie z goproject.com.pl — ' + service;
-          const body =
-            'Imię i nazwisko: ' + name + '\n' +
-            'Telefon: ' + phone + '\n' +
-            'E-mail: ' + (email || '(brak)') + '\n' +
-            'Lokalizacja inwestycji: ' + (location || '(brak)') + '\n' +
-            'Rodzaj usługi: ' + service + '\n\n' +
-            'Wiadomość:\n' + message;
+          const formData = {
+            imie_nazwisko: val('cf-name'),
+            telefon: val('cf-phone'),
+            email: val('cf-email'),
+            lokalizacja: val('cf-location'),
+            service: service,
+            wiadomosc: val('cf-message'),
+            _hp: form.elements['_hp']?.value || ''
+          };
 
-          const mailto = 'mailto:biuro@goproject.com.pl?subject=' +
-            encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          window.location.href = mailto;
+          try {
+            const res = await fetch('./contact.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(formData)
+            });
+            const result = await res.json();
 
-          if (status) {
-            status.classList.remove('hidden');
-            setTimeout(() => status.classList.add('hidden'), 25000);
+            if (res.ok && result.success) {
+              if (status) {
+                status.className = 'mt-4 p-4 bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-mono text-center leading-relaxed';
+                status.innerHTML = '✓ Dziękujemy! Twoja wiadomość została pomyślnie wysłana do pracowni. Odpowiemy w ciągu 24 godzin.';
+                status.classList.remove('hidden');
+              }
+              form.reset();
+              // Reset custom dropdown label
+              if (serviceEl) serviceEl.textContent = 'Projekt indywidualny lub adaptacja';
+              const selectedServiceInput = document.getElementById('selected-service-input');
+              if (selectedServiceInput) selectedServiceInput.value = 'projekt-indywidualny';
+            } else {
+              throw new Error(result.error || 'Nie udało się wysłać wiadomości.');
+            }
+          } catch (err) {
+            if (status) {
+              status.className = 'mt-4 p-4 bg-rose-950/80 border border-rose-500/60 text-rose-300 text-xs font-mono text-center leading-relaxed';
+              status.innerHTML = '⚠ ' + (err.message || 'Wystąpił problem z wysyłaniem. Skontaktuj się bezpośrednio: +48 884 757 815 lub biuro@goproject.com.pl');
+              status.classList.remove('hidden');
+            }
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              if (btnLabel) btnLabel.textContent = originalText;
+            }
           }
         });
       }
