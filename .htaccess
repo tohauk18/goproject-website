@@ -8,15 +8,26 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Allow Clean URLs (remove .html from URL if requested)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+# 2. Redirect /index.html and /index to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
 
-# 3. Custom Error Documents
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\ HTTP/ [NC]
+RewriteRule ^index$ / [R=301,L]
+
+# 3. Clean URLs: Redirect any direct request for /page.html to /page (301 Permanent)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.?#]+)\.html [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# 4. Clean URLs: Internally map /page to /page.html without changing browser URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# 5. Custom Error Documents
 ErrorDocument 404 /404.html
 
-# 4. Gzip / Deflate Compression
+# 6. Gzip / Deflate Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
@@ -24,7 +35,7 @@ ErrorDocument 404 /404.html
   AddOutputFilterByType DEFLATE font/woff2 font/woff application/font-woff2
 </IfModule>
 
-# 5. Browser Caching (Expires Headers)
+# 7. Browser Caching (Expires Headers)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
@@ -52,7 +63,7 @@ ErrorDocument 404 /404.html
   ExpiresByType font/woff "access plus 1 year"
 </IfModule>
 
-# 6. Security Headers
+# 8. Security Headers
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
