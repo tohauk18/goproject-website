@@ -16,6 +16,8 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\ HTTP/ [NC]
 RewriteRule ^index$ / [R=301,L]
 
 # 3. Clean URLs: Redirect any direct request for /page.html to /page (301 Permanent)
+# Exclude Google site verification files from being redirected
+RewriteCond %{THE_REQUEST} !/google[a-zA-Z0-9_-]+\.html [NC]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.?#]+)\.html [NC]
 RewriteRule ^ /%1 [R=301,L,NE]
 
